@@ -41,23 +41,16 @@ namespace Project_PCS
             this.btnBuku = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.lbNama = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.btnDetail = new System.Windows.Forms.Button();
-            this.radioButton2 = new System.Windows.Forms.RadioButton();
-            this.radioButton1 = new System.Windows.Forms.RadioButton();
-            this.btnReset = new System.Windows.Forms.Button();
-            this.cmbArah = new System.Windows.Forms.ComboBox();
-            this.label4 = new System.Windows.Forms.Label();
-            this.cmbSort = new System.Windows.Forms.ComboBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.tbCari = new System.Windows.Forms.TextBox();
-            this.label3 = new System.Windows.Forms.Label();
+            this.btnLaporanPreOrderBuku = new System.Windows.Forms.Button();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.btnLaporanBukuDiatasRataRata = new System.Windows.Forms.Button();
+            this.btnLaporanBukuDibawahRataRata = new System.Windows.Forms.Button();
+            this.btnLaporanMemberPalingSering = new System.Windows.Forms.Button();
+            this.btnLaporanPegawaiPalingSering = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
             this.SuspendLayout();
@@ -241,7 +234,7 @@ namespace Project_PCS
             this.label1.ForeColor = System.Drawing.Color.White;
             this.label1.Location = new System.Drawing.Point(19, 90);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(191, 30);
+            this.label1.Size = new System.Drawing.Size(240, 37);
             this.label1.TabIndex = 2;
             this.label1.Text = "BOOK STATION";
             // 
@@ -255,18 +248,6 @@ namespace Project_PCS
             this.pictureBox1.TabIndex = 3;
             this.pictureBox1.TabStop = false;
             // 
-            // dataGridView1
-            // 
-            this.dataGridView1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.dataGridView1.BackgroundColor = System.Drawing.Color.Gainsboro;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(28, 160);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowHeadersWidth = 51;
-            this.dataGridView1.Size = new System.Drawing.Size(1018, 442);
-            this.dataGridView1.TabIndex = 1;
-            // 
             // lbNama
             // 
             this.lbNama.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
@@ -275,7 +256,7 @@ namespace Project_PCS
             this.lbNama.ForeColor = System.Drawing.Color.White;
             this.lbNama.Location = new System.Drawing.Point(887, 9);
             this.lbNama.Name = "lbNama";
-            this.lbNama.Size = new System.Drawing.Size(156, 23);
+            this.lbNama.Size = new System.Drawing.Size(200, 30);
             this.lbNama.TabIndex = 11;
             this.lbNama.Text = "Halo, Nama Admin";
             // 
@@ -284,141 +265,32 @@ namespace Project_PCS
             this.panel2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.panel2.Controls.Add(this.btnDetail);
-            this.panel2.Controls.Add(this.radioButton2);
-            this.panel2.Controls.Add(this.radioButton1);
-            this.panel2.Controls.Add(this.btnReset);
-            this.panel2.Controls.Add(this.cmbArah);
-            this.panel2.Controls.Add(this.label4);
-            this.panel2.Controls.Add(this.cmbSort);
-            this.panel2.Controls.Add(this.label2);
-            this.panel2.Controls.Add(this.tbCari);
-            this.panel2.Controls.Add(this.label3);
+            this.panel2.Controls.Add(this.btnLaporanPegawaiPalingSering);
+            this.panel2.Controls.Add(this.btnLaporanMemberPalingSering);
+            this.panel2.Controls.Add(this.btnLaporanBukuDibawahRataRata);
+            this.panel2.Controls.Add(this.btnLaporanBukuDiatasRataRata);
+            this.panel2.Controls.Add(this.btnLaporanPreOrderBuku);
             this.panel2.Controls.Add(this.panel3);
-            this.panel2.Controls.Add(this.dataGridView1);
             this.panel2.Location = new System.Drawing.Point(226, 0);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(1058, 661);
             this.panel2.TabIndex = 12;
             // 
-            // btnDetail
+            // btnLaporanPreOrderBuku
             // 
-            this.btnDetail.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnDetail.BackColor = System.Drawing.Color.Navy;
-            this.btnDetail.FlatAppearance.BorderSize = 0;
-            this.btnDetail.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnDetail.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnDetail.ForeColor = System.Drawing.Color.White;
-            this.btnDetail.Location = new System.Drawing.Point(893, 611);
-            this.btnDetail.Name = "btnDetail";
-            this.btnDetail.Size = new System.Drawing.Size(153, 38);
-            this.btnDetail.TabIndex = 28;
-            this.btnDetail.Text = "Lihat Detail";
-            this.btnDetail.UseVisualStyleBackColor = false;
-            this.btnDetail.Click += new System.EventHandler(this.btnDetail_Click);
-            // 
-            // radioButton2
-            // 
-            this.radioButton2.AutoSize = true;
-            this.radioButton2.Location = new System.Drawing.Point(858, 61);
-            this.radioButton2.Name = "radioButton2";
-            this.radioButton2.Size = new System.Drawing.Size(61, 25);
-            this.radioButton2.TabIndex = 27;
-            this.radioButton2.TabStop = true;
-            this.radioButton2.Text = "Desc";
-            this.radioButton2.UseVisualStyleBackColor = true;
-            // 
-            // radioButton1
-            // 
-            this.radioButton1.AutoSize = true;
-            this.radioButton1.Location = new System.Drawing.Point(800, 61);
-            this.radioButton1.Name = "radioButton1";
-            this.radioButton1.Size = new System.Drawing.Size(52, 25);
-            this.radioButton1.TabIndex = 26;
-            this.radioButton1.TabStop = true;
-            this.radioButton1.Text = "Asc";
-            this.radioButton1.UseVisualStyleBackColor = true;
-            // 
-            // btnReset
-            // 
-            this.btnReset.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnReset.BackColor = System.Drawing.Color.Navy;
-            this.btnReset.FlatAppearance.BorderSize = 0;
-            this.btnReset.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnReset.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnReset.ForeColor = System.Drawing.Color.White;
-            this.btnReset.Location = new System.Drawing.Point(951, 115);
-            this.btnReset.Name = "btnReset";
-            this.btnReset.Size = new System.Drawing.Size(95, 34);
-            this.btnReset.TabIndex = 25;
-            this.btnReset.Text = "Reset";
-            this.btnReset.UseVisualStyleBackColor = false;
-            // 
-            // cmbArah
-            // 
-            this.cmbArah.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.cmbArah.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cmbArah.FormattingEnabled = true;
-            this.cmbArah.Items.AddRange(new object[] {
-            "Ascending",
-            "Descending"});
-            this.cmbArah.Location = new System.Drawing.Point(817, 116);
-            this.cmbArah.Name = "cmbArah";
-            this.cmbArah.Size = new System.Drawing.Size(128, 29);
-            this.cmbArah.TabIndex = 24;
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(24, 119);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(45, 21);
-            this.label4.TabIndex = 23;
-            this.label4.Text = "Cari :";
-            // 
-            // cmbSort
-            // 
-            this.cmbSort.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.cmbSort.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cmbSort.FormattingEnabled = true;
-            this.cmbSort.Items.AddRange(new object[] {
-            "Kode",
-            "Judul",
-            "Penulis",
-            "Harga",
-            "Stok"});
-            this.cmbSort.Location = new System.Drawing.Point(643, 116);
-            this.cmbSort.Name = "cmbSort";
-            this.cmbSort.Size = new System.Drawing.Size(168, 29);
-            this.cmbSort.TabIndex = 19;
-            // 
-            // label2
-            // 
-            this.label2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(474, 119);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(163, 21);
-            this.label2.TabIndex = 18;
-            this.label2.Text = "Urutkan Berdasarkan :";
-            // 
-            // tbCari
-            // 
-            this.tbCari.Location = new System.Drawing.Point(75, 115);
-            this.tbCari.Name = "tbCari";
-            this.tbCari.Size = new System.Drawing.Size(294, 29);
-            this.tbCari.TabIndex = 15;
-            this.tbCari.Text = "Kata Kunci";
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Segoe UI Semibold", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(23, 56);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(157, 30);
-            this.label3.TabIndex = 14;
-            this.label3.Text = "Daftar Laporan";
+            this.btnLaporanPreOrderBuku.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnLaporanPreOrderBuku.BackColor = System.Drawing.Color.Navy;
+            this.btnLaporanPreOrderBuku.FlatAppearance.BorderSize = 0;
+            this.btnLaporanPreOrderBuku.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnLaporanPreOrderBuku.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnLaporanPreOrderBuku.ForeColor = System.Drawing.Color.White;
+            this.btnLaporanPreOrderBuku.Location = new System.Drawing.Point(39, 72);
+            this.btnLaporanPreOrderBuku.Name = "btnLaporanPreOrderBuku";
+            this.btnLaporanPreOrderBuku.Size = new System.Drawing.Size(982, 38);
+            this.btnLaporanPreOrderBuku.TabIndex = 28;
+            this.btnLaporanPreOrderBuku.Text = "Laporan Pre-Order Buku";
+            this.btnLaporanPreOrderBuku.UseVisualStyleBackColor = false;
             // 
             // panel3
             // 
@@ -430,6 +302,70 @@ namespace Project_PCS
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(1068, 41);
             this.panel3.TabIndex = 12;
+            // 
+            // btnLaporanBukuDiatasRataRata
+            // 
+            this.btnLaporanBukuDiatasRataRata.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnLaporanBukuDiatasRataRata.BackColor = System.Drawing.Color.Navy;
+            this.btnLaporanBukuDiatasRataRata.FlatAppearance.BorderSize = 0;
+            this.btnLaporanBukuDiatasRataRata.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnLaporanBukuDiatasRataRata.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnLaporanBukuDiatasRataRata.ForeColor = System.Drawing.Color.White;
+            this.btnLaporanBukuDiatasRataRata.Location = new System.Drawing.Point(39, 130);
+            this.btnLaporanBukuDiatasRataRata.Name = "btnLaporanBukuDiatasRataRata";
+            this.btnLaporanBukuDiatasRataRata.Size = new System.Drawing.Size(982, 38);
+            this.btnLaporanBukuDiatasRataRata.TabIndex = 29;
+            this.btnLaporanBukuDiatasRataRata.Text = "Laporan Buku Dengan Penjualan Di Atas Rata-Rata";
+            this.btnLaporanBukuDiatasRataRata.UseVisualStyleBackColor = false;
+            // 
+            // btnLaporanBukuDibawahRataRata
+            // 
+            this.btnLaporanBukuDibawahRataRata.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnLaporanBukuDibawahRataRata.BackColor = System.Drawing.Color.Navy;
+            this.btnLaporanBukuDibawahRataRata.FlatAppearance.BorderSize = 0;
+            this.btnLaporanBukuDibawahRataRata.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnLaporanBukuDibawahRataRata.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnLaporanBukuDibawahRataRata.ForeColor = System.Drawing.Color.White;
+            this.btnLaporanBukuDibawahRataRata.Location = new System.Drawing.Point(39, 193);
+            this.btnLaporanBukuDibawahRataRata.Name = "btnLaporanBukuDibawahRataRata";
+            this.btnLaporanBukuDibawahRataRata.Size = new System.Drawing.Size(982, 38);
+            this.btnLaporanBukuDibawahRataRata.TabIndex = 30;
+            this.btnLaporanBukuDibawahRataRata.Text = "Laporan Buku Dengan Penjualan Di Bawah Rata-Rata";
+            this.btnLaporanBukuDibawahRataRata.UseVisualStyleBackColor = false;
+            // 
+            // btnLaporanMemberPalingSering
+            // 
+            this.btnLaporanMemberPalingSering.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnLaporanMemberPalingSering.BackColor = System.Drawing.Color.Navy;
+            this.btnLaporanMemberPalingSering.FlatAppearance.BorderSize = 0;
+            this.btnLaporanMemberPalingSering.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnLaporanMemberPalingSering.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnLaporanMemberPalingSering.ForeColor = System.Drawing.Color.White;
+            this.btnLaporanMemberPalingSering.Location = new System.Drawing.Point(39, 252);
+            this.btnLaporanMemberPalingSering.Name = "btnLaporanMemberPalingSering";
+            this.btnLaporanMemberPalingSering.Size = new System.Drawing.Size(982, 38);
+            this.btnLaporanMemberPalingSering.TabIndex = 31;
+            this.btnLaporanMemberPalingSering.Text = "Laporan Member Paling Sering Membeli";
+            this.btnLaporanMemberPalingSering.UseVisualStyleBackColor = false;
+            // 
+            // btnLaporanPegawaiPalingSering
+            // 
+            this.btnLaporanPegawaiPalingSering.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnLaporanPegawaiPalingSering.BackColor = System.Drawing.Color.Navy;
+            this.btnLaporanPegawaiPalingSering.FlatAppearance.BorderSize = 0;
+            this.btnLaporanPegawaiPalingSering.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnLaporanPegawaiPalingSering.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnLaporanPegawaiPalingSering.ForeColor = System.Drawing.Color.White;
+            this.btnLaporanPegawaiPalingSering.Location = new System.Drawing.Point(39, 315);
+            this.btnLaporanPegawaiPalingSering.Name = "btnLaporanPegawaiPalingSering";
+            this.btnLaporanPegawaiPalingSering.Size = new System.Drawing.Size(982, 38);
+            this.btnLaporanPegawaiPalingSering.TabIndex = 32;
+            this.btnLaporanPegawaiPalingSering.Text = "Laporan Pegawai Dengan Penjualan Di Atas Rata-Rata";
+            this.btnLaporanPegawaiPalingSering.UseVisualStyleBackColor = false;
             // 
             // MasterLaporanAdmin
             // 
@@ -448,9 +384,7 @@ namespace Project_PCS
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.panel2.ResumeLayout(false);
-            this.panel2.PerformLayout();
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
             this.ResumeLayout(false);
@@ -465,25 +399,19 @@ namespace Project_PCS
         private System.Windows.Forms.Button btnLogout;
         private System.Windows.Forms.Button btnPreOrder;
         private System.Windows.Forms.Button btnBuku;
-        private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.Label lbNama;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Panel panel3;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox tbCari;
-        private System.Windows.Forms.ComboBox cmbSort;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.ComboBox cmbArah;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Button btnReset;
-        private System.Windows.Forms.RadioButton radioButton2;
-        private System.Windows.Forms.RadioButton radioButton1;
-        private System.Windows.Forms.Button btnDetail;
+        private System.Windows.Forms.Button btnLaporanPreOrderBuku;
         private System.Windows.Forms.Button btnKategori;
         private System.Windows.Forms.Button btnPenerbit;
         private System.Windows.Forms.Button btnPegawai;
         private System.Windows.Forms.Button btnLaporan;
         private System.Windows.Forms.Button btnMember;
         private System.Windows.Forms.Button btnTransaksi;
+        private System.Windows.Forms.Button btnLaporanBukuDiatasRataRata;
+        private System.Windows.Forms.Button btnLaporanBukuDibawahRataRata;
+        private System.Windows.Forms.Button btnLaporanMemberPalingSering;
+        private System.Windows.Forms.Button btnLaporanPegawaiPalingSering;
     }
 }
