@@ -1,0 +1,104 @@
+C:\Users\LENOVO\Documents\GitHub\Project-PCS\Project_PCS\Project_PCS\bin\Debug\Project_PCS.exe.config
+C:\Users\LENOVO\Documents\GitHub\Project-PCS\Project_PCS\Project_PCS\bin\Debug\Project_PCS.exe
+C:\Users\LENOVO\Documents\GitHub\Project-PCS\Project_PCS\Project_PCS\bin\Debug\Project_PCS.pdb
+C:\Users\LENOVO\Documents\GitHub\Project-PCS\Project_PCS\Project_PCS\obj\Debug\Project_PCS.csproj.AssemblyReference.cache
+C:\Users\LENOVO\Documents\GitHub\Project-PCS\Project_PCS\Project_PCS\obj\Debug\Project_PCS.FormLogin.resources
+C:\Users\LENOVO\Documents\GitHub\Project-PCS\Project_PCS\Project_PCS\obj\Debug\Project_PCS.MasterBuku.resources
+C:\Users\LENOVO\Documents\GitHub\Project-PCS\Project_PCS\Project_PCS\obj\Debug\Project_PCS.Properties.Resources.resources
+C:\Users\LENOVO\Documents\GitHub\Project-PCS\Project_PCS\Project_PCS\obj\Debug\Project_PCS.csproj.GenerateResource.cache
+C:\Users\LENOVO\Documents\GitHub\Project-PCS\Project_PCS\Project_PCS\obj\Debug\Project_PCS.csproj.CoreCompileInputs.cache
+C:\Users\LENOVO\Documents\GitHub\Project-PCS\Project_PCS\Project_PCS\obj\Debug\Project_PCS.exe
+C:\Users\LENOVO\Documents\GitHub\Project-PCS\Project_PCS\Project_PCS\obj\Debug\Project_PCS.pdb
+C:\Users\LENOVO\Documents\GitHub\Project-PCS\Project_PCS\Project_PCS\obj\Debug\Project_PCS.FormDetailBuku.resources
+C:\Users\LENOVO\Documents\GitHub\Project-PCS\Project_PCS\Project_PCS\obj\Debug\Project_PCS.MasterPreOrder.resources
+C:\Users\LENOVO\Documents\GitHub\Project-PCS\Project_PCS\Project_PCS\obj\Debug\Project_PCS.MasterTransaksi.resources
+C:\Users\LENOVO\Documents\GitHub\Project-PCS\Project_PCS\Project_PCS\obj\Debug\Project_PCS.MasterMember.resources
+A:\College\github\Project-PCS\Project_PCS\Project_PCS\bin\Debug\Project_PCS.exe.config
+A:\College\github\Project-PCS\Project_PCS\Project_PCS\bin\Debug\Project_PCS.exe
+A:\College\github\Project-PCS\Project_PCS\Project_PCS\bin\Debug\Project_PCS.pdb
+A:\College\github\Project-PCS\Project_PCS\Project_PCS\obj\Debug\Project_PCS.csproj.AssemblyReference.cache
+A:\College\github\Project-PCS\Project_PCS\Project_PCS\obj\Debug\Project_PCS.FormDetailBuku.resources
+A:\College\github\Project-PCS\Project_PCS\Project_PCS\obj\Debug\Project_PCS.FormDetailTransaksi.resources
+A:\College\github\Project-PCS\Project_PCS\Project_PCS\obj\Debug\Project_PCS.FormLogin.resources
+A:\College\github\Project-PCS\Project_PCS\Project_PCS\obj\Debug\Project_PCS.MasterBuku.resources
+A:\College\github\Project-PCS\Project_PCS\Project_PCS\obj\Debug\Project_PCS.MasterMember.resources
+A:\College\github\Project-PCS\Project_PCS\Project_PCS\obj\Debug\Project_PCS.MasterPreOrder.resources
+A:\College\github\Project-PCS\Project_PCS\Project_PCS\obj\Debug\Project_PCS.MasterTransaksi.resources
+A:\College\github\Project-PCS\Project_PCS\Project_PCS\obj\Debug\Project_PCS.Properties.Resources.resources
+A:\College\github\Project-PCS\Project_PCS\Project_PCS\obj\Debug\Project_PCS.csproj.GenerateResource.cache
+A:\College\github\Project-PCS\Project_PCS\Project_PCS\obj\Debug\Project_PCS.csproj.CoreCompileInputs.cache
+A:\College\github\Project-PCS\Project_PCS\Project_PCS\obj\Debug\Project_PCS.exe
+A:\College\github\Project-PCS\Project_PCS\Project_PCS\obj\Debug\Project_PCS.pdb
+A:\College\github\Project-PCS\Project_PCS\Project_PCS\obj\Debug\Project_PCS.FormDetailMember.resources
+C:\Users\USER\Documents\GitHub\Project-PCS\Project_PCS\Project_PCS\bin\Debug\Project_PCS.exe.config
+C:\Users\USER\Documents\GitHub\Project-PCS\Project_PCS\Project_PCS\bin\Debug\Project_PCS.exe
+C:\Users\USER\Documents\GitHub\Project-PCS\Project_PCS\Project_PCS\bin\Debug\Project_PCS.pdb
+C:\Users\USER\Documents\GitHub\Project-PCS\Project_PCS\Project_PCS\obj\Debug\Project_PCS.csproj.AssemblyReference.cache
+C:\Users\USER\Documents\GitHub\Project-PCS\Project_PCS\Project_PCS\obj\Debug\Project_PCS.FormDetailBuku.resources
+C:\Users\USER\Documents\GitHub\Project-PCS\Project_PCS\Project_PCS\obj\Debug\Project_PCS.FormDetailMember.resources
+C:\Users\USER\Documents\GitHub\Project-PCS\Project_PCS\Project_PCS\obj\Debug\Project_PCS.FormDetailTransaksi.resources
+C:\Users\USER\Documents\GitHub\Project-PCS\Project_PCS\Project_PCS\obj\Debug\Project_PCS.FormLogin.resources
+C:\Users\USER\Documents\GitHub\Project-PCS\Project_PCS\Project_PCS\obj\Debug\Project_PCS.MasterBuku.resources
+C:\Users\USER\Documents\GitHub\Project-PCS\Project_PCS\Project_PCS\obj\Debug\Project_PCS.MasterBukuAdmin.resources
+C:\Users\USER\Documents\GitHub\Project-PCS\Project_PCS\Project_PCS\obj\Debug\Project_PCS.MasterMember.resources
+C:\Users\USER\Documents\GitHub\Project-PCS\Project_PCS\Project_PCS\obj\Debug\Project_PCS.MasterPenerbitAdmin.resources
+C:\Users\USER\Documents\GitHub\Project-PCS\Project_PCS\Project_PCS\obj\Debug\Project_PCS.MasterPreOrder.resources
+C:\Users\USER\Documents\GitHub\Project-PCS\Project_PCS\Project_PCS\obj\Debug\Project_PCS.MasterTransaksi.resources
+C:\Users\USER\Documents\GitHub\Project-PCS\Project_PCS\Project_PCS\obj\Debug\Project_PCS.Properties.Resources.resources
+C:\Users\USER\Documents\GitHub\Project-PCS\Project_PCS\Project_PCS\obj\Debug\Project_PCS.csproj.GenerateResource.cache
+C:\Users\USER\Documents\GitHub\Project-PCS\Project_PCS\Project_PCS\obj\Debug\Project_PCS.csproj.CoreCompileInputs.cache
+C:\Users\USER\Documents\GitHub\Project-PCS\Project_PCS\Project_PCS\obj\Debug\Project_PCS.exe
+C:\Users\USER\Documents\GitHub\Project-PCS\Project_PCS\Project_PCS\obj\Debug\Project_PCS.pdb
+A:\College\github\Project-PCS\Project_PCS\Project_PCS\obj\Debug\Project_PCS.FormTransaksiBaru.resources
+A:\College\github\Project-PCS\Project_PCS\Project_PCS\obj\Debug\Project_PCS.MasterBukuAdmin.resources
+A:\College\github\Project-PCS\Project_PCS\Project_PCS\obj\Debug\Project_PCS.MasterPenerbitAdmin.resources
+A:\College\github\Project-PCS\Project_PCS\Project_PCS\obj\Debug\Project_PCS.FormCariBuku.resources
+A:\College\github\Project-PCS\Project_PCS\Project_PCS\obj\Debug\Project_PCS.FormMemberBaru.resources
+A:\College\github\Project-PCS\Project_PCS\Project_PCS\obj\Debug\Project_PCS.MasterKategoriAdmin.resources
+A:\College\github\Project-PCS\Project_PCS\Project_PCS\obj\Debug\Project_PCS.FormDetailPegawaiAdmin.resources
+A:\College\github\Project-PCS\Project_PCS\Project_PCS\obj\Debug\Project_PCS.MasterPegawaiAdmin.resources
+A:\College\github\Project-PCS\Project_PCS\Project_PCS\obj\Debug\Project_PCS.FormPegawaiBaruAdmin.resources
+C:\Users\LENOVO\Documents\GitHub\Project-PCS\Project_PCS\Project_PCS\obj\Debug\Project_PCS.FormCariBuku.resources
+C:\Users\LENOVO\Documents\GitHub\Project-PCS\Project_PCS\Project_PCS\obj\Debug\Project_PCS.FormDetailMember.resources
+C:\Users\LENOVO\Documents\GitHub\Project-PCS\Project_PCS\Project_PCS\obj\Debug\Project_PCS.FormDetailPegawaiAdmin.resources
+C:\Users\LENOVO\Documents\GitHub\Project-PCS\Project_PCS\Project_PCS\obj\Debug\Project_PCS.FormDetailPreOrder.resources
+C:\Users\LENOVO\Documents\GitHub\Project-PCS\Project_PCS\Project_PCS\obj\Debug\Project_PCS.FormDetailTransaksi.resources
+C:\Users\LENOVO\Documents\GitHub\Project-PCS\Project_PCS\Project_PCS\obj\Debug\Project_PCS.FormMemberBaru.resources
+C:\Users\LENOVO\Documents\GitHub\Project-PCS\Project_PCS\Project_PCS\obj\Debug\Project_PCS.FormPegawaiBaruAdmin.resources
+C:\Users\LENOVO\Documents\GitHub\Project-PCS\Project_PCS\Project_PCS\obj\Debug\Project_PCS.FormTransaksiBaru.resources
+C:\Users\LENOVO\Documents\GitHub\Project-PCS\Project_PCS\Project_PCS\obj\Debug\Project_PCS.MasterBukuAdmin.resources
+C:\Users\LENOVO\Documents\GitHub\Project-PCS\Project_PCS\Project_PCS\obj\Debug\Project_PCS.MasterKategoriAdmin.resources
+C:\Users\LENOVO\Documents\GitHub\Project-PCS\Project_PCS\Project_PCS\obj\Debug\Project_PCS.MasterPegawaiAdmin.resources
+C:\Users\LENOVO\Documents\GitHub\Project-PCS\Project_PCS\Project_PCS\obj\Debug\Project_PCS.MasterPenerbitAdmin.resources
+C:\This PC\ISTTS\SM 4\PCS\Proyek\GitHub\Project-PCS\Project_PCS\Project_PCS\obj\Debug\Project_PCS.csproj.AssemblyReference.cache
+C:\This PC\ISTTS\SM 4\PCS\Proyek\GitHub\Project-PCS\Project_PCS\Project_PCS\obj\Debug\Project_PCS.FormCariBuku.resources
+C:\This PC\ISTTS\SM 4\PCS\Proyek\GitHub\Project-PCS\Project_PCS\Project_PCS\obj\Debug\Project_PCS.FormDetailBuku.resources
+C:\This PC\ISTTS\SM 4\PCS\Proyek\GitHub\Project-PCS\Project_PCS\Project_PCS\obj\Debug\Project_PCS.FormDetailMember.resources
+C:\This PC\ISTTS\SM 4\PCS\Proyek\GitHub\Project-PCS\Project_PCS\Project_PCS\obj\Debug\Project_PCS.FormDetailPegawaiAdmin.resources
+C:\This PC\ISTTS\SM 4\PCS\Proyek\GitHub\Project-PCS\Project_PCS\Project_PCS\obj\Debug\Project_PCS.FormDetailPreOrder.resources
+C:\This PC\ISTTS\SM 4\PCS\Proyek\GitHub\Project-PCS\Project_PCS\Project_PCS\obj\Debug\Project_PCS.FormDetailTransaksi.resources
+C:\This PC\ISTTS\SM 4\PCS\Proyek\GitHub\Project-PCS\Project_PCS\Project_PCS\obj\Debug\Project_PCS.FormLogin.resources
+C:\This PC\ISTTS\SM 4\PCS\Proyek\GitHub\Project-PCS\Project_PCS\Project_PCS\obj\Debug\Project_PCS.FormMemberBaru.resources
+C:\This PC\ISTTS\SM 4\PCS\Proyek\GitHub\Project-PCS\Project_PCS\Project_PCS\obj\Debug\Project_PCS.FormPegawaiBaruAdmin.resources
+C:\This PC\ISTTS\SM 4\PCS\Proyek\GitHub\Project-PCS\Project_PCS\Project_PCS\obj\Debug\Project_PCS.FormTransaksiBaru.resources
+C:\This PC\ISTTS\SM 4\PCS\Proyek\GitHub\Project-PCS\Project_PCS\Project_PCS\obj\Debug\Project_PCS.MasterBuku.resources
+C:\This PC\ISTTS\SM 4\PCS\Proyek\GitHub\Project-PCS\Project_PCS\Project_PCS\obj\Debug\Project_PCS.MasterMember.resources
+C:\This PC\ISTTS\SM 4\PCS\Proyek\GitHub\Project-PCS\Project_PCS\Project_PCS\obj\Debug\Project_PCS.MasterPreOrder.resources
+C:\This PC\ISTTS\SM 4\PCS\Proyek\GitHub\Project-PCS\Project_PCS\Project_PCS\obj\Debug\Project_PCS.MasterTransaksi.resources
+C:\This PC\ISTTS\SM 4\PCS\Proyek\GitHub\Project-PCS\Project_PCS\Project_PCS\obj\Debug\Project_PCS.Properties.Resources.resources
+C:\This PC\ISTTS\SM 4\PCS\Proyek\GitHub\Project-PCS\Project_PCS\Project_PCS\obj\Debug\Project_PCS.csproj.GenerateResource.cache
+C:\This PC\ISTTS\SM 4\PCS\Proyek\GitHub\Project-PCS\Project_PCS\Project_PCS\obj\Debug\Project_PCS.csproj.CoreCompileInputs.cache
+C:\This PC\ISTTS\SM 4\PCS\Proyek\GitHub\Project-PCS\Project_PCS\Project_PCS\obj\Debug\Project_PCS.exe
+C:\This PC\ISTTS\SM 4\PCS\Proyek\GitHub\Project-PCS\Project_PCS\Project_PCS\obj\Debug\Project_PCS.pdb
+C:\This PC\ISTTS\SM 4\PCS\Proyek\GitHub\Project-PCS\Project_PCS\Project_PCS\bin\Debug\Project_PCS.exe.config
+C:\This PC\ISTTS\SM 4\PCS\Proyek\GitHub\Project-PCS\Project_PCS\Project_PCS\bin\Debug\Project_PCS.exe
+C:\This PC\ISTTS\SM 4\PCS\Proyek\GitHub\Project-PCS\Project_PCS\Project_PCS\bin\Debug\Project_PCS.pdb
+C:\This PC\ISTTS\SM 4\PCS\Proyek\GitHub\Project-PCS\Project_PCS\Project_PCS\obj\Debug\Project_PCS.MasterBukuAdmin.resources
+C:\This PC\ISTTS\SM 4\PCS\Proyek\GitHub\Project-PCS\Project_PCS\Project_PCS\obj\Debug\Project_PCS.MasterKategoriAdmin.resources
+C:\This PC\ISTTS\SM 4\PCS\Proyek\GitHub\Project-PCS\Project_PCS\Project_PCS\obj\Debug\Project_PCS.MasterLaporanAdmin.resources
+C:\This PC\ISTTS\SM 4\PCS\Proyek\GitHub\Project-PCS\Project_PCS\Project_PCS\obj\Debug\Project_PCS.MasterMemberAdmin.resources
+C:\This PC\ISTTS\SM 4\PCS\Proyek\GitHub\Project-PCS\Project_PCS\Project_PCS\obj\Debug\Project_PCS.MasterPegawaiAdmin.resources
+C:\This PC\ISTTS\SM 4\PCS\Proyek\GitHub\Project-PCS\Project_PCS\Project_PCS\obj\Debug\Project_PCS.MasterPenerbitAdmin.resources
+C:\This PC\ISTTS\SM 4\PCS\Proyek\GitHub\Project-PCS\Project_PCS\Project_PCS\obj\Debug\Project_PCS.MasterPreOrderAdmin.resources
+C:\This PC\ISTTS\SM 4\PCS\Proyek\GitHub\Project-PCS\Project_PCS\Project_PCS\obj\Debug\Project_PCS.MasterTransaksiAdmin.resources
+C:\This PC\ISTTS\SM 4\PCS\Proyek\GitHub\Project-PCS\Project_PCS\Project_PCS\obj\Debug\Project_PCS.FormTambahBukuAdmin.resources
