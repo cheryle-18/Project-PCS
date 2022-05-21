@@ -1,7 +1,7 @@
 ﻿
 namespace Project_PCS
 {
-    partial class FormTambahBukuAdmin
+    partial class FormDetailBukuAdmin
     {
         /// <summary>
         /// Required designer variable.
@@ -29,7 +29,7 @@ namespace Project_PCS
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormTambahBukuAdmin));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormDetailBukuAdmin));
             this.panel1 = new System.Windows.Forms.Panel();
             this.btnTransaksi = new System.Windows.Forms.Button();
             this.btnLaporan = new System.Windows.Forms.Button();
@@ -261,7 +261,7 @@ namespace Project_PCS
             this.label1.ForeColor = System.Drawing.Color.White;
             this.label1.Location = new System.Drawing.Point(19, 90);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(240, 37);
+            this.label1.Size = new System.Drawing.Size(191, 30);
             this.label1.TabIndex = 2;
             this.label1.Text = "BOOK STATION";
             // 
@@ -283,7 +283,7 @@ namespace Project_PCS
             this.lbNama.ForeColor = System.Drawing.Color.White;
             this.lbNama.Location = new System.Drawing.Point(887, 9);
             this.lbNama.Name = "lbNama";
-            this.lbNama.Size = new System.Drawing.Size(200, 30);
+            this.lbNama.Size = new System.Drawing.Size(156, 23);
             this.lbNama.TabIndex = 11;
             this.lbNama.Text = "Halo, Nama Admin";
             // 
@@ -339,9 +339,9 @@ namespace Project_PCS
             // 
             this.checkBox3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.checkBox3.AutoSize = true;
-            this.checkBox3.Location = new System.Drawing.Point(560, 530);
+            this.checkBox3.Location = new System.Drawing.Point(560, 537);
             this.checkBox3.Name = "checkBox3";
-            this.checkBox3.Size = new System.Drawing.Size(102, 32);
+            this.checkBox3.Size = new System.Drawing.Size(82, 25);
             this.checkBox3.TabIndex = 107;
             this.checkBox3.Text = "Komedi";
             this.checkBox3.UseVisualStyleBackColor = true;
@@ -350,9 +350,9 @@ namespace Project_PCS
             // 
             this.checkBox2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.checkBox2.AutoSize = true;
-            this.checkBox2.Location = new System.Drawing.Point(478, 530);
+            this.checkBox2.Location = new System.Drawing.Point(478, 537);
             this.checkBox2.Name = "checkBox2";
-            this.checkBox2.Size = new System.Drawing.Size(93, 32);
+            this.checkBox2.Size = new System.Drawing.Size(76, 25);
             this.checkBox2.TabIndex = 106;
             this.checkBox2.Text = "Horror";
             this.checkBox2.UseVisualStyleBackColor = true;
@@ -363,9 +363,9 @@ namespace Project_PCS
             this.checkBox1.AutoSize = true;
             this.checkBox1.Checked = true;
             this.checkBox1.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.checkBox1.Location = new System.Drawing.Point(395, 530);
+            this.checkBox1.Location = new System.Drawing.Point(395, 537);
             this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(94, 32);
+            this.checkBox1.Size = new System.Drawing.Size(77, 25);
             this.checkBox1.TabIndex = 105;
             this.checkBox1.Text = "Fantasi";
             this.checkBox1.UseVisualStyleBackColor = true;
@@ -374,9 +374,9 @@ namespace Project_PCS
             // 
             this.radioButton2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.radioButton2.AutoSize = true;
-            this.radioButton2.Location = new System.Drawing.Point(879, 170);
+            this.radioButton2.Location = new System.Drawing.Point(909, 170);
             this.radioButton2.Name = "radioButton2";
-            this.radioButton2.Size = new System.Drawing.Size(155, 32);
+            this.radioButton2.Size = new System.Drawing.Size(125, 25);
             this.radioButton2.TabIndex = 104;
             this.radioButton2.Text = "Tidak Tersedia";
             this.radioButton2.UseVisualStyleBackColor = true;
@@ -386,9 +386,9 @@ namespace Project_PCS
             this.radioButton1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.radioButton1.AutoSize = true;
             this.radioButton1.Checked = true;
-            this.radioButton1.Location = new System.Drawing.Point(754, 170);
+            this.radioButton1.Location = new System.Drawing.Point(773, 170);
             this.radioButton1.Name = "radioButton1";
-            this.radioButton1.Size = new System.Drawing.Size(103, 32);
+            this.radioButton1.Size = new System.Drawing.Size(84, 25);
             this.radioButton1.TabIndex = 103;
             this.radioButton1.TabStop = true;
             this.radioButton1.Text = "Tersedia";
@@ -400,7 +400,7 @@ namespace Project_PCS
             | System.Windows.Forms.AnchorStyles.Right)));
             this.textBox9.Location = new System.Drawing.Point(879, 524);
             this.textBox9.Name = "textBox9";
-            this.textBox9.Size = new System.Drawing.Size(151, 34);
+            this.textBox9.Size = new System.Drawing.Size(151, 29);
             this.textBox9.TabIndex = 102;
             this.textBox9.Text = "9781408855676";
             // 
@@ -410,7 +410,7 @@ namespace Project_PCS
             | System.Windows.Forms.AnchorStyles.Right)));
             this.textBox8.Location = new System.Drawing.Point(879, 490);
             this.textBox8.Name = "textBox8";
-            this.textBox8.Size = new System.Drawing.Size(151, 34);
+            this.textBox8.Size = new System.Drawing.Size(151, 29);
             this.textBox8.TabIndex = 101;
             this.textBox8.Text = "0545582938";
             // 
@@ -419,7 +419,7 @@ namespace Project_PCS
             this.dateTimePicker1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.dateTimePicker1.Location = new System.Drawing.Point(395, 490);
             this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(402, 34);
+            this.dateTimePicker1.Size = new System.Drawing.Size(402, 29);
             this.dateTimePicker1.TabIndex = 99;
             this.dateTimePicker1.Value = new System.DateTime(1999, 7, 18, 13, 25, 0, 0);
             // 
@@ -431,7 +431,7 @@ namespace Project_PCS
             this.label16.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label16.Location = new System.Drawing.Point(799, 526);
             this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(94, 28);
+            this.label16.Size = new System.Drawing.Size(75, 21);
             this.label16.TabIndex = 97;
             this.label16.Text = "ISBN-13 :";
             // 
@@ -443,7 +443,7 @@ namespace Project_PCS
             this.label17.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label17.Location = new System.Drawing.Point(293, 527);
             this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(99, 28);
+            this.label17.Size = new System.Drawing.Size(81, 21);
             this.label17.TabIndex = 95;
             this.label17.Text = "Kategori :";
             // 
@@ -455,7 +455,7 @@ namespace Project_PCS
             this.label14.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label14.Location = new System.Drawing.Point(798, 491);
             this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(94, 28);
+            this.label14.Size = new System.Drawing.Size(75, 21);
             this.label14.TabIndex = 93;
             this.label14.Text = "ISBN-10 :";
             // 
@@ -467,7 +467,7 @@ namespace Project_PCS
             this.label15.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label15.Location = new System.Drawing.Point(254, 493);
             this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(150, 28);
+            this.label15.Size = new System.Drawing.Size(120, 21);
             this.label15.TabIndex = 91;
             this.label15.Text = "Tanggal Terbit :";
             // 
@@ -482,7 +482,7 @@ namespace Project_PCS
             "Inggris"});
             this.cbBahasa.Location = new System.Drawing.Point(879, 454);
             this.cbBahasa.Name = "cbBahasa";
-            this.cbBahasa.Size = new System.Drawing.Size(151, 36);
+            this.cbBahasa.Size = new System.Drawing.Size(151, 29);
             this.cbBahasa.TabIndex = 90;
             // 
             // label12
@@ -493,7 +493,7 @@ namespace Project_PCS
             this.label12.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label12.Location = new System.Drawing.Point(805, 456);
             this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(86, 28);
+            this.label12.Size = new System.Drawing.Size(68, 21);
             this.label12.TabIndex = 89;
             this.label12.Text = "Bahasa :";
             // 
@@ -502,7 +502,7 @@ namespace Project_PCS
             this.textBox7.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.textBox7.Location = new System.Drawing.Point(395, 455);
             this.textBox7.Name = "textBox7";
-            this.textBox7.Size = new System.Drawing.Size(402, 34);
+            this.textBox7.Size = new System.Drawing.Size(402, 29);
             this.textBox7.TabIndex = 88;
             this.textBox7.Text = "Bloomsbury Publishing plc";
             // 
@@ -514,7 +514,7 @@ namespace Project_PCS
             this.label13.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label13.Location = new System.Drawing.Point(295, 458);
             this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(99, 28);
+            this.label13.Size = new System.Drawing.Size(79, 21);
             this.label13.TabIndex = 87;
             this.label13.Text = "Penerbit :";
             // 
@@ -528,7 +528,7 @@ namespace Project_PCS
             "Paperback"});
             this.cbFormat.Location = new System.Drawing.Point(879, 419);
             this.cbFormat.Name = "cbFormat";
-            this.cbFormat.Size = new System.Drawing.Size(151, 36);
+            this.cbFormat.Size = new System.Drawing.Size(151, 29);
             this.cbFormat.TabIndex = 86;
             // 
             // label10
@@ -539,7 +539,7 @@ namespace Project_PCS
             this.label10.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label10.Location = new System.Drawing.Point(803, 422);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(87, 28);
+            this.label10.Size = new System.Drawing.Size(70, 21);
             this.label10.TabIndex = 85;
             this.label10.Text = "Format :";
             // 
@@ -548,7 +548,7 @@ namespace Project_PCS
             this.textBox6.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.textBox6.Location = new System.Drawing.Point(395, 420);
             this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(402, 34);
+            this.textBox6.Size = new System.Drawing.Size(402, 29);
             this.textBox6.TabIndex = 84;
             this.textBox6.Text = "50";
             // 
@@ -560,7 +560,7 @@ namespace Project_PCS
             this.label11.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label11.Location = new System.Drawing.Point(323, 422);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(63, 28);
+            this.label11.Size = new System.Drawing.Size(51, 21);
             this.label11.TabIndex = 83;
             this.label11.Text = "Stok :";
             // 
@@ -583,7 +583,7 @@ namespace Project_PCS
             this.label9.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label9.Location = new System.Drawing.Point(301, 205);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(106, 28);
+            this.label9.Size = new System.Drawing.Size(84, 21);
             this.label9.TabIndex = 81;
             this.label9.Text = "Deskripsi :";
             // 
@@ -595,7 +595,7 @@ namespace Project_PCS
             this.label8.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label8.Location = new System.Drawing.Point(685, 171);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(78, 28);
+            this.label8.Size = new System.Drawing.Size(63, 21);
             this.label8.TabIndex = 78;
             this.label8.Text = "Status :";
             // 
@@ -606,7 +606,7 @@ namespace Project_PCS
             this.label7.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.Location = new System.Drawing.Point(391, 172);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(36, 28);
+            this.label7.Size = new System.Drawing.Size(30, 21);
             this.label7.TabIndex = 77;
             this.label7.Text = "Rp";
             // 
@@ -616,7 +616,7 @@ namespace Project_PCS
             | System.Windows.Forms.AnchorStyles.Right)));
             this.textBox4.Location = new System.Drawing.Point(416, 169);
             this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(263, 34);
+            this.textBox4.Size = new System.Drawing.Size(263, 29);
             this.textBox4.TabIndex = 76;
             this.textBox4.Text = "130.000";
             // 
@@ -627,7 +627,7 @@ namespace Project_PCS
             this.label6.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.Location = new System.Drawing.Point(323, 171);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(77, 28);
+            this.label6.Size = new System.Drawing.Size(62, 21);
             this.label6.TabIndex = 75;
             this.label6.Text = "Harga :";
             // 
@@ -637,7 +637,7 @@ namespace Project_PCS
             | System.Windows.Forms.AnchorStyles.Right)));
             this.textBox3.Location = new System.Drawing.Point(395, 134);
             this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(635, 34);
+            this.textBox3.Size = new System.Drawing.Size(635, 29);
             this.textBox3.TabIndex = 74;
             this.textBox3.Text = "J. K. Rowling";
             // 
@@ -648,7 +648,7 @@ namespace Project_PCS
             this.label5.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.Location = new System.Drawing.Point(317, 137);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(88, 28);
+            this.label5.Size = new System.Drawing.Size(68, 21);
             this.label5.TabIndex = 73;
             this.label5.Text = "Penulis :";
             // 
@@ -658,7 +658,7 @@ namespace Project_PCS
             | System.Windows.Forms.AnchorStyles.Right)));
             this.textBox2.Location = new System.Drawing.Point(395, 99);
             this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(635, 34);
+            this.textBox2.Size = new System.Drawing.Size(635, 29);
             this.textBox2.TabIndex = 72;
             this.textBox2.Text = "Harry Potter and the Prisoner of Azkaban";
             // 
@@ -669,7 +669,7 @@ namespace Project_PCS
             this.label2.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.Location = new System.Drawing.Point(329, 102);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(78, 28);
+            this.label2.Size = new System.Drawing.Size(60, 21);
             this.label2.TabIndex = 71;
             this.label2.Text = "Judul : ";
             // 
@@ -701,7 +701,7 @@ namespace Project_PCS
             this.textBox1.Location = new System.Drawing.Point(87, 94);
             this.textBox1.Name = "textBox1";
             this.textBox1.ReadOnly = true;
-            this.textBox1.Size = new System.Drawing.Size(153, 34);
+            this.textBox1.Size = new System.Drawing.Size(153, 29);
             this.textBox1.TabIndex = 68;
             this.textBox1.Text = "B0001";
             // 
@@ -712,7 +712,7 @@ namespace Project_PCS
             this.label4.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.Location = new System.Drawing.Point(24, 99);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(70, 28);
+            this.label4.Size = new System.Drawing.Size(57, 21);
             this.label4.TabIndex = 45;
             this.label4.Text = "Kode :";
             // 
@@ -728,7 +728,7 @@ namespace Project_PCS
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(201, 38);
             this.button1.TabIndex = 31;
-            this.button1.Text = "Simpan";
+            this.button1.Text = "Simpan Perubahan";
             this.button1.UseVisualStyleBackColor = false;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
@@ -754,7 +754,7 @@ namespace Project_PCS
             this.label3.Font = new System.Drawing.Font("Segoe UI Semibold", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.Location = new System.Drawing.Point(23, 56);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(182, 37);
+            this.label3.Size = new System.Drawing.Size(143, 30);
             this.label3.TabIndex = 14;
             this.label3.Text = "Tambah Buku";
             // 
@@ -769,7 +769,7 @@ namespace Project_PCS
             this.panel3.Size = new System.Drawing.Size(1068, 41);
             this.panel3.TabIndex = 12;
             // 
-            // FormTambahBukuAdmin
+            // FormDetailBukuAdmin
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.Color.White;
@@ -777,7 +777,7 @@ namespace Project_PCS
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.panel2);
             this.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Name = "FormTambahBukuAdmin";
+            this.Name = "FormDetailBukuAdmin";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "MasterBukuAdmin";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;

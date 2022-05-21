@@ -138,3 +138,4 @@ C:\This PC\ISTTS\SM 4\PCS\Proyek\GitHub\Project-PCS-2\Project_PCS\Project_PCS\ob
 C:\This PC\ISTTS\SM 4\PCS\Proyek\GitHub\Project-PCS-2\Project_PCS\Project_PCS\obj\Debug\Project_PCS.csproj.CoreCompileInputs.cache
 C:\This PC\ISTTS\SM 4\PCS\Proyek\GitHub\Project-PCS-2\Project_PCS\Project_PCS\obj\Debug\Project_PCS.exe
 C:\This PC\ISTTS\SM 4\PCS\Proyek\GitHub\Project-PCS-2\Project_PCS\Project_PCS\obj\Debug\Project_PCS.pdb
+C:\This PC\ISTTS\SM 4\PCS\Proyek\GitHub\Project-PCS-2\Project_PCS\Project_PCS\obj\Debug\Project_PCS.FormDetailBukuAdmin.resources

@@ -21,6 +21,8 @@ namespace Project_PCS
         private void MasterBuku_Load(object sender, EventArgs e)
         {
             pictureBox2.Load("https://embassybooks.in/image/catalog/Child/9781408855676.jpg");
+            cbFormat.SelectedIndex = 0;
+            cbBahasa.SelectedIndex = 1;
         }
 
         private void btnLogout_Click(object sender, EventArgs e)
