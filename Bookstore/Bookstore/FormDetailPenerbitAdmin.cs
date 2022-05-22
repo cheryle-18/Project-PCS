@@ -1,0 +1,45 @@
+﻿using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows.Forms;
+
+namespace Bookstore
+{
+    public partial class FormDetailPenerbitAdmin : Form
+    {
+        public FormDetailPenerbitAdmin()
+        {
+            InitializeComponent();
+        }
+
+        private void btnSimpan_Click(object sender, EventArgs e)
+        {
+            MasterPenerbitAdmin frm = new MasterPenerbitAdmin();
+            Panel temp = (Panel)frm.Controls[0];
+            temp.Width = panel1.Width;
+            temp.Height = panel1.Height;
+            this.panel1.Controls.Clear();
+            this.panel1.Controls.Add(temp);
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            MasterPenerbitAdmin frm = new MasterPenerbitAdmin();
+            Panel temp = (Panel)frm.Controls[0];
+            temp.Width = panel1.Width;
+            temp.Height = panel1.Height;
+            this.panel1.Controls.Clear();
+            this.panel1.Controls.Add(temp);
+        }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+    }
+}
