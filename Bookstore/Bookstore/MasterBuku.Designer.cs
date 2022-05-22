@@ -48,8 +48,8 @@ namespace Bookstore
             this.btnReset = new System.Windows.Forms.Button();
             this.btnDetail = new System.Windows.Forms.Button();
             this.panelBuku = new System.Windows.Forms.Panel();
-            this.btnInsert = new System.Windows.Forms.Button();
             this.txtCari = new System.Windows.Forms.TextBox();
+            this.btnInsert = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.panelBuku.SuspendLayout();
             this.SuspendLayout();
@@ -84,6 +84,7 @@ namespace Bookstore
             this.Column8});
             this.dataGridView1.Location = new System.Drawing.Point(27, 126);
             this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.RowHeadersVisible = false;
             this.dataGridView1.RowHeadersWidth = 51;
             this.dataGridView1.Size = new System.Drawing.Size(1010, 393);
             this.dataGridView1.TabIndex = 1;
@@ -142,7 +143,7 @@ namespace Bookstore
             this.label3.Font = new System.Drawing.Font("Segoe UI Semibold", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.Location = new System.Drawing.Point(22, 22);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(163, 37);
+            this.label3.Size = new System.Drawing.Size(127, 30);
             this.label3.TabIndex = 14;
             this.label3.Text = "Daftar Buku";
             // 
@@ -152,7 +153,7 @@ namespace Bookstore
             this.label2.AutoSize = true;
             this.label2.Location = new System.Drawing.Point(465, 85);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(207, 25);
+            this.label2.Size = new System.Drawing.Size(169, 20);
             this.label2.TabIndex = 18;
             this.label2.Text = "Urutkan Berdasarkan :";
             // 
@@ -169,7 +170,7 @@ namespace Bookstore
             "Stok"});
             this.cmbSort.Location = new System.Drawing.Point(634, 77);
             this.cmbSort.Name = "cmbSort";
-            this.cmbSort.Size = new System.Drawing.Size(168, 33);
+            this.cmbSort.Size = new System.Drawing.Size(168, 28);
             this.cmbSort.TabIndex = 19;
             // 
             // label4
@@ -177,7 +178,7 @@ namespace Bookstore
             this.label4.AutoSize = true;
             this.label4.Location = new System.Drawing.Point(23, 85);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(109, 25);
+            this.label4.Size = new System.Drawing.Size(86, 20);
             this.label4.TabIndex = 23;
             this.label4.Text = "Cari Buku :";
             // 
@@ -191,7 +192,7 @@ namespace Bookstore
             "Descending"});
             this.cmbArah.Location = new System.Drawing.Point(808, 77);
             this.cmbArah.Name = "cmbArah";
-            this.cmbArah.Size = new System.Drawing.Size(128, 33);
+            this.cmbArah.Size = new System.Drawing.Size(128, 28);
             this.cmbArah.TabIndex = 24;
             // 
             // btnReset
@@ -244,6 +245,14 @@ namespace Bookstore
             this.panelBuku.Size = new System.Drawing.Size(1050, 630);
             this.panelBuku.TabIndex = 14;
             // 
+            // txtCari
+            // 
+            this.txtCari.Location = new System.Drawing.Point(138, 80);
+            this.txtCari.Name = "txtCari";
+            this.txtCari.Size = new System.Drawing.Size(321, 26);
+            this.txtCari.TabIndex = 66;
+            this.txtCari.Text = "Harry Potter And The";
+            // 
             // btnInsert
             // 
             this.btnInsert.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
@@ -259,14 +268,6 @@ namespace Bookstore
             this.btnInsert.Text = "Insert Buku";
             this.btnInsert.UseVisualStyleBackColor = false;
             this.btnInsert.Click += new System.EventHandler(this.btnInsert_Click);
-            // 
-            // txtCari
-            // 
-            this.txtCari.Location = new System.Drawing.Point(138, 80);
-            this.txtCari.Name = "txtCari";
-            this.txtCari.Size = new System.Drawing.Size(321, 30);
-            this.txtCari.TabIndex = 66;
-            this.txtCari.Text = "Harry Potter And The";
             // 
             // MasterBuku
             // 
