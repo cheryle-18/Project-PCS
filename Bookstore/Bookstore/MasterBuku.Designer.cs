@@ -82,7 +82,7 @@ namespace Bookstore
             this.Column6,
             this.Column7,
             this.Column8});
-            this.dataGridView1.Location = new System.Drawing.Point(27, 126);
+            this.dataGridView1.Location = new System.Drawing.Point(17, 126);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersVisible = false;
             this.dataGridView1.RowHeadersWidth = 51;
@@ -141,7 +141,7 @@ namespace Bookstore
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Segoe UI Semibold", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(22, 22);
+            this.label3.Location = new System.Drawing.Point(12, 22);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(127, 30);
             this.label3.TabIndex = 14;
@@ -151,7 +151,7 @@ namespace Bookstore
             // 
             this.label2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(465, 85);
+            this.label2.Location = new System.Drawing.Point(455, 85);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(169, 20);
             this.label2.TabIndex = 18;
@@ -168,7 +168,7 @@ namespace Bookstore
             "Penulis",
             "Harga",
             "Stok"});
-            this.cmbSort.Location = new System.Drawing.Point(634, 77);
+            this.cmbSort.Location = new System.Drawing.Point(624, 77);
             this.cmbSort.Name = "cmbSort";
             this.cmbSort.Size = new System.Drawing.Size(168, 28);
             this.cmbSort.TabIndex = 19;
@@ -176,7 +176,7 @@ namespace Bookstore
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(23, 85);
+            this.label4.Location = new System.Drawing.Point(13, 85);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(86, 20);
             this.label4.TabIndex = 23;
@@ -190,7 +190,7 @@ namespace Bookstore
             this.cmbArah.Items.AddRange(new object[] {
             "Ascending",
             "Descending"});
-            this.cmbArah.Location = new System.Drawing.Point(808, 77);
+            this.cmbArah.Location = new System.Drawing.Point(798, 77);
             this.cmbArah.Name = "cmbArah";
             this.cmbArah.Size = new System.Drawing.Size(128, 28);
             this.cmbArah.TabIndex = 24;
@@ -203,7 +203,7 @@ namespace Bookstore
             this.btnReset.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnReset.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnReset.ForeColor = System.Drawing.Color.White;
-            this.btnReset.Location = new System.Drawing.Point(942, 76);
+            this.btnReset.Location = new System.Drawing.Point(932, 76);
             this.btnReset.Name = "btnReset";
             this.btnReset.Size = new System.Drawing.Size(95, 30);
             this.btnReset.TabIndex = 25;
@@ -218,7 +218,7 @@ namespace Bookstore
             this.btnDetail.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnDetail.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnDetail.ForeColor = System.Drawing.Color.White;
-            this.btnDetail.Location = new System.Drawing.Point(884, 538);
+            this.btnDetail.Location = new System.Drawing.Point(874, 538);
             this.btnDetail.Name = "btnDetail";
             this.btnDetail.Size = new System.Drawing.Size(153, 38);
             this.btnDetail.TabIndex = 28;
@@ -247,7 +247,7 @@ namespace Bookstore
             // 
             // txtCari
             // 
-            this.txtCari.Location = new System.Drawing.Point(138, 80);
+            this.txtCari.Location = new System.Drawing.Point(128, 80);
             this.txtCari.Name = "txtCari";
             this.txtCari.Size = new System.Drawing.Size(321, 26);
             this.txtCari.TabIndex = 66;
@@ -261,7 +261,7 @@ namespace Bookstore
             this.btnInsert.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnInsert.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnInsert.ForeColor = System.Drawing.Color.White;
-            this.btnInsert.Location = new System.Drawing.Point(725, 538);
+            this.btnInsert.Location = new System.Drawing.Point(715, 538);
             this.btnInsert.Name = "btnInsert";
             this.btnInsert.Size = new System.Drawing.Size(153, 38);
             this.btnInsert.TabIndex = 30;

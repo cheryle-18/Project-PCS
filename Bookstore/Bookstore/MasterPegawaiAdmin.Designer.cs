@@ -210,31 +210,37 @@ namespace Bookstore
             // Column1
             // 
             this.Column1.HeaderText = "Kode Pegawai";
+            this.Column1.MinimumWidth = 8;
             this.Column1.Name = "Column1";
             // 
             // Column2
             // 
             this.Column2.HeaderText = "Nama";
+            this.Column2.MinimumWidth = 8;
             this.Column2.Name = "Column2";
             // 
             // Column3
             // 
             this.Column3.HeaderText = "Tanggal Lahir";
+            this.Column3.MinimumWidth = 8;
             this.Column3.Name = "Column3";
             // 
             // Column4
             // 
             this.Column4.HeaderText = "Telp";
+            this.Column4.MinimumWidth = 8;
             this.Column4.Name = "Column4";
             // 
             // Column5
             // 
             this.Column5.HeaderText = "ID User";
+            this.Column5.MinimumWidth = 8;
             this.Column5.Name = "Column5";
             // 
             // Column6
             // 
             this.Column6.HeaderText = "Status";
+            this.Column6.MinimumWidth = 8;
             this.Column6.Name = "Column6";
             // 
             // MasterPegawaiAdmin

@@ -186,7 +186,7 @@ namespace Bookstore
             this.panel2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.panel2.Location = new System.Drawing.Point(226, 44);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1058, 618);
+            this.panel2.Size = new System.Drawing.Size(738, 526);
             this.panel2.TabIndex = 16;
             this.panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.panel2_Paint);
             // 
@@ -197,9 +197,9 @@ namespace Bookstore
             this.panel3.BackColor = System.Drawing.Color.MidnightBlue;
             this.panel3.Controls.Add(this.lbNama);
             this.panel3.Location = new System.Drawing.Point(226, 0);
-            this.panel3.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel3.Margin = new System.Windows.Forms.Padding(2);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(1058, 43);
+            this.panel3.Size = new System.Drawing.Size(738, 43);
             this.panel3.TabIndex = 18;
             // 
             // lbNama
@@ -208,7 +208,7 @@ namespace Bookstore
             this.lbNama.AutoSize = true;
             this.lbNama.Font = new System.Drawing.Font("Segoe UI Semibold", 12.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbNama.ForeColor = System.Drawing.Color.White;
-            this.lbNama.Location = new System.Drawing.Point(880, 9);
+            this.lbNama.Location = new System.Drawing.Point(560, 9);
             this.lbNama.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lbNama.Name = "lbNama";
             this.lbNama.Size = new System.Drawing.Size(169, 23);
