@@ -30,6 +30,7 @@ namespace Bookstore
         private void InitializeComponent()
         {
             this.panel2 = new System.Windows.Forms.Panel();
+            this.btnInsert = new System.Windows.Forms.Button();
             this.btnDetail = new System.Windows.Forms.Button();
             this.btnReset = new System.Windows.Forms.Button();
             this.cmbArah = new System.Windows.Forms.ComboBox();
@@ -39,7 +40,11 @@ namespace Bookstore
             this.tbCari = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.btnInsert = new System.Windows.Forms.Button();
+            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
@@ -49,6 +54,7 @@ namespace Bookstore
             this.panel2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.panel2.BackColor = System.Drawing.Color.White;
             this.panel2.Controls.Add(this.btnInsert);
             this.panel2.Controls.Add(this.btnDetail);
             this.panel2.Controls.Add(this.btnReset);
@@ -64,6 +70,22 @@ namespace Bookstore
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(1047, 625);
             this.panel2.TabIndex = 13;
+            // 
+            // btnInsert
+            // 
+            this.btnInsert.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnInsert.BackColor = System.Drawing.Color.Navy;
+            this.btnInsert.FlatAppearance.BorderSize = 0;
+            this.btnInsert.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnInsert.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnInsert.ForeColor = System.Drawing.Color.White;
+            this.btnInsert.Location = new System.Drawing.Point(677, 539);
+            this.btnInsert.Name = "btnInsert";
+            this.btnInsert.Size = new System.Drawing.Size(188, 38);
+            this.btnInsert.TabIndex = 29;
+            this.btnInsert.Text = "Insert Penerbit";
+            this.btnInsert.UseVisualStyleBackColor = false;
+            this.btnInsert.Click += new System.EventHandler(this.btnInsert_Click);
             // 
             // btnDetail
             // 
@@ -106,7 +128,7 @@ namespace Bookstore
             "Descending"});
             this.cmbArah.Location = new System.Drawing.Point(795, 80);
             this.cmbArah.Name = "cmbArah";
-            this.cmbArah.Size = new System.Drawing.Size(128, 36);
+            this.cmbArah.Size = new System.Drawing.Size(128, 29);
             this.cmbArah.TabIndex = 24;
             // 
             // label4
@@ -114,7 +136,7 @@ namespace Bookstore
             this.label4.AutoSize = true;
             this.label4.Location = new System.Drawing.Point(13, 83);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(55, 28);
+            this.label4.Size = new System.Drawing.Size(45, 21);
             this.label4.TabIndex = 23;
             this.label4.Text = "Cari :";
             // 
@@ -131,7 +153,7 @@ namespace Bookstore
             "Stok"});
             this.cmbSort.Location = new System.Drawing.Point(621, 80);
             this.cmbSort.Name = "cmbSort";
-            this.cmbSort.Size = new System.Drawing.Size(168, 36);
+            this.cmbSort.Size = new System.Drawing.Size(168, 29);
             this.cmbSort.TabIndex = 19;
             // 
             // label2
@@ -140,7 +162,7 @@ namespace Bookstore
             this.label2.AutoSize = true;
             this.label2.Location = new System.Drawing.Point(452, 83);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(202, 28);
+            this.label2.Size = new System.Drawing.Size(163, 21);
             this.label2.TabIndex = 18;
             this.label2.Text = "Urutkan Berdasarkan :";
             // 
@@ -148,7 +170,7 @@ namespace Bookstore
             // 
             this.tbCari.Location = new System.Drawing.Point(64, 79);
             this.tbCari.Name = "tbCari";
-            this.tbCari.Size = new System.Drawing.Size(294, 34);
+            this.tbCari.Size = new System.Drawing.Size(294, 29);
             this.tbCari.TabIndex = 15;
             this.tbCari.Text = "Kata Kunci";
             // 
@@ -158,7 +180,7 @@ namespace Bookstore
             this.label3.Font = new System.Drawing.Font("Segoe UI Semibold", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.Location = new System.Drawing.Point(12, 20);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(203, 37);
+            this.label3.Size = new System.Drawing.Size(158, 30);
             this.label3.TabIndex = 14;
             this.label3.Text = "Daftar Penerbit";
             // 
@@ -167,29 +189,46 @@ namespace Bookstore
             this.dataGridView1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridView1.BackgroundColor = System.Drawing.Color.Gainsboro;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Column1,
+            this.Column2,
+            this.Column3,
+            this.Column4,
+            this.Column5});
             this.dataGridView1.Location = new System.Drawing.Point(17, 124);
             this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.RowHeadersVisible = false;
             this.dataGridView1.RowHeadersWidth = 51;
             this.dataGridView1.Size = new System.Drawing.Size(1007, 409);
             this.dataGridView1.TabIndex = 1;
             // 
-            // btnInsert
+            // Column1
             // 
-            this.btnInsert.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnInsert.BackColor = System.Drawing.Color.Navy;
-            this.btnInsert.FlatAppearance.BorderSize = 0;
-            this.btnInsert.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnInsert.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnInsert.ForeColor = System.Drawing.Color.White;
-            this.btnInsert.Location = new System.Drawing.Point(677, 539);
-            this.btnInsert.Name = "btnInsert";
-            this.btnInsert.Size = new System.Drawing.Size(188, 38);
-            this.btnInsert.TabIndex = 29;
-            this.btnInsert.Text = "Insert Penerbit";
-            this.btnInsert.UseVisualStyleBackColor = false;
-            this.btnInsert.Click += new System.EventHandler(this.btnInsert_Click);
+            this.Column1.HeaderText = "Kode Penerbit";
+            this.Column1.Name = "Column1";
+            // 
+            // Column2
+            // 
+            this.Column2.HeaderText = "Nama";
+            this.Column2.Name = "Column2";
+            // 
+            // Column3
+            // 
+            this.Column3.HeaderText = "Alamat";
+            this.Column3.Name = "Column3";
+            // 
+            // Column4
+            // 
+            this.Column4.HeaderText = "Telp";
+            this.Column4.Name = "Column4";
+            // 
+            // Column5
+            // 
+            this.Column5.HeaderText = "Status";
+            this.Column5.Name = "Column5";
             // 
             // MasterPenerbitAdmin
             // 
@@ -218,5 +257,10 @@ namespace Bookstore
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.Button btnInsert;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column5;
     }
 }

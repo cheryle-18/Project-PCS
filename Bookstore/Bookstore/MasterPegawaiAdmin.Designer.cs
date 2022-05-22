@@ -40,6 +40,12 @@ namespace Bookstore
             this.tbCari = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
@@ -123,7 +129,7 @@ namespace Bookstore
             "Descending"});
             this.cmbArah.Location = new System.Drawing.Point(790, 86);
             this.cmbArah.Name = "cmbArah";
-            this.cmbArah.Size = new System.Drawing.Size(128, 36);
+            this.cmbArah.Size = new System.Drawing.Size(128, 29);
             this.cmbArah.TabIndex = 24;
             // 
             // label4
@@ -131,7 +137,7 @@ namespace Bookstore
             this.label4.AutoSize = true;
             this.label4.Location = new System.Drawing.Point(13, 89);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(55, 28);
+            this.label4.Size = new System.Drawing.Size(45, 21);
             this.label4.TabIndex = 23;
             this.label4.Text = "Cari :";
             // 
@@ -148,7 +154,7 @@ namespace Bookstore
             "Stok"});
             this.cmbSort.Location = new System.Drawing.Point(593, 86);
             this.cmbSort.Name = "cmbSort";
-            this.cmbSort.Size = new System.Drawing.Size(191, 36);
+            this.cmbSort.Size = new System.Drawing.Size(191, 29);
             this.cmbSort.TabIndex = 19;
             // 
             // label2
@@ -157,7 +163,7 @@ namespace Bookstore
             this.label2.AutoSize = true;
             this.label2.Location = new System.Drawing.Point(428, 89);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(202, 28);
+            this.label2.Size = new System.Drawing.Size(163, 21);
             this.label2.TabIndex = 18;
             this.label2.Text = "Urutkan Berdasarkan :";
             // 
@@ -165,7 +171,7 @@ namespace Bookstore
             // 
             this.tbCari.Location = new System.Drawing.Point(64, 85);
             this.tbCari.Name = "tbCari";
-            this.tbCari.Size = new System.Drawing.Size(294, 34);
+            this.tbCari.Size = new System.Drawing.Size(294, 29);
             this.tbCari.TabIndex = 15;
             this.tbCari.Text = "Kata Kunci";
             // 
@@ -175,7 +181,7 @@ namespace Bookstore
             this.label3.Font = new System.Drawing.Font("Segoe UI Semibold", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.Location = new System.Drawing.Point(12, 26);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(201, 37);
+            this.label3.Size = new System.Drawing.Size(157, 30);
             this.label3.TabIndex = 14;
             this.label3.Text = "Daftar Pegawai";
             // 
@@ -184,13 +190,52 @@ namespace Bookstore
             this.dataGridView1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridView1.BackgroundColor = System.Drawing.Color.Gainsboro;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Column1,
+            this.Column2,
+            this.Column3,
+            this.Column4,
+            this.Column5,
+            this.Column6});
             this.dataGridView1.Location = new System.Drawing.Point(17, 130);
             this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.RowHeadersVisible = false;
             this.dataGridView1.RowHeadersWidth = 51;
             this.dataGridView1.Size = new System.Drawing.Size(1002, 385);
             this.dataGridView1.TabIndex = 1;
+            // 
+            // Column1
+            // 
+            this.Column1.HeaderText = "Kode Pegawai";
+            this.Column1.Name = "Column1";
+            // 
+            // Column2
+            // 
+            this.Column2.HeaderText = "Nama";
+            this.Column2.Name = "Column2";
+            // 
+            // Column3
+            // 
+            this.Column3.HeaderText = "Tanggal Lahir";
+            this.Column3.Name = "Column3";
+            // 
+            // Column4
+            // 
+            this.Column4.HeaderText = "Telp";
+            this.Column4.Name = "Column4";
+            // 
+            // Column5
+            // 
+            this.Column5.HeaderText = "ID User";
+            this.Column5.Name = "Column5";
+            // 
+            // Column6
+            // 
+            this.Column6.HeaderText = "Status";
+            this.Column6.Name = "Column6";
             // 
             // MasterPegawaiAdmin
             // 
@@ -219,5 +264,11 @@ namespace Bookstore
         private System.Windows.Forms.TextBox tbCari;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column5;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column6;
     }
 }
