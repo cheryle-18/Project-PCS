@@ -115,7 +115,7 @@ namespace Bookstore
             this.label18.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label18.Location = new System.Drawing.Point(454, 357);
             this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(14, 21);
+            this.label18.Size = new System.Drawing.Size(17, 28);
             this.label18.TabIndex = 115;
             this.label18.Text = ":";
             // 
@@ -125,7 +125,7 @@ namespace Bookstore
             this.label17.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label17.Location = new System.Drawing.Point(454, 389);
             this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(14, 21);
+            this.label17.Size = new System.Drawing.Size(17, 28);
             this.label17.TabIndex = 114;
             this.label17.Text = ":";
             // 
@@ -135,7 +135,7 @@ namespace Bookstore
             this.label16.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label16.Location = new System.Drawing.Point(454, 422);
             this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(14, 21);
+            this.label16.Size = new System.Drawing.Size(17, 28);
             this.label16.TabIndex = 113;
             this.label16.Text = ":";
             // 
@@ -145,7 +145,7 @@ namespace Bookstore
             this.label15.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label15.Location = new System.Drawing.Point(454, 454);
             this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(14, 21);
+            this.label15.Size = new System.Drawing.Size(17, 28);
             this.label15.TabIndex = 112;
             this.label15.Text = ":";
             // 
@@ -155,7 +155,7 @@ namespace Bookstore
             this.label14.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label14.Location = new System.Drawing.Point(135, 357);
             this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(14, 21);
+            this.label14.Size = new System.Drawing.Size(17, 28);
             this.label14.TabIndex = 111;
             this.label14.Text = ":";
             // 
@@ -165,7 +165,7 @@ namespace Bookstore
             this.label13.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label13.Location = new System.Drawing.Point(135, 389);
             this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(14, 21);
+            this.label13.Size = new System.Drawing.Size(17, 28);
             this.label13.TabIndex = 110;
             this.label13.Text = ":";
             // 
@@ -175,7 +175,7 @@ namespace Bookstore
             this.label12.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label12.Location = new System.Drawing.Point(135, 456);
             this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(14, 21);
+            this.label12.Size = new System.Drawing.Size(17, 28);
             this.label12.TabIndex = 109;
             this.label12.Text = ":";
             // 
@@ -185,7 +185,7 @@ namespace Bookstore
             this.label11.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label11.Location = new System.Drawing.Point(135, 422);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(14, 21);
+            this.label11.Size = new System.Drawing.Size(17, 28);
             this.label11.TabIndex = 108;
             this.label11.Text = ":";
             // 
@@ -212,7 +212,7 @@ namespace Bookstore
             this.lbIsbn13.ForeColor = System.Drawing.Color.Black;
             this.lbIsbn13.Location = new System.Drawing.Point(474, 456);
             this.lbIsbn13.Name = "lbIsbn13";
-            this.lbIsbn13.Size = new System.Drawing.Size(127, 21);
+            this.lbIsbn13.Size = new System.Drawing.Size(155, 28);
             this.lbIsbn13.TabIndex = 106;
             this.lbIsbn13.Text = "9781408855676";
             // 
@@ -223,7 +223,7 @@ namespace Bookstore
             this.lbIsbn10.ForeColor = System.Drawing.Color.Black;
             this.lbIsbn10.Location = new System.Drawing.Point(474, 421);
             this.lbIsbn10.Name = "lbIsbn10";
-            this.lbIsbn10.Size = new System.Drawing.Size(100, 21);
+            this.lbIsbn10.Size = new System.Drawing.Size(122, 28);
             this.lbIsbn10.TabIndex = 105;
             this.lbIsbn10.Text = "0545582938";
             // 
@@ -234,7 +234,7 @@ namespace Bookstore
             this.lbFormat.ForeColor = System.Drawing.Color.Black;
             this.lbFormat.Location = new System.Drawing.Point(474, 357);
             this.lbFormat.Name = "lbFormat";
-            this.lbFormat.Size = new System.Drawing.Size(81, 21);
+            this.lbFormat.Size = new System.Drawing.Size(102, 28);
             this.lbFormat.TabIndex = 104;
             this.lbFormat.Text = "Paperback";
             // 
@@ -244,7 +244,7 @@ namespace Bookstore
             this.label10.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label10.Location = new System.Drawing.Point(389, 357);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(62, 21);
+            this.label10.Size = new System.Drawing.Size(76, 28);
             this.label10.TabIndex = 103;
             this.label10.Text = "Format";
             // 
@@ -255,7 +255,7 @@ namespace Bookstore
             this.lbBahasa.ForeColor = System.Drawing.Color.Black;
             this.lbBahasa.Location = new System.Drawing.Point(474, 389);
             this.lbBahasa.Name = "lbBahasa";
-            this.lbBahasa.Size = new System.Drawing.Size(58, 21);
+            this.lbBahasa.Size = new System.Drawing.Size(72, 28);
             this.lbBahasa.TabIndex = 102;
             this.lbBahasa.Text = "Inggris";
             // 
@@ -266,7 +266,7 @@ namespace Bookstore
             this.lbKategori.ForeColor = System.Drawing.Color.Black;
             this.lbKategori.Location = new System.Drawing.Point(155, 456);
             this.lbKategori.Name = "lbKategori";
-            this.lbKategori.Size = new System.Drawing.Size(58, 21);
+            this.lbKategori.Size = new System.Drawing.Size(72, 28);
             this.lbKategori.TabIndex = 101;
             this.lbKategori.Text = "Fantasi";
             // 
@@ -277,7 +277,7 @@ namespace Bookstore
             this.lbTanggal.ForeColor = System.Drawing.Color.Black;
             this.lbTanggal.Location = new System.Drawing.Point(155, 422);
             this.lbTanggal.Name = "lbTanggal";
-            this.lbTanggal.Size = new System.Drawing.Size(86, 21);
+            this.lbTanggal.Size = new System.Drawing.Size(105, 28);
             this.lbTanggal.TabIndex = 100;
             this.lbTanggal.Text = "8 Juli 1999";
             // 
@@ -288,7 +288,7 @@ namespace Bookstore
             this.lbPenerbit.ForeColor = System.Drawing.Color.Black;
             this.lbPenerbit.Location = new System.Drawing.Point(155, 389);
             this.lbPenerbit.Name = "lbPenerbit";
-            this.lbPenerbit.Size = new System.Drawing.Size(195, 21);
+            this.lbPenerbit.Size = new System.Drawing.Size(244, 28);
             this.lbPenerbit.TabIndex = 99;
             this.lbPenerbit.Text = "Bloomsbury Publishing plc";
             // 
@@ -299,7 +299,7 @@ namespace Bookstore
             this.lbStok.ForeColor = System.Drawing.Color.Black;
             this.lbStok.Location = new System.Drawing.Point(155, 357);
             this.lbStok.Name = "lbStok";
-            this.lbStok.Size = new System.Drawing.Size(28, 21);
+            this.lbStok.Size = new System.Drawing.Size(34, 28);
             this.lbStok.TabIndex = 98;
             this.lbStok.Text = "50";
             // 
@@ -309,7 +309,7 @@ namespace Bookstore
             this.label9.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label9.Location = new System.Drawing.Point(27, 456);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(73, 21);
+            this.label9.Size = new System.Drawing.Size(88, 28);
             this.label9.TabIndex = 97;
             this.label9.Text = "Kategori";
             // 
@@ -319,7 +319,7 @@ namespace Bookstore
             this.lbJudul.Font = new System.Drawing.Font("Segoe UI Semibold", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbJudul.Location = new System.Drawing.Point(242, 96);
             this.lbJudul.Name = "lbJudul";
-            this.lbJudul.Size = new System.Drawing.Size(409, 30);
+            this.lbJudul.Size = new System.Drawing.Size(520, 37);
             this.lbJudul.TabIndex = 84;
             this.lbJudul.Text = "Harry Potter and the Prisoner of Azkaban";
             // 
@@ -329,7 +329,7 @@ namespace Bookstore
             this.label2.Font = new System.Drawing.Font("Segoe UI Semibold", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.Location = new System.Drawing.Point(26, 23);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(122, 30);
+            this.label2.Size = new System.Drawing.Size(157, 37);
             this.label2.TabIndex = 83;
             this.label2.Text = "Detail Buku";
             // 
@@ -348,7 +348,7 @@ namespace Bookstore
             this.label8.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label8.Location = new System.Drawing.Point(389, 454);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(67, 21);
+            this.label8.Size = new System.Drawing.Size(83, 28);
             this.label8.TabIndex = 96;
             this.label8.Text = "ISBN-13";
             // 
@@ -358,7 +358,7 @@ namespace Bookstore
             this.label7.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.Location = new System.Drawing.Point(389, 421);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(67, 21);
+            this.label7.Size = new System.Drawing.Size(83, 28);
             this.label7.TabIndex = 95;
             this.label7.Text = "ISBN-10";
             // 
@@ -368,7 +368,7 @@ namespace Bookstore
             this.label6.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.Location = new System.Drawing.Point(389, 389);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(60, 21);
+            this.label6.Size = new System.Drawing.Size(75, 28);
             this.label6.TabIndex = 94;
             this.label6.Text = "Bahasa";
             // 
@@ -378,7 +378,7 @@ namespace Bookstore
             this.label5.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.Location = new System.Drawing.Point(27, 422);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(112, 21);
+            this.label5.Size = new System.Drawing.Size(139, 28);
             this.label5.TabIndex = 93;
             this.label5.Text = "Tanggal Terbit";
             // 
@@ -388,7 +388,7 @@ namespace Bookstore
             this.label4.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.Location = new System.Drawing.Point(27, 389);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(71, 21);
+            this.label4.Size = new System.Drawing.Size(88, 28);
             this.label4.TabIndex = 92;
             this.label4.Text = "Penerbit";
             // 
@@ -398,7 +398,7 @@ namespace Bookstore
             this.label3.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.Location = new System.Drawing.Point(27, 357);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(43, 21);
+            this.label3.Size = new System.Drawing.Size(52, 28);
             this.label3.TabIndex = 91;
             this.label3.Text = "Stok";
             // 
@@ -408,7 +408,7 @@ namespace Bookstore
             this.lbKode.Font = new System.Drawing.Font("Segoe UI Semibold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbKode.Location = new System.Drawing.Point(242, 67);
             this.lbKode.Name = "lbKode";
-            this.lbKode.Size = new System.Drawing.Size(64, 25);
+            this.lbKode.Size = new System.Drawing.Size(79, 32);
             this.lbKode.TabIndex = 90;
             this.lbKode.Text = "B0001";
             // 
@@ -419,7 +419,7 @@ namespace Bookstore
             this.lbSynopsis.Location = new System.Drawing.Point(243, 228);
             this.lbSynopsis.MaximumSize = new System.Drawing.Size(595, 105);
             this.lbSynopsis.Name = "lbSynopsis";
-            this.lbSynopsis.Size = new System.Drawing.Size(594, 105);
+            this.lbSynopsis.Size = new System.Drawing.Size(591, 105);
             this.lbSynopsis.TabIndex = 89;
             this.lbSynopsis.Text = resources.GetString("lbSynopsis.Text");
             // 
@@ -430,7 +430,7 @@ namespace Bookstore
             this.lbAuthor.ForeColor = System.Drawing.Color.Black;
             this.lbAuthor.Location = new System.Drawing.Point(243, 133);
             this.lbAuthor.Name = "lbAuthor";
-            this.lbAuthor.Size = new System.Drawing.Size(96, 21);
+            this.lbAuthor.Size = new System.Drawing.Size(119, 28);
             this.lbAuthor.TabIndex = 88;
             this.lbAuthor.Text = "J. K. Rowling";
             // 
@@ -441,7 +441,7 @@ namespace Bookstore
             this.lbStatus.ForeColor = System.Drawing.Color.Green;
             this.lbStatus.Location = new System.Drawing.Point(243, 194);
             this.lbStatus.Name = "lbStatus";
-            this.lbStatus.Size = new System.Drawing.Size(66, 21);
+            this.lbStatus.Size = new System.Drawing.Size(82, 28);
             this.lbStatus.TabIndex = 87;
             this.lbStatus.Text = "Tersedia";
             // 
@@ -451,7 +451,7 @@ namespace Bookstore
             this.lbHarga.Font = new System.Drawing.Font("Segoe UI Semibold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbHarga.Location = new System.Drawing.Point(242, 163);
             this.lbHarga.Name = "lbHarga";
-            this.lbHarga.Size = new System.Drawing.Size(108, 25);
+            this.lbHarga.Size = new System.Drawing.Size(132, 32);
             this.lbHarga.TabIndex = 86;
             this.lbHarga.Text = "Rp 130.000";
             // 
@@ -462,6 +462,7 @@ namespace Bookstore
             this.Controls.Add(this.panel1);
             this.Name = "FormDetailBuku";
             this.Text = "FormDetailBuku";
+            this.Load += new System.EventHandler(this.FormDetailBuku_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();

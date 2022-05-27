@@ -36,5 +36,10 @@ namespace Bookstore
             this.panel2.Controls.Clear();
             this.panel2.Controls.Add(temp);
         }
+
+        private void FormPegawaiBaru_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
