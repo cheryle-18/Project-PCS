@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MySql.Data.MySqlClient;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -13,6 +14,13 @@ namespace Bookstore
     public partial class MasterPreOrder : Form
     {
         private int user_role;
+
+        DataTable dtPO;
+        DataRow taken;
+        string fullTableQuery;
+        string query;
+        string orderBy;
+
         public MasterPreOrder(int role)
         {
             InitializeComponent();
@@ -45,7 +53,40 @@ namespace Bookstore
 
         private void MasterPreOrder_Load(object sender, EventArgs e)
         {
+            fullTableQuery = "select PO_ID, PO_INVOICE_NUMBER, PO_DATE, B_TITLE, PO_QTY, PO_TOTAL, PO_DOWN_PAYMENT, (case when PO_M_ID <> '-' then M_NAME else 'Guest' end) from pre_order join book on B_ID=PO_B_ID join member on M_ID=PO_M_ID";
+            orderBy = "";
+            query = fullTableQuery;
 
+            loadDatabase(query);
+            refreshDgv();
+        }
+
+        public void loadDatabase(string query)
+        {
+            try
+            {
+                MySqlDataAdapter da = new MySqlDataAdapter(query, FormLogin.getConn());
+
+                dtPO = new DataTable();
+                da.Fill(dtPO);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        public void refreshDgv()
+        {
+            dgPO.DataSource = dtPO;
+            dgPO.Columns[0].HeaderText = "Kode PO";
+            dgPO.Columns[1].HeaderText = "Nomor Nota";
+            dgPO.Columns[2].HeaderText = "Tanggal PO";
+            dgPO.Columns[3].HeaderText = "Judul Buku";
+            dgPO.Columns[4].HeaderText = "Qty";
+            dgPO.Columns[5].HeaderText = "Total";
+            dgPO.Columns[6].HeaderText = "Uang Muka";
+            dgPO.Columns[7].HeaderText = "Nama Member";
         }
 
         private void radioButton2_CheckedChanged(object sender, EventArgs e)
