@@ -14,8 +14,6 @@ namespace Bookstore
 {
     public partial class FormLogin : KryptonForm
     {
-        public static MySqlConnection conn = new MySqlConnection();
-
         public FormLogin()
         {
             InitializeComponent();
@@ -67,11 +65,6 @@ namespace Bookstore
         private void FormLogin_FormClosed(object sender, FormClosedEventArgs e)
         {
             Application.Exit();
-        }
-
-        public static MySqlConnection getConn()
-        {
-            return conn;
         }
     }
 }

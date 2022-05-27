@@ -29,6 +29,13 @@ namespace Bookstore
             {
                 this.btnPOBaru.Visible = false;
             }
+
+            fullTableQuery = "select PO_ID, PO_INVOICE_NUMBER, PO_DATE, PO_B_ID, PO_QTY, PO_TOTAL, PO_DOWN_PAYMENT, (case when PO_M_ID is not null then M_NAME else 'Guest' end) from pre_order join member on M_ID=PO_M_ID";
+            orderBy = "";
+            query = fullTableQuery;
+
+            loadDatabase(query);
+            refreshDgv();
         }
 
         private void btnDetail_Click(object sender, EventArgs e)
@@ -53,19 +60,14 @@ namespace Bookstore
 
         private void MasterPreOrder_Load(object sender, EventArgs e)
         {
-            fullTableQuery = "select PO_ID, PO_INVOICE_NUMBER, PO_DATE, B_TITLE, PO_QTY, PO_TOTAL, PO_DOWN_PAYMENT, (case when PO_M_ID <> '-' then M_NAME else 'Guest' end) from pre_order join book on B_ID=PO_B_ID join member on M_ID=PO_M_ID";
-            orderBy = "";
-            query = fullTableQuery;
-
-            loadDatabase(query);
-            refreshDgv();
+            
         }
 
         public void loadDatabase(string query)
         {
             try
             {
-                MySqlDataAdapter da = new MySqlDataAdapter(query, FormLogin.getConn());
+                MySqlDataAdapter da = new MySqlDataAdapter(query, Koneksi.getConn());
 
                 dtPO = new DataTable();
                 da.Fill(dtPO);
@@ -82,7 +84,7 @@ namespace Bookstore
             dgPO.Columns[0].HeaderText = "Kode PO";
             dgPO.Columns[1].HeaderText = "Nomor Nota";
             dgPO.Columns[2].HeaderText = "Tanggal PO";
-            dgPO.Columns[3].HeaderText = "Judul Buku";
+            dgPO.Columns[3].HeaderText = "Kode Buku";
             dgPO.Columns[4].HeaderText = "Qty";
             dgPO.Columns[5].HeaderText = "Total";
             dgPO.Columns[6].HeaderText = "Uang Muka";
