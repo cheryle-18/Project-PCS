@@ -162,6 +162,7 @@
     <Compile Include="FormViewLaporan.Designer.cs">
       <DependentUpon>FormViewLaporan.cs</DependentUpon>
     </Compile>
+    <Compile Include="Koneksi.cs" />
     <Compile Include="MasterKategoriAdmin.cs">
       <SubType>Form</SubType>
     </Compile>

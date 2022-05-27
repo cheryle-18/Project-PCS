@@ -14,12 +14,13 @@ namespace Bookstore
 {
     public partial class FormDetailBuku : Form
     {
-        MySqlConnection connection = new MySqlConnection("datasource=localhost;port=3306;username=root;password=");
+        MySqlConnection connection;
         MySqlCommand command;
         MySqlDataAdapter da;
         public FormDetailBuku()
         {
             InitializeComponent();
+            connection = Koneksi.getConn();
             fill_picture_box();
         }
 

@@ -33,5 +33,27 @@ namespace Bookstore
                 frm.ShowDialog();
             }
         }
+
+        private void FormLogin_Load(object sender, EventArgs e)
+        {
+            connectDB();   
+        }
+
+        private void connectDB()
+        {
+            //setup connections
+            string server = "localhost";
+            string db = "db_tokobuku";
+            string user = "root";
+
+            if (Koneksi.openConn(server, db, user))
+            {
+                //successful
+            }
+            else
+            {
+
+            }
+        }
     }
 }
