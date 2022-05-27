@@ -271,6 +271,7 @@ namespace Bookstore
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.StateCommon.Back.Color1 = System.Drawing.Color.Transparent;
             this.Text = "Form Login";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.FormLogin_FormClosed);
             this.Load += new System.EventHandler(this.FormLogin_Load);
             ((System.ComponentModel.ISupportInitialize)(this.kryptonPanelSide)).EndInit();
             this.kryptonPanelSide.ResumeLayout(false);

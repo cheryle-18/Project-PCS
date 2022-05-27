@@ -45,15 +45,25 @@ namespace Bookstore
             string server = "localhost";
             string db = "db_tokobuku";
             string user = "root";
-
-            if (Koneksi.openConn(server, db, user))
+    
+            if(Koneksi.getConn().State == ConnectionState.Closed)
             {
-                //successful
-            }
-            else
-            {
+                if (Koneksi.openConn(server, db, user))
+                {
+                    //successful
+                }
+                else
+                {
 
+                }
             }
+          
+            
+        }
+
+        private void FormLogin_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            Application.Exit();
         }
     }
 }
