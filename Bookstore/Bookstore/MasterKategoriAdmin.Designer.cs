@@ -129,9 +129,9 @@ namespace Bookstore
             // 
             this.radioButton2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.radioButton2.AutoSize = true;
-            this.radioButton2.Location = new System.Drawing.Point(258, 520);
+            this.radioButton2.Location = new System.Drawing.Point(258, 513);
             this.radioButton2.Name = "radioButton2";
-            this.radioButton2.Size = new System.Drawing.Size(96, 25);
+            this.radioButton2.Size = new System.Drawing.Size(120, 32);
             this.radioButton2.TabIndex = 69;
             this.radioButton2.TabStop = true;
             this.radioButton2.Text = "Non-Aktif";
@@ -141,9 +141,9 @@ namespace Bookstore
             // 
             this.radioButton1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.radioButton1.AutoSize = true;
-            this.radioButton1.Location = new System.Drawing.Point(167, 520);
+            this.radioButton1.Location = new System.Drawing.Point(167, 513);
             this.radioButton1.Name = "radioButton1";
-            this.radioButton1.Size = new System.Drawing.Size(60, 25);
+            this.radioButton1.Size = new System.Drawing.Size(74, 32);
             this.radioButton1.TabIndex = 68;
             this.radioButton1.TabStop = true;
             this.radioButton1.Text = "Aktif";
@@ -154,7 +154,7 @@ namespace Bookstore
             this.textBox2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.textBox2.Location = new System.Drawing.Point(160, 461);
             this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(154, 29);
+            this.textBox2.Size = new System.Drawing.Size(154, 34);
             this.textBox2.TabIndex = 67;
             // 
             // textBox1
@@ -162,7 +162,7 @@ namespace Bookstore
             this.textBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.textBox1.Location = new System.Drawing.Point(160, 411);
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(154, 29);
+            this.textBox1.Size = new System.Drawing.Size(154, 34);
             this.textBox1.TabIndex = 66;
             // 
             // label7
@@ -208,7 +208,7 @@ namespace Bookstore
             this.label6.Font = new System.Drawing.Font("Segoe UI Semibold", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.Location = new System.Drawing.Point(12, 357);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(177, 30);
+            this.label6.Size = new System.Drawing.Size(224, 37);
             this.label6.TabIndex = 62;
             this.label6.Text = "Tambah Kategori";
             // 
@@ -252,7 +252,7 @@ namespace Bookstore
             "Descending"});
             this.cmbArah.Location = new System.Drawing.Point(790, 87);
             this.cmbArah.Name = "cmbArah";
-            this.cmbArah.Size = new System.Drawing.Size(128, 29);
+            this.cmbArah.Size = new System.Drawing.Size(128, 36);
             this.cmbArah.TabIndex = 59;
             // 
             // label4
@@ -260,7 +260,7 @@ namespace Bookstore
             this.label4.AutoSize = true;
             this.label4.Location = new System.Drawing.Point(14, 90);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(107, 21);
+            this.label4.Size = new System.Drawing.Size(135, 28);
             this.label4.TabIndex = 58;
             this.label4.Text = "Cari Kategori :";
             // 
@@ -277,7 +277,7 @@ namespace Bookstore
             "Stok"});
             this.cmbSort.Location = new System.Drawing.Point(616, 87);
             this.cmbSort.Name = "cmbSort";
-            this.cmbSort.Size = new System.Drawing.Size(168, 29);
+            this.cmbSort.Size = new System.Drawing.Size(168, 36);
             this.cmbSort.TabIndex = 57;
             // 
             // label2
@@ -286,7 +286,7 @@ namespace Bookstore
             this.label2.AutoSize = true;
             this.label2.Location = new System.Drawing.Point(447, 90);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(163, 21);
+            this.label2.Size = new System.Drawing.Size(202, 28);
             this.label2.TabIndex = 56;
             this.label2.Text = "Urutkan Berdasarkan :";
             // 
@@ -294,7 +294,7 @@ namespace Bookstore
             // 
             this.tbCari.Location = new System.Drawing.Point(147, 86);
             this.tbCari.Name = "tbCari";
-            this.tbCari.Size = new System.Drawing.Size(294, 29);
+            this.tbCari.Size = new System.Drawing.Size(294, 34);
             this.tbCari.TabIndex = 55;
             this.tbCari.Text = "Kata Kunci";
             // 
@@ -304,7 +304,7 @@ namespace Bookstore
             this.label3.Font = new System.Drawing.Font("Segoe UI Semibold", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.Location = new System.Drawing.Point(12, 27);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(161, 30);
+            this.label3.Size = new System.Drawing.Size(205, 37);
             this.label3.TabIndex = 54;
             this.label3.Text = "Daftar Kategori";
             // 
@@ -330,16 +330,19 @@ namespace Bookstore
             // Column1
             // 
             this.Column1.HeaderText = "Kode Kategori";
+            this.Column1.MinimumWidth = 6;
             this.Column1.Name = "Column1";
             // 
             // Column2
             // 
             this.Column2.HeaderText = "Nama Kategori";
+            this.Column2.MinimumWidth = 6;
             this.Column2.Name = "Column2";
             // 
             // Column3
             // 
             this.Column3.HeaderText = "Status";
+            this.Column3.MinimumWidth = 6;
             this.Column3.Name = "Column3";
             // 
             // MasterKategoriAdmin
