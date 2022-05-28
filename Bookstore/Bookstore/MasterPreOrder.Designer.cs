@@ -30,12 +30,12 @@ namespace Bookstore
         private void InitializeComponent()
         {
             this.panel2 = new System.Windows.Forms.Panel();
-            this.radioButton2 = new System.Windows.Forms.RadioButton();
-            this.radioButton1 = new System.Windows.Forms.RadioButton();
-            this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
+            this.rbDesc = new System.Windows.Forms.RadioButton();
+            this.rbAsc = new System.Windows.Forms.RadioButton();
+            this.dtpSampai = new System.Windows.Forms.DateTimePicker();
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.dtpDari = new System.Windows.Forms.DateTimePicker();
             this.btnPOBaru = new System.Windows.Forms.Button();
             this.btnDetail = new System.Windows.Forms.Button();
             this.btnReset = new System.Windows.Forms.Button();
@@ -55,12 +55,12 @@ namespace Bookstore
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panel2.BackColor = System.Drawing.Color.White;
-            this.panel2.Controls.Add(this.radioButton2);
-            this.panel2.Controls.Add(this.radioButton1);
-            this.panel2.Controls.Add(this.dateTimePicker2);
+            this.panel2.Controls.Add(this.rbDesc);
+            this.panel2.Controls.Add(this.rbAsc);
+            this.panel2.Controls.Add(this.dtpSampai);
             this.panel2.Controls.Add(this.label6);
             this.panel2.Controls.Add(this.label5);
-            this.panel2.Controls.Add(this.dateTimePicker1);
+            this.panel2.Controls.Add(this.dtpDari);
             this.panel2.Controls.Add(this.btnPOBaru);
             this.panel2.Controls.Add(this.btnDetail);
             this.panel2.Controls.Add(this.btnReset);
@@ -76,39 +76,41 @@ namespace Bookstore
             this.panel2.Size = new System.Drawing.Size(1050, 621);
             this.panel2.TabIndex = 15;
             // 
-            // radioButton2
+            // rbDesc
             // 
-            this.radioButton2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.radioButton2.AutoSize = true;
-            this.radioButton2.Location = new System.Drawing.Point(788, 120);
-            this.radioButton2.Name = "radioButton2";
-            this.radioButton2.Size = new System.Drawing.Size(93, 33);
-            this.radioButton2.TabIndex = 36;
-            this.radioButton2.TabStop = true;
-            this.radioButton2.Text = "Desc";
-            this.radioButton2.UseVisualStyleBackColor = true;
-            this.radioButton2.CheckedChanged += new System.EventHandler(this.radioButton2_CheckedChanged);
+            this.rbDesc.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.rbDesc.AutoSize = true;
+            this.rbDesc.Location = new System.Drawing.Point(788, 120);
+            this.rbDesc.Name = "rbDesc";
+            this.rbDesc.Size = new System.Drawing.Size(93, 33);
+            this.rbDesc.TabIndex = 36;
+            this.rbDesc.TabStop = true;
+            this.rbDesc.Text = "Desc";
+            this.rbDesc.UseVisualStyleBackColor = true;
+            this.rbDesc.CheckedChanged += new System.EventHandler(this.rbDesc_CheckedChanged);
             // 
-            // radioButton1
+            // rbAsc
             // 
-            this.radioButton1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.radioButton1.AutoSize = true;
-            this.radioButton1.Location = new System.Drawing.Point(735, 120);
-            this.radioButton1.Name = "radioButton1";
-            this.radioButton1.Size = new System.Drawing.Size(77, 33);
-            this.radioButton1.TabIndex = 35;
-            this.radioButton1.TabStop = true;
-            this.radioButton1.Text = "Asc";
-            this.radioButton1.UseVisualStyleBackColor = true;
+            this.rbAsc.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.rbAsc.AutoSize = true;
+            this.rbAsc.Location = new System.Drawing.Point(735, 120);
+            this.rbAsc.Name = "rbAsc";
+            this.rbAsc.Size = new System.Drawing.Size(77, 33);
+            this.rbAsc.TabIndex = 35;
+            this.rbAsc.TabStop = true;
+            this.rbAsc.Text = "Asc";
+            this.rbAsc.UseVisualStyleBackColor = true;
+            this.rbAsc.CheckedChanged += new System.EventHandler(this.rbAsc_CheckedChanged);
             // 
-            // dateTimePicker2
+            // dtpSampai
             // 
-            this.dateTimePicker2.CustomFormat = "dd/MM/yyyy";
-            this.dateTimePicker2.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dateTimePicker2.Location = new System.Drawing.Point(367, 116);
-            this.dateTimePicker2.Name = "dateTimePicker2";
-            this.dateTimePicker2.Size = new System.Drawing.Size(200, 35);
-            this.dateTimePicker2.TabIndex = 34;
+            this.dtpSampai.CustomFormat = "dd/MM/yyyy";
+            this.dtpSampai.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dtpSampai.Location = new System.Drawing.Point(367, 116);
+            this.dtpSampai.Name = "dtpSampai";
+            this.dtpSampai.Size = new System.Drawing.Size(200, 35);
+            this.dtpSampai.TabIndex = 34;
+            this.dtpSampai.ValueChanged += new System.EventHandler(this.dtpSampai_ValueChanged);
             // 
             // label6
             // 
@@ -128,14 +130,15 @@ namespace Bookstore
             this.label5.TabIndex = 32;
             this.label5.Text = "Filter dari";
             // 
-            // dateTimePicker1
+            // dtpDari
             // 
-            this.dateTimePicker1.CustomFormat = "dd/MM/yyyy";
-            this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dateTimePicker1.Location = new System.Drawing.Point(95, 116);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(200, 35);
-            this.dateTimePicker1.TabIndex = 31;
+            this.dtpDari.CustomFormat = "dd/MM/yyyy";
+            this.dtpDari.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dtpDari.Location = new System.Drawing.Point(95, 116);
+            this.dtpDari.Name = "dtpDari";
+            this.dtpDari.Size = new System.Drawing.Size(200, 35);
+            this.dtpDari.TabIndex = 31;
+            this.dtpDari.ValueChanged += new System.EventHandler(this.dtpDari_ValueChanged);
             // 
             // btnPOBaru
             // 
@@ -183,6 +186,7 @@ namespace Bookstore
             this.btnReset.TabIndex = 25;
             this.btnReset.Text = "Reset";
             this.btnReset.UseVisualStyleBackColor = false;
+            this.btnReset.Click += new System.EventHandler(this.btnReset_Click);
             // 
             // label4
             // 
@@ -208,6 +212,7 @@ namespace Bookstore
             this.cmbSort.Name = "cmbSort";
             this.cmbSort.Size = new System.Drawing.Size(168, 37);
             this.cmbSort.TabIndex = 19;
+            this.cmbSort.SelectedIndexChanged += new System.EventHandler(this.cmbSort_SelectedIndexChanged);
             // 
             // label2
             // 
@@ -225,7 +230,7 @@ namespace Bookstore
             this.tbCari.Name = "tbCari";
             this.tbCari.Size = new System.Drawing.Size(503, 35);
             this.tbCari.TabIndex = 15;
-            this.tbCari.Text = "Kata Kunci";
+            this.tbCari.TextChanged += new System.EventHandler(this.tbCari_TextChanged);
             // 
             // label3
             // 
@@ -256,6 +261,7 @@ namespace Bookstore
             this.dgPO.RowHeadersWidth = 51;
             this.dgPO.Size = new System.Drawing.Size(1010, 353);
             this.dgPO.TabIndex = 1;
+            this.dgPO.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgPO_CellClick);
             // 
             // MasterPreOrder
             // 
@@ -275,12 +281,12 @@ namespace Bookstore
         #endregion
 
         private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.RadioButton radioButton2;
-        private System.Windows.Forms.RadioButton radioButton1;
-        private System.Windows.Forms.DateTimePicker dateTimePicker2;
+        private System.Windows.Forms.RadioButton rbDesc;
+        private System.Windows.Forms.RadioButton rbAsc;
+        private System.Windows.Forms.DateTimePicker dtpSampai;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
+        private System.Windows.Forms.DateTimePicker dtpDari;
         private System.Windows.Forms.Button btnPOBaru;
         private System.Windows.Forms.Button btnDetail;
         private System.Windows.Forms.Button btnReset;
