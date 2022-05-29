@@ -30,6 +30,7 @@ namespace Bookstore
         private void InitializeComponent()
         {
             this.panel2 = new System.Windows.Forms.Panel();
+            this.lbTanggal = new System.Windows.Forms.Label();
             this.btnClear = new System.Windows.Forms.Button();
             this.btnHapus = new System.Windows.Forms.Button();
             this.btnEdit = new System.Windows.Forms.Button();
@@ -66,7 +67,6 @@ namespace Bookstore
             this.tbKodeMember = new System.Windows.Forms.TextBox();
             this.rbMember = new System.Windows.Forms.RadioButton();
             this.rbGuest = new System.Windows.Forms.RadioButton();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.textBox4 = new System.Windows.Forms.TextBox();
             this.label17 = new System.Windows.Forms.Label();
             this.label16 = new System.Windows.Forms.Label();
@@ -85,6 +85,9 @@ namespace Bookstore
             this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnBayar = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
+            this.cmbPembayaran = new System.Windows.Forms.ComboBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label23 = new System.Windows.Forms.Label();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudPoint)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
@@ -96,6 +99,10 @@ namespace Bookstore
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panel2.BackColor = System.Drawing.Color.White;
+            this.panel2.Controls.Add(this.cmbPembayaran);
+            this.panel2.Controls.Add(this.label1);
+            this.panel2.Controls.Add(this.label23);
+            this.panel2.Controls.Add(this.lbTanggal);
             this.panel2.Controls.Add(this.btnClear);
             this.panel2.Controls.Add(this.btnHapus);
             this.panel2.Controls.Add(this.btnEdit);
@@ -132,7 +139,6 @@ namespace Bookstore
             this.panel2.Controls.Add(this.tbKodeMember);
             this.panel2.Controls.Add(this.rbMember);
             this.panel2.Controls.Add(this.rbGuest);
-            this.panel2.Controls.Add(this.dateTimePicker1);
             this.panel2.Controls.Add(this.textBox4);
             this.panel2.Controls.Add(this.label17);
             this.panel2.Controls.Add(this.label16);
@@ -151,6 +157,15 @@ namespace Bookstore
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(1051, 615);
             this.panel2.TabIndex = 25;
+            // 
+            // lbTanggal
+            // 
+            this.lbTanggal.AutoSize = true;
+            this.lbTanggal.Location = new System.Drawing.Point(247, 148);
+            this.lbTanggal.Name = "lbTanggal";
+            this.lbTanggal.Size = new System.Drawing.Size(89, 20);
+            this.lbTanggal.TabIndex = 132;
+            this.lbTanggal.Text = "29/05/2022";
             // 
             // btnClear
             // 
@@ -201,7 +216,7 @@ namespace Bookstore
             // 
             this.lbDisc.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.lbDisc.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbDisc.Location = new System.Drawing.Point(881, 472);
+            this.lbDisc.Location = new System.Drawing.Point(881, 438);
             this.lbDisc.Name = "lbDisc";
             this.lbDisc.Size = new System.Drawing.Size(143, 28);
             this.lbDisc.TabIndex = 117;
@@ -213,9 +228,9 @@ namespace Bookstore
             this.label8.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(852, 476);
+            this.label8.Location = new System.Drawing.Point(852, 442);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(36, 28);
+            this.label8.Size = new System.Drawing.Size(29, 21);
             this.label8.TabIndex = 116;
             this.label8.Text = "Rp";
             // 
@@ -224,9 +239,9 @@ namespace Bookstore
             this.label9.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(733, 476);
+            this.label9.Location = new System.Drawing.Point(733, 442);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(75, 28);
+            this.label9.Size = new System.Drawing.Size(59, 21);
             this.label9.TabIndex = 115;
             this.label9.Text = "Diskon";
             // 
@@ -235,7 +250,7 @@ namespace Bookstore
             this.label22.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.label22.BackColor = System.Drawing.Color.Transparent;
             this.label22.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label22.Location = new System.Drawing.Point(832, 476);
+            this.label22.Location = new System.Drawing.Point(832, 442);
             this.label22.Name = "label22";
             this.label22.Size = new System.Drawing.Size(14, 28);
             this.label22.TabIndex = 114;
@@ -243,14 +258,13 @@ namespace Bookstore
             // 
             // button1
             // 
-            this.button1.AutoSize = true;
             this.button1.BackColor = System.Drawing.Color.Navy;
             this.button1.FlatAppearance.BorderSize = 0;
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button1.ForeColor = System.Drawing.Color.White;
             this.button1.Location = new System.Drawing.Point(441, 69);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(54, 35);
+            this.button1.Size = new System.Drawing.Size(54, 29);
             this.button1.TabIndex = 113;
             this.button1.Text = "...";
             this.button1.UseVisualStyleBackColor = false;
@@ -261,7 +275,7 @@ namespace Bookstore
             this.textBox1.Enabled = false;
             this.textBox1.Location = new System.Drawing.Point(251, 107);
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(244, 30);
+            this.textBox1.Size = new System.Drawing.Size(244, 26);
             this.textBox1.TabIndex = 112;
             this.textBox1.Text = "20220521TR15";
             // 
@@ -281,7 +295,7 @@ namespace Bookstore
             this.label7.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.Location = new System.Drawing.Point(16, 112);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(220, 28);
+            this.label7.Size = new System.Drawing.Size(175, 21);
             this.label7.TabIndex = 110;
             this.label7.Text = "Nomor Nota Transaksi ";
             // 
@@ -291,7 +305,7 @@ namespace Bookstore
             this.nudPoint.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.nudPoint.Location = new System.Drawing.Point(764, 180);
             this.nudPoint.Name = "nudPoint";
-            this.nudPoint.Size = new System.Drawing.Size(95, 34);
+            this.nudPoint.Size = new System.Drawing.Size(95, 29);
             this.nudPoint.TabIndex = 109;
             this.nudPoint.Value = new decimal(new int[] {
             50,
@@ -317,7 +331,7 @@ namespace Bookstore
             this.label27.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label27.Location = new System.Drawing.Point(592, 181);
             this.label27.Name = "label27";
-            this.label27.Size = new System.Drawing.Size(156, 28);
+            this.label27.Size = new System.Drawing.Size(121, 21);
             this.label27.TabIndex = 107;
             this.label27.Text = "Poin Digunakan";
             // 
@@ -327,7 +341,7 @@ namespace Bookstore
             this.lbPoinTersedia.AutoSize = true;
             this.lbPoinTersedia.Location = new System.Drawing.Point(760, 147);
             this.lbPoinTersedia.Name = "lbPoinTersedia";
-            this.lbPoinTersedia.Size = new System.Drawing.Size(45, 25);
+            this.lbPoinTersedia.Size = new System.Drawing.Size(36, 20);
             this.lbPoinTersedia.TabIndex = 106;
             this.lbPoinTersedia.Text = "150";
             // 
@@ -349,7 +363,7 @@ namespace Bookstore
             this.label4.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.Location = new System.Drawing.Point(592, 147);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(132, 28);
+            this.label4.Size = new System.Drawing.Size(105, 21);
             this.label4.TabIndex = 104;
             this.label4.Text = "Poin Tersedia";
             // 
@@ -357,7 +371,7 @@ namespace Bookstore
             // 
             this.lbSubtotal.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.lbSubtotal.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbSubtotal.Location = new System.Drawing.Point(881, 406);
+            this.lbSubtotal.Location = new System.Drawing.Point(881, 372);
             this.lbSubtotal.Name = "lbSubtotal";
             this.lbSubtotal.Size = new System.Drawing.Size(143, 28);
             this.lbSubtotal.TabIndex = 103;
@@ -368,7 +382,7 @@ namespace Bookstore
             // 
             this.lbDP.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.lbDP.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbDP.Location = new System.Drawing.Point(881, 440);
+            this.lbDP.Location = new System.Drawing.Point(881, 406);
             this.lbDP.Name = "lbDP";
             this.lbDP.Size = new System.Drawing.Size(143, 28);
             this.lbDP.TabIndex = 102;
@@ -380,9 +394,9 @@ namespace Bookstore
             this.label37.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.label37.AutoSize = true;
             this.label37.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label37.Location = new System.Drawing.Point(852, 508);
+            this.label37.Location = new System.Drawing.Point(852, 474);
             this.label37.Name = "label37";
-            this.label37.Size = new System.Drawing.Size(36, 28);
+            this.label37.Size = new System.Drawing.Size(30, 21);
             this.label37.TabIndex = 101;
             this.label37.Text = "Rp";
             // 
@@ -391,9 +405,9 @@ namespace Bookstore
             this.label36.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.label36.AutoSize = true;
             this.label36.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label36.Location = new System.Drawing.Point(853, 444);
+            this.label36.Location = new System.Drawing.Point(853, 410);
             this.label36.Name = "label36";
-            this.label36.Size = new System.Drawing.Size(36, 28);
+            this.label36.Size = new System.Drawing.Size(29, 21);
             this.label36.TabIndex = 100;
             this.label36.Text = "Rp";
             // 
@@ -402,9 +416,9 @@ namespace Bookstore
             this.label35.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.label35.AutoSize = true;
             this.label35.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label35.Location = new System.Drawing.Point(853, 410);
+            this.label35.Location = new System.Drawing.Point(853, 376);
             this.label35.Name = "label35";
-            this.label35.Size = new System.Drawing.Size(36, 28);
+            this.label35.Size = new System.Drawing.Size(29, 21);
             this.label35.TabIndex = 99;
             this.label35.Text = "Rp";
             // 
@@ -413,7 +427,7 @@ namespace Bookstore
             this.label32.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.label32.BackColor = System.Drawing.Color.Transparent;
             this.label32.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label32.Location = new System.Drawing.Point(833, 375);
+            this.label32.Location = new System.Drawing.Point(833, 341);
             this.label32.Name = "label32";
             this.label32.Size = new System.Drawing.Size(14, 28);
             this.label32.TabIndex = 98;
@@ -424,7 +438,7 @@ namespace Bookstore
             this.label31.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.label31.BackColor = System.Drawing.Color.Transparent;
             this.label31.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label31.Location = new System.Drawing.Point(832, 508);
+            this.label31.Location = new System.Drawing.Point(832, 474);
             this.label31.Name = "label31";
             this.label31.Size = new System.Drawing.Size(14, 28);
             this.label31.TabIndex = 94;
@@ -435,9 +449,9 @@ namespace Bookstore
             this.label30.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.label30.AutoSize = true;
             this.label30.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label30.Location = new System.Drawing.Point(733, 508);
+            this.label30.Location = new System.Drawing.Point(733, 474);
             this.label30.Name = "label30";
-            this.label30.Size = new System.Drawing.Size(116, 28);
+            this.label30.Size = new System.Drawing.Size(93, 21);
             this.label30.TabIndex = 93;
             this.label30.Text = "Grand Total";
             // 
@@ -446,9 +460,9 @@ namespace Bookstore
             this.label29.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.label29.AutoSize = true;
             this.label29.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label29.Location = new System.Drawing.Point(733, 444);
+            this.label29.Location = new System.Drawing.Point(733, 410);
             this.label29.Name = "label29";
-            this.label29.Size = new System.Drawing.Size(117, 28);
+            this.label29.Size = new System.Drawing.Size(92, 21);
             this.label29.TabIndex = 92;
             this.label29.Text = "Uang Muka";
             // 
@@ -471,7 +485,7 @@ namespace Bookstore
             // 
             this.lbGrandTotal.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.lbGrandTotal.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbGrandTotal.Location = new System.Drawing.Point(881, 504);
+            this.lbGrandTotal.Location = new System.Drawing.Point(881, 470);
             this.lbGrandTotal.Name = "lbGrandTotal";
             this.lbGrandTotal.Size = new System.Drawing.Size(143, 28);
             this.lbGrandTotal.TabIndex = 78;
@@ -483,9 +497,9 @@ namespace Bookstore
             this.lbTotalQty.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.lbTotalQty.AutoSize = true;
             this.lbTotalQty.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbTotalQty.Location = new System.Drawing.Point(853, 375);
+            this.lbTotalQty.Location = new System.Drawing.Point(853, 341);
             this.lbTotalQty.Name = "lbTotalQty";
-            this.lbTotalQty.Size = new System.Drawing.Size(23, 28);
+            this.lbTotalQty.Size = new System.Drawing.Size(19, 21);
             this.lbTotalQty.TabIndex = 77;
             this.lbTotalQty.Text = "2";
             // 
@@ -494,7 +508,7 @@ namespace Bookstore
             this.label21.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.label21.BackColor = System.Drawing.Color.Transparent;
             this.label21.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label21.Location = new System.Drawing.Point(833, 444);
+            this.label21.Location = new System.Drawing.Point(833, 410);
             this.label21.Name = "label21";
             this.label21.Size = new System.Drawing.Size(14, 28);
             this.label21.TabIndex = 76;
@@ -505,7 +519,7 @@ namespace Bookstore
             this.label20.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.label20.BackColor = System.Drawing.Color.Transparent;
             this.label20.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label20.Location = new System.Drawing.Point(833, 409);
+            this.label20.Location = new System.Drawing.Point(833, 375);
             this.label20.Name = "label20";
             this.label20.Size = new System.Drawing.Size(14, 28);
             this.label20.TabIndex = 75;
@@ -516,9 +530,9 @@ namespace Bookstore
             this.label19.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.label19.AutoSize = true;
             this.label19.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label19.Location = new System.Drawing.Point(734, 375);
+            this.label19.Location = new System.Drawing.Point(734, 341);
             this.label19.Name = "label19";
-            this.label19.Size = new System.Drawing.Size(93, 28);
+            this.label19.Size = new System.Drawing.Size(75, 21);
             this.label19.TabIndex = 74;
             this.label19.Text = "Total Qty";
             // 
@@ -527,9 +541,9 @@ namespace Bookstore
             this.label18.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.label18.AutoSize = true;
             this.label18.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label18.Location = new System.Drawing.Point(734, 410);
+            this.label18.Location = new System.Drawing.Point(734, 376);
             this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(88, 28);
+            this.label18.Size = new System.Drawing.Size(72, 21);
             this.label18.TabIndex = 73;
             this.label18.Text = "Subtotal";
             // 
@@ -539,7 +553,7 @@ namespace Bookstore
             this.tbKodeMember.Enabled = false;
             this.tbKodeMember.Location = new System.Drawing.Point(764, 105);
             this.tbKodeMember.Name = "tbKodeMember";
-            this.tbKodeMember.Size = new System.Drawing.Size(147, 30);
+            this.tbKodeMember.Size = new System.Drawing.Size(147, 26);
             this.tbKodeMember.TabIndex = 71;
             this.tbKodeMember.Text = "MEM025";
             // 
@@ -548,9 +562,9 @@ namespace Bookstore
             this.rbMember.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.rbMember.AutoSize = true;
             this.rbMember.Checked = true;
-            this.rbMember.Location = new System.Drawing.Point(744, 66);
+            this.rbMember.Location = new System.Drawing.Point(764, 66);
             this.rbMember.Name = "rbMember";
-            this.rbMember.Size = new System.Drawing.Size(105, 29);
+            this.rbMember.Size = new System.Drawing.Size(85, 24);
             this.rbMember.TabIndex = 70;
             this.rbMember.TabStop = true;
             this.rbMember.Text = "Member";
@@ -561,28 +575,19 @@ namespace Bookstore
             // 
             this.rbGuest.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.rbGuest.AutoSize = true;
-            this.rbGuest.Location = new System.Drawing.Point(843, 66);
+            this.rbGuest.Location = new System.Drawing.Point(857, 66);
             this.rbGuest.Name = "rbGuest";
-            this.rbGuest.Size = new System.Drawing.Size(85, 29);
+            this.rbGuest.Size = new System.Drawing.Size(71, 24);
             this.rbGuest.TabIndex = 69;
             this.rbGuest.Text = "Guest";
             this.rbGuest.UseVisualStyleBackColor = true;
-            // 
-            // dateTimePicker1
-            // 
-            this.dateTimePicker1.CustomFormat = "dd/MM/yyyy";
-            this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dateTimePicker1.Location = new System.Drawing.Point(251, 145);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(244, 30);
-            this.dateTimePicker1.TabIndex = 68;
             // 
             // textBox4
             // 
             this.textBox4.Enabled = false;
             this.textBox4.Location = new System.Drawing.Point(251, 71);
             this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(184, 30);
+            this.textBox4.Size = new System.Drawing.Size(184, 26);
             this.textBox4.TabIndex = 67;
             this.textBox4.Text = "20220521PO05";
             // 
@@ -663,7 +668,7 @@ namespace Bookstore
             this.label10.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label10.Location = new System.Drawing.Point(16, 73);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(159, 28);
+            this.label10.Size = new System.Drawing.Size(127, 21);
             this.label10.TabIndex = 59;
             this.label10.Text = "Nomor Nota PO";
             // 
@@ -674,7 +679,7 @@ namespace Bookstore
             this.label2.ForeColor = System.Drawing.SystemColors.ControlText;
             this.label2.Location = new System.Drawing.Point(15, 215);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(126, 32);
+            this.label2.Size = new System.Drawing.Size(99, 25);
             this.label2.TabIndex = 47;
             this.label2.Text = "Keranjang";
             // 
@@ -750,9 +755,45 @@ namespace Bookstore
             this.label3.Font = new System.Drawing.Font("Segoe UI Semibold", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.Location = new System.Drawing.Point(14, 23);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(225, 37);
+            this.label3.Size = new System.Drawing.Size(176, 30);
             this.label3.TabIndex = 14;
             this.label3.Text = "Proses Pre-Order";
+            // 
+            // cmbPembayaran
+            // 
+            this.cmbPembayaran.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.cmbPembayaran.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbPembayaran.FormattingEnabled = true;
+            this.cmbPembayaran.Items.AddRange(new object[] {
+            "Tunai",
+            "Debit",
+            "Kredit"});
+            this.cmbPembayaran.Location = new System.Drawing.Point(857, 501);
+            this.cmbPembayaran.Name = "cmbPembayaran";
+            this.cmbPembayaran.Size = new System.Drawing.Size(163, 28);
+            this.cmbPembayaran.TabIndex = 144;
+            // 
+            // label1
+            // 
+            this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.label1.BackColor = System.Drawing.Color.Transparent;
+            this.label1.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(833, 503);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(14, 28);
+            this.label1.TabIndex = 143;
+            this.label1.Text = ":";
+            // 
+            // label23
+            // 
+            this.label23.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.label23.AutoSize = true;
+            this.label23.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label23.Location = new System.Drawing.Point(734, 503);
+            this.label23.Name = "label23";
+            this.label23.Size = new System.Drawing.Size(98, 21);
+            this.label23.TabIndex = 142;
+            this.label23.Text = "Pembayaran";
             // 
             // FormProsesPreOrder
             // 
@@ -806,7 +847,6 @@ namespace Bookstore
         private System.Windows.Forms.TextBox tbKodeMember;
         private System.Windows.Forms.RadioButton rbMember;
         private System.Windows.Forms.RadioButton rbGuest;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
         private System.Windows.Forms.TextBox textBox4;
         private System.Windows.Forms.Label label17;
         private System.Windows.Forms.Label label16;
@@ -828,5 +868,9 @@ namespace Bookstore
         private System.Windows.Forms.Button btnClear;
         private System.Windows.Forms.Button btnHapus;
         private System.Windows.Forms.Button btnEdit;
+        private System.Windows.Forms.Label lbTanggal;
+        private System.Windows.Forms.ComboBox cmbPembayaran;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label23;
     }
 }
