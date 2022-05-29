@@ -30,6 +30,10 @@ namespace Bookstore
         private void InitializeComponent()
         {
             this.panel2 = new System.Windows.Forms.Panel();
+            this.lbJenis = new System.Windows.Forms.Label();
+            this.label18 = new System.Windows.Forms.Label();
+            this.label17 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
             this.dgBuku = new System.Windows.Forms.DataGridView();
             this.label35 = new System.Windows.Forms.Label();
             this.label34 = new System.Windows.Forms.Label();
@@ -64,10 +68,6 @@ namespace Bookstore
             this.label13 = new System.Windows.Forms.Label();
             this.btnProses = new System.Windows.Forms.Button();
             this.btnBack = new System.Windows.Forms.Button();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label17 = new System.Windows.Forms.Label();
-            this.label18 = new System.Windows.Forms.Label();
-            this.lbJenis = new System.Windows.Forms.Label();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgBuku)).BeginInit();
             this.SuspendLayout();
@@ -121,6 +121,49 @@ namespace Bookstore
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(1050, 621);
             this.panel2.TabIndex = 17;
+            // 
+            // lbJenis
+            // 
+            this.lbJenis.AutoSize = true;
+            this.lbJenis.BackColor = System.Drawing.Color.White;
+            this.lbJenis.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbJenis.Location = new System.Drawing.Point(604, 100);
+            this.lbJenis.Name = "lbJenis";
+            this.lbJenis.Size = new System.Drawing.Size(117, 32);
+            this.lbJenis.TabIndex = 92;
+            this.lbJenis.Text = "John Doe";
+            // 
+            // label18
+            // 
+            this.label18.AutoSize = true;
+            this.label18.BackColor = System.Drawing.Color.White;
+            this.label18.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label18.Location = new System.Drawing.Point(584, 100);
+            this.label18.Name = "label18";
+            this.label18.Size = new System.Drawing.Size(21, 32);
+            this.label18.TabIndex = 91;
+            this.label18.Text = ":";
+            // 
+            // label17
+            // 
+            this.label17.AutoSize = true;
+            this.label17.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label17.Location = new System.Drawing.Point(436, 100);
+            this.label17.Name = "label17";
+            this.label17.Size = new System.Drawing.Size(180, 32);
+            this.label17.TabIndex = 90;
+            this.label17.Text = "Jenis Customer";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.Color.White;
+            this.label1.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(584, 132);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(21, 32);
+            this.label1.TabIndex = 89;
+            this.label1.Text = ":";
             // 
             // dgBuku
             // 
@@ -496,7 +539,7 @@ namespace Bookstore
             // 
             // btnBack
             // 
-            this.btnBack.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnBack.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.btnBack.BackColor = System.Drawing.Color.Navy;
             this.btnBack.FlatAppearance.BorderSize = 0;
             this.btnBack.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -509,49 +552,6 @@ namespace Bookstore
             this.btnBack.Text = "Back";
             this.btnBack.UseVisualStyleBackColor = false;
             this.btnBack.Click += new System.EventHandler(this.btnBack_Click);
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.BackColor = System.Drawing.Color.White;
-            this.label1.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(584, 132);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(21, 32);
-            this.label1.TabIndex = 89;
-            this.label1.Text = ":";
-            // 
-            // label17
-            // 
-            this.label17.AutoSize = true;
-            this.label17.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label17.Location = new System.Drawing.Point(436, 100);
-            this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(180, 32);
-            this.label17.TabIndex = 90;
-            this.label17.Text = "Jenis Customer";
-            // 
-            // label18
-            // 
-            this.label18.AutoSize = true;
-            this.label18.BackColor = System.Drawing.Color.White;
-            this.label18.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label18.Location = new System.Drawing.Point(584, 100);
-            this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(21, 32);
-            this.label18.TabIndex = 91;
-            this.label18.Text = ":";
-            // 
-            // lbJenis
-            // 
-            this.lbJenis.AutoSize = true;
-            this.lbJenis.BackColor = System.Drawing.Color.White;
-            this.lbJenis.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbJenis.Location = new System.Drawing.Point(604, 100);
-            this.lbJenis.Name = "lbJenis";
-            this.lbJenis.Size = new System.Drawing.Size(117, 32);
-            this.lbJenis.TabIndex = 92;
-            this.lbJenis.Text = "John Doe";
             // 
             // FormDetailPreOrder
             // 

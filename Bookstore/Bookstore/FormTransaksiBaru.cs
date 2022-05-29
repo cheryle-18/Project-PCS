@@ -43,7 +43,7 @@ namespace Bookstore
         private void btnCariBuku_Click(object sender, EventArgs e)
         {
 
-            FormCariBuku frm = new FormCariBuku();
+            FormCariBuku frm = new FormCariBuku("transaksi");
             var result = frm.ShowDialog();
             if (result == DialogResult.OK)
             {

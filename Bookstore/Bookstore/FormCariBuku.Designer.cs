@@ -43,7 +43,7 @@ namespace Bookstore
             this.label4.AutoSize = true;
             this.label4.Location = new System.Drawing.Point(20, 79);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(113, 28);
+            this.label4.Size = new System.Drawing.Size(89, 21);
             this.label4.TabIndex = 100;
             this.label4.Text = "Kata Kunci :";
             // 
@@ -51,7 +51,7 @@ namespace Bookstore
             // 
             this.tbCari.Location = new System.Drawing.Point(145, 76);
             this.tbCari.Name = "tbCari";
-            this.tbCari.Size = new System.Drawing.Size(396, 34);
+            this.tbCari.Size = new System.Drawing.Size(396, 29);
             this.tbCari.TabIndex = 99;
             this.tbCari.Text = "Kode / Judul / Penulis Buku";
             this.tbCari.TextChanged += new System.EventHandler(this.tbCari_TextChanged);
@@ -65,6 +65,7 @@ namespace Bookstore
             this.dgvBuku.Location = new System.Drawing.Point(24, 123);
             this.dgvBuku.Name = "dgvBuku";
             this.dgvBuku.ReadOnly = true;
+            this.dgvBuku.RowHeadersVisible = false;
             this.dgvBuku.RowHeadersWidth = 51;
             this.dgvBuku.RowTemplate.Height = 24;
             this.dgvBuku.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
@@ -108,7 +109,7 @@ namespace Bookstore
             this.label3.Font = new System.Drawing.Font("Segoe UI Semibold", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.Location = new System.Drawing.Point(17, 19);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(134, 37);
+            this.label3.Size = new System.Drawing.Size(104, 30);
             this.label3.TabIndex = 95;
             this.label3.Text = "Cari Buku";
             // 

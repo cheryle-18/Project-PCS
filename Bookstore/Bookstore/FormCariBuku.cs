@@ -15,9 +15,18 @@ namespace Bookstore
     {
         public string book_id { get; set; }
         DataTable dtBuku;
-        public FormCariBuku()
+        string where;
+        public FormCariBuku(string asal)
         {
             InitializeComponent();
+            if (asal == "transaksi")
+            {
+                where = "where book.`B_STATUS`=1";
+            }
+            else if (asal == "preorder")
+            {
+                where = "where book.`B_STATUS`=0";
+            }
             loadDGV();
             refreshGridView();
         }
@@ -49,7 +58,7 @@ namespace Bookstore
         {
             try
             {
-                MySqlDataAdapter adapter = new MySqlDataAdapter("SELECT book.`B_ID`,book.`B_TITLE`,book.`B_AUTHOR`,book.`B_PRICE`,(CASE WHEN book.`B_STATUS` = 1 THEN 'Tersedia' ELSE 'Tidak Tersedia' END) AS 'B_STATUS' FROM book;", Koneksi.getConn());
+                MySqlDataAdapter adapter = new MySqlDataAdapter("SELECT book.`B_ID`,book.`B_TITLE`,book.`B_AUTHOR`,book.`B_PRICE`,book.`B_STOCK` FROM book "+where+";", Koneksi.getConn());
                 dtBuku = new DataTable();
                 adapter.Fill(dtBuku);
             }
@@ -64,9 +73,9 @@ namespace Bookstore
             dgvBuku.DataSource = dtBuku;
             dgvBuku.Columns["B_ID"].HeaderText = "ID Buku";
             dgvBuku.Columns["B_TITLE"].HeaderText = "Judul Buku";
-            dgvBuku.Columns["B_AUTHOR"].HeaderText = "Penerbit Buku";
+            dgvBuku.Columns["B_AUTHOR"].HeaderText = "Penulis Buku";
             dgvBuku.Columns["B_PRICE"].HeaderText = "Harga Buku";
-            dgvBuku.Columns["B_STATUS"].HeaderText = "Status Buku";
+            dgvBuku.Columns["B_STOCK"].HeaderText = "Stok";
             dgvBuku.ClearSelection();
         }
 
@@ -83,7 +92,7 @@ namespace Bookstore
         {
             try
             {
-                MySqlDataAdapter adapter = new MySqlDataAdapter("SELECT book.B_ID, book.`B_TITLE`, book.`B_AUTHOR`, book.`B_PRICE`,(CASE WHEN book.`B_STATUS` = 1 THEN 'Tersedia' ELSE 'Tidak Tersedia' END) AS 'B_STATUS' FROM book WHERE book.`B_ID` LIKE '%"+tbCari.Text+"%' OR book.B_TITLE LIKE '%"+tbCari.Text+"%' OR book.`B_AUTHOR` LIKE '%"+tbCari.Text+"%'; ", Koneksi.getConn());
+                MySqlDataAdapter adapter = new MySqlDataAdapter("SELECT book.B_ID, book.`B_TITLE`, book.`B_AUTHOR`, book.`B_PRICE`,book.`B_STOCK` FROM book WHERE book.`B_ID` LIKE '%" + tbCari.Text+"%' OR book.B_TITLE LIKE '%"+tbCari.Text+"%' OR book.`B_AUTHOR` LIKE '%"+tbCari.Text+"%' "+where+";", Koneksi.getConn());
                 dtBuku = new DataTable();
                 adapter.Fill(dtBuku);
             }
