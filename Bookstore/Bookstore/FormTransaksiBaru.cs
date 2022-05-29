@@ -136,6 +136,7 @@ namespace Bookstore
             isEditMode = false;
             edit_dgv_idx = -1;
             btnTambah.Text = "Tambah";
+
         }
 
         private void updateAutoIcrCart()
@@ -194,12 +195,22 @@ namespace Bookstore
                             dgvCart.Rows[i].Cells[4].Value = newSum;
                             //SUBTOTAL
                             dgvCart.Rows[i].Cells[5].Value = "Rp " + (newSum * bookPrice).ToString("N0", new System.Globalization.CultureInfo("id-ID"));
+
                         }
                     }
                     if (!isExist)
                     {
-                        dgvCart.Rows.Add("", book_code, book_title, "Rp " + txtHargaBuku.Text, qty, "Rp " + subtotal.ToString("N0", new System.Globalization.CultureInfo("id-ID")));
+                        if (isEditMode)
+                        {
+                            dgvCart.Rows.Insert(edit_dgv_idx, "", book_code, book_title, "Rp " + txtHargaBuku.Text, qty, "Rp " + subtotal.ToString("N0", new System.Globalization.CultureInfo("id-ID")));
+                        }
+                        else
+                        {
+                            dgvCart.Rows.Add("", book_code, book_title, "Rp " + txtHargaBuku.Text, qty, "Rp " + subtotal.ToString("N0", new System.Globalization.CultureInfo("id-ID")));
+                        }
+                        dgvCart.ClearSelection();
                         updateAutoIcrCart();
+                        
                     }
 
                     clearFields();
