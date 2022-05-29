@@ -38,8 +38,7 @@ namespace Bookstore
             this.label8 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.label22 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.tbNotaTrans = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.nudPoint = new System.Windows.Forms.NumericUpDown();
@@ -67,7 +66,7 @@ namespace Bookstore
             this.tbKodeMember = new System.Windows.Forms.TextBox();
             this.rbMember = new System.Windows.Forms.RadioButton();
             this.rbGuest = new System.Windows.Forms.RadioButton();
-            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.tbNotaPO = new System.Windows.Forms.TextBox();
             this.label17 = new System.Windows.Forms.Label();
             this.label16 = new System.Windows.Forms.Label();
             this.label15 = new System.Windows.Forms.Label();
@@ -77,20 +76,16 @@ namespace Bookstore
             this.label11 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.dataGridView2 = new System.Windows.Forms.DataGridView();
-            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dgBuku = new System.Windows.Forms.DataGridView();
             this.btnBayar = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
             this.cmbPembayaran = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label23 = new System.Windows.Forms.Label();
+            this.tbNamaMember = new System.Windows.Forms.TextBox();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudPoint)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgBuku)).BeginInit();
             this.SuspendLayout();
             // 
             // panel2
@@ -99,6 +94,7 @@ namespace Bookstore
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panel2.BackColor = System.Drawing.Color.White;
+            this.panel2.Controls.Add(this.tbNamaMember);
             this.panel2.Controls.Add(this.cmbPembayaran);
             this.panel2.Controls.Add(this.label1);
             this.panel2.Controls.Add(this.label23);
@@ -110,8 +106,7 @@ namespace Bookstore
             this.panel2.Controls.Add(this.label8);
             this.panel2.Controls.Add(this.label9);
             this.panel2.Controls.Add(this.label22);
-            this.panel2.Controls.Add(this.button1);
-            this.panel2.Controls.Add(this.textBox1);
+            this.panel2.Controls.Add(this.tbNotaTrans);
             this.panel2.Controls.Add(this.label6);
             this.panel2.Controls.Add(this.label7);
             this.panel2.Controls.Add(this.nudPoint);
@@ -139,7 +134,7 @@ namespace Bookstore
             this.panel2.Controls.Add(this.tbKodeMember);
             this.panel2.Controls.Add(this.rbMember);
             this.panel2.Controls.Add(this.rbGuest);
-            this.panel2.Controls.Add(this.textBox4);
+            this.panel2.Controls.Add(this.tbNotaPO);
             this.panel2.Controls.Add(this.label17);
             this.panel2.Controls.Add(this.label16);
             this.panel2.Controls.Add(this.label15);
@@ -149,7 +144,7 @@ namespace Bookstore
             this.panel2.Controls.Add(this.label11);
             this.panel2.Controls.Add(this.label10);
             this.panel2.Controls.Add(this.label2);
-            this.panel2.Controls.Add(this.dataGridView2);
+            this.panel2.Controls.Add(this.dgBuku);
             this.panel2.Controls.Add(this.btnBayar);
             this.panel2.Controls.Add(this.label3);
             this.panel2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -220,7 +215,7 @@ namespace Bookstore
             this.lbDisc.Name = "lbDisc";
             this.lbDisc.Size = new System.Drawing.Size(143, 28);
             this.lbDisc.TabIndex = 117;
-            this.lbDisc.Text = "50.000";
+            this.lbDisc.Text = "0";
             this.lbDisc.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // label8
@@ -256,28 +251,14 @@ namespace Bookstore
             this.label22.TabIndex = 114;
             this.label22.Text = ":";
             // 
-            // button1
+            // tbNotaTrans
             // 
-            this.button1.BackColor = System.Drawing.Color.Navy;
-            this.button1.FlatAppearance.BorderSize = 0;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.ForeColor = System.Drawing.Color.White;
-            this.button1.Location = new System.Drawing.Point(441, 69);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(54, 29);
-            this.button1.TabIndex = 113;
-            this.button1.Text = "...";
-            this.button1.UseVisualStyleBackColor = false;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
-            // 
-            // textBox1
-            // 
-            this.textBox1.Enabled = false;
-            this.textBox1.Location = new System.Drawing.Point(251, 107);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(244, 26);
-            this.textBox1.TabIndex = 112;
-            this.textBox1.Text = "20220521TR15";
+            this.tbNotaTrans.Enabled = false;
+            this.tbNotaTrans.Location = new System.Drawing.Point(251, 107);
+            this.tbNotaTrans.Name = "tbNotaTrans";
+            this.tbNotaTrans.Size = new System.Drawing.Size(244, 26);
+            this.tbNotaTrans.TabIndex = 112;
+            this.tbNotaTrans.Text = "-";
             // 
             // label6
             // 
@@ -303,22 +284,17 @@ namespace Bookstore
             // 
             this.nudPoint.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.nudPoint.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.nudPoint.Location = new System.Drawing.Point(764, 180);
+            this.nudPoint.Location = new System.Drawing.Point(764, 210);
             this.nudPoint.Name = "nudPoint";
             this.nudPoint.Size = new System.Drawing.Size(95, 29);
             this.nudPoint.TabIndex = 109;
-            this.nudPoint.Value = new decimal(new int[] {
-            50,
-            0,
-            0,
-            0});
             // 
             // label28
             // 
             this.label28.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label28.BackColor = System.Drawing.Color.Transparent;
             this.label28.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label28.Location = new System.Drawing.Point(734, 181);
+            this.label28.Location = new System.Drawing.Point(734, 211);
             this.label28.Name = "label28";
             this.label28.Size = new System.Drawing.Size(14, 28);
             this.label28.TabIndex = 108;
@@ -329,7 +305,7 @@ namespace Bookstore
             this.label27.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label27.AutoSize = true;
             this.label27.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label27.Location = new System.Drawing.Point(592, 181);
+            this.label27.Location = new System.Drawing.Point(592, 211);
             this.label27.Name = "label27";
             this.label27.Size = new System.Drawing.Size(121, 21);
             this.label27.TabIndex = 107;
@@ -339,18 +315,18 @@ namespace Bookstore
             // 
             this.lbPoinTersedia.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.lbPoinTersedia.AutoSize = true;
-            this.lbPoinTersedia.Location = new System.Drawing.Point(760, 147);
+            this.lbPoinTersedia.Location = new System.Drawing.Point(760, 177);
             this.lbPoinTersedia.Name = "lbPoinTersedia";
-            this.lbPoinTersedia.Size = new System.Drawing.Size(36, 20);
+            this.lbPoinTersedia.Size = new System.Drawing.Size(14, 20);
             this.lbPoinTersedia.TabIndex = 106;
-            this.lbPoinTersedia.Text = "150";
+            this.lbPoinTersedia.Text = "-";
             // 
             // label5
             // 
             this.label5.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label5.BackColor = System.Drawing.Color.Transparent;
             this.label5.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(734, 147);
+            this.label5.Location = new System.Drawing.Point(734, 177);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(14, 28);
             this.label5.TabIndex = 105;
@@ -361,7 +337,7 @@ namespace Bookstore
             this.label4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(592, 147);
+            this.label4.Location = new System.Drawing.Point(592, 177);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(105, 21);
             this.label4.TabIndex = 104;
@@ -375,7 +351,7 @@ namespace Bookstore
             this.lbSubtotal.Name = "lbSubtotal";
             this.lbSubtotal.Size = new System.Drawing.Size(143, 28);
             this.lbSubtotal.TabIndex = 103;
-            this.lbSubtotal.Text = "200.000";
+            this.lbSubtotal.Text = "0";
             this.lbSubtotal.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // lbDP
@@ -386,7 +362,7 @@ namespace Bookstore
             this.lbDP.Name = "lbDP";
             this.lbDP.Size = new System.Drawing.Size(143, 28);
             this.lbDP.TabIndex = 102;
-            this.lbDP.Text = "100.000";
+            this.lbDP.Text = "0";
             this.lbDP.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // label37
@@ -489,7 +465,7 @@ namespace Bookstore
             this.lbGrandTotal.Name = "lbGrandTotal";
             this.lbGrandTotal.Size = new System.Drawing.Size(143, 28);
             this.lbGrandTotal.TabIndex = 78;
-            this.lbGrandTotal.Text = "50.000";
+            this.lbGrandTotal.Text = "0";
             this.lbGrandTotal.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // lbTotalQty
@@ -501,7 +477,7 @@ namespace Bookstore
             this.lbTotalQty.Name = "lbTotalQty";
             this.lbTotalQty.Size = new System.Drawing.Size(19, 21);
             this.lbTotalQty.TabIndex = 77;
-            this.lbTotalQty.Text = "2";
+            this.lbTotalQty.Text = "0";
             // 
             // label21
             // 
@@ -555,18 +531,16 @@ namespace Bookstore
             this.tbKodeMember.Name = "tbKodeMember";
             this.tbKodeMember.Size = new System.Drawing.Size(147, 26);
             this.tbKodeMember.TabIndex = 71;
-            this.tbKodeMember.Text = "MEM025";
+            this.tbKodeMember.Text = "-";
             // 
             // rbMember
             // 
             this.rbMember.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.rbMember.AutoSize = true;
-            this.rbMember.Checked = true;
             this.rbMember.Location = new System.Drawing.Point(764, 66);
             this.rbMember.Name = "rbMember";
             this.rbMember.Size = new System.Drawing.Size(85, 24);
             this.rbMember.TabIndex = 70;
-            this.rbMember.TabStop = true;
             this.rbMember.Text = "Member";
             this.rbMember.UseVisualStyleBackColor = true;
             this.rbMember.CheckedChanged += new System.EventHandler(this.rbMember_CheckedChanged);
@@ -575,21 +549,23 @@ namespace Bookstore
             // 
             this.rbGuest.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.rbGuest.AutoSize = true;
+            this.rbGuest.Checked = true;
             this.rbGuest.Location = new System.Drawing.Point(857, 66);
             this.rbGuest.Name = "rbGuest";
             this.rbGuest.Size = new System.Drawing.Size(71, 24);
             this.rbGuest.TabIndex = 69;
+            this.rbGuest.TabStop = true;
             this.rbGuest.Text = "Guest";
             this.rbGuest.UseVisualStyleBackColor = true;
             // 
-            // textBox4
+            // tbNotaPO
             // 
-            this.textBox4.Enabled = false;
-            this.textBox4.Location = new System.Drawing.Point(251, 71);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(184, 26);
-            this.textBox4.TabIndex = 67;
-            this.textBox4.Text = "20220521PO05";
+            this.tbNotaPO.Enabled = false;
+            this.tbNotaPO.Location = new System.Drawing.Point(251, 71);
+            this.tbNotaPO.Name = "tbNotaPO";
+            this.tbNotaPO.Size = new System.Drawing.Size(177, 26);
+            this.tbNotaPO.TabIndex = 67;
+            this.tbNotaPO.Text = "-";
             // 
             // label17
             // 
@@ -677,62 +653,31 @@ namespace Bookstore
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Segoe UI Semibold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.label2.Location = new System.Drawing.Point(15, 215);
+            this.label2.Location = new System.Drawing.Point(15, 254);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(99, 25);
             this.label2.TabIndex = 47;
             this.label2.Text = "Keranjang";
             // 
-            // dataGridView2
+            // dgBuku
             // 
-            this.dataGridView2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.dgBuku.AllowUserToAddRows = false;
+            this.dgBuku.AllowUserToDeleteRows = false;
+            this.dgBuku.AllowUserToResizeColumns = false;
+            this.dgBuku.AllowUserToResizeRows = false;
+            this.dgBuku.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.dataGridView2.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dataGridView2.BackgroundColor = System.Drawing.Color.Gainsboro;
-            this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView2.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Column1,
-            this.Column2,
-            this.Column3,
-            this.Column4,
-            this.Column5});
-            this.dataGridView2.Location = new System.Drawing.Point(19, 262);
-            this.dataGridView2.Name = "dataGridView2";
-            this.dataGridView2.RowHeadersVisible = false;
-            this.dataGridView2.RowHeadersWidth = 51;
-            this.dataGridView2.Size = new System.Drawing.Size(702, 267);
-            this.dataGridView2.TabIndex = 46;
-            // 
-            // Column1
-            // 
-            this.Column1.HeaderText = "Kode Buku";
-            this.Column1.MinimumWidth = 8;
-            this.Column1.Name = "Column1";
-            // 
-            // Column2
-            // 
-            this.Column2.HeaderText = "Judul Buku";
-            this.Column2.MinimumWidth = 8;
-            this.Column2.Name = "Column2";
-            // 
-            // Column3
-            // 
-            this.Column3.HeaderText = "Harga";
-            this.Column3.MinimumWidth = 8;
-            this.Column3.Name = "Column3";
-            // 
-            // Column4
-            // 
-            this.Column4.HeaderText = "Qty";
-            this.Column4.MinimumWidth = 8;
-            this.Column4.Name = "Column4";
-            // 
-            // Column5
-            // 
-            this.Column5.HeaderText = "Subtotal";
-            this.Column5.MinimumWidth = 8;
-            this.Column5.Name = "Column5";
+            this.dgBuku.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgBuku.BackgroundColor = System.Drawing.Color.Gainsboro;
+            this.dgBuku.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgBuku.Location = new System.Drawing.Point(19, 295);
+            this.dgBuku.Name = "dgBuku";
+            this.dgBuku.ReadOnly = true;
+            this.dgBuku.RowHeadersVisible = false;
+            this.dgBuku.RowHeadersWidth = 51;
+            this.dgBuku.Size = new System.Drawing.Size(702, 234);
+            this.dgBuku.TabIndex = 46;
             // 
             // btnBayar
             // 
@@ -795,6 +740,16 @@ namespace Bookstore
             this.label23.TabIndex = 142;
             this.label23.Text = "Pembayaran";
             // 
+            // tbNamaMember
+            // 
+            this.tbNamaMember.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.tbNamaMember.Enabled = false;
+            this.tbNamaMember.Location = new System.Drawing.Point(764, 145);
+            this.tbNamaMember.Name = "tbNamaMember";
+            this.tbNamaMember.Size = new System.Drawing.Size(256, 26);
+            this.tbNamaMember.TabIndex = 145;
+            this.tbNamaMember.Text = "-";
+            // 
             // FormProsesPreOrder
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
@@ -806,7 +761,7 @@ namespace Bookstore
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudPoint)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgBuku)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -818,8 +773,7 @@ namespace Bookstore
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label22;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox tbNotaTrans;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.NumericUpDown nudPoint;
@@ -847,7 +801,7 @@ namespace Bookstore
         private System.Windows.Forms.TextBox tbKodeMember;
         private System.Windows.Forms.RadioButton rbMember;
         private System.Windows.Forms.RadioButton rbGuest;
-        private System.Windows.Forms.TextBox textBox4;
+        private System.Windows.Forms.TextBox tbNotaPO;
         private System.Windows.Forms.Label label17;
         private System.Windows.Forms.Label label16;
         private System.Windows.Forms.Label label15;
@@ -857,12 +811,7 @@ namespace Bookstore
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.DataGridView dataGridView2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column5;
+        private System.Windows.Forms.DataGridView dgBuku;
         private System.Windows.Forms.Button btnBayar;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Button btnClear;
@@ -872,5 +821,6 @@ namespace Bookstore
         private System.Windows.Forms.ComboBox cmbPembayaran;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label23;
+        private System.Windows.Forms.TextBox tbNamaMember;
     }
 }
