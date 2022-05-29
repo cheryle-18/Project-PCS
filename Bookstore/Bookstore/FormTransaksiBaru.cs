@@ -27,14 +27,45 @@ namespace Bookstore
         private void btnBayar_Click(object sender, EventArgs e)
         {
 
+            //GET EMPLOYEE
+            MySqlCommand cmd = new MySqlCommand("SELECT employee.`E_ID` FROM employee WHERE employee.`E_U_ID` = @us_id;", Koneksi.getConn());
+            cmd.Parameters.AddWithValue("@us_id", FormLogin.us_id);
+            string emp_id = (String)cmd.ExecuteScalar();
+
             //PAY!
 
-            MasterTransaksi frm = new MasterTransaksi(0);
-            Panel temp = (Panel)frm.Controls[0];
-            temp.Width = panel2.Width;
-            temp.Height = panel2.Height;
-            this.panel2.Controls.Clear();
-            this.panel2.Controls.Add(temp);
+            MySqlConnection conn = Koneksi.getConn();
+
+            using (MySqlTransaction obTrans = conn.BeginTransaction())
+            {
+                
+                try
+                {
+                    cmd = new MySqlCommand("SELECT generateIdHtrans()", Koneksi.getConn());
+                    string id_htrans = cmd.ExecuteScalar().ToString();
+
+                    cmd = new MySqlCommand();
+                    cmd.Connection = conn;
+
+                    //TRANSACTION HEADER
+                    cmd.CommandText = "INSERT INTO htrans_purchase(HP_ID,HP_INVOICE_NUMBER,HP_DATE,HP_TOTAL_QTY,HP_TOTAL,HP_TOTAL_PAID,HP_POINTS_USED,HP_POINTS_RECEIVED,HP_PAYMENT_METHOD,HP_E_ID,HP_M_ID,HP_STATUS) VALUES (@HP_ID,@HP_INVOICE_NUMBER,@HP_DATE,@HP_TOTAL_QTY,@HP_TOTAL,@HP_TOTAL_PAID,@HP_POINTS_USED,@HP_POINTS_RECEIVED,@HP_PAYMENT_METHOD,@HP_E_ID,@HP_M_ID,1);";
+                    cmd.Parameters.AddWithValue("@HP_ID", id_htrans);
+                    cmd.Parameters.AddWithValue("@HP_INVOICE_NUMBER", txtNota.Text);
+
+                }
+                catch (MySqlException ex)
+                {
+                    MessageBox.Show(ex.Message);
+                    obTrans.Rollback();
+                }
+            }
+
+            //MasterTransaksi frm = new MasterTransaksi(0);
+            //Panel temp = (Panel)frm.Controls[0];
+            //temp.Width = panel2.Width;
+            //temp.Height = panel2.Height;
+            //this.panel2.Controls.Clear();
+            //this.panel2.Controls.Add(temp);
         }
 
         private void btnBatal_Click(object sender, EventArgs e)
@@ -114,7 +145,7 @@ namespace Bookstore
 
         private void fillHeaderInfo()
         {
-            MySqlCommand cmd = new MySqlCommand("SELECT generateIDHtrans()", Koneksi.getConn());
+            MySqlCommand cmd = new MySqlCommand("SELECT generateInvoiceTrans()", Koneksi.getConn());
             
             // GENERATE INVOICE NUMBER
             string id = cmd.ExecuteScalar().ToString();
@@ -168,6 +199,16 @@ namespace Bookstore
             lbTotalQty.Text = sumQty + "";
             lbDisc.Text = nudPoint.Value.ToString();
             lbGrandTotal.Text = (total - Convert.ToInt32(nudPoint.Value)).ToString("N0", new System.Globalization.CultureInfo("id-ID"));
+
+            if(sumQty == 0)
+            {
+                //DISABLE PAY BUTTON
+                btnBayar.Enabled = false;
+            }
+            else
+            {
+                btnBayar.Enabled = true;
+            }
         }
 
         private void btnTambah_Click(object sender, EventArgs e)
@@ -286,6 +327,7 @@ namespace Bookstore
 
             deleteDGVRow(selected_dgv_idx);
             selected_dgv_idx = -1;
+            
         }
 
         private void deleteDGVRow(int row)

@@ -842,6 +842,7 @@ namespace Bookstore
             // 
             this.btnBayar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.btnBayar.BackColor = System.Drawing.Color.Navy;
+            this.btnBayar.Enabled = false;
             this.btnBayar.FlatAppearance.BorderSize = 0;
             this.btnBayar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnBayar.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));

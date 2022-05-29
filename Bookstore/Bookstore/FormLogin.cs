@@ -44,6 +44,7 @@ namespace Bookstore
                     us_id = rd["U_ID"].ToString();
                     us_role = Convert.ToInt32(rd["U_ROLE"].ToString());
                 }
+                rd.Close();
                 if (us_role == 1)
                 {
                     //USER ROLE = ADMIN
@@ -58,6 +59,7 @@ namespace Bookstore
                     MasterUtamaPegawai frm = new MasterUtamaPegawai();
                     frm.ShowDialog();
                 }
+                
             }
             else
             {

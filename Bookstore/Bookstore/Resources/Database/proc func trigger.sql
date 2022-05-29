@@ -195,3 +195,24 @@ BEGIN
     end if;
 END$$
 DELIMITER ;
+
+
+--trigger update status buku setelah insert dtrans
+DELIMITER $$
+CREATE OR REPLACE TRIGGER triggerBukuDtrans 
+BEFORE INSERT ON dtrans_purchase 
+FOR EACH ROW 
+BEGIN
+ DECLARE book_qty INT DEFAULT 0;
+ SELECT book.B_STOCK INTO book_qty FROM book WHERE book.`B_ID` = NEW.DP_B_ID;
+ 
+ IF book_qty - NEW.DP_QTY < 1 THEN
+  UPDATE book SET book.B_STATUS = 0 WHERE book.B_ID = NEW.DP_B_ID;
+ END IF;
+ 
+ UPDATE book SET book.B_STOCK = (book_qty - NEW.DP_QTY) WHERE book.B_ID = NEW.DP_B_ID;
+ 
+END$$
+
+DELIMITER ;
+
