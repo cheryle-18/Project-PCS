@@ -92,7 +92,7 @@ namespace Bookstore
         {
             try
             {
-                MySqlDataAdapter adapter = new MySqlDataAdapter("SELECT book.B_ID, book.`B_TITLE`, book.`B_AUTHOR`, book.`B_PRICE`,book.`B_STOCK` FROM book WHERE book.`B_ID` LIKE '%" + tbCari.Text+"%' OR book.B_TITLE LIKE '%"+tbCari.Text+"%' OR book.`B_AUTHOR` LIKE '%"+tbCari.Text+"%' "+where+";", Koneksi.getConn());
+                MySqlDataAdapter adapter = new MySqlDataAdapter("SELECT book.B_ID, book.`B_TITLE`, book.`B_AUTHOR`, book.`B_PRICE`,book.`B_STOCK` FROM book "+where+" AND book.`B_ID` LIKE '%" + tbCari.Text+"%' OR book.B_TITLE LIKE '%"+tbCari.Text+"%' OR book.`B_AUTHOR` LIKE '%"+tbCari.Text+"%';", Koneksi.getConn());
                 dtBuku = new DataTable();
                 adapter.Fill(dtBuku);
             }
