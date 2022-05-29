@@ -13,6 +13,9 @@ namespace Bookstore
 {
     public partial class FormTransaksiBaru : Form
     {
+        int selected_dgv_idx;
+        int edit_dgv_idx;
+        bool isEditMode;
         public FormTransaksiBaru()
         {
             InitializeComponent();
@@ -130,6 +133,9 @@ namespace Bookstore
             nudPoint.Enabled = false;
             btnCariMember.Enabled = false;
             lbTanggal.Text = DateTime.Now.ToString("dd/MM/yyyy");
+            isEditMode = false;
+            edit_dgv_idx = -1;
+            btnTambah.Text = "Tambah";
         }
 
         private void updateAutoIcrCart()
@@ -138,6 +144,22 @@ namespace Bookstore
             {
                 dgvCart.Rows[i].Cells[0].Value = (i + 1);
             }
+        }
+
+        private void updateTotal()
+        {
+            //UPDATE TOTAL
+            int total = 0;
+            int sumQty = 0;
+            for(int i = 0; i < dgvCart.RowCount; i++)
+            {
+                sumQty += Convert.ToInt32(dgvCart.Rows[i].Cells[4].Value.ToString());
+                total += Convert.ToInt32(dgvCart.Rows[i].Cells[5].Value.ToString().Substring(3).Replace(".", String.Empty));
+            }
+            lbSubtotal.Text = (total).ToString("N0", new System.Globalization.CultureInfo("id-ID"));
+            lbTotalQty.Text = sumQty + "";
+            lbDisc.Text = nudPoint.Value.ToString();
+            lbGrandTotal.Text = (total - Convert.ToInt32(nudPoint.Value)).ToString("N0", new System.Globalization.CultureInfo("id-ID"));
         }
 
         private void btnTambah_Click(object sender, EventArgs e)
@@ -149,6 +171,13 @@ namespace Bookstore
 
                 if(nudQTY.Value > 0)
                 {
+
+                    if (isEditMode)
+                    {
+                        //DELETE AT EDIT IDX
+                        deleteDGVRow(edit_dgv_idx);
+                    }
+
                     string book_code = txtKodeBuku.Text;
                     string book_title = txtJudulBuku.Text;
                     int bookPrice = Convert.ToInt32(txtHargaBuku.Text.Replace(".", String.Empty));
@@ -174,6 +203,7 @@ namespace Bookstore
                     }
 
                     clearFields();
+                    updateTotal();
                 }
                 else
                 {
@@ -186,6 +216,57 @@ namespace Bookstore
                 MessageBox.Show("Silakan pilih buku terlebih dahulu!");
             }
 
+        }
+
+        private void btnClear_Click(object sender, EventArgs e)
+        {
+            //CLEAR DGV
+            dgvCart.Rows.Clear();
+            updateTotal();
+        }
+
+        private void btnHapus_Click(object sender, EventArgs e)
+        {
+
+            deleteDGVRow(selected_dgv_idx);
+            selected_dgv_idx = -1;
+        }
+
+        private void deleteDGVRow(int row)
+        {
+            if (row != -1)
+            {
+                dgvCart.Rows.RemoveAt(row);
+                updateTotal();
+                updateAutoIcrCart();
+                dgvCart.ClearSelection();
+            }
+        }
+
+        private void dgvCart_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            selected_dgv_idx = dgvCart.CurrentCell.RowIndex;
+        }
+
+        private void btnEdit_Click(object sender, EventArgs e)
+        {
+            if(selected_dgv_idx != -1)
+            {
+                //MOVE TO TEXTBOX
+                edit_dgv_idx = selected_dgv_idx;
+                isEditMode = true;
+                txtKodeBuku.Text = dgvCart.Rows[selected_dgv_idx].Cells[1].Value.ToString();
+                txtJudulBuku.Text = dgvCart.Rows[selected_dgv_idx].Cells[2].Value.ToString();
+                txtHargaBuku.Text = dgvCart.Rows[selected_dgv_idx].Cells[3].Value.ToString().Substring(3);
+                nudQTY.Value = Convert.ToInt32(dgvCart.Rows[selected_dgv_idx].Cells[4].Value);
+                btnTambah.Text = "Submit";
+            }
+            else
+            {
+                
+            }
+           
+           
         }
     }
 }

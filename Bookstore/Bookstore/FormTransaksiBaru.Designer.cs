@@ -30,6 +30,7 @@ namespace Bookstore
         private void InitializeComponent()
         {
             this.panel2 = new System.Windows.Forms.Panel();
+            this.lbTanggal = new System.Windows.Forms.Label();
             this.txtNamaMember = new System.Windows.Forms.TextBox();
             this.btnClear = new System.Windows.Forms.Button();
             this.btnHapus = new System.Windows.Forms.Button();
@@ -83,15 +84,14 @@ namespace Bookstore
             this.label6 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.dgvCart = new System.Windows.Forms.DataGridView();
-            this.btnBayar = new System.Windows.Forms.Button();
-            this.label3 = new System.Windows.Forms.Label();
-            this.lbTanggal = new System.Windows.Forms.Label();
             this.No = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.btnBayar = new System.Windows.Forms.Button();
+            this.label3 = new System.Windows.Forms.Label();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudPoint)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudQTY)).BeginInit();
@@ -164,6 +164,15 @@ namespace Bookstore
             this.panel2.Size = new System.Drawing.Size(1058, 622);
             this.panel2.TabIndex = 21;
             // 
+            // lbTanggal
+            // 
+            this.lbTanggal.AutoSize = true;
+            this.lbTanggal.Location = new System.Drawing.Point(195, 110);
+            this.lbTanggal.Name = "lbTanggal";
+            this.lbTanggal.Size = new System.Drawing.Size(19, 25);
+            this.lbTanggal.TabIndex = 108;
+            this.lbTanggal.Text = "-";
+            // 
             // txtNamaMember
             // 
             this.txtNamaMember.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
@@ -188,6 +197,7 @@ namespace Bookstore
             this.btnClear.TabIndex = 106;
             this.btnClear.Text = "Clear";
             this.btnClear.UseVisualStyleBackColor = false;
+            this.btnClear.Click += new System.EventHandler(this.btnClear_Click);
             // 
             // btnHapus
             // 
@@ -203,6 +213,7 @@ namespace Bookstore
             this.btnHapus.TabIndex = 105;
             this.btnHapus.Text = "Hapus";
             this.btnHapus.UseVisualStyleBackColor = false;
+            this.btnHapus.Click += new System.EventHandler(this.btnHapus_Click);
             // 
             // btnEdit
             // 
@@ -218,6 +229,7 @@ namespace Bookstore
             this.btnEdit.TabIndex = 104;
             this.btnEdit.Text = "Edit";
             this.btnEdit.UseVisualStyleBackColor = false;
+            this.btnEdit.Click += new System.EventHandler(this.btnEdit_Click);
             // 
             // lbSubtotal
             // 
@@ -769,6 +781,49 @@ namespace Bookstore
             this.dgvCart.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvCart.Size = new System.Drawing.Size(709, 161);
             this.dgvCart.TabIndex = 46;
+            this.dgvCart.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvCart_CellClick);
+            // 
+            // No
+            // 
+            this.No.HeaderText = "No";
+            this.No.MinimumWidth = 6;
+            this.No.Name = "No";
+            this.No.ReadOnly = true;
+            // 
+            // Column1
+            // 
+            this.Column1.HeaderText = "Kode Buku";
+            this.Column1.MinimumWidth = 8;
+            this.Column1.Name = "Column1";
+            this.Column1.ReadOnly = true;
+            // 
+            // Column2
+            // 
+            this.Column2.HeaderText = "Judul Buku";
+            this.Column2.MinimumWidth = 8;
+            this.Column2.Name = "Column2";
+            this.Column2.ReadOnly = true;
+            // 
+            // Column3
+            // 
+            this.Column3.HeaderText = "Harga";
+            this.Column3.MinimumWidth = 8;
+            this.Column3.Name = "Column3";
+            this.Column3.ReadOnly = true;
+            // 
+            // Column4
+            // 
+            this.Column4.HeaderText = "Qty";
+            this.Column4.MinimumWidth = 8;
+            this.Column4.Name = "Column4";
+            this.Column4.ReadOnly = true;
+            // 
+            // Column5
+            // 
+            this.Column5.HeaderText = "Subtotal";
+            this.Column5.MinimumWidth = 8;
+            this.Column5.Name = "Column5";
+            this.Column5.ReadOnly = true;
             // 
             // btnBayar
             // 
@@ -795,51 +850,6 @@ namespace Bookstore
             this.label3.Size = new System.Drawing.Size(192, 37);
             this.label3.TabIndex = 14;
             this.label3.Text = "Transaksi Baru";
-            // 
-            // lbTanggal
-            // 
-            this.lbTanggal.AutoSize = true;
-            this.lbTanggal.Location = new System.Drawing.Point(195, 110);
-            this.lbTanggal.Name = "lbTanggal";
-            this.lbTanggal.Size = new System.Drawing.Size(19, 25);
-            this.lbTanggal.TabIndex = 108;
-            this.lbTanggal.Text = "-";
-            // 
-            // No
-            // 
-            this.No.HeaderText = "No";
-            this.No.MinimumWidth = 6;
-            this.No.Name = "No";
-            // 
-            // Column1
-            // 
-            this.Column1.HeaderText = "Kode Buku";
-            this.Column1.MinimumWidth = 8;
-            this.Column1.Name = "Column1";
-            // 
-            // Column2
-            // 
-            this.Column2.HeaderText = "Judul Buku";
-            this.Column2.MinimumWidth = 8;
-            this.Column2.Name = "Column2";
-            // 
-            // Column3
-            // 
-            this.Column3.HeaderText = "Harga";
-            this.Column3.MinimumWidth = 8;
-            this.Column3.Name = "Column3";
-            // 
-            // Column4
-            // 
-            this.Column4.HeaderText = "Qty";
-            this.Column4.MinimumWidth = 8;
-            this.Column4.Name = "Column4";
-            // 
-            // Column5
-            // 
-            this.Column5.HeaderText = "Subtotal";
-            this.Column5.MinimumWidth = 8;
-            this.Column5.Name = "Column5";
             // 
             // FormTransaksiBaru
             // 
