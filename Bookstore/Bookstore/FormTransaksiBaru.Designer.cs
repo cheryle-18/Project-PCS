@@ -30,6 +30,10 @@ namespace Bookstore
         private void InitializeComponent()
         {
             this.panel2 = new System.Windows.Forms.Panel();
+            this.btnCancelEdit = new System.Windows.Forms.Button();
+            this.cmbPembayaran = new System.Windows.Forms.ComboBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label22 = new System.Windows.Forms.Label();
             this.lbTanggal = new System.Windows.Forms.Label();
             this.txtNamaMember = new System.Windows.Forms.TextBox();
             this.btnClear = new System.Windows.Forms.Button();
@@ -92,10 +96,6 @@ namespace Bookstore
             this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnBayar = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
-            this.cmbPembayaran = new System.Windows.Forms.ComboBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label22 = new System.Windows.Forms.Label();
-            this.btnCancelEdit = new System.Windows.Forms.Button();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudPoint)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudQTY)).BeginInit();
@@ -171,6 +171,58 @@ namespace Bookstore
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(1058, 622);
             this.panel2.TabIndex = 21;
+            // 
+            // btnCancelEdit
+            // 
+            this.btnCancelEdit.BackColor = System.Drawing.Color.Red;
+            this.btnCancelEdit.FlatAppearance.BorderSize = 0;
+            this.btnCancelEdit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCancelEdit.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCancelEdit.ForeColor = System.Drawing.Color.White;
+            this.btnCancelEdit.Location = new System.Drawing.Point(421, 296);
+            this.btnCancelEdit.Name = "btnCancelEdit";
+            this.btnCancelEdit.Size = new System.Drawing.Size(113, 29);
+            this.btnCancelEdit.TabIndex = 145;
+            this.btnCancelEdit.Text = "Cancel";
+            this.btnCancelEdit.UseVisualStyleBackColor = false;
+            this.btnCancelEdit.Visible = false;
+            this.btnCancelEdit.Click += new System.EventHandler(this.btnCancelEdit_Click);
+            // 
+            // cmbPembayaran
+            // 
+            this.cmbPembayaran.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.cmbPembayaran.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbPembayaran.FormattingEnabled = true;
+            this.cmbPembayaran.Items.AddRange(new object[] {
+            "Tunai",
+            "Debit",
+            "Kredit"});
+            this.cmbPembayaran.Location = new System.Drawing.Point(857, 505);
+            this.cmbPembayaran.Name = "cmbPembayaran";
+            this.cmbPembayaran.Size = new System.Drawing.Size(163, 33);
+            this.cmbPembayaran.TabIndex = 144;
+            // 
+            // label1
+            // 
+            this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.label1.BackColor = System.Drawing.Color.Transparent;
+            this.label1.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(833, 507);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(14, 28);
+            this.label1.TabIndex = 143;
+            this.label1.Text = ":";
+            // 
+            // label22
+            // 
+            this.label22.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.label22.AutoSize = true;
+            this.label22.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label22.Location = new System.Drawing.Point(734, 507);
+            this.label22.Name = "label22";
+            this.label22.Size = new System.Drawing.Size(123, 28);
+            this.label22.TabIndex = 142;
+            this.label22.Text = "Pembayaran";
             // 
             // lbTanggal
             // 
@@ -864,58 +916,6 @@ namespace Bookstore
             this.label3.Size = new System.Drawing.Size(192, 37);
             this.label3.TabIndex = 14;
             this.label3.Text = "Transaksi Baru";
-            // 
-            // cmbPembayaran
-            // 
-            this.cmbPembayaran.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.cmbPembayaran.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cmbPembayaran.FormattingEnabled = true;
-            this.cmbPembayaran.Items.AddRange(new object[] {
-            "Tunai",
-            "Debit",
-            "Kredit"});
-            this.cmbPembayaran.Location = new System.Drawing.Point(857, 505);
-            this.cmbPembayaran.Name = "cmbPembayaran";
-            this.cmbPembayaran.Size = new System.Drawing.Size(163, 33);
-            this.cmbPembayaran.TabIndex = 144;
-            // 
-            // label1
-            // 
-            this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.label1.BackColor = System.Drawing.Color.Transparent;
-            this.label1.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(833, 507);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(14, 28);
-            this.label1.TabIndex = 143;
-            this.label1.Text = ":";
-            // 
-            // label22
-            // 
-            this.label22.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.label22.AutoSize = true;
-            this.label22.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label22.Location = new System.Drawing.Point(734, 507);
-            this.label22.Name = "label22";
-            this.label22.Size = new System.Drawing.Size(123, 28);
-            this.label22.TabIndex = 142;
-            this.label22.Text = "Pembayaran";
-            // 
-            // btnCancelEdit
-            // 
-            this.btnCancelEdit.BackColor = System.Drawing.Color.Red;
-            this.btnCancelEdit.FlatAppearance.BorderSize = 0;
-            this.btnCancelEdit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCancelEdit.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCancelEdit.ForeColor = System.Drawing.Color.White;
-            this.btnCancelEdit.Location = new System.Drawing.Point(421, 296);
-            this.btnCancelEdit.Name = "btnCancelEdit";
-            this.btnCancelEdit.Size = new System.Drawing.Size(113, 29);
-            this.btnCancelEdit.TabIndex = 145;
-            this.btnCancelEdit.Text = "Cancel";
-            this.btnCancelEdit.UseVisualStyleBackColor = false;
-            this.btnCancelEdit.Visible = false;
-            this.btnCancelEdit.Click += new System.EventHandler(this.btnCancelEdit_Click);
             // 
             // FormTransaksiBaru
             // 

@@ -216,3 +216,25 @@ END$$
 
 DELIMITER ;
 
+-- generate id category
+DELIMITER $$ 
+CREATE OR REPLACE FUNCTION generateIdCategory()
+RETURNS varchar(6)
+BEGIN 
+    declare ctr int;
+    declare newId varchar(6);
+    declare total int;
+
+    select count(*) into total from category;
+    
+    if total>0 then
+      select substr(max(C_ID),3)+1 into ctr from category;
+    else
+      set ctr = 1;
+    end if;
+    
+    set newId = (concat("C", LPAD(ctr, 3, "0")));
+
+    return newId;
+END$$ 
+DELIMITER ;
