@@ -31,11 +31,11 @@ namespace Bookstore
         {
             this.label4 = new System.Windows.Forms.Label();
             this.tbCari = new System.Windows.Forms.TextBox();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.dgPO = new System.Windows.Forms.DataGridView();
             this.button3 = new System.Windows.Forms.Button();
             this.btnPilih = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgPO)).BeginInit();
             this.SuspendLayout();
             // 
             // label4
@@ -43,7 +43,7 @@ namespace Bookstore
             this.label4.AutoSize = true;
             this.label4.Location = new System.Drawing.Point(17, 77);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(113, 28);
+            this.label4.Size = new System.Drawing.Size(89, 21);
             this.label4.TabIndex = 112;
             this.label4.Text = "Kata Kunci :";
             // 
@@ -51,19 +51,28 @@ namespace Bookstore
             // 
             this.tbCari.Location = new System.Drawing.Point(112, 74);
             this.tbCari.Name = "tbCari";
-            this.tbCari.Size = new System.Drawing.Size(396, 34);
+            this.tbCari.Size = new System.Drawing.Size(396, 29);
             this.tbCari.TabIndex = 111;
             this.tbCari.Text = "Kode / Nomor Nota Pre-Order";
+            this.tbCari.TextChanged += new System.EventHandler(this.tbCari_TextChanged);
             // 
-            // dataGridView1
+            // dgPO
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(21, 121);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowHeadersWidth = 51;
-            this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(805, 429);
-            this.dataGridView1.TabIndex = 110;
+            this.dgPO.AllowUserToAddRows = false;
+            this.dgPO.AllowUserToDeleteRows = false;
+            this.dgPO.AllowUserToResizeColumns = false;
+            this.dgPO.AllowUserToResizeRows = false;
+            this.dgPO.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgPO.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgPO.Location = new System.Drawing.Point(21, 121);
+            this.dgPO.Name = "dgPO";
+            this.dgPO.ReadOnly = true;
+            this.dgPO.RowHeadersVisible = false;
+            this.dgPO.RowHeadersWidth = 51;
+            this.dgPO.RowTemplate.Height = 24;
+            this.dgPO.Size = new System.Drawing.Size(805, 429);
+            this.dgPO.TabIndex = 110;
+            this.dgPO.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgPO_CellClick);
             // 
             // button3
             // 
@@ -101,7 +110,7 @@ namespace Bookstore
             this.label3.Font = new System.Drawing.Font("Segoe UI Semibold", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.Location = new System.Drawing.Point(12, 9);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(193, 37);
+            this.label3.Size = new System.Drawing.Size(151, 30);
             this.label3.TabIndex = 107;
             this.label3.Text = "Cari Pre-Order";
             // 
@@ -112,7 +121,7 @@ namespace Bookstore
             this.ClientSize = new System.Drawing.Size(844, 611);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.tbCari);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.dgPO);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.btnPilih);
             this.Controls.Add(this.label3);
@@ -121,7 +130,7 @@ namespace Bookstore
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FormCariPO";
             this.Load += new System.EventHandler(this.FormCariPO_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgPO)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -131,7 +140,7 @@ namespace Bookstore
 
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.TextBox tbCari;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView dgPO;
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Button btnPilih;
         private System.Windows.Forms.Label label3;
