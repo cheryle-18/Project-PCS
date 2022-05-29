@@ -285,9 +285,16 @@ namespace Bookstore
             this.nudPoint.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.nudPoint.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.nudPoint.Location = new System.Drawing.Point(764, 210);
+            this.nudPoint.Maximum = new decimal(new int[] {
+            10000000,
+            0,
+            0,
+            0});
             this.nudPoint.Name = "nudPoint";
             this.nudPoint.Size = new System.Drawing.Size(95, 29);
             this.nudPoint.TabIndex = 109;
+            this.nudPoint.ValueChanged += new System.EventHandler(this.nudPoint_ValueChanged);
+            this.nudPoint.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.nudPoint_KeyPress);
             // 
             // label28
             // 
@@ -537,19 +544,20 @@ namespace Bookstore
             // 
             this.rbMember.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.rbMember.AutoSize = true;
+            this.rbMember.Enabled = false;
             this.rbMember.Location = new System.Drawing.Point(764, 66);
             this.rbMember.Name = "rbMember";
             this.rbMember.Size = new System.Drawing.Size(85, 24);
             this.rbMember.TabIndex = 70;
             this.rbMember.Text = "Member";
             this.rbMember.UseVisualStyleBackColor = true;
-            this.rbMember.CheckedChanged += new System.EventHandler(this.rbMember_CheckedChanged);
             // 
             // rbGuest
             // 
             this.rbGuest.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.rbGuest.AutoSize = true;
             this.rbGuest.Checked = true;
+            this.rbGuest.Enabled = false;
             this.rbGuest.Location = new System.Drawing.Point(857, 66);
             this.rbGuest.Name = "rbGuest";
             this.rbGuest.Size = new System.Drawing.Size(71, 24);

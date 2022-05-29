@@ -208,6 +208,8 @@ namespace Bookstore
                 string qty = lbTotalQty.Text;
                 string total = subtotal.ToString();
                 string downpayment = uangmuka.ToString();
+
+                string pembayaran = cmbPembayaran.Items[cmbPembayaran.SelectedIndex].ToString();
             }
             catch (MySqlException ex)
             {

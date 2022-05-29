@@ -120,14 +120,44 @@ namespace Bookstore
             frm.ShowDialog();
         }
 
-        private void rbMember_CheckedChanged(object sender, EventArgs e)
+        private void FormProsesPreOrder_Load(object sender, EventArgs e)
         {
 
         }
 
-        private void FormProsesPreOrder_Load(object sender, EventArgs e)
+        private void nudPoint_ValueChanged(object sender, EventArgs e)
         {
+            if (nudPoint.Value > 0)
+            {
+                if(nudPoint.Value > Convert.ToInt32(lbPoinTersedia.Text))
+                {
+                    MessageBox.Show("Poin tidak cukup!");
+                }
+                else
+                {
+                    diskon = Convert.ToInt32(nudPoint.Value);
 
+                    lbDisc.Text = diskon.ToString("N0", new System.Globalization.CultureInfo("id-ID"));
+                }
+            }
+            
+        }
+
+        private void nudPoint_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (nudPoint.Value > 0)
+            {
+                if (nudPoint.Value > Convert.ToInt32(lbPoinTersedia.Text))
+                {
+                    MessageBox.Show("Poin tidak cukup!");
+                }
+                else
+                {
+                    diskon = Convert.ToInt32(nudPoint.Value);
+
+                    lbDisc.Text = diskon.ToString("N0", new System.Globalization.CultureInfo("id-ID"));
+                }
+            }
         }
     }
 }
