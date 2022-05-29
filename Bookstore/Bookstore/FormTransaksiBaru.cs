@@ -17,6 +17,7 @@ namespace Bookstore
         {
             InitializeComponent();
             fillHeaderInfo();
+            clearFields();
         }
 
         private void btnBayar_Click(object sender, EventArgs e)
@@ -54,7 +55,7 @@ namespace Bookstore
                 while (rd.Read())
                 {
                     this.txtJudulBuku.Text = rd["B_TITLE"].ToString();
-                    this.txtHargaBuku.Text = rd["B_PRICE"].ToString();
+                    this.txtHargaBuku.Text = Convert.ToInt32(rd["B_PRICE"].ToString()).ToString("N0", new System.Globalization.CultureInfo("id-ID"));
                 }
                 rd.Close();
             }
@@ -112,6 +113,78 @@ namespace Bookstore
             string id = cmd.ExecuteScalar().ToString();
             this.txtNota.Text = id;
 
+        }
+
+        private void clearFields()
+        {
+            txtKodeBuku.Text = "-";
+            txtJudulBuku.Text = "-";
+            txtHargaBuku.Text = "0";
+            nudQTY.Value = 0;
+            rbGuest.Checked = true;
+            rbMember.Checked = false;
+            tbKodeMember.Text = "-";
+            txtNamaMember.Text = "-";
+            lbPoinTersedia.Text = "0";
+            nudPoint.Value = 0;
+            nudPoint.Enabled = false;
+            btnCariMember.Enabled = false;
+            lbTanggal.Text = DateTime.Now.ToString("dd/MM/yyyy");
+        }
+
+        private void updateAutoIcrCart()
+        {
+            for (int i = 0; i < dgvCart.RowCount; i++)
+            {
+                dgvCart.Rows[i].Cells[0].Value = (i + 1);
+            }
+        }
+
+        private void btnTambah_Click(object sender, EventArgs e)
+        {
+            //ADD TO CHART
+            //CHECK PASSED
+            if(txtKodeBuku.Text != "-")
+            {
+
+                if(nudQTY.Value > 0)
+                {
+                    string book_code = txtKodeBuku.Text;
+                    string book_title = txtJudulBuku.Text;
+                    int bookPrice = Convert.ToInt32(txtHargaBuku.Text.Replace(".", String.Empty));
+                    int qty = Convert.ToInt32(nudQTY.Value);
+                    int subtotal = bookPrice * qty;
+
+                    bool isExist = false;
+                    for (int i = 0; i < dgvCart.RowCount; i++)
+                    {
+                        if (dgvCart.Rows[i].Cells[1].Value.ToString() == book_code)
+                        {
+                            isExist = true;
+                            int newSum = Convert.ToInt32(dgvCart.Rows[i].Cells[4].Value.ToString()) + qty;
+                            dgvCart.Rows[i].Cells[4].Value = newSum;
+                            //SUBTOTAL
+                            dgvCart.Rows[i].Cells[5].Value = "Rp " + (newSum * bookPrice).ToString("N0", new System.Globalization.CultureInfo("id-ID"));
+                        }
+                    }
+                    if (!isExist)
+                    {
+                        dgvCart.Rows.Add("", book_code, book_title, "Rp " + txtHargaBuku.Text, qty, "Rp " + subtotal.ToString("N0", new System.Globalization.CultureInfo("id-ID")));
+                        updateAutoIcrCart();
+                    }
+
+                    clearFields();
+                }
+                else
+                {
+                    MessageBox.Show("Quantity harus lebih dari 0!");
+                }
+
+            }
+            else
+            {
+                MessageBox.Show("Silakan pilih buku terlebih dahulu!");
+            }
 
         }
     }
