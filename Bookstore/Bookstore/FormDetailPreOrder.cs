@@ -125,7 +125,7 @@ namespace Bookstore
 
         private void btnProses_Click(object sender, EventArgs e)
         {
-            FormProsesPreOrder frm = new FormProsesPreOrder();
+            FormProsesPreOrder frm = new FormProsesPreOrder(poId);
             Panel temp = (Panel)frm.Controls[0];
             temp.Width = panel2.Width;
             temp.Height = panel2.Height;
