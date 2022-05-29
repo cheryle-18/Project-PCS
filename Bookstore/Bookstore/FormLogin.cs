@@ -14,6 +14,9 @@ namespace Bookstore
 {
     public partial class FormLogin : KryptonForm
     {
+        public static string us_id;
+        public static int us_role;
+
         public FormLogin()
         {
             InitializeComponent();
@@ -21,18 +24,46 @@ namespace Bookstore
 
         private void btnLogin_Click(object sender, EventArgs e)
         {
-            if (txtUsername.Text == "admin" && txtPassword.Text == "admin")
+            //CHECK FOR USER ROLE
+            string username = txtUsername.Text;
+            string password = txtPassword.Text;
+            MySqlCommand cmd = new MySqlCommand("SELECT COUNT(*) FROM users WHERE users.`U_USERNAME` = @u_username AND users.`U_PASSWORD` = @u_password;",Koneksi.getConn());
+            cmd.Parameters.AddWithValue("@u_username", username);
+            cmd.Parameters.AddWithValue("@u_password", password);
+            int data_found = Convert.ToInt32(cmd.ExecuteScalar());
+
+            if (data_found != 0)
             {
-                this.Hide();
-                MasterUtamaAdmin frm = new MasterUtamaAdmin();
-                frm.ShowDialog();
+
+                cmd = new MySqlCommand("SELECT users.U_ID,users.U_ROLE FROM users WHERE users.`U_USERNAME` = @u_username AND users.`U_PASSWORD` = @u_password;", Koneksi.getConn());
+                cmd.Parameters.AddWithValue("@u_username", username);
+                cmd.Parameters.AddWithValue("@u_password", password);
+                MySqlDataReader rd = cmd.ExecuteReader();
+                while (rd.Read())
+                {
+                    us_id = rd["U_ID"].ToString();
+                    us_role = Convert.ToInt32(rd["U_ROLE"].ToString());
+                }
+                if (us_role == 1)
+                {
+                    //USER ROLE = ADMIN
+                    this.Hide();
+                    MasterUtamaAdmin frm = new MasterUtamaAdmin();
+                    frm.ShowDialog();
+                }
+                else
+                {
+                    //USER ROLE = EMPLOYEE
+                    this.Hide();
+                    MasterUtamaPegawai frm = new MasterUtamaPegawai();
+                    frm.ShowDialog();
+                }
             }
             else
             {
-                this.Hide();
-                MasterUtamaPegawai frm = new MasterUtamaPegawai();
-                frm.ShowDialog();
+                MessageBox.Show("Username/Password salah!");
             }
+          
         }
 
         private void FormLogin_Load(object sender, EventArgs e)
@@ -61,6 +92,7 @@ namespace Bookstore
           
             
         }
+
 
         private void FormLogin_FormClosed(object sender, FormClosedEventArgs e)
         {
