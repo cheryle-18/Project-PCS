@@ -65,7 +65,7 @@ namespace Bookstore
             this.rbMember = new System.Windows.Forms.RadioButton();
             this.rbGuest = new System.Windows.Forms.RadioButton();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
-            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.txtNota = new System.Windows.Forms.TextBox();
             this.label17 = new System.Windows.Forms.Label();
             this.label16 = new System.Windows.Forms.Label();
             this.label15 = new System.Windows.Forms.Label();
@@ -76,10 +76,10 @@ namespace Bookstore
             this.label10 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
-            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.txtHargaBuku = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txtJudulBuku = new System.Windows.Forms.TextBox();
+            this.txtKodeBuku = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.dataGridView2 = new System.Windows.Forms.DataGridView();
@@ -90,6 +90,7 @@ namespace Bookstore
             this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnBayar = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
+            this.txtNamaMember = new System.Windows.Forms.TextBox();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudPoint)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
@@ -100,6 +101,7 @@ namespace Bookstore
             // 
             this.panel2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.panel2.BackColor = System.Drawing.Color.White;
+            this.panel2.Controls.Add(this.txtNamaMember);
             this.panel2.Controls.Add(this.btnClear);
             this.panel2.Controls.Add(this.btnHapus);
             this.panel2.Controls.Add(this.btnEdit);
@@ -135,7 +137,7 @@ namespace Bookstore
             this.panel2.Controls.Add(this.rbMember);
             this.panel2.Controls.Add(this.rbGuest);
             this.panel2.Controls.Add(this.dateTimePicker1);
-            this.panel2.Controls.Add(this.textBox4);
+            this.panel2.Controls.Add(this.txtNota);
             this.panel2.Controls.Add(this.label17);
             this.panel2.Controls.Add(this.label16);
             this.panel2.Controls.Add(this.label15);
@@ -146,10 +148,10 @@ namespace Bookstore
             this.panel2.Controls.Add(this.label10);
             this.panel2.Controls.Add(this.label9);
             this.panel2.Controls.Add(this.label8);
-            this.panel2.Controls.Add(this.textBox3);
+            this.panel2.Controls.Add(this.txtHargaBuku);
             this.panel2.Controls.Add(this.label7);
-            this.panel2.Controls.Add(this.textBox2);
-            this.panel2.Controls.Add(this.textBox1);
+            this.panel2.Controls.Add(this.txtJudulBuku);
+            this.panel2.Controls.Add(this.txtKodeBuku);
             this.panel2.Controls.Add(this.label6);
             this.panel2.Controls.Add(this.label2);
             this.panel2.Controls.Add(this.dataGridView2);
@@ -309,22 +311,17 @@ namespace Bookstore
             // 
             this.nudPoint.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.nudPoint.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.nudPoint.Location = new System.Drawing.Point(762, 183);
+            this.nudPoint.Location = new System.Drawing.Point(762, 215);
             this.nudPoint.Name = "nudPoint";
             this.nudPoint.Size = new System.Drawing.Size(95, 34);
             this.nudPoint.TabIndex = 91;
-            this.nudPoint.Value = new decimal(new int[] {
-            100,
-            0,
-            0,
-            0});
             // 
             // label28
             // 
             this.label28.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label28.BackColor = System.Drawing.Color.Transparent;
             this.label28.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label28.Location = new System.Drawing.Point(732, 184);
+            this.label28.Location = new System.Drawing.Point(732, 216);
             this.label28.Name = "label28";
             this.label28.Size = new System.Drawing.Size(14, 28);
             this.label28.TabIndex = 90;
@@ -335,7 +332,7 @@ namespace Bookstore
             this.label27.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label27.AutoSize = true;
             this.label27.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label27.Location = new System.Drawing.Point(597, 184);
+            this.label27.Location = new System.Drawing.Point(597, 216);
             this.label27.Name = "label27";
             this.label27.Size = new System.Drawing.Size(156, 28);
             this.label27.TabIndex = 89;
@@ -345,18 +342,18 @@ namespace Bookstore
             // 
             this.lbPoinTersedia.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.lbPoinTersedia.AutoSize = true;
-            this.lbPoinTersedia.Location = new System.Drawing.Point(758, 149);
+            this.lbPoinTersedia.Location = new System.Drawing.Point(758, 181);
             this.lbPoinTersedia.Name = "lbPoinTersedia";
-            this.lbPoinTersedia.Size = new System.Drawing.Size(45, 25);
+            this.lbPoinTersedia.Size = new System.Drawing.Size(23, 25);
             this.lbPoinTersedia.TabIndex = 88;
-            this.lbPoinTersedia.Text = "150";
+            this.lbPoinTersedia.Text = "0";
             // 
             // label5
             // 
             this.label5.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label5.BackColor = System.Drawing.Color.Transparent;
             this.label5.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(732, 149);
+            this.label5.Location = new System.Drawing.Point(732, 181);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(14, 28);
             this.label5.TabIndex = 87;
@@ -367,7 +364,7 @@ namespace Bookstore
             this.label4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(597, 149);
+            this.label4.Location = new System.Drawing.Point(597, 181);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(132, 28);
             this.label4.TabIndex = 86;
@@ -536,7 +533,6 @@ namespace Bookstore
             this.tbKodeMember.Name = "tbKodeMember";
             this.tbKodeMember.Size = new System.Drawing.Size(147, 30);
             this.tbKodeMember.TabIndex = 71;
-            this.tbKodeMember.Text = "MEM025";
             // 
             // rbMember
             // 
@@ -573,14 +569,14 @@ namespace Bookstore
             this.dateTimePicker1.Size = new System.Drawing.Size(241, 30);
             this.dateTimePicker1.TabIndex = 68;
             // 
-            // textBox4
+            // txtNota
             // 
-            this.textBox4.Enabled = false;
-            this.textBox4.Location = new System.Drawing.Point(195, 66);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(241, 30);
-            this.textBox4.TabIndex = 67;
-            this.textBox4.Text = "20220521TR15";
+            this.txtNota.Enabled = false;
+            this.txtNota.Location = new System.Drawing.Point(195, 66);
+            this.txtNota.Name = "txtNota";
+            this.txtNota.Size = new System.Drawing.Size(241, 30);
+            this.txtNota.TabIndex = 67;
+            this.txtNota.Text = "20220521TR15";
             // 
             // label17
             // 
@@ -686,14 +682,14 @@ namespace Bookstore
             this.label8.TabIndex = 57;
             this.label8.Text = ":";
             // 
-            // textBox3
+            // txtHargaBuku
             // 
-            this.textBox3.Enabled = false;
-            this.textBox3.Location = new System.Drawing.Point(195, 255);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(220, 30);
-            this.textBox3.TabIndex = 55;
-            this.textBox3.Text = "120.000";
+            this.txtHargaBuku.Enabled = false;
+            this.txtHargaBuku.Location = new System.Drawing.Point(195, 255);
+            this.txtHargaBuku.Name = "txtHargaBuku";
+            this.txtHargaBuku.Size = new System.Drawing.Size(220, 30);
+            this.txtHargaBuku.TabIndex = 55;
+            this.txtHargaBuku.Text = "120.000";
             // 
             // label7
             // 
@@ -705,23 +701,23 @@ namespace Bookstore
             this.label7.TabIndex = 54;
             this.label7.Text = "Harga Buku (Rp)";
             // 
-            // textBox2
+            // txtJudulBuku
             // 
-            this.textBox2.Enabled = false;
-            this.textBox2.Location = new System.Drawing.Point(195, 217);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(339, 30);
-            this.textBox2.TabIndex = 53;
-            this.textBox2.Text = "Harry Potter and The Order Of Phoenix";
+            this.txtJudulBuku.Enabled = false;
+            this.txtJudulBuku.Location = new System.Drawing.Point(195, 217);
+            this.txtJudulBuku.Name = "txtJudulBuku";
+            this.txtJudulBuku.Size = new System.Drawing.Size(339, 30);
+            this.txtJudulBuku.TabIndex = 53;
+            this.txtJudulBuku.Text = "Harry Potter and The Order Of Phoenix";
             // 
-            // textBox1
+            // txtKodeBuku
             // 
-            this.textBox1.Enabled = false;
-            this.textBox1.Location = new System.Drawing.Point(195, 182);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(220, 30);
-            this.textBox1.TabIndex = 51;
-            this.textBox1.Text = "B005";
+            this.txtKodeBuku.Enabled = false;
+            this.txtKodeBuku.Location = new System.Drawing.Point(195, 182);
+            this.txtKodeBuku.Name = "txtKodeBuku";
+            this.txtKodeBuku.Size = new System.Drawing.Size(220, 30);
+            this.txtKodeBuku.TabIndex = 51;
+            this.txtKodeBuku.Text = "B005";
             // 
             // label6
             // 
@@ -821,6 +817,15 @@ namespace Bookstore
             this.label3.TabIndex = 14;
             this.label3.Text = "Transaksi Baru";
             // 
+            // txtNamaMember
+            // 
+            this.txtNamaMember.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtNamaMember.Enabled = false;
+            this.txtNamaMember.Location = new System.Drawing.Point(762, 148);
+            this.txtNamaMember.Name = "txtNamaMember";
+            this.txtNamaMember.Size = new System.Drawing.Size(266, 30);
+            this.txtNamaMember.TabIndex = 107;
+            // 
             // FormTransaksiBaru
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
@@ -873,7 +878,7 @@ namespace Bookstore
         private System.Windows.Forms.RadioButton rbMember;
         private System.Windows.Forms.RadioButton rbGuest;
         private System.Windows.Forms.DateTimePicker dateTimePicker1;
-        private System.Windows.Forms.TextBox textBox4;
+        private System.Windows.Forms.TextBox txtNota;
         private System.Windows.Forms.Label label17;
         private System.Windows.Forms.Label label16;
         private System.Windows.Forms.Label label15;
@@ -884,10 +889,10 @@ namespace Bookstore
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.TextBox txtHargaBuku;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txtJudulBuku;
+        private System.Windows.Forms.TextBox txtKodeBuku;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.DataGridView dataGridView2;
@@ -901,5 +906,6 @@ namespace Bookstore
         private System.Windows.Forms.Button btnClear;
         private System.Windows.Forms.Button btnHapus;
         private System.Windows.Forms.Button btnEdit;
+        private System.Windows.Forms.TextBox txtNamaMember;
     }
 }

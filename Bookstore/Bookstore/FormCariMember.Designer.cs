@@ -31,11 +31,11 @@ namespace Bookstore
         {
             this.label4 = new System.Windows.Forms.Label();
             this.tbCari = new System.Windows.Forms.TextBox();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.dgvMember = new System.Windows.Forms.DataGridView();
             this.button3 = new System.Windows.Forms.Button();
             this.btnPilih = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvMember)).BeginInit();
             this.SuspendLayout();
             // 
             // label4
@@ -43,7 +43,7 @@ namespace Bookstore
             this.label4.AutoSize = true;
             this.label4.Location = new System.Drawing.Point(20, 79);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(89, 21);
+            this.label4.Size = new System.Drawing.Size(113, 28);
             this.label4.TabIndex = 106;
             this.label4.Text = "Kata Kunci :";
             // 
@@ -51,19 +51,26 @@ namespace Bookstore
             // 
             this.tbCari.Location = new System.Drawing.Point(145, 76);
             this.tbCari.Name = "tbCari";
-            this.tbCari.Size = new System.Drawing.Size(396, 29);
+            this.tbCari.Size = new System.Drawing.Size(396, 34);
             this.tbCari.TabIndex = 105;
             this.tbCari.Text = "Kode / Nama Member";
+            this.tbCari.TextChanged += new System.EventHandler(this.tbCari_TextChanged);
             // 
-            // dataGridView1
+            // dgvMember
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(24, 123);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowHeadersWidth = 51;
-            this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(805, 429);
-            this.dataGridView1.TabIndex = 104;
+            this.dgvMember.AllowUserToAddRows = false;
+            this.dgvMember.AllowUserToDeleteRows = false;
+            this.dgvMember.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvMember.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvMember.Location = new System.Drawing.Point(24, 123);
+            this.dgvMember.Name = "dgvMember";
+            this.dgvMember.ReadOnly = true;
+            this.dgvMember.RowHeadersWidth = 51;
+            this.dgvMember.RowTemplate.Height = 24;
+            this.dgvMember.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvMember.Size = new System.Drawing.Size(805, 429);
+            this.dgvMember.TabIndex = 104;
+            this.dgvMember.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvMember_CellClick);
             // 
             // button3
             // 
@@ -101,7 +108,7 @@ namespace Bookstore
             this.label3.Font = new System.Drawing.Font("Segoe UI Semibold", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.Location = new System.Drawing.Point(15, 11);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(137, 30);
+            this.label3.Size = new System.Drawing.Size(175, 37);
             this.label3.TabIndex = 101;
             this.label3.Text = "Cari Member";
             // 
@@ -112,7 +119,7 @@ namespace Bookstore
             this.ClientSize = new System.Drawing.Size(844, 611);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.tbCari);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.dgvMember);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.btnPilih);
             this.Controls.Add(this.label3);
@@ -120,7 +127,8 @@ namespace Bookstore
             this.Name = "FormCariMember";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FormCariMember";
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            this.Load += new System.EventHandler(this.FormCariMember_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.dgvMember)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -130,7 +138,7 @@ namespace Bookstore
 
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.TextBox tbCari;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView dgvMember;
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Button btnPilih;
         private System.Windows.Forms.Label label3;

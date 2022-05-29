@@ -89,9 +89,9 @@ namespace Bookstore
             // 
             this.radioButton2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.radioButton2.AutoSize = true;
-            this.radioButton2.Location = new System.Drawing.Point(817, 114);
+            this.radioButton2.Location = new System.Drawing.Point(803, 114);
             this.radioButton2.Name = "radioButton2";
-            this.radioButton2.Size = new System.Drawing.Size(64, 24);
+            this.radioButton2.Size = new System.Drawing.Size(78, 29);
             this.radioButton2.TabIndex = 49;
             this.radioButton2.TabStop = true;
             this.radioButton2.Text = "Desc";
@@ -101,9 +101,9 @@ namespace Bookstore
             // 
             this.radioButton1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.radioButton1.AutoSize = true;
-            this.radioButton1.Location = new System.Drawing.Point(758, 114);
+            this.radioButton1.Location = new System.Drawing.Point(745, 114);
             this.radioButton1.Name = "radioButton1";
-            this.radioButton1.Size = new System.Drawing.Size(54, 24);
+            this.radioButton1.Size = new System.Drawing.Size(67, 29);
             this.radioButton1.TabIndex = 48;
             this.radioButton1.TabStop = true;
             this.radioButton1.Text = "Asc";
@@ -137,7 +137,7 @@ namespace Bookstore
             "Total"});
             this.cmbSort.Location = new System.Drawing.Point(758, 75);
             this.cmbSort.Name = "cmbSort";
-            this.cmbSort.Size = new System.Drawing.Size(168, 28);
+            this.cmbSort.Size = new System.Drawing.Size(168, 33);
             this.cmbSort.TabIndex = 46;
             // 
             // label2
@@ -146,7 +146,7 @@ namespace Bookstore
             this.label2.AutoSize = true;
             this.label2.Location = new System.Drawing.Point(589, 78);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(169, 20);
+            this.label2.Size = new System.Drawing.Size(207, 25);
             this.label2.TabIndex = 45;
             this.label2.Text = "Urutkan Berdasarkan :";
             // 
@@ -156,7 +156,7 @@ namespace Bookstore
             this.dateTimePicker2.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.dateTimePicker2.Location = new System.Drawing.Point(367, 111);
             this.dateTimePicker2.Name = "dateTimePicker2";
-            this.dateTimePicker2.Size = new System.Drawing.Size(200, 26);
+            this.dateTimePicker2.Size = new System.Drawing.Size(200, 30);
             this.dateTimePicker2.TabIndex = 44;
             // 
             // label6
@@ -164,7 +164,7 @@ namespace Bookstore
             this.label6.AutoSize = true;
             this.label6.Location = new System.Drawing.Point(301, 117);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(60, 20);
+            this.label6.Size = new System.Drawing.Size(75, 25);
             this.label6.TabIndex = 43;
             this.label6.Text = "sampai";
             // 
@@ -173,7 +173,7 @@ namespace Bookstore
             this.label5.AutoSize = true;
             this.label5.Location = new System.Drawing.Point(13, 117);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(74, 20);
+            this.label5.Size = new System.Drawing.Size(91, 25);
             this.label5.TabIndex = 42;
             this.label5.Text = "Filter dari";
             // 
@@ -183,7 +183,7 @@ namespace Bookstore
             this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.dateTimePicker1.Location = new System.Drawing.Point(95, 111);
             this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(200, 26);
+            this.dateTimePicker1.Size = new System.Drawing.Size(200, 30);
             this.dateTimePicker1.TabIndex = 41;
             // 
             // label4
@@ -191,7 +191,7 @@ namespace Bookstore
             this.label4.AutoSize = true;
             this.label4.Location = new System.Drawing.Point(13, 79);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(45, 20);
+            this.label4.Size = new System.Drawing.Size(59, 25);
             this.label4.TabIndex = 40;
             this.label4.Text = "Cari :";
             // 
@@ -199,7 +199,7 @@ namespace Bookstore
             // 
             this.tbCari.Location = new System.Drawing.Point(64, 76);
             this.tbCari.Name = "tbCari";
-            this.tbCari.Size = new System.Drawing.Size(503, 26);
+            this.tbCari.Size = new System.Drawing.Size(503, 30);
             this.tbCari.TabIndex = 37;
             this.tbCari.Text = "Kata Kunci";
             // 
@@ -241,7 +241,7 @@ namespace Bookstore
             this.label3.Font = new System.Drawing.Font("Segoe UI Semibold", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.Location = new System.Drawing.Point(12, 21);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(165, 30);
+            this.label3.Size = new System.Drawing.Size(213, 37);
             this.label3.TabIndex = 14;
             this.label3.Text = "Daftar Transaksi";
             // 
