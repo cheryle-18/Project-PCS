@@ -27,45 +27,126 @@ namespace Bookstore
         private void btnBayar_Click(object sender, EventArgs e)
         {
 
-            //GET EMPLOYEE
-            MySqlCommand cmd = new MySqlCommand("SELECT employee.`E_ID` FROM employee WHERE employee.`E_U_ID` = @us_id;", Koneksi.getConn());
-            cmd.Parameters.AddWithValue("@us_id", FormLogin.us_id);
-            string emp_id = (String)cmd.ExecuteScalar();
-
-            //PAY!
-
-            MySqlConnection conn = Koneksi.getConn();
-
-            using (MySqlTransaction obTrans = conn.BeginTransaction())
+            if (cmbPembayaran.SelectedIndex == -1)
             {
-                
-                try
-                {
-                    cmd = new MySqlCommand("SELECT generateIdHtrans()", Koneksi.getConn());
-                    string id_htrans = cmd.ExecuteScalar().ToString();
-
-                    cmd = new MySqlCommand();
-                    cmd.Connection = conn;
-
-                    //TRANSACTION HEADER
-                    cmd.CommandText = "INSERT INTO htrans_purchase(HP_ID,HP_INVOICE_NUMBER,HP_DATE,HP_TOTAL_QTY,HP_TOTAL,HP_TOTAL_PAID,HP_POINTS_USED,HP_POINTS_RECEIVED,HP_PAYMENT_METHOD,HP_E_ID,HP_M_ID,HP_STATUS) VALUES (@HP_ID,@HP_INVOICE_NUMBER,@HP_DATE,@HP_TOTAL_QTY,@HP_TOTAL,@HP_TOTAL_PAID,@HP_POINTS_USED,@HP_POINTS_RECEIVED,@HP_PAYMENT_METHOD,@HP_E_ID,@HP_M_ID,1);";
-                    cmd.Parameters.AddWithValue("@HP_ID", id_htrans);
-                    cmd.Parameters.AddWithValue("@HP_INVOICE_NUMBER", txtNota.Text);
-
-                }
-                catch (MySqlException ex)
-                {
-                    MessageBox.Show(ex.Message);
-                    obTrans.Rollback();
-                }
+                //THROW ERROR
+                MessageBox.Show("Belum ada metode pembayaran yang terpilih!");
             }
+            else
+            {
+                //GET EMPLOYEE
+                MySqlCommand cmd = new MySqlCommand("SELECT employee.`E_ID` FROM employee WHERE employee.`E_U_ID` = @us_id;", Koneksi.getConn());
+                cmd.Parameters.AddWithValue("@us_id", FormLogin.us_id);
+                string emp_id = (String)cmd.ExecuteScalar();
 
-            //MasterTransaksi frm = new MasterTransaksi(0);
-            //Panel temp = (Panel)frm.Controls[0];
-            //temp.Width = panel2.Width;
-            //temp.Height = panel2.Height;
-            //this.panel2.Controls.Clear();
-            //this.panel2.Controls.Add(temp);
+                //PAY!
+
+                MySqlConnection conn = Koneksi.getConn();
+
+                using (MySqlTransaction obTrans = conn.BeginTransaction())
+                {
+
+                    try
+                    {
+                        string payment_method = cmbPembayaran.Text;
+
+
+                        cmd = new MySqlCommand("SELECT generateIdHtrans()", Koneksi.getConn());
+                        string id_htrans = cmd.ExecuteScalar().ToString();
+
+                        cmd = new MySqlCommand();
+                        cmd.Connection = conn;
+
+                        //CHECK MEMBER OR GUEST
+                        int total_htrans;
+                        int point_used;
+                        int point_received;
+                        string member_id = null;
+                        if (rbGuest.Checked)
+                        {
+                            //GUEST
+                            total_htrans = Convert.ToInt32(lbGrandTotal.Text.Replace(".", String.Empty));
+                            point_used = 0;
+                            point_received = 0;
+                        }
+                        else
+                        {
+
+                            point_used = Convert.ToInt32(nudPoint.Value);
+                            total_htrans = Convert.ToInt32(lbGrandTotal.Text.Replace(".", String.Empty)) - point_used;
+                            point_received = Convert.ToInt32(Math.Round(0.1 * total_htrans));
+                            member_id = tbKodeMember.Text;
+                        }
+
+                        //TRANSACTION HEADER, ADD SOME PARAMETERS
+                        cmd.CommandText = "INSERT INTO htrans_purchase(HP_ID,HP_INVOICE_NUMBER,HP_DATE,HP_TOTAL_QTY,HP_TOTAL,HP_TOTAL_PAID,HP_POINTS_USED,HP_POINTS_RECEIVED,HP_PAYMENT_METHOD,HP_E_ID,HP_M_ID,HP_STATUS) VALUES (@HP_ID,@HP_INVOICE_NUMBER,NOW(),@HP_TOTAL_QTY,@HP_TOTAL,@HP_TOTAL_PAID,@HP_POINTS_USED,@HP_POINTS_RECEIVED,@HP_PAYMENT_METHOD,@HP_E_ID,@HP_M_ID,1);";
+                        cmd.Parameters.AddWithValue("@HP_ID", id_htrans);
+                        cmd.Parameters.AddWithValue("@HP_INVOICE_NUMBER", txtNota.Text);
+                        cmd.Parameters.AddWithValue("@HP_TOTAL_QTY", Convert.ToInt32(lbTotalQty.Text));
+                        cmd.Parameters.AddWithValue("@HP_TOTAL", total_htrans);
+                        cmd.Parameters.AddWithValue("@HP_TOTAL_PAID", total_htrans);
+                        cmd.Parameters.AddWithValue("@HP_POINTS_USED", point_used);
+                        cmd.Parameters.AddWithValue("@HP_POINTS_RECEIVED", point_received);
+                        cmd.Parameters.AddWithValue("@HP_PAYMENT_METHOD", payment_method);
+                        cmd.Parameters.AddWithValue("@HP_E_ID", emp_id);
+                        cmd.Parameters.AddWithValue("HP_M_ID", member_id);
+
+                        //NO RETURNING VALUES
+                        cmd.ExecuteNonQuery();
+
+                        //TRANSACTION DETAILS
+
+                        cmd.Parameters.Clear();
+                        cmd.CommandText = "INSERT INTO dtrans_purchase(DP_ID,DP_HP_ID,DP_B_ID,DP_QTY,DP_SUBTOTAL,DP_STATUS) VALUES (@DP_ID,@DP_HP_ID,@DP_B_ID,@DP_QTY,@DP_SUBTOTAL,1);";
+                        cmd.Parameters.AddWithValue("@DP_ID", "");
+                        cmd.Parameters.AddWithValue("@DP_HP_ID", id_htrans);
+                        cmd.Parameters.AddWithValue("@DP_B_ID", "");
+                        cmd.Parameters.AddWithValue("@DP_QTY", 0);
+                        cmd.Parameters.AddWithValue("@DP_SUBTOTAL", 0);
+
+                        MySqlCommand cmd_dtrans = new MySqlCommand();
+                        cmd_dtrans.Connection = conn;
+
+                        for (int i = 0; i < dgvCart.RowCount; i++)
+                        {
+                            cmd_dtrans.CommandText = "SELECT generateIdDtrans()";
+                            string dtrans_id = (String)cmd_dtrans.ExecuteScalar();
+
+                            cmd.Parameters["@DP_ID"].Value = dtrans_id;
+                            cmd.Parameters["@DP_B_ID"].Value = dgvCart.Rows[i].Cells[1].Value.ToString();
+                            cmd.Parameters["@DP_QTY"].Value = Convert.ToInt32(dgvCart.Rows[i].Cells[4].Value);
+                            cmd.Parameters["@DP_SUBTOTAL"].Value = Convert.ToInt32(dgvCart.Rows[i].Cells[5].Value.ToString().Substring(3).Replace(".", String.Empty));
+                            cmd.ExecuteNonQuery();
+
+                        }
+
+                        //UPDATE MEMBER
+                        cmd.Parameters.Clear();
+                        cmd.CommandText = "UPDATE member SET member.M_POINT = member.`M_POINT` - @point_used + @point_received WHERE member.`M_ID` = @member_id;";
+                        cmd.Parameters.AddWithValue("@point_used", point_used);
+                        cmd.Parameters.AddWithValue("@point_received", point_received);
+                        cmd.Parameters.AddWithValue("@member_id", member_id);
+                        cmd.ExecuteNonQuery();
+                        //--------------------------------------
+
+
+                        obTrans.Commit();
+                        MessageBox.Show("Transaksi sukses!");
+                        dgvCart.Rows.Clear();
+                        clearFields();
+                        updateTotal();
+
+                        fillHeaderInfo();
+
+                    }
+                    catch (MySqlException ex)
+                    {
+                        MessageBox.Show(ex.Message);
+                        obTrans.Rollback();
+                    }
+                }
+
+            }
         }
 
         private void btnBatal_Click(object sender, EventArgs e)
@@ -115,8 +196,10 @@ namespace Bookstore
                 {
                     this.txtNamaMember.Text = rd["M_NAME"].ToString();
                     this.lbPoinTersedia.Text = rd["M_POINT"].ToString();
+                    this.nudPoint.Maximum = Convert.ToInt32(rd["M_POINT"].ToString());
                 }
                 rd.Close();
+                btnUseAll.Enabled = true;
             }
         }
 
@@ -135,6 +218,11 @@ namespace Bookstore
             {
                 nudPoint.Enabled = false;
                 btnCariMember.Enabled = false;
+                btnUseAll.Enabled = false;
+                this.lbPoinTersedia.Text = "0";
+                nudPoint.Value = 0;
+                this.tbKodeMember.Text = "-";
+                this.txtNamaMember.Text = "-";
             }
         }
 
@@ -175,6 +263,7 @@ namespace Bookstore
             btnTambah.Text = "Tambah";
             btnCancelEdit.Visible = false;
             dgvCart.ClearSelection();
+            btnUseAll.Enabled = false;
         }
 
         private void updateAutoIcrCart()
@@ -190,7 +279,7 @@ namespace Bookstore
             //UPDATE TOTAL
             int total = 0;
             int sumQty = 0;
-            for(int i = 0; i < dgvCart.RowCount; i++)
+            for (int i = 0; i < dgvCart.RowCount; i++)
             {
                 sumQty += Convert.ToInt32(dgvCart.Rows[i].Cells[4].Value.ToString());
                 total += Convert.ToInt32(dgvCart.Rows[i].Cells[5].Value.ToString().Substring(3).Replace(".", String.Empty));
@@ -200,7 +289,7 @@ namespace Bookstore
             lbDisc.Text = nudPoint.Value.ToString();
             lbGrandTotal.Text = (total - Convert.ToInt32(nudPoint.Value)).ToString("N0", new System.Globalization.CultureInfo("id-ID"));
 
-            if(sumQty == 0)
+            if (sumQty == 0)
             {
                 //DISABLE PAY BUTTON
                 btnBayar.Enabled = false;
@@ -216,10 +305,10 @@ namespace Bookstore
             bool isAllowed = true;
             //ADD TO CHART
             //CHECK PASSED
-            if(txtKodeBuku.Text != "-")
+            if (txtKodeBuku.Text != "-")
             {
 
-                if(nudQTY.Value > 0)
+                if (nudQTY.Value > 0)
                 {
 
                     string book_code = txtKodeBuku.Text;
@@ -348,7 +437,7 @@ namespace Bookstore
 
         private void btnEdit_Click(object sender, EventArgs e)
         {
-            if(selected_dgv_idx != -1)
+            if (selected_dgv_idx != -1)
             {
                 //MOVE TO TEXTBOX
                 edit_dgv_idx = selected_dgv_idx;
@@ -365,13 +454,18 @@ namespace Bookstore
             {
                 MessageBox.Show("Belum ada buku yang terpilih!");
             }
-           
-           
+
+
         }
 
         private void btnCancelEdit_Click(object sender, EventArgs e)
         {
             clearFields();
+        }
+
+        private void btnUseAll_Click(object sender, EventArgs e)
+        {
+            this.nudPoint.Value = Convert.ToInt32(lbPoinTersedia.Text);
         }
     }
 }
