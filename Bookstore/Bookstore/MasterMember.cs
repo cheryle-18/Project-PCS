@@ -53,18 +53,18 @@ namespace Bookstore
 
         void loadDatabaseName(string name)
         {
-            string query = $"SELECT C_ID,C_NAME,CONVERT(C_STATUS, CHAR) FROM category where C_NAME like '%{name}%' {sort}";
-            try
-            {
-                MySqlDataAdapter da = new MySqlDataAdapter(query, Koneksi.getConn());
+            //string query = $"SELECT C_ID,C_NAME,CONVERT(C_STATUS, CHAR) FROM category where C_NAME like '%{name}%' {sort}";
+            //try
+            //{
+            //    MySqlDataAdapter da = new MySqlDataAdapter(query, Koneksi.getConn());
 
-                dtMember = new DataTable();
-                da.Fill(dtMember);
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
+            //    dtMember = new DataTable();
+            //    da.Fill(dtMember);
+            //}
+            //catch (Exception ex)
+            //{
+            //    MessageBox.Show(ex.Message);
+            //}
         }
     }
 }
