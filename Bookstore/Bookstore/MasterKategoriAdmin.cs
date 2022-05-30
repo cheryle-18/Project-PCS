@@ -17,6 +17,8 @@ namespace Bookstore
         public MasterKategoriAdmin()
         {
             InitializeComponent();
+            cmbSort.SelectedIndex = 0;
+            cmbArah.SelectedIndex = 0;
             loadDatabaseName(tbCari.Text);
             refreshDgv();
         }
@@ -44,24 +46,10 @@ namespace Bookstore
         //}
         void loadDatabaseName(string name)
         {
-            string arah = "asc";
-            if (cmbArah.SelectedIndex == 1)
-            {
-                arah = "desc";
-            }
-            string sort = "";
-            if (cmbSort.SelectedIndex == 0)
-            {
-                sort = "order by C_ID " + arah;
-            }
-            else if (cmbSort.SelectedIndex == 1)
-            {
-                sort = "order by C_NAME " + arah;
-            }
-            else if (cmbSort.SelectedIndex == 2)
-            {
-                sort = "order by C_STATUS " + arah;
-            }
+            string[] arahs = { "asc", "desc" };
+            string[] sorts = { "C_ID", "C_NAME", "C_STATUS" };
+            string arah = arahs[cmbArah.SelectedIndex];
+            string sort = $"order by {sorts[cmbSort.SelectedIndex]} {arah}";
             string query = $"SELECT C_ID,C_NAME,CONVERT(C_STATUS, CHAR) FROM category where C_NAME like '%{name}%' {sort}";
             try
             {
@@ -132,8 +120,11 @@ namespace Bookstore
 
         private void tbCari_TextChanged(object sender, EventArgs e)
         {
-            loadDatabaseName(tbCari.Text);
-            refreshDgv();
+            if (cmbSort.SelectedIndex!=-1&&cmbArah.SelectedIndex!=-1)
+            {
+                loadDatabaseName(tbCari.Text);
+                refreshDgv();
+            }
         }
     }
 }

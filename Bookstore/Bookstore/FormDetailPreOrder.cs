@@ -29,17 +29,17 @@ namespace Bookstore
             custType = "";
             memberId = "";
 
-            MySqlCommand cmd = new MySqlCommand("select PO_STATUS from pre_order where PO_ID=@po_id", Koneksi.getConn());
+            MySqlCommand cmd = new MySqlCommand("select (case when PO_STATUS is not null then PO_STATUS end) as status from pre_order where PO_ID=@po_id", Koneksi.getConn());
             cmd.Parameters.AddWithValue("@po_id", poId);
             int status = Convert.ToInt32(cmd.ExecuteScalar());
-            //if (status == 2)
-            //{
-            //    btnProses.Enabled = true;
-            //}
-            //else
-            //{
-            //    btnProses.Enabled = false;
-            //}
+            if (status == 2)
+            {
+                btnProses.Enabled = true;
+            }
+            else
+            {
+                btnProses.Enabled = false;
+            }
 
             loadDetails();
             loadDgv();

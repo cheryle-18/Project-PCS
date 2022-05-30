@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MySql.Data.MySqlClient;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,6 +13,7 @@ namespace Bookstore
 {
     public partial class MasterMember : Form
     {
+        DataTable dtMember;
         private int user_role;
         public MasterMember(int role)
         {
@@ -46,6 +48,23 @@ namespace Bookstore
         private void MasterMember_Load(object sender, EventArgs e)
         {
 
+        }
+
+
+        void loadDatabaseName(string name)
+        {
+            string query = $"SELECT C_ID,C_NAME,CONVERT(C_STATUS, CHAR) FROM category where C_NAME like '%{name}%' {sort}";
+            try
+            {
+                MySqlDataAdapter da = new MySqlDataAdapter(query, Koneksi.getConn());
+
+                dtMember = new DataTable();
+                da.Fill(dtMember);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
     }
 }
