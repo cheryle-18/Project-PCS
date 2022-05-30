@@ -22,6 +22,8 @@ namespace Bookstore
             InitializeComponent();
             fillHeaderInfo();
             clearFields();
+            clearFieldMember();
+            nudPoint.Controls[0].Visible = false;
         }
 
         private void btnBayar_Click(object sender, EventArgs e)
@@ -134,6 +136,7 @@ namespace Bookstore
                         MessageBox.Show("Transaksi sukses!");
                         dgvCart.Rows.Clear();
                         clearFields();
+                        clearFieldMember();
                         updateTotal();
 
                         fillHeaderInfo();
@@ -196,7 +199,6 @@ namespace Bookstore
                 {
                     this.txtNamaMember.Text = rd["M_NAME"].ToString();
                     this.lbPoinTersedia.Text = rd["M_POINT"].ToString();
-                    this.nudPoint.Maximum = Convert.ToInt32(rd["M_POINT"].ToString());
                 }
                 rd.Close();
                 btnUseAll.Enabled = true;
@@ -216,13 +218,7 @@ namespace Bookstore
         {
             if (rbGuest.Checked)
             {
-                nudPoint.Enabled = false;
-                btnCariMember.Enabled = false;
-                btnUseAll.Enabled = false;
-                this.lbPoinTersedia.Text = "0";
-                nudPoint.Value = 0;
-                this.tbKodeMember.Text = "-";
-                this.txtNamaMember.Text = "-";
+                clearFieldMember();
             }
         }
 
@@ -247,14 +243,6 @@ namespace Bookstore
             txtJudulBuku.Text = "-";
             txtHargaBuku.Text = "0";
             nudQTY.Value = 0;
-            rbGuest.Checked = true;
-            rbMember.Checked = false;
-            tbKodeMember.Text = "-";
-            txtNamaMember.Text = "-";
-            lbPoinTersedia.Text = "0";
-            nudPoint.Value = 0;
-            nudPoint.Enabled = false;
-            btnCariMember.Enabled = false;
             lbTanggal.Text = DateTime.Now.ToString("dd/MM/yyyy");
             isEditMode = false;
             edit_dgv_idx = -1;
@@ -263,7 +251,21 @@ namespace Bookstore
             btnTambah.Text = "Tambah";
             btnCancelEdit.Visible = false;
             dgvCart.ClearSelection();
+            nudPoint.Maximum = Convert.ToInt32(lbSubtotal.Text.Replace(".", String.Empty));
+        }
+
+        private void clearFieldMember()
+        {
+            rbGuest.Checked = true;
+            rbMember.Checked = false;
+            tbKodeMember.Text = "-";
+            txtNamaMember.Text = "-";
+            lbPoinTersedia.Text = "0";
+            nudPoint.Value = 0;
+            nudPoint.Enabled = false;
+            btnCariMember.Enabled = false;
             btnUseAll.Enabled = false;
+           
         }
 
         private void updateAutoIcrCart()
@@ -276,6 +278,10 @@ namespace Bookstore
 
         private void updateTotal()
         {
+            if (nudPoint.Text == "")
+            { 
+                nudPoint.Value = 0;
+            }
             //UPDATE TOTAL
             int total = 0;
             int sumQty = 0;
@@ -286,7 +292,7 @@ namespace Bookstore
             }
             lbSubtotal.Text = (total).ToString("N0", new System.Globalization.CultureInfo("id-ID"));
             lbTotalQty.Text = sumQty + "";
-            lbDisc.Text = nudPoint.Value.ToString();
+            lbDisc.Text = nudPoint.Value.ToString("N0", new System.Globalization.CultureInfo("id-ID"));
             lbGrandTotal.Text = (total - Convert.ToInt32(nudPoint.Value)).ToString("N0", new System.Globalization.CultureInfo("id-ID"));
 
             if (sumQty == 0)
@@ -465,7 +471,36 @@ namespace Bookstore
 
         private void btnUseAll_Click(object sender, EventArgs e)
         {
-            this.nudPoint.Value = Convert.ToInt32(lbPoinTersedia.Text);
+            if(Convert.ToInt32(lbPoinTersedia.Text) <= this.nudPoint.Maximum)
+            {
+                this.nudPoint.Value = Convert.ToInt32(lbPoinTersedia.Text);
+            }
+            else
+            {
+                this.nudPoint.Value = this.nudPoint.Maximum;
+            }
+            updateTotal();
+        }
+
+        private void nudPoint_ValueChanged(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void nudPoint_KeyUp(object sender, KeyEventArgs e)
+        {
+            if(Convert.ToInt32(nudPoint.Value) > Convert.ToInt32(lbPoinTersedia.Text))
+            {
+                nudPoint.Value = Convert.ToInt32(lbPoinTersedia.Text);
+                MessageBox.Show("Poin tidak mencukupi!");
+             
+            }
+            updateTotal();
+        }
+
+        private void lbSubtotal_TextChanged(object sender, EventArgs e)
+        {
+            nudPoint.Maximum = Convert.ToInt32(lbSubtotal.Text.Replace(".", String.Empty));
         }
     }
 }

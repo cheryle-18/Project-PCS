@@ -303,6 +303,7 @@ namespace Bookstore
             this.lbSubtotal.TabIndex = 103;
             this.lbSubtotal.Text = "0";
             this.lbSubtotal.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.lbSubtotal.TextChanged += new System.EventHandler(this.lbSubtotal_TextChanged);
             // 
             // lbDisc
             // 
@@ -400,6 +401,8 @@ namespace Bookstore
             this.nudPoint.Name = "nudPoint";
             this.nudPoint.Size = new System.Drawing.Size(95, 34);
             this.nudPoint.TabIndex = 91;
+            this.nudPoint.ValueChanged += new System.EventHandler(this.nudPoint_ValueChanged);
+            this.nudPoint.KeyUp += new System.Windows.Forms.KeyEventHandler(this.nudPoint_KeyUp);
             // 
             // label28
             // 
