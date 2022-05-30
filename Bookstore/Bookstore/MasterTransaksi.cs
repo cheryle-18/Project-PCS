@@ -16,6 +16,14 @@ namespace Bookstore
     {
         private int user_role;
         DataTable dtTransaksi;
+
+        string fullTableQuery;
+        string query;
+        string orderBy;
+        string arahOrderBy;
+        string cari;
+        string filterDari;
+        string filterSampai;
         public MasterTransaksi(int role)
         {
             InitializeComponent();
@@ -26,6 +34,16 @@ namespace Bookstore
                 //can't create new transactions
                 this.btnTransBaru.Visible = false;
             }
+
+            btnDetail.Enabled = false;
+
+            fullTableQuery = "SELECT htrans_purchase.`HP_ID`,htrans_purchase.`HP_INVOICE_NUMBER`,htrans_purchase.`HP_DATE`,htrans_purchase.`HP_TOTAL_QTY`,htrans_purchase.HP_TOTAL,htrans_purchase.`HP_TOTAL_PAID`,(CASE WHEN member.`M_NAME` IS NULL THEN 'Non-Member' ELSE member.`M_NAME` END) AS M_NAME FROM htrans_purchase LEFT JOIN member ON htrans_purchase.`HP_M_ID` = member.`M_ID`;";
+            cari = "";
+            filterDari = "";
+            filterSampai = "";
+            orderBy = "";
+            arahOrderBy = "";
+
             loadDGV();
             refreshGridView();
         }

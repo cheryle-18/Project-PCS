@@ -126,7 +126,7 @@ namespace Bookstore
             "Kode",
             "Invoice",
             "Tanggal",
-            "Judul",
+            "Qty",
             "Total"});
             this.cmbSort.Location = new System.Drawing.Point(758, 75);
             this.cmbSort.Name = "cmbSort";
