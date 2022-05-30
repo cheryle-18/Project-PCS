@@ -32,6 +32,8 @@ namespace Bookstore
 
             loadDetail();
             loadDgv();
+
+            nudPoint.Controls[0].Visible = false;
         }
 
         public void loadDetail()
@@ -87,11 +89,6 @@ namespace Bookstore
             }
         }
 
-        public void loadMember()
-        {
-            
-        }
-
         public void loadDgv()
         {
             string query = "select PO_B_ID, B_TITLE, CONCAT('Rp ', format(PO_TOTAL/PO_QTY, 0, 'de_DE')), PO_QTY, CONCAT('Rp ', format(PO_TOTAL, 0, 'de_DE')) from pre_order join book on B_ID=PO_B_ID where PO_ID='" + poId + "' AND B_ID='" + bookId + "'";
@@ -137,13 +134,20 @@ namespace Bookstore
                 {
                     diskon = Convert.ToInt32(nudPoint.Value);
 
-                    lbDisc.Text = diskon.ToString("N0", new System.Globalization.CultureInfo("id-ID"));
+                    if(diskon > subtotal - uangmuka)
+                    {
+                        MessageBox.Show("Diskon melebihi total!");
+                    }
+                    else
+                    {
+                        lbDisc.Text = diskon.ToString("N0", new System.Globalization.CultureInfo("id-ID"));
+                    }
                 }
             }
             
         }
 
-        private void nudPoint_KeyPress(object sender, KeyPressEventArgs e)
+        private void nudPoint_KeyUp(object sender, KeyEventArgs e)
         {
             if (nudPoint.Value > 0)
             {
@@ -155,7 +159,151 @@ namespace Bookstore
                 {
                     diskon = Convert.ToInt32(nudPoint.Value);
 
-                    lbDisc.Text = diskon.ToString("N0", new System.Globalization.CultureInfo("id-ID"));
+                    if (diskon > subtotal - uangmuka)
+                    {
+                        MessageBox.Show("Diskon melebihi total!");
+                    }
+                    else
+                    {
+                        lbDisc.Text = diskon.ToString("N0", new System.Globalization.CultureInfo("id-ID"));
+
+                        grandtotal = subtotal - uangmuka - diskon;
+                        lbGrandTotal.Text = grandtotal.ToString("N0", new System.Globalization.CultureInfo("id-ID"));
+                    }
+                }
+            }
+        }
+
+        private void btnPakaiSemua_Click(object sender, EventArgs e)
+        {
+            int pointAvail = Convert.ToInt32(lbPoinTersedia.Text);
+            if(pointAvail <= (subtotal - uangmuka))
+            {
+                diskon = pointAvail;
+            }
+            else
+            {
+                diskon = (subtotal - uangmuka);
+            }
+
+            nudPoint.Value = diskon;
+            lbDisc.Text = diskon.ToString("N0", new System.Globalization.CultureInfo("id-ID"));
+
+            grandtotal = subtotal - uangmuka - diskon;
+            lbGrandTotal.Text = grandtotal.ToString("N0", new System.Globalization.CultureInfo("id-ID"));
+        }
+
+        private void btnBatal_Click(object sender, EventArgs e)
+        {
+            FormDetailPreOrder frm = new FormDetailPreOrder(poId);
+            Panel temp = (Panel)frm.Controls[0];
+            temp.Width = panel2.Width;
+            temp.Height = panel2.Height;
+            this.panel2.Controls.Clear();
+            this.panel2.Controls.Add(temp);
+        }
+
+        private void btnBayar_Click(object sender, EventArgs e)
+        {
+            if (cmbPembayaran.SelectedIndex < 0)
+            {
+                MessageBox.Show("Metode pembayaran belum dipilih!");
+            }
+            else
+            {
+                MySqlTransaction trans = Koneksi.getConn().BeginTransaction();
+                try
+                {
+                    //get employee
+                    MySqlCommand cmd = new MySqlCommand("SELECT E_ID FROM employee WHERE E_U_ID = @us_id;", Koneksi.getConn());
+                    cmd.Parameters.AddWithValue("@us_id", FormLogin.us_id);
+                    string emId = cmd.ExecuteScalar().ToString();
+
+                    //generate id htrans
+                    cmd = new MySqlCommand("select generateIdHtrans()", Koneksi.getConn());
+                    string htransId = cmd.ExecuteScalar().ToString();
+                    string invoice = tbNotaTrans.Text;
+
+                    //generate id dtrans
+                    cmd = new MySqlCommand("select generateIdDtrans()", Koneksi.getConn());
+                    string dtransId = cmd.ExecuteScalar().ToString();
+
+                    //get member
+                    string memberId = null;
+                    if (rbGuest.Checked)
+                    {
+                        memberId = null;
+                    }
+                    else if (rbMember.Checked)
+                    {
+                        memberId = tbKodeMember.Text;
+                    }
+
+                    //qty + pembayaran
+                    int qty = Convert.ToInt32(lbTotalQty.Text);
+                    string pembayaran = cmbPembayaran.Items[cmbPembayaran.SelectedIndex].ToString();
+
+                    //point
+                    int pointAvail = Convert.ToInt32(lbPoinTersedia.Text);
+                    int pointUsed = diskon;
+                    int pointGet = 0;
+                    if (grandtotal > 0)
+                    {
+                        pointGet = Convert.ToInt32(grandtotal * 0.05);
+                    }
+
+                    //insert htrans
+                    cmd = new MySqlCommand("insert into htrans_purchase values(@hp_id, @invoice, CURRENT_DATE, @qty, @total, @totalpaid, @pointUsed, @pointGet, @method, @e_id, @m_id, 1)", Koneksi.getConn());
+                    cmd.Parameters.AddWithValue("@hp_id", htransId);
+                    cmd.Parameters.AddWithValue("@invoice", invoice);
+                    cmd.Parameters.AddWithValue("@qty", qty);
+                    cmd.Parameters.AddWithValue("@total", subtotal);
+                    cmd.Parameters.AddWithValue("@totalpaid", grandtotal);
+                    cmd.Parameters.AddWithValue("@pointUsed", diskon);
+                    cmd.Parameters.AddWithValue("@pointGet", pointGet);
+                    cmd.Parameters.AddWithValue("@method", pembayaran);
+                    cmd.Parameters.AddWithValue("@e_id", emId);
+                    cmd.Parameters.AddWithValue("@m_id", memberId);
+                    cmd.ExecuteNonQuery();
+
+                    //insert dtrans
+                    cmd = new MySqlCommand("insert into dtrans_purchase values(@dp_id, @hp_id, @b_id, @qty, @total, 1)", Koneksi.getConn());
+                    cmd.Parameters.AddWithValue("@dp_id", dtransId);
+                    cmd.Parameters.AddWithValue("@hp_id", htransId);
+                    cmd.Parameters.AddWithValue("@b_id", bookId);
+                    cmd.Parameters.AddWithValue("@qty", qty);
+                    cmd.Parameters.AddWithValue("@total", subtotal);
+                    cmd.ExecuteNonQuery();
+
+                    //update status PO
+                    cmd = new MySqlCommand("update pre_order set PO_STATUS=3 where PO_ID=@po_id", Koneksi.getConn());
+                    cmd.Parameters.AddWithValue("@po_id", poId);
+                    cmd.ExecuteNonQuery();
+
+                    //update poin member
+                    int pointNew = pointAvail + (pointGet - pointUsed);
+                    cmd = new MySqlCommand("update member set M_POINT=@point where M_ID=@m_id", Koneksi.getConn());
+                    cmd.Parameters.AddWithValue("@point", pointNew);
+                    cmd.Parameters.AddWithValue("@m_id", memberId);
+                    cmd.ExecuteNonQuery();
+
+                    //commit
+                    trans.Commit();
+                    MessageBox.Show("Transaksi Berhasil!");
+
+                    //kembali ke detail
+
+                    FormDetailPreOrder frm = new FormDetailPreOrder(poId);
+                    Panel temp = (Panel)frm.Controls[0];
+                    temp.Width = panel2.Width;
+                    temp.Height = panel2.Height;
+                    this.panel2.Controls.Clear();
+                    this.panel2.Controls.Add(temp);
+                }
+                catch (MySqlException ex)
+                {
+                    trans.Rollback();
+                    MessageBox.Show(ex.Message);
                 }
             }
         }

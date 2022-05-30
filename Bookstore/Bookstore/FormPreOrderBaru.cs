@@ -134,20 +134,27 @@ namespace Bookstore
                 lbSubtotal.Text = subtotal.ToString("N0", new System.Globalization.CultureInfo("id-ID"));
                 grandtotal = 0;
                 lbGrandTotal.Text = grandtotal.ToString("N0", new System.Globalization.CultureInfo("id-ID"));
-            }
 
-            tbKodeBuku.Text = "-";
-            tbJudulBuku.Text = "-";
-            tbHargaBuku.Text = "0";
-            nudQty.Value = 0;
-            dgCart.ClearSelection();
+                tbKodeBuku.Text = "-";
+                tbJudulBuku.Text = "-";
+                tbHargaBuku.Text = "0";
+                nudQty.Value = 0;
+                dgCart.ClearSelection();
+            }
         }
 
         private void tbDP_TextChanged(object sender, EventArgs e)
         {
             if (tbDP.Text != "")
             {
-                uangmuka = Convert.ToInt32(tbDP.Text);
+                try
+                {
+                    uangmuka = Convert.ToInt32(tbDP.Text);
+                }
+                catch
+                {
+                    MessageBox.Show("Uang muka harus di atas Rp 10.000!");
+                }
 
                 if(uangmuka > subtotal)
                 {
@@ -214,70 +221,85 @@ namespace Bookstore
 
         private void btnBayar_Click(object sender, EventArgs e)
         {
-            MySqlTransaction trans = Koneksi.getConn().BeginTransaction();
-            try
+            if(cmbPembayaran.SelectedIndex < 0)
             {
-                //get employee
-                MySqlCommand cmd = new MySqlCommand("SELECT E_ID FROM employee WHERE E_U_ID = @us_id;", Koneksi.getConn());
-                cmd.Parameters.AddWithValue("@us_id", FormLogin.us_id);
-                string emId = cmd.ExecuteScalar().ToString();
-
-                //generate id po
-                cmd = new MySqlCommand("select generateIdPO()", Koneksi.getConn());
-                string poId = cmd.ExecuteScalar().ToString();
-                string invoice = tbNota.Text;
-
-                //buku
-                string bookId = dgCart.Rows[0].Cells[0].Value.ToString();
-
-                //member
-                string memberId = "0";
-                if (rbGuest.Checked)
-                {
-                    memberId = "0";
-                }
-                else if (rbMember.Checked)
-                {
-                    memberId = tbKodeMember.Text;
-                }
-
-                //harga + pembayaran
-                int qty = Convert.ToInt32(lbTotalQty.Text);
-                string pembayaran = cmbPembayaran.Items[cmbPembayaran.SelectedIndex].ToString();
-
-                //insert
-                cmd = new MySqlCommand("insert into pre_order values(@po_id, @invoice, CURRENT_DATE, @b_id, @e_id, @m_id, @qty, @total, @downpayment, @method, @status)", Koneksi.getConn());
-                cmd.Parameters.AddWithValue("@po_id", poId);
-                cmd.Parameters.AddWithValue("@invoice", invoice);
-                cmd.Parameters.AddWithValue("@b_id", bookId);
-                cmd.Parameters.AddWithValue("@e_id", emId);
-                cmd.Parameters.AddWithValue("@m_id", memberId);
-                cmd.Parameters.AddWithValue("@qty", qty);
-                cmd.Parameters.AddWithValue("@total", subtotal);
-                cmd.Parameters.AddWithValue("@downpayment", uangmuka);
-                cmd.Parameters.AddWithValue("@method", pembayaran);
-                cmd.Parameters.AddWithValue("@status", 1);
-
-                cmd.ExecuteNonQuery();
-
-                //commit
-                trans.Commit();
-                MessageBox.Show("Pre-Order Berhasil");
-
-                //kembali ke master
-                clearAll();
-
-                MasterPreOrder frm = new MasterPreOrder(0);
-                Panel temp = (Panel)frm.Controls[0];
-                temp.Width = panel2.Width;
-                temp.Height = panel2.Height;
-                this.panel2.Controls.Clear();
-                this.panel2.Controls.Add(temp);
+                MessageBox.Show("Metode pembayaran belum dipilih!");
             }
-            catch (MySqlException ex)
+            else if (subtotal <= 0)
             {
-                trans.Rollback();
-                MessageBox.Show(ex.Message);
+                MessageBox.Show("Belum ada buku terpilih!");
+            }
+            else if (uangmuka <= 10000)
+            {
+                MessageBox.Show("Uang muka harus di atas Rp 10.000!");
+            }
+            else
+            {
+                MySqlTransaction trans = Koneksi.getConn().BeginTransaction();
+                try
+                {
+                    //get employee
+                    MySqlCommand cmd = new MySqlCommand("SELECT E_ID FROM employee WHERE E_U_ID = @us_id;", Koneksi.getConn());
+                    cmd.Parameters.AddWithValue("@us_id", FormLogin.us_id);
+                    string emId = cmd.ExecuteScalar().ToString();
+
+                    //generate id po
+                    cmd = new MySqlCommand("select generateIdPO()", Koneksi.getConn());
+                    string poId = cmd.ExecuteScalar().ToString();
+                    string invoice = tbNota.Text;
+
+                    //buku
+                    string bookId = dgCart.Rows[0].Cells[0].Value.ToString();
+
+                    //member
+                    string memberId = null;
+                    if (rbGuest.Checked)
+                    {
+                        memberId = null;
+                    }
+                    else if (rbMember.Checked)
+                    {
+                        memberId = tbKodeMember.Text;
+                    }
+
+                    //harga + pembayaran
+                    int qty = Convert.ToInt32(lbTotalQty.Text);
+                    string pembayaran = cmbPembayaran.Items[cmbPembayaran.SelectedIndex].ToString();
+
+                    //insert
+                    cmd = new MySqlCommand("insert into pre_order values(@po_id, @invoice, CURRENT_DATE, @b_id, @e_id, @m_id, @qty, @total, @downpayment, @method, @status)", Koneksi.getConn());
+                    cmd.Parameters.AddWithValue("@po_id", poId);
+                    cmd.Parameters.AddWithValue("@invoice", invoice);
+                    cmd.Parameters.AddWithValue("@b_id", bookId);
+                    cmd.Parameters.AddWithValue("@e_id", emId);
+                    cmd.Parameters.AddWithValue("@m_id", memberId);
+                    cmd.Parameters.AddWithValue("@qty", qty);
+                    cmd.Parameters.AddWithValue("@total", subtotal);
+                    cmd.Parameters.AddWithValue("@downpayment", uangmuka);
+                    cmd.Parameters.AddWithValue("@method", pembayaran);
+                    cmd.Parameters.AddWithValue("@status", 1);
+
+                    cmd.ExecuteNonQuery();
+
+                    //commit
+                    trans.Commit();
+                    MessageBox.Show("Pre-Order Berhasil!");
+
+                    //kembali ke master
+                    clearAll();
+
+                    MasterPreOrder frm = new MasterPreOrder(0);
+                    Panel temp = (Panel)frm.Controls[0];
+                    temp.Width = panel2.Width;
+                    temp.Height = panel2.Height;
+                    this.panel2.Controls.Clear();
+                    this.panel2.Controls.Add(temp);
+                }
+                catch (MySqlException ex)
+                {
+                    trans.Rollback();
+                    MessageBox.Show(ex.Message);
+                }
             }
         }
 
