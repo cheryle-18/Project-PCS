@@ -23,7 +23,7 @@ namespace Bookstore
             fillHeaderInfo();
             clearFields();
             clearFieldMember();
-            nudPoint.Controls[0].Visible = false;
+            nudPoint.Controls[0].Visible = false;            
         }
 
         private void btnBayar_Click(object sender, EventArgs e)
@@ -61,9 +61,11 @@ namespace Bookstore
 
                         //CHECK MEMBER OR GUEST
                         int total_htrans;
+                        int subtotal = Convert.ToInt32(lbSubtotal.Text.Replace(".", String.Empty));
                         int point_used;
                         int point_received;
                         string member_id = null;
+                        
                         if (rbGuest.Checked)
                         {
                             //GUEST
@@ -75,7 +77,7 @@ namespace Bookstore
                         {
 
                             point_used = Convert.ToInt32(nudPoint.Value);
-                            total_htrans = Convert.ToInt32(lbGrandTotal.Text.Replace(".", String.Empty)) - point_used;
+                            total_htrans = Convert.ToInt32(lbGrandTotal.Text.Replace(".", String.Empty));
                             point_received = Convert.ToInt32(Math.Round(0.1 * total_htrans));
                             member_id = tbKodeMember.Text;
                         }
@@ -85,7 +87,7 @@ namespace Bookstore
                         cmd.Parameters.AddWithValue("@HP_ID", id_htrans);
                         cmd.Parameters.AddWithValue("@HP_INVOICE_NUMBER", txtNota.Text);
                         cmd.Parameters.AddWithValue("@HP_TOTAL_QTY", Convert.ToInt32(lbTotalQty.Text));
-                        cmd.Parameters.AddWithValue("@HP_TOTAL", total_htrans);
+                        cmd.Parameters.AddWithValue("@HP_TOTAL", subtotal);
                         cmd.Parameters.AddWithValue("@HP_TOTAL_PAID", total_htrans);
                         cmd.Parameters.AddWithValue("@HP_POINTS_USED", point_used);
                         cmd.Parameters.AddWithValue("@HP_POINTS_RECEIVED", point_received);
@@ -138,7 +140,7 @@ namespace Bookstore
                         clearFields();
                         clearFieldMember();
                         updateTotal();
-
+                        cmbPembayaran.SelectedIndex = -1;
                         fillHeaderInfo();
 
                     }
@@ -198,7 +200,7 @@ namespace Bookstore
                 while (rd.Read())
                 {
                     this.txtNamaMember.Text = rd["M_NAME"].ToString();
-                    this.lbPoinTersedia.Text = rd["M_POINT"].ToString();
+                    this.lbPoinTersedia.Text = Convert.ToInt32(rd["M_POINT"].ToString()).ToString("N0", new System.Globalization.CultureInfo("id-ID"));
                 }
                 rd.Close();
                 btnUseAll.Enabled = true;
@@ -471,9 +473,9 @@ namespace Bookstore
 
         private void btnUseAll_Click(object sender, EventArgs e)
         {
-            if(Convert.ToInt32(lbPoinTersedia.Text) <= this.nudPoint.Maximum)
+            if(Convert.ToInt32(lbPoinTersedia.Text.Replace(".",String.Empty)) <= this.nudPoint.Maximum)
             {
-                this.nudPoint.Value = Convert.ToInt32(lbPoinTersedia.Text);
+                this.nudPoint.Value = Convert.ToInt32(lbPoinTersedia.Text.Replace(".", String.Empty));
             }
             else
             {
@@ -489,9 +491,9 @@ namespace Bookstore
 
         private void nudPoint_KeyUp(object sender, KeyEventArgs e)
         {
-            if(Convert.ToInt32(nudPoint.Value) > Convert.ToInt32(lbPoinTersedia.Text))
+            if(Convert.ToInt32(nudPoint.Value) > Convert.ToInt32(lbPoinTersedia.Text.Replace(".", String.Empty)))
             {
-                nudPoint.Value = Convert.ToInt32(lbPoinTersedia.Text);
+                nudPoint.Value = Convert.ToInt32(lbPoinTersedia.Text.Replace(".", String.Empty));
                 MessageBox.Show("Poin tidak mencukupi!");
              
             }

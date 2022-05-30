@@ -30,6 +30,7 @@ namespace Bookstore
         private void InitializeComponent()
         {
             this.panel2 = new System.Windows.Forms.Panel();
+            this.btnUseAll = new System.Windows.Forms.Button();
             this.btnCancelEdit = new System.Windows.Forms.Button();
             this.cmbPembayaran = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
@@ -96,7 +97,6 @@ namespace Bookstore
             this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnBayar = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
-            this.btnUseAll = new System.Windows.Forms.Button();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudPoint)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudQTY)).BeginInit();
@@ -173,6 +173,22 @@ namespace Bookstore
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(1058, 622);
             this.panel2.TabIndex = 21;
+            // 
+            // btnUseAll
+            // 
+            this.btnUseAll.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnUseAll.BackColor = System.Drawing.Color.Navy;
+            this.btnUseAll.FlatAppearance.BorderSize = 0;
+            this.btnUseAll.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnUseAll.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnUseAll.ForeColor = System.Drawing.Color.White;
+            this.btnUseAll.Location = new System.Drawing.Point(863, 215);
+            this.btnUseAll.Name = "btnUseAll";
+            this.btnUseAll.Size = new System.Drawing.Size(157, 29);
+            this.btnUseAll.TabIndex = 146;
+            this.btnUseAll.Text = "Pakai Semua";
+            this.btnUseAll.UseVisualStyleBackColor = false;
+            this.btnUseAll.Click += new System.EventHandler(this.btnUseAll_Click);
             // 
             // btnCancelEdit
             // 
@@ -921,22 +937,6 @@ namespace Bookstore
             this.label3.Size = new System.Drawing.Size(192, 37);
             this.label3.TabIndex = 14;
             this.label3.Text = "Transaksi Baru";
-            // 
-            // btnUseAll
-            // 
-            this.btnUseAll.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnUseAll.BackColor = System.Drawing.Color.Navy;
-            this.btnUseAll.FlatAppearance.BorderSize = 0;
-            this.btnUseAll.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnUseAll.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnUseAll.ForeColor = System.Drawing.Color.White;
-            this.btnUseAll.Location = new System.Drawing.Point(863, 215);
-            this.btnUseAll.Name = "btnUseAll";
-            this.btnUseAll.Size = new System.Drawing.Size(157, 29);
-            this.btnUseAll.TabIndex = 146;
-            this.btnUseAll.Text = "Pakai Semua";
-            this.btnUseAll.UseVisualStyleBackColor = false;
-            this.btnUseAll.Click += new System.EventHandler(this.btnUseAll_Click);
             // 
             // FormTransaksiBaru
             // 
