@@ -232,7 +232,6 @@ C:\Users\LENOVO\Documents\GitHub\Project-PCS-2\Bookstore\Bookstore\obj\Debug\Boo
 C:\Users\LENOVO\Documents\GitHub\Project-PCS-2\Bookstore\Bookstore\obj\Debug\Bookstore.FormBukuBaruAdmin.resources
 C:\Users\LENOVO\Documents\GitHub\Project-PCS-2\Bookstore\Bookstore\obj\Debug\Bookstore.FormCariBuku.resources
 C:\Users\LENOVO\Documents\GitHub\Project-PCS-2\Bookstore\Bookstore\obj\Debug\Bookstore.FormCariMember.resources
-C:\Users\LENOVO\Documents\GitHub\Project-PCS-2\Bookstore\Bookstore\obj\Debug\Bookstore.FormCariPO.resources
 C:\Users\LENOVO\Documents\GitHub\Project-PCS-2\Bookstore\Bookstore\obj\Debug\Bookstore.FormDetailBuku.resources
 C:\Users\LENOVO\Documents\GitHub\Project-PCS-2\Bookstore\Bookstore\obj\Debug\Bookstore.FormDetailBukuAdmin.resources
 C:\Users\LENOVO\Documents\GitHub\Project-PCS-2\Bookstore\Bookstore\obj\Debug\Bookstore.FormDetailMember.resources
