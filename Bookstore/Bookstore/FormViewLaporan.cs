@@ -25,7 +25,7 @@ namespace Bookstore
             }
             else if(this.mode == 2)
             {
-                
+                showLaporanBukuDiatasRata();
             }
             else if(this.mode == 3)
             {
@@ -64,6 +64,18 @@ namespace Bookstore
 
             //FIND AVG
             MySqlCommand cmd = new MySqlCommand("SELECT SUM(DP_QTY)/COUNT(DP_B_ID) FROM dtrans_purchase;",Koneksi.getConn());
+            double avg = Convert.ToDouble(cmd.ExecuteScalar());
+            rep.SetParameterValue("average", avg);
+            crViewLaporan.ReportSource = rep;
+        }
+
+        private void showLaporanBukuDiatasRata()
+        {
+            //SHOW CRYSTAL REPORT
+            CrPenjualanBukuDiatasRata rep = new CrPenjualanBukuDiatasRata();
+
+            //FIND AVG
+            MySqlCommand cmd = new MySqlCommand("SELECT SUM(DP_QTY)/COUNT(DP_B_ID) FROM dtrans_purchase;", Koneksi.getConn());
             double avg = Convert.ToDouble(cmd.ExecuteScalar());
             rep.SetParameterValue("average", avg);
             crViewLaporan.ReportSource = rep;
