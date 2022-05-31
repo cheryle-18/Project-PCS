@@ -31,6 +31,7 @@ namespace Bookstore
             this.user_role = role;
             if(this.user_role == 1)
             {
+                //role=1 -> admin
                 this.btnPOBaru.Visible = false;
             }
 
@@ -54,7 +55,7 @@ namespace Bookstore
             taken = dtPO.Rows[selectedIndex];
             string poId = taken[0].ToString();
 
-            FormDetailPreOrder frm = new FormDetailPreOrder(poId);
+            FormDetailPreOrder frm = new FormDetailPreOrder(poId, user_role);
             Panel temp = (Panel)frm.Controls[0];
             temp.Width = panel2.Width;
             temp.Height = panel2.Height;
