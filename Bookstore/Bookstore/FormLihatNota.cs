@@ -18,11 +18,24 @@ namespace Bookstore
         {
             InitializeComponent();
             this.user_role = role;
+            this.tr_id = tr_id;
+            loadNota();
         }
 
         private void FormLihatNota_Load(object sender, EventArgs e)
         {
 
+        }
+
+        private void loadNota()
+        {
+            CrNotaTransaksi rep = new CrNotaTransaksi();
+            //rep.SetParameterValue("id_pegawai", cbPegawai.SelectedValue);
+            //rep.SetParameterValue("nama_pegawai", namaku);
+            //rep.SetParameterValue("tanggal_awal", dtpTanggalAwal.Value.Date.ToString("dd MMMM yyyy"));
+            //rep.SetParameterValue("tanggal_akhir", dtpTanggalAkhir.Value.Date.ToString("dd MMMM yyyy"));
+            //rep.SetParameterValue("total_belanja", Convert.ToInt32(txtTotalBelanja.Text));
+            crNota.ReportSource = rep;
         }
 
         private void btnBack_Click(object sender, EventArgs e)
