@@ -72,6 +72,21 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+<<<<<<< Updated upstream
+=======
+    <Compile Include="CrNotaTransaksi.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CrNotaTransaksi.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="CrPenjualanBukuDibawahRata.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CrPenjualanBukuDibawahRata.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+>>>>>>> Stashed changes
     <Compile Include="FormBukuBaruAdmin.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -255,6 +270,17 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+<<<<<<< Updated upstream
+=======
+    <EmbeddedResource Include="CrNotaTransaksi.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>CrNotaTransaksi.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CrPenjualanBukuDibawahRata.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>CrPenjualanBukuDibawahRata.cs</LastGenOutput>
+    </EmbeddedResource>
+>>>>>>> Stashed changes
     <EmbeddedResource Include="FormBukuBaruAdmin.resx">
       <DependentUpon>FormBukuBaruAdmin.cs</DependentUpon>
     </EmbeddedResource>

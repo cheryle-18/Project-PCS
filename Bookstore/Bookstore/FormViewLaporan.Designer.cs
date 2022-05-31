@@ -30,15 +30,15 @@ namespace Bookstore
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
-            this.panel2 = new System.Windows.Forms.Panel();
+            this.btnBack = new System.Windows.Forms.Button();
+            this.btnMemberBaru = new System.Windows.Forms.Button();
+            this.label3 = new System.Windows.Forms.Label();
             this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
-            this.label3 = new System.Windows.Forms.Label();
-            this.crystalReportViewer1 = new CrystalDecisions.Windows.Forms.CrystalReportViewer();
-            this.btnMemberBaru = new System.Windows.Forms.Button();
-            this.btnBack = new System.Windows.Forms.Button();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.crViewLaporan = new CrystalDecisions.Windows.Forms.CrystalReportViewer();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.SuspendLayout();
@@ -59,16 +59,48 @@ namespace Bookstore
             this.panel1.Size = new System.Drawing.Size(1041, 617);
             this.panel1.TabIndex = 0;
             // 
-            // panel2
+            // btnBack
             // 
-            this.panel2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
+            this.btnBack.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnBack.BackColor = System.Drawing.Color.Navy;
+            this.btnBack.FlatAppearance.BorderSize = 0;
+            this.btnBack.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnBack.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnBack.ForeColor = System.Drawing.Color.White;
+            this.btnBack.Location = new System.Drawing.Point(875, 553);
+            this.btnBack.Name = "btnBack";
+            this.btnBack.Size = new System.Drawing.Size(153, 38);
+            this.btnBack.TabIndex = 52;
+            this.btnBack.Text = "Back";
+            this.btnBack.UseVisualStyleBackColor = false;
+            this.btnBack.Click += new System.EventHandler(this.btnBack_Click);
+            // 
+            // btnMemberBaru
+            // 
+            this.btnMemberBaru.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.btnMemberBaru.BackColor = System.Drawing.Color.Navy;
+            this.btnMemberBaru.FlatAppearance.BorderSize = 0;
+            this.btnMemberBaru.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnMemberBaru.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnMemberBaru.ForeColor = System.Drawing.Color.White;
+            this.btnMemberBaru.Location = new System.Drawing.Point(764, 83);
+            this.btnMemberBaru.Name = "btnMemberBaru";
+            this.btnMemberBaru.Size = new System.Drawing.Size(153, 28);
+            this.btnMemberBaru.TabIndex = 50;
+            this.btnMemberBaru.Text = "Tampilkan";
+            this.btnMemberBaru.UseVisualStyleBackColor = false;
+            // 
+            // label3
+            // 
+            this.label3.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.panel2.Controls.Add(this.crystalReportViewer1);
-            this.panel2.Location = new System.Drawing.Point(65, 147);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(895, 376);
-            this.panel2.TabIndex = 14;
+            this.label3.Font = new System.Drawing.Font("Segoe UI Semibold", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(3, 25);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(1035, 37);
+            this.label3.TabIndex = 49;
+            this.label3.Text = "Laporan <Nama Laporan>";
+            this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // dateTimePicker2
             // 
@@ -110,61 +142,29 @@ namespace Bookstore
             this.dateTimePicker1.Size = new System.Drawing.Size(218, 34);
             this.dateTimePicker1.TabIndex = 45;
             // 
-            // label3
+            // panel2
             // 
-            this.label3.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.label3.Font = new System.Drawing.Font("Segoe UI Semibold", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(3, 25);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(1035, 37);
-            this.label3.TabIndex = 49;
-            this.label3.Text = "Laporan <Nama Laporan>";
-            this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // crystalReportViewer1
-            // 
-            this.crystalReportViewer1.ActiveViewIndex = -1;
-            this.crystalReportViewer1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.panel2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.crystalReportViewer1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.crystalReportViewer1.Cursor = System.Windows.Forms.Cursors.Default;
-            this.crystalReportViewer1.Location = new System.Drawing.Point(0, 0);
-            this.crystalReportViewer1.Name = "crystalReportViewer1";
-            this.crystalReportViewer1.Size = new System.Drawing.Size(895, 376);
-            this.crystalReportViewer1.TabIndex = 0;
+            this.panel2.Controls.Add(this.crViewLaporan);
+            this.panel2.Location = new System.Drawing.Point(65, 147);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(895, 376);
+            this.panel2.TabIndex = 14;
             // 
-            // btnMemberBaru
+            // crViewLaporan
             // 
-            this.btnMemberBaru.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.btnMemberBaru.BackColor = System.Drawing.Color.Navy;
-            this.btnMemberBaru.FlatAppearance.BorderSize = 0;
-            this.btnMemberBaru.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnMemberBaru.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnMemberBaru.ForeColor = System.Drawing.Color.White;
-            this.btnMemberBaru.Location = new System.Drawing.Point(764, 83);
-            this.btnMemberBaru.Name = "btnMemberBaru";
-            this.btnMemberBaru.Size = new System.Drawing.Size(153, 28);
-            this.btnMemberBaru.TabIndex = 50;
-            this.btnMemberBaru.Text = "Tampilkan";
-            this.btnMemberBaru.UseVisualStyleBackColor = false;
-            // 
-            // btnBack
-            // 
-            this.btnBack.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnBack.BackColor = System.Drawing.Color.Navy;
-            this.btnBack.FlatAppearance.BorderSize = 0;
-            this.btnBack.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnBack.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnBack.ForeColor = System.Drawing.Color.White;
-            this.btnBack.Location = new System.Drawing.Point(875, 553);
-            this.btnBack.Name = "btnBack";
-            this.btnBack.Size = new System.Drawing.Size(153, 38);
-            this.btnBack.TabIndex = 52;
-            this.btnBack.Text = "Back";
-            this.btnBack.UseVisualStyleBackColor = false;
-            this.btnBack.Click += new System.EventHandler(this.btnBack_Click);
+            this.crViewLaporan.ActiveViewIndex = -1;
+            this.crViewLaporan.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.crViewLaporan.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.crViewLaporan.Cursor = System.Windows.Forms.Cursors.Default;
+            this.crViewLaporan.Location = new System.Drawing.Point(0, 0);
+            this.crViewLaporan.Name = "crViewLaporan";
+            this.crViewLaporan.Size = new System.Drawing.Size(895, 376);
+            this.crViewLaporan.TabIndex = 0;
             // 
             // FormViewLaporan
             // 
@@ -191,7 +191,7 @@ namespace Bookstore
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.DateTimePicker dateTimePicker1;
         private System.Windows.Forms.Label label3;
-        private CrystalDecisions.Windows.Forms.CrystalReportViewer crystalReportViewer1;
+        private CrystalDecisions.Windows.Forms.CrystalReportViewer crViewLaporan;
         private System.Windows.Forms.Button btnMemberBaru;
         private System.Windows.Forms.Button btnBack;
     }
