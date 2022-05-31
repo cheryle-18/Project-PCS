@@ -15,6 +15,7 @@ namespace Bookstore
     public partial class MasterTransaksi : KryptonForm
     {
         private int user_role;
+        private int selected_idx_dgv;
         DataTable dtTransaksi;
 
         string fullTableQuery;
@@ -37,7 +38,7 @@ namespace Bookstore
 
             btnDetail.Enabled = false;
 
-            fullTableQuery = "SELECT htrans_purchase.`HP_ID`,htrans_purchase.`HP_INVOICE_NUMBER`,htrans_purchase.`HP_DATE`,htrans_purchase.`HP_TOTAL_QTY`,htrans_purchase.HP_TOTAL,htrans_purchase.`HP_TOTAL_PAID`,htrans_purchase.HP_PAYMENT_METHOD,(CASE WHEN member.`M_NAME` IS NULL THEN 'Non-Member' ELSE member.`M_NAME` END) AS MEMBER_NAME FROM htrans_purchase LEFT JOIN member ON htrans_purchase.`HP_M_ID` = member.`M_ID`";
+            fullTableQuery = "SELECT htrans_purchase.`HP_ID`,htrans_purchase.`HP_INVOICE_NUMBER`,htrans_purchase.`HP_DATE`,htrans_purchase.`HP_TOTAL_QTY`,CONCAT('Rp ',FORMAT(htrans_purchase.HP_TOTAL,0,'id_ID')) AS HP_TOTAL, concat('Rp ',FORMAT(htrans_purchase.HP_TOTAL_PAID,0,'id_ID')) AS HP_TOTAL_PAID,htrans_purchase.HP_PAYMENT_METHOD,(CASE WHEN member.`M_NAME` IS NULL THEN 'Non-Member' ELSE member.`M_NAME` END) AS MEMBER_NAME FROM htrans_purchase LEFT JOIN member ON htrans_purchase.`HP_M_ID` = member.`M_ID`";
             cari = "";
             filterDari = "";
             filterSampai = "";
@@ -50,12 +51,22 @@ namespace Bookstore
 
         private void btnDetail_Click(object sender, EventArgs e)
         {
-            FormDetailTransaksi frm = new FormDetailTransaksi(user_role);
-            Panel temp = (Panel)frm.Controls[0];
-            temp.Width = panel2.Width;
-            temp.Height = panel2.Height;
-            this.panel2.Controls.Clear();
-            this.panel2.Controls.Add(temp);
+            if(selected_idx_dgv != -1)
+            {
+                //GO TO DETAIL FORM
+                string tr_id = dgvTransaksi.Rows[selected_idx_dgv].Cells[0].Value.ToString();
+                FormDetailTransaksi frm = new FormDetailTransaksi(user_role,tr_id);
+                Panel temp = (Panel)frm.Controls[0];
+                temp.Width = panel2.Width;
+                temp.Height = panel2.Height;
+                this.panel2.Controls.Clear();
+                this.panel2.Controls.Add(temp);
+            }
+            else
+            {
+                MessageBox.Show("Belum ada transaksi yang dipilih!");
+            }
+           
 
         }
 
@@ -209,6 +220,8 @@ namespace Bookstore
 
             btnDetail.Enabled = false;
 
+            selected_idx_dgv = -1;
+            dgvTransaksi.ClearSelection();
             cari = "";
             filterDari = "";
             filterSampai = "";
@@ -217,6 +230,18 @@ namespace Bookstore
             loadDGV();
             refreshGridView();
 
+        }
+
+        private void dgvTransaksi_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            //CHECK ROW INDEX = -1?
+
+            if(e.RowIndex != -1)
+            {
+                btnDetail.Enabled = true;
+                selected_idx_dgv = e.RowIndex;
+            }
+            
         }
     }
 }

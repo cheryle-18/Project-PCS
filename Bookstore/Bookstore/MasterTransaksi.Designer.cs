@@ -82,9 +82,9 @@ namespace Bookstore
             // 
             this.rbDesc.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.rbDesc.AutoSize = true;
-            this.rbDesc.Location = new System.Drawing.Point(817, 114);
+            this.rbDesc.Location = new System.Drawing.Point(803, 114);
             this.rbDesc.Name = "rbDesc";
-            this.rbDesc.Size = new System.Drawing.Size(64, 24);
+            this.rbDesc.Size = new System.Drawing.Size(78, 29);
             this.rbDesc.TabIndex = 49;
             this.rbDesc.TabStop = true;
             this.rbDesc.Text = "Desc";
@@ -95,9 +95,9 @@ namespace Bookstore
             // 
             this.rbAsc.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.rbAsc.AutoSize = true;
-            this.rbAsc.Location = new System.Drawing.Point(758, 114);
+            this.rbAsc.Location = new System.Drawing.Point(745, 114);
             this.rbAsc.Name = "rbAsc";
-            this.rbAsc.Size = new System.Drawing.Size(54, 24);
+            this.rbAsc.Size = new System.Drawing.Size(67, 29);
             this.rbAsc.TabIndex = 48;
             this.rbAsc.TabStop = true;
             this.rbAsc.Text = "Asc";
@@ -133,7 +133,7 @@ namespace Bookstore
             "Total"});
             this.cmbSort.Location = new System.Drawing.Point(758, 75);
             this.cmbSort.Name = "cmbSort";
-            this.cmbSort.Size = new System.Drawing.Size(168, 28);
+            this.cmbSort.Size = new System.Drawing.Size(168, 33);
             this.cmbSort.TabIndex = 46;
             this.cmbSort.SelectedIndexChanged += new System.EventHandler(this.cmbSort_SelectedIndexChanged);
             // 
@@ -143,7 +143,7 @@ namespace Bookstore
             this.label2.AutoSize = true;
             this.label2.Location = new System.Drawing.Point(589, 78);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(169, 20);
+            this.label2.Size = new System.Drawing.Size(207, 25);
             this.label2.TabIndex = 45;
             this.label2.Text = "Urutkan Berdasarkan :";
             // 
@@ -153,7 +153,7 @@ namespace Bookstore
             this.dtpSampai.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.dtpSampai.Location = new System.Drawing.Point(367, 111);
             this.dtpSampai.Name = "dtpSampai";
-            this.dtpSampai.Size = new System.Drawing.Size(200, 26);
+            this.dtpSampai.Size = new System.Drawing.Size(200, 30);
             this.dtpSampai.TabIndex = 44;
             this.dtpSampai.ValueChanged += new System.EventHandler(this.dtpSampai_ValueChanged);
             // 
@@ -162,7 +162,7 @@ namespace Bookstore
             this.label6.AutoSize = true;
             this.label6.Location = new System.Drawing.Point(301, 117);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(60, 20);
+            this.label6.Size = new System.Drawing.Size(75, 25);
             this.label6.TabIndex = 43;
             this.label6.Text = "sampai";
             // 
@@ -171,7 +171,7 @@ namespace Bookstore
             this.label5.AutoSize = true;
             this.label5.Location = new System.Drawing.Point(13, 117);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(74, 20);
+            this.label5.Size = new System.Drawing.Size(91, 25);
             this.label5.TabIndex = 42;
             this.label5.Text = "Filter dari";
             // 
@@ -181,7 +181,7 @@ namespace Bookstore
             this.dtpDari.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.dtpDari.Location = new System.Drawing.Point(95, 111);
             this.dtpDari.Name = "dtpDari";
-            this.dtpDari.Size = new System.Drawing.Size(200, 26);
+            this.dtpDari.Size = new System.Drawing.Size(200, 30);
             this.dtpDari.TabIndex = 41;
             this.dtpDari.ValueChanged += new System.EventHandler(this.dtpDari_ValueChanged);
             // 
@@ -190,7 +190,7 @@ namespace Bookstore
             this.label4.AutoSize = true;
             this.label4.Location = new System.Drawing.Point(13, 79);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(45, 20);
+            this.label4.Size = new System.Drawing.Size(59, 25);
             this.label4.TabIndex = 40;
             this.label4.Text = "Cari :";
             // 
@@ -198,7 +198,7 @@ namespace Bookstore
             // 
             this.tbCari.Location = new System.Drawing.Point(64, 76);
             this.tbCari.Name = "tbCari";
-            this.tbCari.Size = new System.Drawing.Size(503, 26);
+            this.tbCari.Size = new System.Drawing.Size(503, 30);
             this.tbCari.TabIndex = 37;
             this.tbCari.TextChanged += new System.EventHandler(this.tbCari_TextChanged);
             // 
@@ -240,7 +240,7 @@ namespace Bookstore
             this.label3.Font = new System.Drawing.Font("Segoe UI Semibold", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.Location = new System.Drawing.Point(12, 21);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(165, 30);
+            this.label3.Size = new System.Drawing.Size(213, 37);
             this.label3.TabIndex = 14;
             this.label3.Text = "Daftar Transaksi";
             // 
@@ -262,6 +262,7 @@ namespace Bookstore
             this.dgvTransaksi.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvTransaksi.Size = new System.Drawing.Size(1010, 355);
             this.dgvTransaksi.TabIndex = 1;
+            this.dgvTransaksi.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvTransaksi_CellClick);
             // 
             // MasterTransaksi
             // 

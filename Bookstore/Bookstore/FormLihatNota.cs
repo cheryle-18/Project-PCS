@@ -13,7 +13,8 @@ namespace Bookstore
     public partial class FormLihatNota : Form
     {
         private int user_role;
-        public FormLihatNota(int role)
+        private string tr_id;
+        public FormLihatNota(int role,string tr_id)
         {
             InitializeComponent();
             this.user_role = role;
@@ -26,7 +27,7 @@ namespace Bookstore
 
         private void btnBack_Click(object sender, EventArgs e)
         {
-            FormDetailTransaksi frm = new FormDetailTransaksi(user_role);
+            FormDetailTransaksi frm = new FormDetailTransaksi(user_role,tr_id);
             Panel temp = (Panel)frm.Controls[0];
             temp.Width = panel1.Width;
             temp.Height = panel1.Height;
