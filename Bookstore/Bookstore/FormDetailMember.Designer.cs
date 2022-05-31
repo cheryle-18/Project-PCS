@@ -30,14 +30,14 @@ namespace Bookstore
         private void InitializeComponent()
         {
             this.panel2 = new System.Windows.Forms.Panel();
-            this.dtpTanggalLahir = new System.Windows.Forms.DateTimePicker();
-            this.rbStatusNonAktif = new System.Windows.Forms.RadioButton();
-            this.rbStatusAktif = new System.Windows.Forms.RadioButton();
-            this.tbJumlahPoin = new System.Windows.Forms.TextBox();
-            this.tbTelepon = new System.Windows.Forms.TextBox();
-            this.tbAlamat = new System.Windows.Forms.TextBox();
-            this.tbNama = new System.Windows.Forms.TextBox();
-            this.tbKode = new System.Windows.Forms.TextBox();
+            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.radioButton2 = new System.Windows.Forms.RadioButton();
+            this.radioButton1 = new System.Windows.Forms.RadioButton();
+            this.textBox5 = new System.Windows.Forms.TextBox();
+            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.textBox4 = new System.Windows.Forms.TextBox();
             this.label24 = new System.Windows.Forms.Label();
             this.label23 = new System.Windows.Forms.Label();
             this.label22 = new System.Windows.Forms.Label();
@@ -73,14 +73,14 @@ namespace Bookstore
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panel2.BackColor = System.Drawing.Color.White;
-            this.panel2.Controls.Add(this.dtpTanggalLahir);
-            this.panel2.Controls.Add(this.rbStatusNonAktif);
-            this.panel2.Controls.Add(this.rbStatusAktif);
-            this.panel2.Controls.Add(this.tbJumlahPoin);
-            this.panel2.Controls.Add(this.tbTelepon);
-            this.panel2.Controls.Add(this.tbAlamat);
-            this.panel2.Controls.Add(this.tbNama);
-            this.panel2.Controls.Add(this.tbKode);
+            this.panel2.Controls.Add(this.dateTimePicker1);
+            this.panel2.Controls.Add(this.radioButton2);
+            this.panel2.Controls.Add(this.radioButton1);
+            this.panel2.Controls.Add(this.textBox5);
+            this.panel2.Controls.Add(this.textBox3);
+            this.panel2.Controls.Add(this.textBox2);
+            this.panel2.Controls.Add(this.textBox1);
+            this.panel2.Controls.Add(this.textBox4);
             this.panel2.Controls.Add(this.label24);
             this.panel2.Controls.Add(this.label23);
             this.panel2.Controls.Add(this.label22);
@@ -105,78 +105,78 @@ namespace Bookstore
             this.panel2.Size = new System.Drawing.Size(1039, 615);
             this.panel2.TabIndex = 21;
             // 
-            // dtpTanggalLahir
+            // dateTimePicker1
             // 
-            this.dtpTanggalLahir.CustomFormat = "dd/MM/yyyy";
-            this.dtpTanggalLahir.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dtpTanggalLahir.Location = new System.Drawing.Point(147, 195);
-            this.dtpTanggalLahir.Name = "dtpTanggalLahir";
-            this.dtpTanggalLahir.Size = new System.Drawing.Size(241, 29);
-            this.dtpTanggalLahir.TabIndex = 95;
+            this.dateTimePicker1.CustomFormat = "dd/MM/yyyy";
+            this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dateTimePicker1.Location = new System.Drawing.Point(147, 195);
+            this.dateTimePicker1.Name = "dateTimePicker1";
+            this.dateTimePicker1.Size = new System.Drawing.Size(241, 29);
+            this.dateTimePicker1.TabIndex = 95;
             // 
-            // rbStatusNonAktif
+            // radioButton2
             // 
-            this.rbStatusNonAktif.AutoSize = true;
-            this.rbStatusNonAktif.Location = new System.Drawing.Point(235, 319);
-            this.rbStatusNonAktif.Name = "rbStatusNonAktif";
-            this.rbStatusNonAktif.Size = new System.Drawing.Size(96, 25);
-            this.rbStatusNonAktif.TabIndex = 94;
-            this.rbStatusNonAktif.TabStop = true;
-            this.rbStatusNonAktif.Text = "Non-Aktif";
-            this.rbStatusNonAktif.UseVisualStyleBackColor = true;
+            this.radioButton2.AutoSize = true;
+            this.radioButton2.Location = new System.Drawing.Point(235, 319);
+            this.radioButton2.Name = "radioButton2";
+            this.radioButton2.Size = new System.Drawing.Size(96, 25);
+            this.radioButton2.TabIndex = 94;
+            this.radioButton2.TabStop = true;
+            this.radioButton2.Text = "Non-Aktif";
+            this.radioButton2.UseVisualStyleBackColor = true;
             // 
-            // rbStatusAktif
+            // radioButton1
             // 
-            this.rbStatusAktif.AutoSize = true;
-            this.rbStatusAktif.Location = new System.Drawing.Point(147, 319);
-            this.rbStatusAktif.Name = "rbStatusAktif";
-            this.rbStatusAktif.Size = new System.Drawing.Size(60, 25);
-            this.rbStatusAktif.TabIndex = 93;
-            this.rbStatusAktif.TabStop = true;
-            this.rbStatusAktif.Text = "Aktif";
-            this.rbStatusAktif.UseVisualStyleBackColor = true;
+            this.radioButton1.AutoSize = true;
+            this.radioButton1.Location = new System.Drawing.Point(147, 319);
+            this.radioButton1.Name = "radioButton1";
+            this.radioButton1.Size = new System.Drawing.Size(60, 25);
+            this.radioButton1.TabIndex = 93;
+            this.radioButton1.TabStop = true;
+            this.radioButton1.Text = "Aktif";
+            this.radioButton1.UseVisualStyleBackColor = true;
             // 
-            // tbJumlahPoin
+            // textBox5
             // 
-            this.tbJumlahPoin.Enabled = false;
-            this.tbJumlahPoin.Location = new System.Drawing.Point(147, 272);
-            this.tbJumlahPoin.Name = "tbJumlahPoin";
-            this.tbJumlahPoin.Size = new System.Drawing.Size(241, 29);
-            this.tbJumlahPoin.TabIndex = 92;
-            this.tbJumlahPoin.Text = "120";
+            this.textBox5.Enabled = false;
+            this.textBox5.Location = new System.Drawing.Point(147, 272);
+            this.textBox5.Name = "textBox5";
+            this.textBox5.Size = new System.Drawing.Size(241, 29);
+            this.textBox5.TabIndex = 92;
+            this.textBox5.Text = "120";
             // 
-            // tbTelepon
+            // textBox3
             // 
-            this.tbTelepon.Location = new System.Drawing.Point(147, 232);
-            this.tbTelepon.Name = "tbTelepon";
-            this.tbTelepon.Size = new System.Drawing.Size(241, 29);
-            this.tbTelepon.TabIndex = 91;
-            this.tbTelepon.Text = "089343433421";
+            this.textBox3.Location = new System.Drawing.Point(147, 232);
+            this.textBox3.Name = "textBox3";
+            this.textBox3.Size = new System.Drawing.Size(241, 29);
+            this.textBox3.TabIndex = 91;
+            this.textBox3.Text = "089343433421";
             // 
-            // tbAlamat
+            // textBox2
             // 
-            this.tbAlamat.Location = new System.Drawing.Point(146, 155);
-            this.tbAlamat.Name = "tbAlamat";
-            this.tbAlamat.Size = new System.Drawing.Size(241, 29);
-            this.tbAlamat.TabIndex = 89;
-            this.tbAlamat.Text = "Kelapa Gading VII/7";
+            this.textBox2.Location = new System.Drawing.Point(146, 155);
+            this.textBox2.Name = "textBox2";
+            this.textBox2.Size = new System.Drawing.Size(241, 29);
+            this.textBox2.TabIndex = 89;
+            this.textBox2.Text = "Kelapa Gading VII/7";
             // 
-            // tbNama
+            // textBox1
             // 
-            this.tbNama.Location = new System.Drawing.Point(146, 115);
-            this.tbNama.Name = "tbNama";
-            this.tbNama.Size = new System.Drawing.Size(241, 29);
-            this.tbNama.TabIndex = 88;
-            this.tbNama.Text = "Edward William";
+            this.textBox1.Location = new System.Drawing.Point(146, 115);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(241, 29);
+            this.textBox1.TabIndex = 88;
+            this.textBox1.Text = "Edward William";
             // 
-            // tbKode
+            // textBox4
             // 
-            this.tbKode.Enabled = false;
-            this.tbKode.Location = new System.Drawing.Point(146, 75);
-            this.tbKode.Name = "tbKode";
-            this.tbKode.Size = new System.Drawing.Size(241, 29);
-            this.tbKode.TabIndex = 87;
-            this.tbKode.Text = "MEM023";
+            this.textBox4.Enabled = false;
+            this.textBox4.Location = new System.Drawing.Point(146, 75);
+            this.textBox4.Name = "textBox4";
+            this.textBox4.Size = new System.Drawing.Size(241, 29);
+            this.textBox4.TabIndex = 87;
+            this.textBox4.Text = "MEM023";
             // 
             // label24
             // 
@@ -468,13 +468,13 @@ namespace Bookstore
         private System.Windows.Forms.DataGridViewTextBoxColumn Column5;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column6;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column7;
-        private System.Windows.Forms.RadioButton rbStatusNonAktif;
-        private System.Windows.Forms.RadioButton rbStatusAktif;
-        private System.Windows.Forms.TextBox tbJumlahPoin;
-        private System.Windows.Forms.TextBox tbTelepon;
-        private System.Windows.Forms.TextBox tbAlamat;
-        private System.Windows.Forms.TextBox tbNama;
-        private System.Windows.Forms.TextBox tbKode;
-        private System.Windows.Forms.DateTimePicker dtpTanggalLahir;
+        private System.Windows.Forms.RadioButton radioButton2;
+        private System.Windows.Forms.RadioButton radioButton1;
+        private System.Windows.Forms.TextBox textBox5;
+        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox textBox4;
+        private System.Windows.Forms.DateTimePicker dateTimePicker1;
     }
 }

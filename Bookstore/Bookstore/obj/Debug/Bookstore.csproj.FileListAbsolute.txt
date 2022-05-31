@@ -300,6 +300,7 @@ A:\College\github\Project-PCS-2\Bookstore\Bookstore\obj\Debug\Bookstore.csproj.A
 A:\College\github\Project-PCS-2\Bookstore\Bookstore\obj\Debug\Bookstore.FormBukuBaruAdmin.resources
 A:\College\github\Project-PCS-2\Bookstore\Bookstore\obj\Debug\Bookstore.FormCariBuku.resources
 A:\College\github\Project-PCS-2\Bookstore\Bookstore\obj\Debug\Bookstore.FormCariMember.resources
+A:\College\github\Project-PCS-2\Bookstore\Bookstore\obj\Debug\Bookstore.FormCariPO.resources
 A:\College\github\Project-PCS-2\Bookstore\Bookstore\obj\Debug\Bookstore.FormDetailBuku.resources
 A:\College\github\Project-PCS-2\Bookstore\Bookstore\obj\Debug\Bookstore.FormDetailBukuAdmin.resources
 A:\College\github\Project-PCS-2\Bookstore\Bookstore\obj\Debug\Bookstore.FormDetailMember.resources
@@ -414,6 +415,7 @@ C:\This PC\ISTTS\SM 4\PCS\Proyek\GitHub\Project-PCS-2\Bookstore\Bookstore\obj\De
 C:\This PC\ISTTS\SM 4\PCS\Proyek\GitHub\Project-PCS-2\Bookstore\Bookstore\obj\Debug\Bookstore.FormBukuBaruAdmin.resources
 C:\This PC\ISTTS\SM 4\PCS\Proyek\GitHub\Project-PCS-2\Bookstore\Bookstore\obj\Debug\Bookstore.FormCariBuku.resources
 C:\This PC\ISTTS\SM 4\PCS\Proyek\GitHub\Project-PCS-2\Bookstore\Bookstore\obj\Debug\Bookstore.FormCariMember.resources
+C:\This PC\ISTTS\SM 4\PCS\Proyek\GitHub\Project-PCS-2\Bookstore\Bookstore\obj\Debug\Bookstore.FormCariPO.resources
 C:\This PC\ISTTS\SM 4\PCS\Proyek\GitHub\Project-PCS-2\Bookstore\Bookstore\obj\Debug\Bookstore.FormDetailBuku.resources
 C:\This PC\ISTTS\SM 4\PCS\Proyek\GitHub\Project-PCS-2\Bookstore\Bookstore\obj\Debug\Bookstore.FormDetailBukuAdmin.resources
 C:\This PC\ISTTS\SM 4\PCS\Proyek\GitHub\Project-PCS-2\Bookstore\Bookstore\obj\Debug\Bookstore.FormDetailMember.resources
