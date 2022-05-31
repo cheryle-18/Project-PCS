@@ -1,4 +1,5 @@
 ﻿
+
 namespace Bookstore
 {
     partial class FormDetailBukuAdmin
@@ -32,45 +33,44 @@ namespace Bookstore
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormDetailBukuAdmin));
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.checkBox3 = new System.Windows.Forms.CheckBox();
-            this.checkBox2 = new System.Windows.Forms.CheckBox();
-            this.checkBox1 = new System.Windows.Forms.CheckBox();
-            this.radioButton2 = new System.Windows.Forms.RadioButton();
-            this.radioButton1 = new System.Windows.Forms.RadioButton();
-            this.textBox9 = new System.Windows.Forms.TextBox();
-            this.textBox8 = new System.Windows.Forms.TextBox();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.cbPenerbit = new System.Windows.Forms.ComboBox();
+            this.numStok = new System.Windows.Forms.NumericUpDown();
+            this.tbBahasa = new System.Windows.Forms.TextBox();
+            this.tbFormat = new System.Windows.Forms.TextBox();
+            this.chListKategori = new System.Windows.Forms.CheckedListBox();
+            this.radTAda = new System.Windows.Forms.RadioButton();
+            this.radAda = new System.Windows.Forms.RadioButton();
+            this.tbIsbn13 = new System.Windows.Forms.TextBox();
+            this.tbIsbn10 = new System.Windows.Forms.TextBox();
+            this.tglTerbit = new System.Windows.Forms.DateTimePicker();
             this.label16 = new System.Windows.Forms.Label();
             this.label17 = new System.Windows.Forms.Label();
             this.label14 = new System.Windows.Forms.Label();
             this.label15 = new System.Windows.Forms.Label();
-            this.cbBahasa = new System.Windows.Forms.ComboBox();
             this.label12 = new System.Windows.Forms.Label();
-            this.textBox7 = new System.Windows.Forms.TextBox();
             this.label13 = new System.Windows.Forms.Label();
-            this.cbFormat = new System.Windows.Forms.ComboBox();
             this.label10 = new System.Windows.Forms.Label();
-            this.textBox6 = new System.Windows.Forms.TextBox();
             this.label11 = new System.Windows.Forms.Label();
-            this.textBox5 = new System.Windows.Forms.TextBox();
+            this.tbSynopsis = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
-            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.tbHarga = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
-            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.tbAuthor = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.tbJudul = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.button2 = new System.Windows.Forms.Button();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.tbKode = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
             this.btnBack = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numStok)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.SuspendLayout();
             // 
@@ -88,39 +88,37 @@ namespace Bookstore
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panel2.BackColor = System.Drawing.Color.White;
-            this.panel2.Controls.Add(this.checkBox3);
-            this.panel2.Controls.Add(this.checkBox2);
-            this.panel2.Controls.Add(this.checkBox1);
-            this.panel2.Controls.Add(this.radioButton2);
-            this.panel2.Controls.Add(this.radioButton1);
-            this.panel2.Controls.Add(this.textBox9);
-            this.panel2.Controls.Add(this.textBox8);
-            this.panel2.Controls.Add(this.dateTimePicker1);
+            this.panel2.Controls.Add(this.cbPenerbit);
+            this.panel2.Controls.Add(this.numStok);
+            this.panel2.Controls.Add(this.tbBahasa);
+            this.panel2.Controls.Add(this.tbFormat);
+            this.panel2.Controls.Add(this.chListKategori);
+            this.panel2.Controls.Add(this.radTAda);
+            this.panel2.Controls.Add(this.radAda);
+            this.panel2.Controls.Add(this.tbIsbn13);
+            this.panel2.Controls.Add(this.tbIsbn10);
+            this.panel2.Controls.Add(this.tglTerbit);
             this.panel2.Controls.Add(this.label16);
             this.panel2.Controls.Add(this.label17);
             this.panel2.Controls.Add(this.label14);
             this.panel2.Controls.Add(this.label15);
-            this.panel2.Controls.Add(this.cbBahasa);
             this.panel2.Controls.Add(this.label12);
-            this.panel2.Controls.Add(this.textBox7);
             this.panel2.Controls.Add(this.label13);
-            this.panel2.Controls.Add(this.cbFormat);
             this.panel2.Controls.Add(this.label10);
-            this.panel2.Controls.Add(this.textBox6);
             this.panel2.Controls.Add(this.label11);
-            this.panel2.Controls.Add(this.textBox5);
+            this.panel2.Controls.Add(this.tbSynopsis);
             this.panel2.Controls.Add(this.label9);
             this.panel2.Controls.Add(this.label8);
             this.panel2.Controls.Add(this.label7);
-            this.panel2.Controls.Add(this.textBox4);
+            this.panel2.Controls.Add(this.tbHarga);
             this.panel2.Controls.Add(this.label6);
-            this.panel2.Controls.Add(this.textBox3);
+            this.panel2.Controls.Add(this.tbAuthor);
             this.panel2.Controls.Add(this.label5);
-            this.panel2.Controls.Add(this.textBox2);
+            this.panel2.Controls.Add(this.tbJudul);
             this.panel2.Controls.Add(this.label2);
             this.panel2.Controls.Add(this.button2);
             this.panel2.Controls.Add(this.pictureBox2);
-            this.panel2.Controls.Add(this.textBox1);
+            this.panel2.Controls.Add(this.tbKode);
             this.panel2.Controls.Add(this.label4);
             this.panel2.Controls.Add(this.button1);
             this.panel2.Controls.Add(this.btnBack);
@@ -131,95 +129,107 @@ namespace Bookstore
             this.panel2.Size = new System.Drawing.Size(1042, 624);
             this.panel2.TabIndex = 13;
             // 
-            // checkBox3
+            // cbPenerbit
             // 
-            this.checkBox3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.checkBox3.AutoSize = true;
-            this.checkBox3.Location = new System.Drawing.Point(558, 458);
-            this.checkBox3.Name = "checkBox3";
-            this.checkBox3.Size = new System.Drawing.Size(82, 25);
-            this.checkBox3.TabIndex = 107;
-            this.checkBox3.Text = "Komedi";
-            this.checkBox3.UseVisualStyleBackColor = true;
+            this.cbPenerbit.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.cbPenerbit.FormattingEnabled = true;
+            this.cbPenerbit.Location = new System.Drawing.Point(394, 388);
+            this.cbPenerbit.Name = "cbPenerbit";
+            this.cbPenerbit.Size = new System.Drawing.Size(401, 29);
+            this.cbPenerbit.TabIndex = 109;
             // 
-            // checkBox2
+            // numStok
             // 
-            this.checkBox2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.checkBox2.AutoSize = true;
-            this.checkBox2.Location = new System.Drawing.Point(476, 458);
-            this.checkBox2.Name = "checkBox2";
-            this.checkBox2.Size = new System.Drawing.Size(76, 25);
-            this.checkBox2.TabIndex = 106;
-            this.checkBox2.Text = "Horror";
-            this.checkBox2.UseVisualStyleBackColor = true;
+            this.numStok.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.numStok.Location = new System.Drawing.Point(393, 352);
+            this.numStok.Name = "numStok";
+            this.numStok.Size = new System.Drawing.Size(95, 29);
+            this.numStok.TabIndex = 108;
             // 
-            // checkBox1
+            // tbBahasa
             // 
-            this.checkBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.checkBox1.AutoSize = true;
-            this.checkBox1.Checked = true;
-            this.checkBox1.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.checkBox1.Location = new System.Drawing.Point(393, 458);
-            this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(77, 25);
-            this.checkBox1.TabIndex = 105;
-            this.checkBox1.Text = "Fantasi";
-            this.checkBox1.UseVisualStyleBackColor = true;
-            // 
-            // radioButton2
-            // 
-            this.radioButton2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.radioButton2.AutoSize = true;
-            this.radioButton2.Location = new System.Drawing.Point(891, 139);
-            this.radioButton2.Name = "radioButton2";
-            this.radioButton2.Size = new System.Drawing.Size(125, 25);
-            this.radioButton2.TabIndex = 104;
-            this.radioButton2.Text = "Tidak Tersedia";
-            this.radioButton2.UseVisualStyleBackColor = true;
-            // 
-            // radioButton1
-            // 
-            this.radioButton1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.radioButton1.AutoSize = true;
-            this.radioButton1.Checked = true;
-            this.radioButton1.Location = new System.Drawing.Point(755, 139);
-            this.radioButton1.Name = "radioButton1";
-            this.radioButton1.Size = new System.Drawing.Size(84, 25);
-            this.radioButton1.TabIndex = 103;
-            this.radioButton1.TabStop = true;
-            this.radioButton1.Text = "Tersedia";
-            this.radioButton1.UseVisualStyleBackColor = true;
-            // 
-            // textBox9
-            // 
-            this.textBox9.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            this.tbBahasa.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBox9.Location = new System.Drawing.Point(877, 456);
-            this.textBox9.Name = "textBox9";
-            this.textBox9.Size = new System.Drawing.Size(135, 29);
-            this.textBox9.TabIndex = 102;
-            this.textBox9.Text = "9781408855676";
+            this.tbBahasa.Location = new System.Drawing.Point(877, 385);
+            this.tbBahasa.Name = "tbBahasa";
+            this.tbBahasa.Size = new System.Drawing.Size(135, 29);
+            this.tbBahasa.TabIndex = 107;
+            this.tbBahasa.Text = "-";
             // 
-            // textBox8
+            // tbFormat
             // 
-            this.textBox8.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            this.tbFormat.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBox8.Location = new System.Drawing.Point(877, 422);
-            this.textBox8.Name = "textBox8";
-            this.textBox8.Size = new System.Drawing.Size(135, 29);
-            this.textBox8.TabIndex = 101;
-            this.textBox8.Text = "0545582938";
+            this.tbFormat.Location = new System.Drawing.Point(877, 351);
+            this.tbFormat.Name = "tbFormat";
+            this.tbFormat.Size = new System.Drawing.Size(135, 29);
+            this.tbFormat.TabIndex = 106;
+            this.tbFormat.Text = "-";
             // 
-            // dateTimePicker1
+            // chListKategori
             // 
-            this.dateTimePicker1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.dateTimePicker1.CustomFormat = "dd//MM/yyyy";
-            this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dateTimePicker1.Location = new System.Drawing.Point(393, 422);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(402, 29);
-            this.dateTimePicker1.TabIndex = 99;
-            this.dateTimePicker1.Value = new System.DateTime(1999, 7, 18, 13, 25, 0, 0);
+            this.chListKategori.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.chListKategori.FormattingEnabled = true;
+            this.chListKategori.Location = new System.Drawing.Point(392, 465);
+            this.chListKategori.Name = "chListKategori";
+            this.chListKategori.Size = new System.Drawing.Size(402, 100);
+            this.chListKategori.TabIndex = 105;
+            this.chListKategori.SelectedIndexChanged += new System.EventHandler(this.chListKategori_SelectedIndexChanged);
+            // 
+            // radTAda
+            // 
+            this.radTAda.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.radTAda.AutoSize = true;
+            this.radTAda.Location = new System.Drawing.Point(891, 139);
+            this.radTAda.Name = "radTAda";
+            this.radTAda.Size = new System.Drawing.Size(125, 25);
+            this.radTAda.TabIndex = 104;
+            this.radTAda.Text = "Tidak Tersedia";
+            this.radTAda.UseVisualStyleBackColor = true;
+            // 
+            // radAda
+            // 
+            this.radAda.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.radAda.AutoSize = true;
+            this.radAda.Checked = true;
+            this.radAda.Location = new System.Drawing.Point(755, 139);
+            this.radAda.Name = "radAda";
+            this.radAda.Size = new System.Drawing.Size(84, 25);
+            this.radAda.TabIndex = 103;
+            this.radAda.TabStop = true;
+            this.radAda.Text = "Tersedia";
+            this.radAda.UseVisualStyleBackColor = true;
+            // 
+            // tbIsbn13
+            // 
+            this.tbIsbn13.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.tbIsbn13.Location = new System.Drawing.Point(877, 456);
+            this.tbIsbn13.Name = "tbIsbn13";
+            this.tbIsbn13.Size = new System.Drawing.Size(135, 29);
+            this.tbIsbn13.TabIndex = 102;
+            this.tbIsbn13.Text = "9781408855676";
+            // 
+            // tbIsbn10
+            // 
+            this.tbIsbn10.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.tbIsbn10.Location = new System.Drawing.Point(877, 422);
+            this.tbIsbn10.Name = "tbIsbn10";
+            this.tbIsbn10.Size = new System.Drawing.Size(135, 29);
+            this.tbIsbn10.TabIndex = 101;
+            this.tbIsbn10.Text = "0545582938";
+            // 
+            // tglTerbit
+            // 
+            this.tglTerbit.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.tglTerbit.CustomFormat = "MMMM - yyyy";
+            this.tglTerbit.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.tglTerbit.Location = new System.Drawing.Point(393, 422);
+            this.tglTerbit.Name = "tglTerbit";
+            this.tglTerbit.Size = new System.Drawing.Size(402, 29);
+            this.tglTerbit.TabIndex = 99;
+            this.tglTerbit.Value = new System.DateTime(1999, 7, 18, 13, 25, 0, 0);
             // 
             // label16
             // 
@@ -269,20 +279,6 @@ namespace Bookstore
             this.label15.TabIndex = 91;
             this.label15.Text = "Tanggal Terbit :";
             // 
-            // cbBahasa
-            // 
-            this.cbBahasa.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.cbBahasa.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbBahasa.FormattingEnabled = true;
-            this.cbBahasa.Items.AddRange(new object[] {
-            "Indonesia",
-            "Inggris"});
-            this.cbBahasa.Location = new System.Drawing.Point(877, 386);
-            this.cbBahasa.Name = "cbBahasa";
-            this.cbBahasa.Size = new System.Drawing.Size(135, 29);
-            this.cbBahasa.TabIndex = 90;
-            // 
             // label12
             // 
             this.label12.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
@@ -294,15 +290,6 @@ namespace Bookstore
             this.label12.Size = new System.Drawing.Size(68, 21);
             this.label12.TabIndex = 89;
             this.label12.Text = "Bahasa :";
-            // 
-            // textBox7
-            // 
-            this.textBox7.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.textBox7.Location = new System.Drawing.Point(393, 387);
-            this.textBox7.Name = "textBox7";
-            this.textBox7.Size = new System.Drawing.Size(402, 29);
-            this.textBox7.TabIndex = 88;
-            this.textBox7.Text = "Bloomsbury Publishing plc";
             // 
             // label13
             // 
@@ -316,20 +303,6 @@ namespace Bookstore
             this.label13.TabIndex = 87;
             this.label13.Text = "Penerbit :";
             // 
-            // cbFormat
-            // 
-            this.cbFormat.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.cbFormat.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbFormat.FormattingEnabled = true;
-            this.cbFormat.Items.AddRange(new object[] {
-            "Paperback",
-            "Hardback"});
-            this.cbFormat.Location = new System.Drawing.Point(877, 351);
-            this.cbFormat.Name = "cbFormat";
-            this.cbFormat.Size = new System.Drawing.Size(135, 29);
-            this.cbFormat.TabIndex = 86;
-            // 
             // label10
             // 
             this.label10.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
@@ -341,15 +314,6 @@ namespace Bookstore
             this.label10.Size = new System.Drawing.Size(70, 21);
             this.label10.TabIndex = 85;
             this.label10.Text = "Format :";
-            // 
-            // textBox6
-            // 
-            this.textBox6.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.textBox6.Location = new System.Drawing.Point(393, 352);
-            this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(402, 29);
-            this.textBox6.TabIndex = 84;
-            this.textBox6.Text = "50";
             // 
             // label11
             // 
@@ -363,17 +327,17 @@ namespace Bookstore
             this.label11.TabIndex = 83;
             this.label11.Text = "Stok :";
             // 
-            // textBox5
+            // tbSynopsis
             // 
-            this.textBox5.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.tbSynopsis.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBox5.Location = new System.Drawing.Point(393, 179);
-            this.textBox5.Multiline = true;
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(619, 166);
-            this.textBox5.TabIndex = 82;
-            this.textBox5.Text = resources.GetString("textBox5.Text");
+            this.tbSynopsis.Location = new System.Drawing.Point(393, 179);
+            this.tbSynopsis.Multiline = true;
+            this.tbSynopsis.Name = "tbSynopsis";
+            this.tbSynopsis.Size = new System.Drawing.Size(619, 166);
+            this.tbSynopsis.TabIndex = 82;
+            this.tbSynopsis.Text = resources.GetString("tbSynopsis.Text");
             // 
             // label9
             // 
@@ -409,15 +373,16 @@ namespace Bookstore
             this.label7.TabIndex = 77;
             this.label7.Text = "Rp";
             // 
-            // textBox4
+            // tbHarga
             // 
-            this.textBox4.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.tbHarga.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBox4.Location = new System.Drawing.Point(425, 138);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(247, 29);
-            this.textBox4.TabIndex = 76;
-            this.textBox4.Text = "130.000";
+            this.tbHarga.Location = new System.Drawing.Point(425, 138);
+            this.tbHarga.Name = "tbHarga";
+            this.tbHarga.Size = new System.Drawing.Size(247, 29);
+            this.tbHarga.TabIndex = 76;
+            this.tbHarga.Text = "130.000";
+            this.tbHarga.Leave += new System.EventHandler(this.tbHarga_Leave);
             // 
             // label6
             // 
@@ -430,15 +395,15 @@ namespace Bookstore
             this.label6.TabIndex = 75;
             this.label6.Text = "Harga :";
             // 
-            // textBox3
+            // tbAuthor
             // 
-            this.textBox3.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.tbAuthor.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBox3.Location = new System.Drawing.Point(393, 103);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(619, 29);
-            this.textBox3.TabIndex = 74;
-            this.textBox3.Text = "J. K. Rowling";
+            this.tbAuthor.Location = new System.Drawing.Point(393, 103);
+            this.tbAuthor.Name = "tbAuthor";
+            this.tbAuthor.Size = new System.Drawing.Size(619, 29);
+            this.tbAuthor.TabIndex = 74;
+            this.tbAuthor.Text = "J. K. Rowling";
             // 
             // label5
             // 
@@ -451,15 +416,15 @@ namespace Bookstore
             this.label5.TabIndex = 73;
             this.label5.Text = "Penulis :";
             // 
-            // textBox2
+            // tbJudul
             // 
-            this.textBox2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.tbJudul.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBox2.Location = new System.Drawing.Point(393, 68);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(619, 29);
-            this.textBox2.TabIndex = 72;
-            this.textBox2.Text = "Harry Potter and the Prisoner of Azkaban";
+            this.tbJudul.Location = new System.Drawing.Point(393, 68);
+            this.tbJudul.Name = "tbJudul";
+            this.tbJudul.Size = new System.Drawing.Size(619, 29);
+            this.tbJudul.TabIndex = 72;
+            this.tbJudul.Text = "Harry Potter and the Prisoner of Azkaban";
             // 
             // label2
             // 
@@ -486,6 +451,7 @@ namespace Bookstore
             this.button2.TabIndex = 70;
             this.button2.Text = "Browse Picture";
             this.button2.UseVisualStyleBackColor = false;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // pictureBox2
             // 
@@ -498,14 +464,15 @@ namespace Bookstore
             this.pictureBox2.TabIndex = 69;
             this.pictureBox2.TabStop = false;
             // 
-            // textBox1
+            // tbKode
             // 
-            this.textBox1.Location = new System.Drawing.Point(85, 63);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.ReadOnly = true;
-            this.textBox1.Size = new System.Drawing.Size(153, 29);
-            this.textBox1.TabIndex = 68;
-            this.textBox1.Text = "B0001";
+            this.tbKode.Enabled = false;
+            this.tbKode.Location = new System.Drawing.Point(85, 63);
+            this.tbKode.Name = "tbKode";
+            this.tbKode.ReadOnly = true;
+            this.tbKode.Size = new System.Drawing.Size(153, 29);
+            this.tbKode.TabIndex = 68;
+            this.tbKode.Text = "B0001";
             // 
             // label4
             // 
@@ -532,6 +499,7 @@ namespace Bookstore
             this.button1.TabIndex = 31;
             this.button1.Text = "Simpan Perubahan";
             this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // btnBack
             // 
@@ -566,9 +534,11 @@ namespace Bookstore
             this.Controls.Add(this.panel1);
             this.Name = "FormDetailBukuAdmin";
             this.Text = "FormDetailBukuAdmin";
+            this.Load += new System.EventHandler(this.FormDetailBukuAdmin_Load);
             this.panel1.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numStok)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.ResumeLayout(false);
 
@@ -578,42 +548,40 @@ namespace Bookstore
 
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.CheckBox checkBox3;
-        private System.Windows.Forms.CheckBox checkBox2;
-        private System.Windows.Forms.CheckBox checkBox1;
-        private System.Windows.Forms.RadioButton radioButton2;
-        private System.Windows.Forms.RadioButton radioButton1;
-        private System.Windows.Forms.TextBox textBox9;
-        private System.Windows.Forms.TextBox textBox8;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
+        private System.Windows.Forms.RadioButton radTAda;
+        private System.Windows.Forms.RadioButton radAda;
+        private System.Windows.Forms.TextBox tbIsbn13;
+        private System.Windows.Forms.TextBox tbIsbn10;
+        private System.Windows.Forms.DateTimePicker tglTerbit;
         private System.Windows.Forms.Label label16;
         private System.Windows.Forms.Label label17;
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.Label label15;
-        private System.Windows.Forms.ComboBox cbBahasa;
         private System.Windows.Forms.Label label12;
-        private System.Windows.Forms.TextBox textBox7;
         private System.Windows.Forms.Label label13;
-        private System.Windows.Forms.ComboBox cbFormat;
         private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.TextBox textBox6;
         private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.TextBox textBox5;
+        private System.Windows.Forms.TextBox tbSynopsis;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.TextBox textBox4;
+        private System.Windows.Forms.TextBox tbHarga;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.TextBox tbAuthor;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox tbJudul;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.PictureBox pictureBox2;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox tbKode;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button btnBack;
         private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.CheckedListBox chListKategori;
+        private System.Windows.Forms.TextBox tbBahasa;
+        private System.Windows.Forms.TextBox tbFormat;
+        private System.Windows.Forms.NumericUpDown numStok;
+        private System.Windows.Forms.ComboBox cbPenerbit;
     }
 }

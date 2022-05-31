@@ -46,6 +46,7 @@ namespace Bookstore
             string server = "localhost";
             string db = "db_tokobuku";
             string user = "root";
+            string password = "mysql";
     
             if(Koneksi.getConn().State == ConnectionState.Closed)
             {
