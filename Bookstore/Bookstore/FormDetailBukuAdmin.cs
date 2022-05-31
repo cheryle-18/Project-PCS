@@ -174,9 +174,7 @@ namespace Bookstore
         {
             string query;
             string publisher="";
-            dtPenerbit = new DataTable();
-            DataRow dRow;  
-            
+            dtPenerbit = new DataTable();            
             try
             {
                 query = "SELECT b.B_ID AS 'Kode Buku',b.B_TITLE AS 'Judul Buku',b.B_AUTHOR AS 'Penulis',p.P_NAME AS 'Penerbit' , b.B_PRICE AS 'Harga', b.B_STOCK AS 'Stok',b.B_STATUS AS 'Status',b.B_IMAGE AS 'image',b.B_SYNOPSIS as 'sinopsis',b.B_ISBN10 ,b.B_ISBN13,b.B_LANGUAGE,b.B_FORMAT,b.B_PUB_DATE " +

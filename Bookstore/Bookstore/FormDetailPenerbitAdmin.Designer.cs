@@ -29,12 +29,12 @@ namespace Bookstore
         /// </summary>
         private void InitializeComponent()
         {
-            this.radioButton2 = new System.Windows.Forms.RadioButton();
-            this.radioButton1 = new System.Windows.Forms.RadioButton();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.radTAda = new System.Windows.Forms.RadioButton();
+            this.radAda = new System.Windows.Forms.RadioButton();
+            this.tbTelp = new System.Windows.Forms.TextBox();
+            this.tbAlamat = new System.Windows.Forms.TextBox();
+            this.tbNama = new System.Windows.Forms.TextBox();
+            this.tbKode = new System.Windows.Forms.TextBox();
             this.btnSimpan = new System.Windows.Forms.Button();
             this.label14 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
@@ -59,61 +59,62 @@ namespace Bookstore
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
-            // radioButton2
+            // radTAda
             // 
-            this.radioButton2.AutoSize = true;
-            this.radioButton2.Location = new System.Drawing.Point(292, 293);
-            this.radioButton2.Name = "radioButton2";
-            this.radioButton2.Size = new System.Drawing.Size(96, 25);
-            this.radioButton2.TabIndex = 70;
-            this.radioButton2.TabStop = true;
-            this.radioButton2.Text = "Non-Aktif";
-            this.radioButton2.UseVisualStyleBackColor = true;
+            this.radTAda.AutoSize = true;
+            this.radTAda.Location = new System.Drawing.Point(292, 293);
+            this.radTAda.Name = "radTAda";
+            this.radTAda.Size = new System.Drawing.Size(96, 25);
+            this.radTAda.TabIndex = 70;
+            this.radTAda.TabStop = true;
+            this.radTAda.Text = "Non-Aktif";
+            this.radTAda.UseVisualStyleBackColor = true;
             // 
-            // radioButton1
+            // radAda
             // 
-            this.radioButton1.AutoSize = true;
-            this.radioButton1.Location = new System.Drawing.Point(202, 293);
-            this.radioButton1.Name = "radioButton1";
-            this.radioButton1.Size = new System.Drawing.Size(60, 25);
-            this.radioButton1.TabIndex = 69;
-            this.radioButton1.TabStop = true;
-            this.radioButton1.Text = "Aktif";
-            this.radioButton1.UseVisualStyleBackColor = true;
+            this.radAda.AutoSize = true;
+            this.radAda.Location = new System.Drawing.Point(202, 293);
+            this.radAda.Name = "radAda";
+            this.radAda.Size = new System.Drawing.Size(60, 25);
+            this.radAda.TabIndex = 69;
+            this.radAda.TabStop = true;
+            this.radAda.Text = "Aktif";
+            this.radAda.UseVisualStyleBackColor = true;
             // 
-            // textBox4
+            // tbTelp
             // 
-            this.textBox4.Location = new System.Drawing.Point(202, 242);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(235, 29);
-            this.textBox4.TabIndex = 68;
-            this.textBox4.Text = "0893473472";
+            this.tbTelp.Location = new System.Drawing.Point(202, 242);
+            this.tbTelp.Name = "tbTelp";
+            this.tbTelp.Size = new System.Drawing.Size(235, 29);
+            this.tbTelp.TabIndex = 68;
+            this.tbTelp.Text = "0893473472";
             // 
-            // textBox3
+            // tbAlamat
             // 
-            this.textBox3.Location = new System.Drawing.Point(202, 172);
-            this.textBox3.Multiline = true;
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(721, 60);
-            this.textBox3.TabIndex = 67;
-            this.textBox3.Text = "Jl. Palmerah Barat, RT.1/RW.2, Gelora, Tanah Abang, Kota Jakarta Pusat, Daerah Kh" +
+            this.tbAlamat.Location = new System.Drawing.Point(202, 172);
+            this.tbAlamat.Multiline = true;
+            this.tbAlamat.Name = "tbAlamat";
+            this.tbAlamat.Size = new System.Drawing.Size(721, 60);
+            this.tbAlamat.TabIndex = 67;
+            this.tbAlamat.Text = "Jl. Palmerah Barat, RT.1/RW.2, Gelora, Tanah Abang, Kota Jakarta Pusat, Daerah Kh" +
     "usus Ibukota Jakarta 10270";
             // 
-            // textBox2
+            // tbNama
             // 
-            this.textBox2.Location = new System.Drawing.Point(208, 120);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(235, 29);
-            this.textBox2.TabIndex = 66;
-            this.textBox2.Text = "Gramedia Pustaka Utama";
+            this.tbNama.Location = new System.Drawing.Point(202, 123);
+            this.tbNama.Name = "tbNama";
+            this.tbNama.Size = new System.Drawing.Size(235, 29);
+            this.tbNama.TabIndex = 66;
+            this.tbNama.Text = "Gramedia Pustaka Utama";
             // 
-            // textBox1
+            // tbKode
             // 
-            this.textBox1.Location = new System.Drawing.Point(208, 76);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(135, 29);
-            this.textBox1.TabIndex = 65;
-            this.textBox1.Text = "15";
+            this.tbKode.Enabled = false;
+            this.tbKode.Location = new System.Drawing.Point(202, 74);
+            this.tbKode.Name = "tbKode";
+            this.tbKode.Size = new System.Drawing.Size(135, 29);
+            this.tbKode.TabIndex = 65;
+            this.tbKode.Text = "15";
             // 
             // btnSimpan
             // 
@@ -123,7 +124,7 @@ namespace Bookstore
             this.btnSimpan.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSimpan.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSimpan.ForeColor = System.Drawing.Color.White;
-            this.btnSimpan.Location = new System.Drawing.Point(899, 520);
+            this.btnSimpan.Location = new System.Drawing.Point(899, 553);
             this.btnSimpan.Margin = new System.Windows.Forms.Padding(4);
             this.btnSimpan.Name = "btnSimpan";
             this.btnSimpan.Size = new System.Drawing.Size(115, 38);
@@ -151,7 +152,7 @@ namespace Bookstore
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button1.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button1.ForeColor = System.Drawing.Color.White;
-            this.button1.Location = new System.Drawing.Point(30, 520);
+            this.button1.Location = new System.Drawing.Point(28, 553);
             this.button1.Margin = new System.Windows.Forms.Padding(4);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(115, 38);
@@ -175,6 +176,7 @@ namespace Bookstore
             this.btnReset.TabIndex = 61;
             this.btnReset.Text = "Reset";
             this.btnReset.UseVisualStyleBackColor = false;
+            this.btnReset.Click += new System.EventHandler(this.btnReset_Click);
             // 
             // cmbArah
             // 
@@ -190,6 +192,7 @@ namespace Bookstore
             this.cmbArah.Name = "cmbArah";
             this.cmbArah.Size = new System.Drawing.Size(169, 29);
             this.cmbArah.TabIndex = 60;
+            this.cmbArah.SelectedIndexChanged += new System.EventHandler(this.cmbArah_SelectedIndexChanged);
             // 
             // cmbSort
             // 
@@ -208,6 +211,7 @@ namespace Bookstore
             this.cmbSort.Name = "cmbSort";
             this.cmbSort.Size = new System.Drawing.Size(223, 29);
             this.cmbSort.TabIndex = 59;
+            this.cmbSort.SelectedIndexChanged += new System.EventHandler(this.cmbSort_SelectedIndexChanged);
             // 
             // label10
             // 
@@ -222,6 +226,8 @@ namespace Bookstore
             // 
             // dataGridView1
             // 
+            this.dataGridView1.AllowUserToAddRows = false;
+            this.dataGridView1.AllowUserToDeleteRows = false;
             this.dataGridView1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
@@ -230,8 +236,9 @@ namespace Bookstore
             this.dataGridView1.Location = new System.Drawing.Point(30, 402);
             this.dataGridView1.Margin = new System.Windows.Forms.Padding(4);
             this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.ReadOnly = true;
             this.dataGridView1.RowHeadersWidth = 51;
-            this.dataGridView1.Size = new System.Drawing.Size(984, 101);
+            this.dataGridView1.Size = new System.Drawing.Size(984, 143);
             this.dataGridView1.TabIndex = 56;
             // 
             // label7
@@ -346,12 +353,12 @@ namespace Bookstore
             // 
             // panel1
             // 
-            this.panel1.Controls.Add(this.radioButton2);
-            this.panel1.Controls.Add(this.radioButton1);
-            this.panel1.Controls.Add(this.textBox4);
-            this.panel1.Controls.Add(this.textBox3);
-            this.panel1.Controls.Add(this.textBox2);
-            this.panel1.Controls.Add(this.textBox1);
+            this.panel1.Controls.Add(this.radTAda);
+            this.panel1.Controls.Add(this.radAda);
+            this.panel1.Controls.Add(this.tbTelp);
+            this.panel1.Controls.Add(this.tbAlamat);
+            this.panel1.Controls.Add(this.tbNama);
+            this.panel1.Controls.Add(this.tbKode);
             this.panel1.Controls.Add(this.btnSimpan);
             this.panel1.Controls.Add(this.label14);
             this.panel1.Controls.Add(this.button1);
@@ -405,12 +412,12 @@ namespace Bookstore
 
         #endregion
 
-        private System.Windows.Forms.RadioButton radioButton2;
-        private System.Windows.Forms.RadioButton radioButton1;
-        private System.Windows.Forms.TextBox textBox4;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.RadioButton radTAda;
+        private System.Windows.Forms.RadioButton radAda;
+        private System.Windows.Forms.TextBox tbTelp;
+        private System.Windows.Forms.TextBox tbAlamat;
+        private System.Windows.Forms.TextBox tbNama;
+        private System.Windows.Forms.TextBox tbKode;
         private System.Windows.Forms.Button btnSimpan;
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.Button button1;

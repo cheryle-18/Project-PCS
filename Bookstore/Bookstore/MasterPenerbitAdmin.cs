@@ -27,12 +27,15 @@ namespace Bookstore
 
         private void btnDetail_Click(object sender, EventArgs e)
         {
-            FormDetailPenerbitAdmin frm = new FormDetailPenerbitAdmin();
+            int selected_row = dataGridView1.CurrentCell.RowIndex;
+            string id_pilih = dataGridView1.Rows[selected_row].Cells[0].Value.ToString();
+            FormDetailPenerbitAdmin frm = new FormDetailPenerbitAdmin(id_pilih);
             Panel temp = (Panel)frm.Controls[0];
             temp.Width = panel2.Width;
             temp.Height = panel2.Height;
             this.panel2.Controls.Clear();
             this.panel2.Controls.Add(temp);
+           
         }
 
         private void btnInsert_Click(object sender, EventArgs e)
@@ -109,38 +112,127 @@ namespace Bookstore
                     }
                     else if (cmbSort.SelectedIndex == 2)
                     {
-                        kolom = 3;
+                        kolom = 5;
                     }
 
-                    cmd = "SELECT b.B_ID AS 'Kode Buku',b.B_TITLE AS 'Judul Buku',b.B_AUTHOR AS 'Penulis',p.P_NAME AS 'Penerbit',c.C_NAME AS 'Kategori',CONCAT('Rp.',FORMAT(b.B_PRICE,0)) AS 'Harga', b.B_STOCK AS 'Stok',b.B_STATUS AS 'Status' " +
-                                      "FROM book b,publisher p, book_category bc,category c " +
-                                      $"WHERE b.B_ID = bc.B_ID AND bc.C_ID = c.C_ID AND b.B_P_ID = p.P_ID AND b.B_TITLE LIKE CONCAT('%','{input}','%') ORDER BY {kolom} {order}; ";
-                }
-                else if (cmbSort.SelectedIndex >= 3)
-                {
-                    if (cmbSort.SelectedIndex == 3)
-                    {
-                        kolom = 6;
-                        cmd = "SELECT b.B_ID AS 'Kode Buku',b.B_TITLE AS 'Judul Buku',b.B_AUTHOR AS 'Penulis',p.P_NAME AS 'Penerbit',c.C_NAME AS 'Kategori',CONCAT('Rp.', FORMAT(b.B_PRICE, 0)) AS 'Harga', b.B_STOCK AS 'Stok',b.B_STATUS AS 'Status' " +
-                                  "FROM book b,publisher p, book_category bc,category c " +
-                                  $"WHERE b.B_ID = bc.B_ID AND bc.C_ID = c.C_ID AND b.B_P_ID = p.P_ID AND b.B_TITLE LIKE CONCAT('%','{input}','%') ORDER BY LENGTH(b.B_PRICE) {order}, b.B_PRICE {order}; ";
-                    }
-                    else if (cmbSort.SelectedIndex == 4)
-                    {
-                        kolom = 7;
-                        cmd = "SELECT b.B_ID AS 'Kode Buku',b.B_TITLE AS 'Judul Buku',b.B_AUTHOR AS 'Penulis',p.P_NAME AS 'Penerbit',c.C_NAME AS 'Kategori',CONCAT('Rp.', FORMAT(b.B_PRICE, 0)) AS 'Harga', b.B_STOCK AS 'Stok',b.B_STATUS AS 'Status' " +
-                                  "FROM book b,publisher p, book_category bc,category c " +
-                                  $"WHERE b.B_ID = bc.B_ID AND bc.C_ID = c.C_ID AND b.B_P_ID = p.P_ID AND b.B_TITLE LIKE CONCAT('%','{input}','%') ORDER BY LENGTH(b.B_STOCK) {order}, b.B_STOCK {order}; ";
-                    }
-
+                    cmd = "SELECT P_ID AS 'Kode Penerbit',P_NAME AS 'Nama',P_ADDRESS AS 'Alamat',P_TELP AS 'Telp',P_STATUS AS 'Status' " +
+                                   "FROM publisher " +
+                                      $"WHERE P_NAME LIKE CONCAT('%','{input}','%') ORDER BY {kolom} {order}; ";
                 }
             }
             else
             {
-                cmd = "SELECT b.B_ID AS 'Kode Buku',b.B_TITLE AS 'Judul Buku',b.B_AUTHOR AS 'Penulis',p.P_NAME AS 'Penerbit',c.C_NAME AS 'Kategori',CONCAT('Rp.',FORMAT(b.B_PRICE,0)) AS 'Harga', b.B_STOCK AS 'Stok',b.B_STATUS AS 'Status' " +
-                                      $"FROM book b,publisher p, book_category bc,category c WHERE b.B_ID = bc.B_ID AND bc.C_ID = c.C_ID AND b.B_P_ID = p.P_ID AND b.B_TITLE LIKE CONCAT('%','{input}','%'); ";
+                cmd = "SELECT P_ID AS 'Kode Penerbit',P_NAME AS 'Nama',P_ADDRESS AS 'Alamat',P_TELP AS 'Telp',P_STATUS AS 'Status' " +
+                                   "FROM publisher " +
+                                      $"WHERE P_NAME LIKE CONCAT('%','{input}','%'); ";
             }
             return cmd;
+        }
+
+        private void cmbSort_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (cmbArah.SelectedIndex > -1 && cmbSort.SelectedIndex > -1)
+            {
+                string order = "ASC";
+                int kolom = 0;
+                string cmd = "";
+                string keyword = "";
+                if (tbCari.Text != "Kata Kunci")
+                {
+                    keyword = tbCari.Text;
+                }
+
+                if (cmbArah.SelectedIndex == 0)
+                {
+                    order = "ASC";
+                }
+                else if (cmbArah.SelectedIndex == 1)
+                {
+                    order = "DESC";
+                }
+                if (cmbSort.SelectedIndex < 3)
+                {
+                    if (cmbSort.SelectedIndex == 0)
+                    {
+                        kolom = 1;
+                    }
+                    else if (cmbSort.SelectedIndex == 1)
+                    {
+                        kolom = 2;
+                    }
+                    else if (cmbSort.SelectedIndex == 2)
+                    {
+                        kolom = 3;
+                    }
+
+                    cmd = "SELECT P_ID AS 'Kode Penerbit',P_NAME AS 'Nama',P_ADDRESS AS 'Alamat',P_TELP AS 'Telp',P_STATUS AS 'Status' " +
+                                   "FROM publisher " +
+                                      $"WHERE P_NAME LIKE CONCAT('%','{keyword}','%') ORDER BY {kolom} {order}; ";
+                }
+
+                refreshDgv(cmd);
+            }
+
+        }
+
+        private void tbCari_TextChanged(object sender, EventArgs e)
+        {
+            if (tbCari.Text != "Kata Kunci")
+            {
+                string temp = search(tbCari.Text);
+                refreshDgv(temp);
+            }
+        }
+
+        private void cmbArah_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (cmbSort.SelectedIndex > -1 && cmbArah.SelectedIndex > -1)
+            {
+                string order = "ASC";
+                int kolom = 0;
+                string cmd = "";
+                string keyword = "";
+                if (tbCari.Text != "Kata Kunci")
+                {
+                    keyword = tbCari.Text;
+                }
+                if (cmbArah.SelectedIndex == 0)
+                {
+                    order = "ASC";
+                }
+                else if (cmbArah.SelectedIndex == 1)
+                {
+                    order = "DESC";
+                }
+                if (cmbSort.SelectedIndex < 3)
+                {
+                    if (cmbSort.SelectedIndex == 0)
+                    {
+                        kolom = 1;
+                    }
+                    else if (cmbSort.SelectedIndex == 1)
+                    {
+                        kolom = 2;
+                    }
+                    else if (cmbSort.SelectedIndex == 2)
+                    {
+                        kolom = 3;
+                    }
+
+                    cmd = "SELECT P_ID AS 'Kode Penerbit',P_NAME AS 'Nama',P_ADDRESS AS 'Alamat',P_TELP AS 'Telp',P_STATUS AS 'Status' " +
+                                   "FROM publisher " +
+                                      $"WHERE P_NAME LIKE CONCAT('%','{keyword}','%') ORDER BY {kolom} {order}; ";
+                }
+                refreshDgv(cmd);
+            }
+        }
+
+        private void btnReset_Click(object sender, EventArgs e)
+        {
+            tbCari.Text = "Kata Kunci";
+            cmbSort.SelectedIndex = -1;
+            cmbArah.SelectedIndex = -1;
+            refreshDgv(command_querry);
         }
     }
 }

@@ -113,6 +113,7 @@ namespace Bookstore
             this.btnReset.TabIndex = 25;
             this.btnReset.Text = "Reset";
             this.btnReset.UseVisualStyleBackColor = false;
+            this.btnReset.Click += new System.EventHandler(this.btnReset_Click);
             // 
             // cmbArah
             // 
@@ -126,6 +127,7 @@ namespace Bookstore
             this.cmbArah.Name = "cmbArah";
             this.cmbArah.Size = new System.Drawing.Size(128, 29);
             this.cmbArah.TabIndex = 24;
+            this.cmbArah.SelectedIndexChanged += new System.EventHandler(this.cmbArah_SelectedIndexChanged);
             // 
             // label4
             // 
@@ -143,14 +145,13 @@ namespace Bookstore
             this.cmbSort.FormattingEnabled = true;
             this.cmbSort.Items.AddRange(new object[] {
             "Kode",
-            "Judul",
-            "Penulis",
-            "Harga",
-            "Stok"});
+            "Nama",
+            "Status"});
             this.cmbSort.Location = new System.Drawing.Point(621, 80);
             this.cmbSort.Name = "cmbSort";
             this.cmbSort.Size = new System.Drawing.Size(168, 29);
             this.cmbSort.TabIndex = 19;
+            this.cmbSort.SelectedIndexChanged += new System.EventHandler(this.cmbSort_SelectedIndexChanged);
             // 
             // label2
             // 
@@ -169,6 +170,7 @@ namespace Bookstore
             this.tbCari.Size = new System.Drawing.Size(294, 29);
             this.tbCari.TabIndex = 15;
             this.tbCari.Text = "Kata Kunci";
+            this.tbCari.TextChanged += new System.EventHandler(this.tbCari_TextChanged);
             // 
             // label3
             // 
