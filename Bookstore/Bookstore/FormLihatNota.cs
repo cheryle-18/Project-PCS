@@ -30,6 +30,7 @@ namespace Bookstore
         private void loadNota()
         {
             CrNotaTransaksi rep = new CrNotaTransaksi();
+            rep.SetParameterValue("id_transaksi",tr_id);
             //rep.SetParameterValue("id_pegawai", cbPegawai.SelectedValue);
             //rep.SetParameterValue("nama_pegawai", namaku);
             //rep.SetParameterValue("tanggal_awal", dtpTanggalAwal.Value.Date.ToString("dd MMMM yyyy"));
