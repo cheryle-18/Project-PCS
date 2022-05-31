@@ -255,6 +255,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ReportNotaPO.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <EmbeddedResource Include="CrNotaTransaksi.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>CrNotaTransaksi.cs</LastGenOutput>
