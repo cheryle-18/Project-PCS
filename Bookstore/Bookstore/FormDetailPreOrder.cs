@@ -57,7 +57,7 @@ namespace Bookstore
             lbKodePO.Text = poId;
 
             //Detail PO
-            MySqlCommand cmd = new MySqlCommand("select PO_INVOICE_NUMBER, PO_B_ID, concat('Rp ', format(PO_TOTAL,0,'de_DE')), concat('Rp ', format(PO_DOWN_PAYMENT,0,'de_DE')), PO_QTY, (case when PO_STATUS=1 then 'Menunggu Buku' when PO_STATUS=2 then 'Siap Diproses' else 'Selesai' end) as status, date_format(PO_DATE, '%d/%m/%Y'), (case when PO_M_ID is not null then PO_M_ID else 'Guest' end) as jenis, E_NAME from pre_order join book on B_ID=PO_B_ID join member on M_ID=PO_M_ID join employee on E_ID=PO_E_ID where PO_ID=@po_id", Koneksi.getConn());
+            MySqlCommand cmd = new MySqlCommand("select PO_INVOICE_NUMBER, PO_B_ID, concat('Rp ', format(PO_TOTAL,0,'de_DE')), concat('Rp ', format(PO_DOWN_PAYMENT,0,'de_DE')), PO_QTY, (case when PO_STATUS=1 then 'Menunggu Buku' when PO_STATUS=2 then 'Siap Diproses' else 'Selesai' end) as status, date_format(PO_DATE, '%d/%m/%Y'), (case when PO_M_ID is null then 'Guest' else PO_M_ID end) as jenis, E_NAME from pre_order join book on B_ID=PO_B_ID left join member on M_ID=PO_M_ID join employee on E_ID=PO_E_ID where PO_ID=@po_id", Koneksi.getConn());
             cmd.Parameters.AddWithValue("@po_id", poId);
             MySqlDataReader reader = cmd.ExecuteReader();
             while (reader.Read())
