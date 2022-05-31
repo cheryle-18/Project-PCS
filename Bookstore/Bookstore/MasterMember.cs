@@ -13,6 +13,7 @@ namespace Bookstore
 {
     public partial class MasterMember : Form
     {
+        private string m_id = "";
         DataTable dtMember;
         private int user_role;
         public MasterMember(int role)
@@ -31,12 +32,27 @@ namespace Bookstore
 
         private void btnDetail_Click(object sender, EventArgs e)
         {
-            FormDetailMember frm = new FormDetailMember(user_role);
-            Panel temp = (Panel)frm.Controls[0];
-            temp.Width = panel2.Width;
-            temp.Height = panel2.Height;
-            this.panel2.Controls.Clear();
-            this.panel2.Controls.Add(temp);
+            if (m_id == "")
+            {
+                try
+                {
+                    m_id = dgMember.Rows[0].Cells[0].Value.ToString();
+                }
+                catch (Exception)
+                {
+
+                }
+            }
+            if (m_id != "")
+            {
+                //MessageBox.Show(m_id);
+                FormDetailMember frm = new FormDetailMember(user_role,m_id);
+                Panel temp = (Panel)frm.Controls[0];
+                temp.Width = panel2.Width;
+                temp.Height = panel2.Height;
+                this.panel2.Controls.Clear();
+                this.panel2.Controls.Add(temp);
+            }
         }
 
         private void btnMemberBaru_Click(object sender, EventArgs e)
@@ -62,7 +78,7 @@ namespace Bookstore
             string[] sorts = { "m_id", "m_name", "m_birthdate", "m_address", "m_telp", "m_point", "m_status"};
             string arah = arahs[cmbArah.SelectedIndex];
             string sort = $"order by {sorts[cmbSort.SelectedIndex]} {arah}";
-            string query = $"SELECT m_id,m_name,m_birthdate,m_address,m_telp,m_point,CONVERT(m_status, CHAR) FROM MEMBER where M_NAME like '%{name}%' {sort}";
+            string query = $"SELECT m_id,m_name,DATE_FORMAT(m_birthdate,'%d/%m/%Y'),m_address,m_telp,m_point,CONVERT(m_status, CHAR) FROM MEMBER where M_NAME like '%{name}%' {sort}";
             try
             {
                 MySqlDataAdapter da = new MySqlDataAdapter(query, Koneksi.getConn());
@@ -90,8 +106,7 @@ namespace Bookstore
 
         private void dgMember_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            string m_id = dgMember.Rows[e.RowIndex].Cells[0].Value.ToString();
-            //MessageBox.Show(m_id);
+            m_id = dgMember.Rows[e.RowIndex].Cells[0].Value.ToString();
         }
 
         private void dgMember_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
