@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MySql.Data.MySqlClient;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -60,11 +61,12 @@ namespace Bookstore
         {
             //SHOW CRYSTAL REPORT
             CrPenjualanBukuDibawahRata rep = new CrPenjualanBukuDibawahRata();
+
+            //FIND AVG
+            MySqlCommand cmd = new MySqlCommand("SELECT SUM(DP_QTY)/COUNT(DP_B_ID) FROM dtrans_purchase;",Koneksi.getConn());
+            double avg = Convert.ToDouble(cmd.ExecuteScalar());
+            rep.SetParameterValue("average", avg);
             crViewLaporan.ReportSource = rep;
-            
-
-
-           
         }
     }
 }
