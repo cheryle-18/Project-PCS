@@ -138,6 +138,12 @@
     <Compile Include="FormLihatNota.Designer.cs">
       <DependentUpon>FormLihatNota.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormLihatNotaPO.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormLihatNotaPO.Designer.cs">
+      <DependentUpon>FormLihatNotaPO.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormPegawaiBaru.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -281,6 +287,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormLihatNota.resx">
       <DependentUpon>FormLihatNota.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormLihatNotaPO.resx">
+      <DependentUpon>FormLihatNotaPO.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormPegawaiBaru.resx">
       <DependentUpon>FormPegawaiBaru.cs</DependentUpon>

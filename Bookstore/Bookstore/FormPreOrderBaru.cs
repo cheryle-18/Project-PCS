@@ -297,7 +297,7 @@ namespace Bookstore
                     //kembali ke master
                     clearAll();
 
-                    MasterPreOrder frm = new MasterPreOrder(0);
+                    MasterPreOrder frm = new MasterPreOrder(2);
                     Panel temp = (Panel)frm.Controls[0];
                     temp.Width = panel2.Width;
                     temp.Height = panel2.Height;
@@ -316,7 +316,7 @@ namespace Bookstore
         {
             clearAll();
 
-            MasterPreOrder frm = new MasterPreOrder(0);
+            MasterPreOrder frm = new MasterPreOrder(2);
             Panel temp = (Panel)frm.Controls[0];
             temp.Width = panel2.Width;
             temp.Height = panel2.Height;

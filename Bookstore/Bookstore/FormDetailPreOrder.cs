@@ -17,14 +17,21 @@ namespace Bookstore
         string bookId;
         string custType;
         string memberId;
+        int userRole;
 
         DataTable dtBuku;
 
-        public FormDetailPreOrder(string poId)
+        public FormDetailPreOrder(string poId, int role)
         {
             InitializeComponent();
 
             this.poId = poId;
+            this.userRole = role;
+            if (userRole == 1)
+            {
+                btnProses.Visible = false;
+            }
+
             bookId = "";
             custType = "";
             memberId = "";
@@ -34,11 +41,11 @@ namespace Bookstore
             int status = Convert.ToInt32(cmd.ExecuteScalar());
             if (status == 2)
             {
-                btnProses.Enabled = true;
+                btnProses.Visible = true;
             }
             else
             {
-                btnProses.Enabled = false;
+                btnProses.Visible = false;
             }
 
             loadDetails();
@@ -146,6 +153,16 @@ namespace Bookstore
         private void FormDetailPreOrder_Load(object sender, EventArgs e)
         {
             
+        }
+
+        private void btnLihatNota_Click(object sender, EventArgs e)
+        {
+            FormLihatNotaPO frm = new FormLihatNotaPO(poId, userRole);
+            Panel temp = (Panel)frm.Controls[0];
+            temp.Width = panel2.Width;
+            temp.Height = panel2.Height;
+            this.panel2.Controls.Clear();
+            this.panel2.Controls.Add(temp);
         }
     }
 }

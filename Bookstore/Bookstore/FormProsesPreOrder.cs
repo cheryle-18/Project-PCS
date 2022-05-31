@@ -179,7 +179,7 @@ namespace Bookstore
 
         private void btnBatal_Click(object sender, EventArgs e)
         {
-            FormDetailPreOrder frm = new FormDetailPreOrder(poId);
+            FormDetailPreOrder frm = new FormDetailPreOrder(poId,2);
             Panel temp = (Panel)frm.Controls[0];
             temp.Width = panel2.Width;
             temp.Height = panel2.Height;
@@ -277,7 +277,7 @@ namespace Bookstore
 
                     //kembali ke detail
 
-                    FormDetailPreOrder frm = new FormDetailPreOrder(poId);
+                    FormDetailPreOrder frm = new FormDetailPreOrder(poId,2);
                     Panel temp = (Panel)frm.Controls[0];
                     temp.Width = panel2.Width;
                     temp.Height = panel2.Height;
