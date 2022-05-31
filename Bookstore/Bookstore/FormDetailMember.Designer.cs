@@ -63,6 +63,7 @@ namespace Bookstore
             this.label2 = new System.Windows.Forms.Label();
             this.btnDetail = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
+            this.btnSimpanPerubahan = new System.Windows.Forms.Button();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
@@ -73,6 +74,7 @@ namespace Bookstore
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panel2.BackColor = System.Drawing.Color.White;
+            this.panel2.Controls.Add(this.btnSimpanPerubahan);
             this.panel2.Controls.Add(this.dtpTanggalLahir);
             this.panel2.Controls.Add(this.rbStatusNonAktif);
             this.panel2.Controls.Add(this.rbStatusAktif);
@@ -426,6 +428,21 @@ namespace Bookstore
             this.label3.TabIndex = 14;
             this.label3.Text = "Detail Member";
             // 
+            // btnSimpanPerubahan
+            // 
+            this.btnSimpanPerubahan.BackColor = System.Drawing.Color.Navy;
+            this.btnSimpanPerubahan.FlatAppearance.BorderSize = 0;
+            this.btnSimpanPerubahan.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSimpanPerubahan.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSimpanPerubahan.ForeColor = System.Drawing.Color.White;
+            this.btnSimpanPerubahan.Location = new System.Drawing.Point(403, 312);
+            this.btnSimpanPerubahan.Name = "btnSimpanPerubahan";
+            this.btnSimpanPerubahan.Size = new System.Drawing.Size(157, 38);
+            this.btnSimpanPerubahan.TabIndex = 96;
+            this.btnSimpanPerubahan.Text = "Simpan Perubahan";
+            this.btnSimpanPerubahan.UseVisualStyleBackColor = false;
+            this.btnSimpanPerubahan.Click += new System.EventHandler(this.btnSimpanPerubahan_Click);
+            // 
             // FormDetailMember
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
@@ -476,5 +493,6 @@ namespace Bookstore
         private System.Windows.Forms.TextBox tbNama;
         private System.Windows.Forms.TextBox tbKode;
         private System.Windows.Forms.DateTimePicker dtpTanggalLahir;
+        private System.Windows.Forms.Button btnSimpanPerubahan;
     }
 }

@@ -123,7 +123,7 @@
     <Compile Include="FormDetailMember.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormDetailMember.Designer.cs">
+    <Compile Include="FormDetailMember.designer.cs">
       <DependentUpon>FormDetailMember.cs</DependentUpon>
     </Compile>
     <Compile Include="FormDetailPegawaiAdmin.cs">
@@ -162,6 +162,12 @@
     <Compile Include="FormLihatNotaPO.Designer.cs">
       <DependentUpon>FormLihatNotaPO.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormMemberBaru.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormMemberBaru.designer.cs">
+      <DependentUpon>FormMemberBaru.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormPegawaiBaru.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -192,12 +198,6 @@
     </Compile>
     <Compile Include="FormLogin.Designer.cs">
       <DependentUpon>FormLogin.cs</DependentUpon>
-    </Compile>
-    <Compile Include="FormMemberBaru.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="FormMemberBaru.Designer.cs">
-      <DependentUpon>FormMemberBaru.cs</DependentUpon>
     </Compile>
     <Compile Include="FormPreOrderBaru.cs">
       <SubType>Form</SubType>
@@ -348,6 +348,9 @@
     <EmbeddedResource Include="FormLihatNota.resx">
       <DependentUpon>FormLihatNota.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FormMemberBaru.resx">
+      <DependentUpon>FormMemberBaru.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormPegawaiBaru.resx">
       <DependentUpon>FormPegawaiBaru.cs</DependentUpon>
     </EmbeddedResource>
@@ -362,9 +365,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormLogin.resx">
       <DependentUpon>FormLogin.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="FormMemberBaru.resx">
-      <DependentUpon>FormMemberBaru.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormPreOrderBaru.resx">
       <DependentUpon>FormPreOrderBaru.cs</DependentUpon>

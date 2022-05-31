@@ -79,5 +79,28 @@ namespace Bookstore
                 rbStatusAktif.Checked = true;
             }
         }
+
+        private void btnSimpanPerubahan_Click(object sender, EventArgs e)
+        {
+            if (tbKode.Text == "" || tbNama.Text == "" || tbAlamat.Text == "" || tbTelepon.Text == "" || tbJumlahPoin.Text == "" || (!rbStatusAktif.Checked && !rbStatusNonAktif.Checked))
+            {
+                MessageBox.Show("Semua Field Harus Terisi!");
+            }
+            else
+            {
+                string query = $"UPDATE MEMBER SET M_NAME = @M_NAME, M_BIRTHDATE = @M_BIRTHDATE, M_ADDRESS = @M_ADDRESS, M_TELP = @M_TELP, M_STATUS = @M_STATUS WHERE M_ID = @M_ID;";
+                MySqlCommand cmd = new MySqlCommand(query, Koneksi.getConn());
+                cmd.Parameters.AddWithValue("@M_NAME", tbNama.Text);
+                cmd.Parameters.AddWithValue("@M_BIRTHDATE", dtpTanggalLahir.Value.ToString("yyyy-MM-dd"));
+                cmd.Parameters.AddWithValue("@M_ADDRESS", tbAlamat.Text);
+                cmd.Parameters.AddWithValue("@M_TELP", tbTelepon.Text);
+                cmd.Parameters.AddWithValue("@M_STATUS", Convert.ToInt32(rbStatusAktif.Checked));
+                cmd.Parameters.AddWithValue("@M_ID", tbKode.Text);
+
+                cmd.ExecuteNonQuery();
+
+                MessageBox.Show("Simpan Perubahan Berhasil!");
+            }
+        }
     }
 }
