@@ -72,6 +72,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CrNotaTransaksi.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CrNotaTransaksi.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="FormBukuBaruAdmin.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -256,6 +262,9 @@
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ReportNotaPO.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="ReportNotaPO.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>ReportNotaPO.rpt</DependentUpon>
@@ -279,6 +288,10 @@
       <DependentUpon>ReportPreOrderV2.rpt</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
+    <EmbeddedResource Include="CrNotaTransaksi.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>CrNotaTransaksi.cs</LastGenOutput>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormBukuBaruAdmin.resx">
       <DependentUpon>FormBukuBaruAdmin.cs</DependentUpon>
     </EmbeddedResource>
@@ -300,6 +313,9 @@
     <EmbeddedResource Include="FormDetailPegawaiAdmin.resx">
       <DependentUpon>FormDetailPegawaiAdmin.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FormLihatNotaPO.resx">
+      <DependentUpon>FormLihatNotaPO.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormDetailPenerbitAdmin.resx">
       <DependentUpon>FormDetailPenerbitAdmin.cs</DependentUpon>
     </EmbeddedResource>
@@ -311,9 +327,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormLihatNota.resx">
       <DependentUpon>FormLihatNota.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="FormLihatNotaPO.resx">
-      <DependentUpon>FormLihatNotaPO.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormPegawaiBaru.resx">
       <DependentUpon>FormPegawaiBaru.cs</DependentUpon>
