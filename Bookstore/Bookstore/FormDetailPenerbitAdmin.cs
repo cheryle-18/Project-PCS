@@ -259,6 +259,18 @@ namespace Bookstore
             refreshDgv(command_querry);
         }
 
-
+        private void dataGridView1_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            Panel temp;
+            int selected_row = dataGridView1.CurrentCell.RowIndex;
+            string id_pilih = dataGridView1.Rows[selected_row].Cells[0].Value.ToString();
+            
+            FormDetailBukuAdmin frm = new FormDetailBukuAdmin(id_pilih,id_penerbit);
+            temp = (Panel)frm.Controls[0];
+            temp.Width = panel1.Width;
+            temp.Height = panel1.Height;
+            this.panel1.Controls.Clear();
+            this.panel1.Controls.Add(temp);
+        }
     }
 }

@@ -19,31 +19,45 @@ namespace Bookstore
         MySqlDataAdapter da;
         MySqlDataReader dr;
         string idBuku;
-        string bahasa, format,tempharga;
+        string bahasa, format,tempharga,navigasi;
         int harga;
         List<string> arrTemp;
         List<string> arrPenerbit;
         List<string> arrIDPenerbit;
         DataTable dtPenerbit;
         Random rnd=new Random();
-        public FormDetailBukuAdmin(string id)
+        public FormDetailBukuAdmin(string id,string nav)
         {
             InitializeComponent();
             arrIDPenerbit = new List<string>();
             arrPenerbit = new List<string>();
             connection = Koneksi.getConn();
             idBuku = id;
+            navigasi = nav;
             connects();
         }
 
         private void btnBack_Click(object sender, EventArgs e)
         {
-            MasterBuku frm = new MasterBuku(1);
-            Panel temp = (Panel)frm.Controls[0];
-            temp.Width = panel1.Width;
-            temp.Height = panel1.Height;
-            this.panel1.Controls.Clear();
-            this.panel1.Controls.Add(temp);
+            if (navigasi == "buku")
+            {
+                MasterBuku frm = new MasterBuku(1);
+                Panel temp = (Panel)frm.Controls[0];
+                temp.Width = panel1.Width;
+                temp.Height = panel1.Height;
+                this.panel1.Controls.Clear();
+                this.panel1.Controls.Add(temp);
+            }
+            else
+            {
+                FormDetailPenerbitAdmin frm = new FormDetailPenerbitAdmin(navigasi);
+                Panel temp = (Panel)frm.Controls[0];
+                temp.Width = panel1.Width;
+                temp.Height = panel1.Height;
+                this.panel1.Controls.Clear();
+                this.panel1.Controls.Add(temp);
+            }
+            
         }
 
         private void FormDetailBukuAdmin_Load(object sender, EventArgs e)

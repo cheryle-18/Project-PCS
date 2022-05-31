@@ -29,10 +29,10 @@ namespace Bookstore
         /// </summary>
         private void InitializeComponent()
         {
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.tbTelp = new System.Windows.Forms.TextBox();
+            this.tbAlamat = new System.Windows.Forms.TextBox();
+            this.tbNama = new System.Windows.Forms.TextBox();
+            this.tbKode = new System.Windows.Forms.TextBox();
             this.label12 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
@@ -48,34 +48,34 @@ namespace Bookstore
             this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
-            // textBox4
+            // tbTelp
             // 
-            this.textBox4.Location = new System.Drawing.Point(246, 194);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(213, 26);
-            this.textBox4.TabIndex = 90;
+            this.tbTelp.Location = new System.Drawing.Point(246, 194);
+            this.tbTelp.Name = "tbTelp";
+            this.tbTelp.Size = new System.Drawing.Size(213, 26);
+            this.tbTelp.TabIndex = 90;
             // 
-            // textBox3
+            // tbAlamat
             // 
-            this.textBox3.Location = new System.Drawing.Point(246, 159);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(213, 26);
-            this.textBox3.TabIndex = 89;
+            this.tbAlamat.Location = new System.Drawing.Point(246, 159);
+            this.tbAlamat.Name = "tbAlamat";
+            this.tbAlamat.Size = new System.Drawing.Size(213, 26);
+            this.tbAlamat.TabIndex = 89;
             // 
-            // textBox2
+            // tbNama
             // 
-            this.textBox2.Location = new System.Drawing.Point(246, 124);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(213, 26);
-            this.textBox2.TabIndex = 87;
+            this.tbNama.Location = new System.Drawing.Point(246, 124);
+            this.tbNama.Name = "tbNama";
+            this.tbNama.Size = new System.Drawing.Size(213, 26);
+            this.tbNama.TabIndex = 87;
             // 
-            // textBox1
+            // tbKode
             // 
-            this.textBox1.Enabled = false;
-            this.textBox1.Location = new System.Drawing.Point(246, 89);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(149, 26);
-            this.textBox1.TabIndex = 86;
+            this.tbKode.Enabled = false;
+            this.tbKode.Location = new System.Drawing.Point(246, 89);
+            this.tbKode.Name = "tbKode";
+            this.tbKode.Size = new System.Drawing.Size(149, 26);
+            this.tbKode.TabIndex = 86;
             // 
             // label12
             // 
@@ -197,10 +197,10 @@ namespace Bookstore
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panel2.BackColor = System.Drawing.Color.White;
-            this.panel2.Controls.Add(this.textBox4);
-            this.panel2.Controls.Add(this.textBox3);
-            this.panel2.Controls.Add(this.textBox2);
-            this.panel2.Controls.Add(this.textBox1);
+            this.panel2.Controls.Add(this.tbTelp);
+            this.panel2.Controls.Add(this.tbAlamat);
+            this.panel2.Controls.Add(this.tbNama);
+            this.panel2.Controls.Add(this.tbKode);
             this.panel2.Controls.Add(this.label12);
             this.panel2.Controls.Add(this.label11);
             this.panel2.Controls.Add(this.label8);
@@ -233,10 +233,10 @@ namespace Bookstore
         }
 
         #endregion
-        private System.Windows.Forms.TextBox textBox4;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox tbTelp;
+        private System.Windows.Forms.TextBox tbAlamat;
+        private System.Windows.Forms.TextBox tbNama;
+        private System.Windows.Forms.TextBox tbKode;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Label label8;

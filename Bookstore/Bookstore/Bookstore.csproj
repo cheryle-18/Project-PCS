@@ -267,8 +267,16 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ReportMemberTerbanyakBeli.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ReportMemberTerbanyakBeli.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="ReportNotaPO.cs">
       <SubType>Component</SubType>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
     </Compile>
     <Compile Include="ReportNotaPO.cs">
       <AutoGen>True</AutoGen>
@@ -300,7 +308,7 @@
     </EmbeddedResource>
     <EmbeddedResource Include="CrPenjualanBukuDibawahRata.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
-    <LastGenOutput>CrPenjualanBukuDibawahRata.cs</LastGenOutput>
+      <LastGenOutput>CrPenjualanBukuDibawahRata.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="FormBukuBaruAdmin.resx">
       <DependentUpon>FormBukuBaruAdmin.cs</DependentUpon>
@@ -396,6 +404,10 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <SubType>Designer</SubType>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ReportMemberTerbanyakBeli.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>ReportMemberTerbanyakBeli.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="ReportNotaPO.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>

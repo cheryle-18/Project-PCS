@@ -52,7 +52,7 @@ namespace Bookstore
             }
             else
             {
-                FormDetailBukuAdmin frm = new FormDetailBukuAdmin(id_pilih);
+                FormDetailBukuAdmin frm = new FormDetailBukuAdmin(id_pilih,"buku");
                 temp = (Panel)frm.Controls[0];
               
             }
