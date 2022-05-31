@@ -72,21 +72,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-<<<<<<< Updated upstream
-=======
     <Compile Include="CrNotaTransaksi.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>CrNotaTransaksi.rpt</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="CrPenjualanBukuDibawahRata.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>CrPenjualanBukuDibawahRata.rpt</DependentUpon>
-      <SubType>Component</SubType>
-    </Compile>
->>>>>>> Stashed changes
     <Compile Include="FormBukuBaruAdmin.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -104,12 +95,6 @@
     </Compile>
     <Compile Include="FormCariMember.Designer.cs">
       <DependentUpon>FormCariMember.cs</DependentUpon>
-    </Compile>
-    <Compile Include="FormCariPO.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="FormCariPO.Designer.cs">
-      <DependentUpon>FormCariPO.cs</DependentUpon>
     </Compile>
     <Compile Include="FormDetailBuku.cs">
       <SubType>Form</SubType>
@@ -158,6 +143,12 @@
     </Compile>
     <Compile Include="FormLihatNota.Designer.cs">
       <DependentUpon>FormLihatNota.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormLihatNotaPO.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormLihatNotaPO.Designer.cs">
+      <DependentUpon>FormLihatNotaPO.cs</DependentUpon>
     </Compile>
     <Compile Include="FormPegawaiBaru.cs">
       <SubType>Form</SubType>
@@ -270,17 +261,37 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-<<<<<<< Updated upstream
-=======
+    <Compile Include="ReportNotaPO.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="ReportNotaPO.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ReportNotaPO.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="ReportPenjualanPegawai.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ReportPenjualanPegawai.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="ReportPreOrder.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ReportPreOrder.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="ReportPreOrderV2.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ReportPreOrderV2.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
     <EmbeddedResource Include="CrNotaTransaksi.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>CrNotaTransaksi.cs</LastGenOutput>
     </EmbeddedResource>
-    <EmbeddedResource Include="CrPenjualanBukuDibawahRata.rpt">
-      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
-      <LastGenOutput>CrPenjualanBukuDibawahRata.cs</LastGenOutput>
-    </EmbeddedResource>
->>>>>>> Stashed changes
     <EmbeddedResource Include="FormBukuBaruAdmin.resx">
       <DependentUpon>FormBukuBaruAdmin.cs</DependentUpon>
     </EmbeddedResource>
@@ -289,9 +300,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormCariMember.resx">
       <DependentUpon>FormCariMember.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="FormCariPO.resx">
-      <DependentUpon>FormCariPO.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormDetailBuku.resx">
       <DependentUpon>FormDetailBuku.cs</DependentUpon>
@@ -304,6 +312,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormDetailPegawaiAdmin.resx">
       <DependentUpon>FormDetailPegawaiAdmin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormLihatNotaPO.resx">
+      <DependentUpon>FormLihatNotaPO.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormDetailPenerbitAdmin.resx">
       <DependentUpon>FormDetailPenerbitAdmin.cs</DependentUpon>
@@ -376,6 +387,22 @@
       <SubType>Designer</SubType>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+    <EmbeddedResource Include="ReportNotaPO.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>ReportNotaPO.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ReportPenjualanPegawai.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>ReportPenjualanPegawai.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ReportPreOrder.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>ReportPreOrder.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ReportPreOrderV2.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>ReportPreOrderV2.cs</LastGenOutput>
+    </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -396,6 +423,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\Images\book.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{C0C07587-41A7-46C8-8FBD-3F9C8EBE2DDC}" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

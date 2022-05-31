@@ -19,7 +19,7 @@ namespace Bookstore
             InitializeComponent();
             cmbSort.SelectedIndex = 0;
             cmbArah.SelectedIndex = 0;
-            loadDatabaseName(tbCari.Text);
+            loadDatabase(tbCari.Text);
             refreshDgv();
         }
 
@@ -44,7 +44,7 @@ namespace Bookstore
         //        MessageBox.Show(ex.Message);
         //    }
         //}
-        void loadDatabaseName(string name)
+        void loadDatabase(string name)
         {
             string[] arahs = { "asc", "desc" };
             string[] sorts = { "C_ID", "C_NAME", "C_STATUS" };
@@ -109,10 +109,16 @@ namespace Bookstore
             }
             else
             {
-                string query = $"insert into category values ('{tbID.Text}','{tbNama.Text}','{Convert.ToInt32(rbStatusAktif.Checked)}')";
+                //string query = $"insert into category values ('{tbID.Text}','{tbNama.Text}','{Convert.ToInt32(rbStatusAktif.Checked)}')";
+                string query = $"insert into category values (@id,@nama,@status)";
                 MySqlCommand cmd = new MySqlCommand(query, Koneksi.getConn());
+                cmd.Parameters.AddWithValue("@id", tbID.Text);
+                cmd.Parameters.AddWithValue("@nama", tbNama.Text);
+                cmd.Parameters.AddWithValue("@status", Convert.ToInt32(rbStatusAktif.Checked));
+
                 cmd.ExecuteNonQuery();
-                loadDatabaseName(tbCari.Text);
+
+                loadDatabase(tbCari.Text);
                 refreshDgv();
                 generateID();
             }
@@ -122,9 +128,16 @@ namespace Bookstore
         {
             if (cmbSort.SelectedIndex!=-1&&cmbArah.SelectedIndex!=-1)
             {
-                loadDatabaseName(tbCari.Text);
+                loadDatabase(tbCari.Text);
                 refreshDgv();
             }
+        }
+
+        private void btnReset_Click(object sender, EventArgs e)
+        {
+            cmbArah.SelectedIndex = 0;
+            cmbSort.SelectedIndex = 0;
+            tbCari.Text = "";
         }
     }
 }

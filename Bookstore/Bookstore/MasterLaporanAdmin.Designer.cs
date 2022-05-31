@@ -30,12 +30,12 @@ namespace Bookstore
         private void InitializeComponent()
         {
             this.panel2 = new System.Windows.Forms.Panel();
+            this.label3 = new System.Windows.Forms.Label();
             this.btnLaporanPegawaiPalingSering = new System.Windows.Forms.Button();
             this.btnLaporanMemberPalingSering = new System.Windows.Forms.Button();
             this.btnLaporanBukuDibawahRataRata = new System.Windows.Forms.Button();
             this.btnLaporanBukuDiatasRataRata = new System.Windows.Forms.Button();
             this.btnLaporanPreOrderBuku = new System.Windows.Forms.Button();
-            this.label3 = new System.Windows.Forms.Label();
             this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -53,6 +53,18 @@ namespace Bookstore
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(1042, 616);
             this.panel2.TabIndex = 13;
+            // 
+            // label3
+            // 
+            this.label3.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.label3.Font = new System.Drawing.Font("Segoe UI Semibold", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(3, 35);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(1036, 37);
+            this.label3.TabIndex = 33;
+            this.label3.Text = "Daftar Laporan";
+            this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // btnLaporanPegawaiPalingSering
             // 
@@ -131,21 +143,9 @@ namespace Bookstore
             this.btnLaporanPreOrderBuku.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.btnLaporanPreOrderBuku.Size = new System.Drawing.Size(324, 70);
             this.btnLaporanPreOrderBuku.TabIndex = 28;
-            this.btnLaporanPreOrderBuku.Text = "Laporan Pre-Order Buku";
+            this.btnLaporanPreOrderBuku.Text = "Laporan Buku Pre-Order";
             this.btnLaporanPreOrderBuku.UseVisualStyleBackColor = false;
             this.btnLaporanPreOrderBuku.Click += new System.EventHandler(this.btnLaporanPreOrderBuku_Click);
-            // 
-            // label3
-            // 
-            this.label3.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.label3.Font = new System.Drawing.Font("Segoe UI Semibold", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(3, 35);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(1036, 37);
-            this.label3.TabIndex = 33;
-            this.label3.Text = "Daftar Laporan";
-            this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // MasterLaporanAdmin
             // 

@@ -111,45 +111,22 @@ namespace Bookstore
             dgBuku.Columns[4].HeaderText = "Subtotal";
         }
 
-        private void button1_Click(object sender, EventArgs e)
-        {
-            FormCariPO frm = new FormCariPO();
-            frm.ShowDialog();
-        }
-
         private void FormProsesPreOrder_Load(object sender, EventArgs e)
         {
 
         }
 
-        private void nudPoint_ValueChanged(object sender, EventArgs e)
-        {
-            if (nudPoint.Value > 0)
-            {
-                if(nudPoint.Value > Convert.ToInt32(lbPoinTersedia.Text))
-                {
-                    MessageBox.Show("Poin tidak cukup!");
-                }
-                else
-                {
-                    diskon = Convert.ToInt32(nudPoint.Value);
-
-                    if(diskon > subtotal - uangmuka)
-                    {
-                        MessageBox.Show("Diskon melebihi total!");
-                    }
-                    else
-                    {
-                        lbDisc.Text = diskon.ToString("N0", new System.Globalization.CultureInfo("id-ID"));
-                    }
-                }
-            }
-            
-        }
-
         private void nudPoint_KeyUp(object sender, KeyEventArgs e)
         {
-            if (nudPoint.Value > 0)
+            if (nudPoint.Text == "")
+            {
+                nudPoint.Value = 0;
+                diskon = 0;
+                lbDisc.Text = diskon.ToString();
+                grandtotal = subtotal - uangmuka - diskon;
+                lbGrandTotal.Text = grandtotal.ToString("N0", new System.Globalization.CultureInfo("id-ID"));
+            }
+            else if (nudPoint.Value > 0)
             {
                 if (nudPoint.Value > Convert.ToInt32(lbPoinTersedia.Text))
                 {
@@ -171,6 +148,13 @@ namespace Bookstore
                         lbGrandTotal.Text = grandtotal.ToString("N0", new System.Globalization.CultureInfo("id-ID"));
                     }
                 }
+            }
+            else
+            {
+                diskon = 0;
+                lbDisc.Text = diskon.ToString();
+                grandtotal = subtotal - uangmuka - diskon;
+                lbGrandTotal.Text = grandtotal.ToString("N0", new System.Globalization.CultureInfo("id-ID"));
             }
         }
 
@@ -195,7 +179,7 @@ namespace Bookstore
 
         private void btnBatal_Click(object sender, EventArgs e)
         {
-            FormDetailPreOrder frm = new FormDetailPreOrder(poId);
+            FormDetailPreOrder frm = new FormDetailPreOrder(poId,2);
             Panel temp = (Panel)frm.Controls[0];
             temp.Width = panel2.Width;
             temp.Height = panel2.Height;
@@ -239,7 +223,8 @@ namespace Bookstore
                         memberId = tbKodeMember.Text;
                     }
 
-                    //qty + pembayaran
+                    //total paid + qty + pembayaran
+                    int totalpaid = grandtotal + uangmuka;
                     int qty = Convert.ToInt32(lbTotalQty.Text);
                     string pembayaran = cmbPembayaran.Items[cmbPembayaran.SelectedIndex].ToString();
 
@@ -247,9 +232,9 @@ namespace Bookstore
                     int pointAvail = Convert.ToInt32(lbPoinTersedia.Text);
                     int pointUsed = diskon;
                     int pointGet = 0;
-                    if (grandtotal > 0)
+                    if (totalpaid > 0)
                     {
-                        pointGet = Convert.ToInt32(grandtotal * 0.05);
+                        pointGet = Convert.ToInt32(totalpaid * 0.05);
                     }
 
                     //insert htrans
@@ -258,7 +243,7 @@ namespace Bookstore
                     cmd.Parameters.AddWithValue("@invoice", invoice);
                     cmd.Parameters.AddWithValue("@qty", qty);
                     cmd.Parameters.AddWithValue("@total", subtotal);
-                    cmd.Parameters.AddWithValue("@totalpaid", grandtotal);
+                    cmd.Parameters.AddWithValue("@totalpaid", totalpaid);
                     cmd.Parameters.AddWithValue("@pointUsed", diskon);
                     cmd.Parameters.AddWithValue("@pointGet", pointGet);
                     cmd.Parameters.AddWithValue("@method", pembayaran);
@@ -293,7 +278,7 @@ namespace Bookstore
 
                     //kembali ke detail
 
-                    FormDetailPreOrder frm = new FormDetailPreOrder(poId);
+                    FormDetailPreOrder frm = new FormDetailPreOrder(poId,2);
                     Panel temp = (Panel)frm.Controls[0];
                     temp.Width = panel2.Width;
                     temp.Height = panel2.Height;

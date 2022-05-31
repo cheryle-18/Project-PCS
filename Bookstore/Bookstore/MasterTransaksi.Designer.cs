@@ -262,6 +262,7 @@ namespace Bookstore
             this.dgvTransaksi.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvTransaksi.Size = new System.Drawing.Size(1010, 355);
             this.dgvTransaksi.TabIndex = 1;
+            this.dgvTransaksi.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvTransaksi_CellClick);
             // 
             // MasterTransaksi
             // 

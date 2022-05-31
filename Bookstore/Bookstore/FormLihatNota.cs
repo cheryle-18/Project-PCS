@@ -13,10 +13,13 @@ namespace Bookstore
     public partial class FormLihatNota : Form
     {
         private int user_role;
-        public FormLihatNota(int role)
+        private string tr_id;
+        public FormLihatNota(int role,string tr_id)
         {
             InitializeComponent();
             this.user_role = role;
+            this.tr_id = tr_id;
+            loadNota();
         }
 
         private void FormLihatNota_Load(object sender, EventArgs e)
@@ -24,9 +27,21 @@ namespace Bookstore
 
         }
 
+        private void loadNota()
+        {
+            CrNotaTransaksi rep = new CrNotaTransaksi();
+            rep.SetParameterValue("id_transaksi",tr_id);
+            //rep.SetParameterValue("id_pegawai", cbPegawai.SelectedValue);
+            //rep.SetParameterValue("nama_pegawai", namaku);
+            //rep.SetParameterValue("tanggal_awal", dtpTanggalAwal.Value.Date.ToString("dd MMMM yyyy"));
+            //rep.SetParameterValue("tanggal_akhir", dtpTanggalAkhir.Value.Date.ToString("dd MMMM yyyy"));
+            //rep.SetParameterValue("total_belanja", Convert.ToInt32(txtTotalBelanja.Text));
+            crNota.ReportSource = rep;
+        }
+
         private void btnBack_Click(object sender, EventArgs e)
         {
-            FormDetailTransaksi frm = new FormDetailTransaksi(user_role);
+            FormDetailTransaksi frm = new FormDetailTransaksi(user_role,tr_id);
             Panel temp = (Panel)frm.Controls[0];
             temp.Width = panel1.Width;
             temp.Height = panel1.Height;
