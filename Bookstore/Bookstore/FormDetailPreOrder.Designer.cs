@@ -30,6 +30,9 @@ namespace Bookstore
         private void InitializeComponent()
         {
             this.panel2 = new System.Windows.Forms.Panel();
+            this.label8 = new System.Windows.Forms.Label();
+            this.lbTotal = new System.Windows.Forms.Label();
+            this.label10 = new System.Windows.Forms.Label();
             this.lbJenis = new System.Windows.Forms.Label();
             this.label18 = new System.Windows.Forms.Label();
             this.label17 = new System.Windows.Forms.Label();
@@ -68,9 +71,7 @@ namespace Bookstore
             this.label13 = new System.Windows.Forms.Label();
             this.btnProses = new System.Windows.Forms.Button();
             this.btnBack = new System.Windows.Forms.Button();
-            this.label8 = new System.Windows.Forms.Label();
-            this.lbTotal = new System.Windows.Forms.Label();
-            this.label10 = new System.Windows.Forms.Label();
+            this.btnLihatNota = new System.Windows.Forms.Button();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgBuku)).BeginInit();
             this.SuspendLayout();
@@ -81,6 +82,7 @@ namespace Bookstore
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panel2.BackColor = System.Drawing.Color.White;
+            this.panel2.Controls.Add(this.btnLihatNota);
             this.panel2.Controls.Add(this.label8);
             this.panel2.Controls.Add(this.lbTotal);
             this.panel2.Controls.Add(this.label10);
@@ -127,6 +129,39 @@ namespace Bookstore
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(1050, 621);
             this.panel2.TabIndex = 17;
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.BackColor = System.Drawing.Color.White;
+            this.label8.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.Location = new System.Drawing.Point(137, 158);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(14, 21);
+            this.label8.TabIndex = 95;
+            this.label8.Text = ":";
+            // 
+            // lbTotal
+            // 
+            this.lbTotal.AutoSize = true;
+            this.lbTotal.BackColor = System.Drawing.Color.White;
+            this.lbTotal.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbTotal.Location = new System.Drawing.Point(157, 158);
+            this.lbTotal.Name = "lbTotal";
+            this.lbTotal.Size = new System.Drawing.Size(90, 21);
+            this.lbTotal.TabIndex = 94;
+            this.lbTotal.Text = "Rp 100.000";
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.BackColor = System.Drawing.Color.White;
+            this.label10.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label10.Location = new System.Drawing.Point(13, 158);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(45, 21);
+            this.label10.TabIndex = 93;
+            this.label10.Text = "Total";
             // 
             // lbJenis
             // 
@@ -535,7 +570,7 @@ namespace Bookstore
             this.btnProses.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnProses.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnProses.ForeColor = System.Drawing.Color.White;
-            this.btnProses.Location = new System.Drawing.Point(884, 537);
+            this.btnProses.Location = new System.Drawing.Point(735, 537);
             this.btnProses.Name = "btnProses";
             this.btnProses.Size = new System.Drawing.Size(143, 38);
             this.btnProses.TabIndex = 30;
@@ -559,38 +594,21 @@ namespace Bookstore
             this.btnBack.UseVisualStyleBackColor = false;
             this.btnBack.Click += new System.EventHandler(this.btnBack_Click);
             // 
-            // label8
+            // btnLihatNota
             // 
-            this.label8.AutoSize = true;
-            this.label8.BackColor = System.Drawing.Color.White;
-            this.label8.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(137, 158);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(14, 21);
-            this.label8.TabIndex = 95;
-            this.label8.Text = ":";
-            // 
-            // lbTotal
-            // 
-            this.lbTotal.AutoSize = true;
-            this.lbTotal.BackColor = System.Drawing.Color.White;
-            this.lbTotal.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbTotal.Location = new System.Drawing.Point(157, 158);
-            this.lbTotal.Name = "lbTotal";
-            this.lbTotal.Size = new System.Drawing.Size(90, 21);
-            this.lbTotal.TabIndex = 94;
-            this.lbTotal.Text = "Rp 100.000";
-            // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.BackColor = System.Drawing.Color.White;
-            this.label10.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.Location = new System.Drawing.Point(13, 158);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(45, 21);
-            this.label10.TabIndex = 93;
-            this.label10.Text = "Total";
+            this.btnLihatNota.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnLihatNota.BackColor = System.Drawing.Color.Navy;
+            this.btnLihatNota.FlatAppearance.BorderSize = 0;
+            this.btnLihatNota.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnLihatNota.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnLihatNota.ForeColor = System.Drawing.Color.White;
+            this.btnLihatNota.Location = new System.Drawing.Point(884, 537);
+            this.btnLihatNota.Name = "btnLihatNota";
+            this.btnLihatNota.Size = new System.Drawing.Size(143, 38);
+            this.btnLihatNota.TabIndex = 96;
+            this.btnLihatNota.Text = "Lihat Nota";
+            this.btnLihatNota.UseVisualStyleBackColor = false;
+            this.btnLihatNota.Click += new System.EventHandler(this.btnLihatNota_Click);
             // 
             // FormDetailPreOrder
             // 
@@ -651,5 +669,6 @@ namespace Bookstore
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label lbTotal;
         private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.Button btnLihatNota;
     }
 }

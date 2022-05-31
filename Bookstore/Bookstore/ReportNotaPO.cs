@@ -16,14 +16,14 @@ namespace Bookstore {
     using CrystalDecisions.CrystalReports.Engine;
     
     
-    public class CrNotaTransaksi : ReportClass {
+    public class ReportNotaPO : ReportClass {
         
-        public CrNotaTransaksi() {
+        public ReportNotaPO() {
         }
         
         public override string ResourceName {
             get {
-                return "CrNotaTransaksi.rpt";
+                return "ReportNotaPO.rpt";
             }
             set {
                 // Do nothing
@@ -41,7 +41,7 @@ namespace Bookstore {
         
         public override string FullResourceName {
             get {
-                return "Bookstore.CrNotaTransaksi.rpt";
+                return "Bookstore.ReportNotaPO.rpt";
             }
             set {
                 // Do nothing
@@ -90,7 +90,7 @@ namespace Bookstore {
         
         [Browsable(false)]
         [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
-        public CrystalDecisions.Shared.IParameterField Parameter_id_transaksi {
+        public CrystalDecisions.Shared.IParameterField Parameter_poId {
             get {
                 return this.DataDefinition.ParameterFields[0];
             }
@@ -98,9 +98,9 @@ namespace Bookstore {
     }
     
     [System.Drawing.ToolboxBitmapAttribute(typeof(CrystalDecisions.Shared.ExportOptions), "report.bmp")]
-    public class CachedCrNotaTransaksi : Component, ICachedReport {
+    public class CachedReportNotaPO : Component, ICachedReport {
         
-        public CachedCrNotaTransaksi() {
+        public CachedReportNotaPO() {
         }
         
         [Browsable(false)]
@@ -137,7 +137,7 @@ namespace Bookstore {
         }
         
         public virtual CrystalDecisions.CrystalReports.Engine.ReportDocument CreateReport() {
-            CrNotaTransaksi rpt = new CrNotaTransaksi();
+            ReportNotaPO rpt = new ReportNotaPO();
             rpt.Site = this.Site;
             return rpt;
         }

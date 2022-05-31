@@ -179,7 +179,7 @@ namespace Bookstore
 
         private void btnBatal_Click(object sender, EventArgs e)
         {
-            FormDetailPreOrder frm = new FormDetailPreOrder(poId);
+            FormDetailPreOrder frm = new FormDetailPreOrder(poId,2);
             Panel temp = (Panel)frm.Controls[0];
             temp.Width = panel2.Width;
             temp.Height = panel2.Height;
@@ -223,7 +223,8 @@ namespace Bookstore
                         memberId = tbKodeMember.Text;
                     }
 
-                    //qty + pembayaran
+                    //total paid + qty + pembayaran
+                    int totalpaid = grandtotal + uangmuka;
                     int qty = Convert.ToInt32(lbTotalQty.Text);
                     string pembayaran = cmbPembayaran.Items[cmbPembayaran.SelectedIndex].ToString();
 
@@ -231,9 +232,9 @@ namespace Bookstore
                     int pointAvail = Convert.ToInt32(lbPoinTersedia.Text);
                     int pointUsed = diskon;
                     int pointGet = 0;
-                    if (grandtotal > 0)
+                    if (totalpaid > 0)
                     {
-                        pointGet = Convert.ToInt32(grandtotal * 0.05);
+                        pointGet = Convert.ToInt32(totalpaid * 0.05);
                     }
 
                     //insert htrans
@@ -242,7 +243,7 @@ namespace Bookstore
                     cmd.Parameters.AddWithValue("@invoice", invoice);
                     cmd.Parameters.AddWithValue("@qty", qty);
                     cmd.Parameters.AddWithValue("@total", subtotal);
-                    cmd.Parameters.AddWithValue("@totalpaid", grandtotal);
+                    cmd.Parameters.AddWithValue("@totalpaid", totalpaid);
                     cmd.Parameters.AddWithValue("@pointUsed", diskon);
                     cmd.Parameters.AddWithValue("@pointGet", pointGet);
                     cmd.Parameters.AddWithValue("@method", pembayaran);
@@ -277,7 +278,7 @@ namespace Bookstore
 
                     //kembali ke detail
 
-                    FormDetailPreOrder frm = new FormDetailPreOrder(poId);
+                    FormDetailPreOrder frm = new FormDetailPreOrder(poId,2);
                     Panel temp = (Panel)frm.Controls[0];
                     temp.Width = panel2.Width;
                     temp.Height = panel2.Height;

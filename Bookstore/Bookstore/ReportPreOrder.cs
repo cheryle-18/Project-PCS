@@ -16,14 +16,14 @@ namespace Bookstore {
     using CrystalDecisions.CrystalReports.Engine;
     
     
-    public class CrtNotaTransaksi : ReportClass {
+    public class ReportPreOrder : ReportClass {
         
-        public CrtNotaTransaksi() {
+        public ReportPreOrder() {
         }
         
         public override string ResourceName {
             get {
-                return "CrtNotaTransaksi.rpt";
+                return "ReportPreOrder.rpt";
             }
             set {
                 // Do nothing
@@ -41,7 +41,7 @@ namespace Bookstore {
         
         public override string FullResourceName {
             get {
-                return "Bookstore.CrtNotaTransaksi.rpt";
+                return "Bookstore.ReportPreOrder.rpt";
             }
             set {
                 // Do nothing
@@ -66,7 +66,7 @@ namespace Bookstore {
         
         [Browsable(false)]
         [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
-        public CrystalDecisions.CrystalReports.Engine.Section Section3 {
+        public CrystalDecisions.CrystalReports.Engine.Section GroupHeaderSection1 {
             get {
                 return this.ReportDefinition.Sections[2];
             }
@@ -74,7 +74,7 @@ namespace Bookstore {
         
         [Browsable(false)]
         [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
-        public CrystalDecisions.CrystalReports.Engine.Section Section4 {
+        public CrystalDecisions.CrystalReports.Engine.Section Section3 {
             get {
                 return this.ReportDefinition.Sections[3];
             }
@@ -82,17 +82,49 @@ namespace Bookstore {
         
         [Browsable(false)]
         [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
-        public CrystalDecisions.CrystalReports.Engine.Section Section5 {
+        public CrystalDecisions.CrystalReports.Engine.Section GroupFooterSection1 {
             get {
                 return this.ReportDefinition.Sections[4];
+            }
+        }
+        
+        [Browsable(false)]
+        [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
+        public CrystalDecisions.CrystalReports.Engine.Section Section4 {
+            get {
+                return this.ReportDefinition.Sections[5];
+            }
+        }
+        
+        [Browsable(false)]
+        [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
+        public CrystalDecisions.CrystalReports.Engine.Section Section5 {
+            get {
+                return this.ReportDefinition.Sections[6];
+            }
+        }
+        
+        [Browsable(false)]
+        [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
+        public CrystalDecisions.Shared.IParameterField Parameter_tglDari {
+            get {
+                return this.DataDefinition.ParameterFields[0];
+            }
+        }
+        
+        [Browsable(false)]
+        [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
+        public CrystalDecisions.Shared.IParameterField Parameter_tglSampai {
+            get {
+                return this.DataDefinition.ParameterFields[1];
             }
         }
     }
     
     [System.Drawing.ToolboxBitmapAttribute(typeof(CrystalDecisions.Shared.ExportOptions), "report.bmp")]
-    public class CachedCrtNotaTransaksi : Component, ICachedReport {
+    public class CachedReportPreOrder : Component, ICachedReport {
         
-        public CachedCrtNotaTransaksi() {
+        public CachedReportPreOrder() {
         }
         
         [Browsable(false)]
@@ -129,7 +161,7 @@ namespace Bookstore {
         }
         
         public virtual CrystalDecisions.CrystalReports.Engine.ReportDocument CreateReport() {
-            CrtNotaTransaksi rpt = new CrtNotaTransaksi();
+            ReportPreOrder rpt = new ReportPreOrder();
             rpt.Site = this.Site;
             return rpt;
         }
