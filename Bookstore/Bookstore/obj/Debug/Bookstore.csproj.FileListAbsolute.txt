@@ -447,3 +447,4 @@ C:\This PC\ISTTS\SM 4\PCS\Proyek\GitHub\Project-PCS-2\Bookstore\Bookstore\obj\De
 C:\This PC\ISTTS\SM 4\PCS\Proyek\GitHub\Project-PCS-2\Bookstore\Bookstore\obj\Debug\Bookstore.exe
 C:\This PC\ISTTS\SM 4\PCS\Proyek\GitHub\Project-PCS-2\Bookstore\Bookstore\obj\Debug\Bookstore.pdb
 C:\Users\LENOVO\Documents\GitHub\Project-PCS-2\Bookstore\Bookstore\obj\Debug\Bookstore.FormLihatNotaPO.resources
+A:\College\github\Project-PCS-2\Bookstore\Bookstore\obj\Debug\Bookstore.FormLihatNotaPO.resources
