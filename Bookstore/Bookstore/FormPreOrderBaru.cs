@@ -141,6 +141,11 @@ namespace Bookstore
                 nudQty.Value = 0;
                 dgCart.ClearSelection();
             }
+
+            btnCancelEdit.Visible = false;
+            btnTambah.Text = "Tambah";
+            btnEdit.Enabled = false;
+            btnHapus.Enabled = false;
         }
 
         private void tbDP_TextChanged(object sender, EventArgs e)
@@ -153,12 +158,12 @@ namespace Bookstore
                 }
                 catch
                 {
-                    MessageBox.Show("Uang muka harus di atas Rp 10.000!");
+                    MessageBox.Show("Uang muka minimal 50% dari subtotal!");
                 }
 
                 if(uangmuka > subtotal)
                 {
-                    MessageBox.Show("Uang muka harus kurang dari subtotal!");
+                    MessageBox.Show("Uang muka melebihi subtotal!");
                 }
                 else
                 {
@@ -194,6 +199,10 @@ namespace Bookstore
             tbJudulBuku.Text = "-";
             tbHargaBuku.Text = "0";
             nudQty.Value = 0;
+            btnCancelEdit.Visible = false;
+            btnTambah.Text = "Tambah";
+            btnEdit.Enabled = false;
+            btnHapus.Enabled = false;
         }
 
         private void dgCart_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -229,9 +238,9 @@ namespace Bookstore
             {
                 MessageBox.Show("Belum ada buku terpilih!");
             }
-            else if (uangmuka <= 10000)
+            else if (uangmuka < Convert.ToInt32(subtotal/2))
             {
-                MessageBox.Show("Uang muka harus di atas Rp 10.000!");
+                MessageBox.Show("Uang muka minimal 50% dari subtotal!");
             }
             else
             {

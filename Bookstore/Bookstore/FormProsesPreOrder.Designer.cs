@@ -30,6 +30,7 @@ namespace Bookstore
         private void InitializeComponent()
         {
             this.panel2 = new System.Windows.Forms.Panel();
+            this.btnPakaiSemua = new System.Windows.Forms.Button();
             this.tbNamaMember = new System.Windows.Forms.TextBox();
             this.cmbPembayaran = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
@@ -80,7 +81,6 @@ namespace Bookstore
             this.dgBuku = new System.Windows.Forms.DataGridView();
             this.btnBayar = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
-            this.btnPakaiSemua = new System.Windows.Forms.Button();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudPoint)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgBuku)).BeginInit();
@@ -148,6 +148,22 @@ namespace Bookstore
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(1051, 615);
             this.panel2.TabIndex = 25;
+            // 
+            // btnPakaiSemua
+            // 
+            this.btnPakaiSemua.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnPakaiSemua.BackColor = System.Drawing.Color.Navy;
+            this.btnPakaiSemua.FlatAppearance.BorderSize = 0;
+            this.btnPakaiSemua.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnPakaiSemua.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnPakaiSemua.ForeColor = System.Drawing.Color.White;
+            this.btnPakaiSemua.Location = new System.Drawing.Point(865, 210);
+            this.btnPakaiSemua.Name = "btnPakaiSemua";
+            this.btnPakaiSemua.Size = new System.Drawing.Size(155, 29);
+            this.btnPakaiSemua.TabIndex = 146;
+            this.btnPakaiSemua.Text = "Pakai Semua";
+            this.btnPakaiSemua.UseVisualStyleBackColor = false;
+            this.btnPakaiSemua.Click += new System.EventHandler(this.btnPakaiSemua_Click);
             // 
             // tbNamaMember
             // 
@@ -709,22 +725,6 @@ namespace Bookstore
             this.label3.Size = new System.Drawing.Size(269, 45);
             this.label3.TabIndex = 14;
             this.label3.Text = "Proses Pre-Order";
-            // 
-            // btnPakaiSemua
-            // 
-            this.btnPakaiSemua.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnPakaiSemua.BackColor = System.Drawing.Color.Navy;
-            this.btnPakaiSemua.FlatAppearance.BorderSize = 0;
-            this.btnPakaiSemua.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnPakaiSemua.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnPakaiSemua.ForeColor = System.Drawing.Color.White;
-            this.btnPakaiSemua.Location = new System.Drawing.Point(865, 210);
-            this.btnPakaiSemua.Name = "btnPakaiSemua";
-            this.btnPakaiSemua.Size = new System.Drawing.Size(155, 29);
-            this.btnPakaiSemua.TabIndex = 146;
-            this.btnPakaiSemua.Text = "Pakai Semua";
-            this.btnPakaiSemua.UseVisualStyleBackColor = false;
-            this.btnPakaiSemua.Click += new System.EventHandler(this.btnPakaiSemua_Click);
             // 
             // FormProsesPreOrder
             // 

@@ -111,45 +111,22 @@ namespace Bookstore
             dgBuku.Columns[4].HeaderText = "Subtotal";
         }
 
-        private void button1_Click(object sender, EventArgs e)
-        {
-            FormCariPO frm = new FormCariPO();
-            frm.ShowDialog();
-        }
-
         private void FormProsesPreOrder_Load(object sender, EventArgs e)
         {
 
         }
 
-        private void nudPoint_ValueChanged(object sender, EventArgs e)
-        {
-            if (nudPoint.Value > 0)
-            {
-                if(nudPoint.Value > Convert.ToInt32(lbPoinTersedia.Text))
-                {
-                    MessageBox.Show("Poin tidak cukup!");
-                }
-                else
-                {
-                    diskon = Convert.ToInt32(nudPoint.Value);
-
-                    if(diskon > subtotal - uangmuka)
-                    {
-                        MessageBox.Show("Diskon melebihi total!");
-                    }
-                    else
-                    {
-                        lbDisc.Text = diskon.ToString("N0", new System.Globalization.CultureInfo("id-ID"));
-                    }
-                }
-            }
-            
-        }
-
         private void nudPoint_KeyUp(object sender, KeyEventArgs e)
         {
-            if (nudPoint.Value > 0)
+            if (nudPoint.Text == "")
+            {
+                nudPoint.Value = 0;
+                diskon = 0;
+                lbDisc.Text = diskon.ToString();
+                grandtotal = subtotal - uangmuka - diskon;
+                lbGrandTotal.Text = grandtotal.ToString("N0", new System.Globalization.CultureInfo("id-ID"));
+            }
+            else if (nudPoint.Value > 0)
             {
                 if (nudPoint.Value > Convert.ToInt32(lbPoinTersedia.Text))
                 {
@@ -171,6 +148,13 @@ namespace Bookstore
                         lbGrandTotal.Text = grandtotal.ToString("N0", new System.Globalization.CultureInfo("id-ID"));
                     }
                 }
+            }
+            else
+            {
+                diskon = 0;
+                lbDisc.Text = diskon.ToString();
+                grandtotal = subtotal - uangmuka - diskon;
+                lbGrandTotal.Text = grandtotal.ToString("N0", new System.Globalization.CultureInfo("id-ID"));
             }
         }
 
