@@ -36,7 +36,6 @@ namespace Bookstore
             //user role = 0
             MasterBuku frm = new MasterBuku(0);
             reAddControls(frm);
-
         }
 
         private void refreshButton()

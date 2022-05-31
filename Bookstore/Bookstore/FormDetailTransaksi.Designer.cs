@@ -30,14 +30,14 @@ namespace Bookstore
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
-            this.label38 = new System.Windows.Forms.Label();
-            this.label37 = new System.Windows.Forms.Label();
+            this.lblPoinDigunakan = new System.Windows.Forms.Label();
+            this.lblPaid = new System.Windows.Forms.Label();
             this.label36 = new System.Windows.Forms.Label();
             this.label35 = new System.Windows.Forms.Label();
             this.label34 = new System.Windows.Forms.Label();
             this.label33 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.label31 = new System.Windows.Forms.Label();
+            this.lblPoinDiterima = new System.Windows.Forms.Label();
             this.label32 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label30 = new System.Windows.Forms.Label();
@@ -49,48 +49,43 @@ namespace Bookstore
             this.label24 = new System.Windows.Forms.Label();
             this.label23 = new System.Windows.Forms.Label();
             this.label22 = new System.Windows.Forms.Label();
-            this.label21 = new System.Windows.Forms.Label();
-            this.label20 = new System.Windows.Forms.Label();
+            this.lblPegawai = new System.Windows.Forms.Label();
+            this.lblJenisCustomer = new System.Windows.Forms.Label();
             this.label19 = new System.Windows.Forms.Label();
             this.label18 = new System.Windows.Forms.Label();
-            this.label17 = new System.Windows.Forms.Label();
+            this.lblMetode = new System.Windows.Forms.Label();
             this.label16 = new System.Windows.Forms.Label();
-            this.label15 = new System.Windows.Forms.Label();
+            this.lblNomorNota = new System.Windows.Forms.Label();
             this.label14 = new System.Windows.Forms.Label();
-            this.label11 = new System.Windows.Forms.Label();
+            this.lblTotal = new System.Windows.Forms.Label();
             this.btnLihatNota = new System.Windows.Forms.Button();
-            this.label10 = new System.Windows.Forms.Label();
+            this.lblQty = new System.Windows.Forms.Label();
             this.btnBack = new System.Windows.Forms.Button();
-            this.label9 = new System.Windows.Forms.Label();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.lblMember = new System.Windows.Forms.Label();
+            this.dgvDetail = new System.Windows.Forms.DataGridView();
             this.label7 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
+            this.lblKode = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
-            this.label12 = new System.Windows.Forms.Label();
+            this.lblTanggal = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvDetail)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.White;
-            this.panel1.Controls.Add(this.label38);
-            this.panel1.Controls.Add(this.label37);
+            this.panel1.Controls.Add(this.lblPoinDigunakan);
+            this.panel1.Controls.Add(this.lblPaid);
             this.panel1.Controls.Add(this.label36);
             this.panel1.Controls.Add(this.label35);
             this.panel1.Controls.Add(this.label34);
             this.panel1.Controls.Add(this.label33);
             this.panel1.Controls.Add(this.label1);
-            this.panel1.Controls.Add(this.label31);
+            this.panel1.Controls.Add(this.lblPoinDiterima);
             this.panel1.Controls.Add(this.label32);
             this.panel1.Controls.Add(this.label3);
             this.panel1.Controls.Add(this.label30);
@@ -102,65 +97,65 @@ namespace Bookstore
             this.panel1.Controls.Add(this.label24);
             this.panel1.Controls.Add(this.label23);
             this.panel1.Controls.Add(this.label22);
-            this.panel1.Controls.Add(this.label21);
-            this.panel1.Controls.Add(this.label20);
+            this.panel1.Controls.Add(this.lblPegawai);
+            this.panel1.Controls.Add(this.lblJenisCustomer);
             this.panel1.Controls.Add(this.label19);
             this.panel1.Controls.Add(this.label18);
-            this.panel1.Controls.Add(this.label17);
+            this.panel1.Controls.Add(this.lblMetode);
             this.panel1.Controls.Add(this.label16);
-            this.panel1.Controls.Add(this.label15);
+            this.panel1.Controls.Add(this.lblNomorNota);
             this.panel1.Controls.Add(this.label14);
-            this.panel1.Controls.Add(this.label11);
+            this.panel1.Controls.Add(this.lblTotal);
             this.panel1.Controls.Add(this.btnLihatNota);
-            this.panel1.Controls.Add(this.label10);
+            this.panel1.Controls.Add(this.lblQty);
             this.panel1.Controls.Add(this.btnBack);
-            this.panel1.Controls.Add(this.label9);
-            this.panel1.Controls.Add(this.dataGridView1);
+            this.panel1.Controls.Add(this.lblMember);
+            this.panel1.Controls.Add(this.dgvDetail);
             this.panel1.Controls.Add(this.label7);
             this.panel1.Controls.Add(this.label13);
             this.panel1.Controls.Add(this.label6);
-            this.panel1.Controls.Add(this.label8);
+            this.panel1.Controls.Add(this.lblKode);
             this.panel1.Controls.Add(this.label5);
-            this.panel1.Controls.Add(this.label12);
+            this.panel1.Controls.Add(this.lblTanggal);
             this.panel1.Controls.Add(this.label2);
             this.panel1.Controls.Add(this.label4);
             this.panel1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel1.Margin = new System.Windows.Forms.Padding(4);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1388, 763);
             this.panel1.TabIndex = 0;
             // 
-            // label38
+            // lblPoinDigunakan
             // 
-            this.label38.AutoSize = true;
-            this.label38.BackColor = System.Drawing.Color.White;
-            this.label38.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label38.Location = new System.Drawing.Point(749, 182);
-            this.label38.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
-            this.label38.Name = "label38";
-            this.label38.Size = new System.Drawing.Size(23, 28);
-            this.label38.TabIndex = 113;
-            this.label38.Text = "0";
+            this.lblPoinDigunakan.AutoSize = true;
+            this.lblPoinDigunakan.BackColor = System.Drawing.Color.White;
+            this.lblPoinDigunakan.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblPoinDigunakan.Location = new System.Drawing.Point(749, 182);
+            this.lblPoinDigunakan.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
+            this.lblPoinDigunakan.Name = "lblPoinDigunakan";
+            this.lblPoinDigunakan.Size = new System.Drawing.Size(23, 28);
+            this.lblPoinDigunakan.TabIndex = 113;
+            this.lblPoinDigunakan.Text = "0";
             // 
-            // label37
+            // lblPaid
             // 
-            this.label37.AutoSize = true;
-            this.label37.BackColor = System.Drawing.Color.White;
-            this.label37.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label37.Location = new System.Drawing.Point(749, 135);
-            this.label37.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
-            this.label37.Name = "label37";
-            this.label37.Size = new System.Drawing.Size(111, 28);
-            this.label37.TabIndex = 112;
-            this.label37.Text = "Rp 302.000";
+            this.lblPaid.AutoSize = true;
+            this.lblPaid.BackColor = System.Drawing.Color.White;
+            this.lblPaid.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblPaid.Location = new System.Drawing.Point(749, 135);
+            this.lblPaid.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
+            this.lblPaid.Name = "lblPaid";
+            this.lblPaid.Size = new System.Drawing.Size(111, 28);
+            this.lblPaid.TabIndex = 112;
+            this.lblPaid.Text = "Rp 302.000";
             // 
             // label36
             // 
             this.label36.AutoSize = true;
             this.label36.BackColor = System.Drawing.Color.White;
             this.label36.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label36.Location = new System.Drawing.Point(707, 231);
+            this.label36.Location = new System.Drawing.Point(713, 231);
             this.label36.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.label36.Name = "label36";
             this.label36.Size = new System.Drawing.Size(17, 28);
@@ -208,24 +203,24 @@ namespace Bookstore
             this.label1.AutoSize = true;
             this.label1.BackColor = System.Drawing.Color.White;
             this.label1.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(707, 182);
+            this.label1.Location = new System.Drawing.Point(713, 182);
             this.label1.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(17, 28);
             this.label1.TabIndex = 107;
             this.label1.Text = ":";
             // 
-            // label31
+            // lblPoinDiterima
             // 
-            this.label31.AutoSize = true;
-            this.label31.BackColor = System.Drawing.Color.White;
-            this.label31.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label31.Location = new System.Drawing.Point(749, 231);
-            this.label31.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
-            this.label31.Name = "label31";
-            this.label31.Size = new System.Drawing.Size(34, 28);
-            this.label31.TabIndex = 106;
-            this.label31.Text = "30";
+            this.lblPoinDiterima.AutoSize = true;
+            this.lblPoinDiterima.BackColor = System.Drawing.Color.White;
+            this.lblPoinDiterima.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblPoinDiterima.Location = new System.Drawing.Point(749, 231);
+            this.lblPoinDiterima.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
+            this.lblPoinDiterima.Name = "lblPoinDiterima";
+            this.lblPoinDiterima.Size = new System.Drawing.Size(34, 28);
+            this.lblPoinDiterima.TabIndex = 106;
+            this.lblPoinDiterima.Text = "30";
             // 
             // label32
             // 
@@ -359,29 +354,29 @@ namespace Bookstore
             this.label22.TabIndex = 95;
             this.label22.Text = ":";
             // 
-            // label21
+            // lblPegawai
             // 
-            this.label21.AutoSize = true;
-            this.label21.BackColor = System.Drawing.Color.White;
-            this.label21.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label21.Location = new System.Drawing.Point(1189, 83);
-            this.label21.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
-            this.label21.Name = "label21";
-            this.label21.Size = new System.Drawing.Size(73, 28);
-            this.label21.TabIndex = 94;
-            this.label21.Text = "EM021";
+            this.lblPegawai.AutoSize = true;
+            this.lblPegawai.BackColor = System.Drawing.Color.White;
+            this.lblPegawai.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblPegawai.Location = new System.Drawing.Point(1189, 83);
+            this.lblPegawai.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
+            this.lblPegawai.Name = "lblPegawai";
+            this.lblPegawai.Size = new System.Drawing.Size(73, 28);
+            this.lblPegawai.TabIndex = 94;
+            this.lblPegawai.Text = "EM021";
             // 
-            // label20
+            // lblJenisCustomer
             // 
-            this.label20.AutoSize = true;
-            this.label20.BackColor = System.Drawing.Color.White;
-            this.label20.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label20.Location = new System.Drawing.Point(1189, 135);
-            this.label20.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
-            this.label20.Name = "label20";
-            this.label20.Size = new System.Drawing.Size(86, 28);
-            this.label20.TabIndex = 93;
-            this.label20.Text = "Member";
+            this.lblJenisCustomer.AutoSize = true;
+            this.lblJenisCustomer.BackColor = System.Drawing.Color.White;
+            this.lblJenisCustomer.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblJenisCustomer.Location = new System.Drawing.Point(1189, 135);
+            this.lblJenisCustomer.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
+            this.lblJenisCustomer.Name = "lblJenisCustomer";
+            this.lblJenisCustomer.Size = new System.Drawing.Size(86, 28);
+            this.lblJenisCustomer.TabIndex = 93;
+            this.lblJenisCustomer.Text = "Member";
             // 
             // label19
             // 
@@ -407,17 +402,17 @@ namespace Bookstore
             this.label18.TabIndex = 91;
             this.label18.Text = "Jenis Customer";
             // 
-            // label17
+            // lblMetode
             // 
-            this.label17.AutoSize = true;
-            this.label17.BackColor = System.Drawing.Color.White;
-            this.label17.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label17.Location = new System.Drawing.Point(270, 280);
-            this.label17.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
-            this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(59, 28);
-            this.label17.TabIndex = 90;
-            this.label17.Text = "Tunai";
+            this.lblMetode.AutoSize = true;
+            this.lblMetode.BackColor = System.Drawing.Color.White;
+            this.lblMetode.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblMetode.Location = new System.Drawing.Point(270, 280);
+            this.lblMetode.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
+            this.lblMetode.Name = "lblMetode";
+            this.lblMetode.Size = new System.Drawing.Size(59, 28);
+            this.lblMetode.TabIndex = 90;
+            this.lblMetode.Text = "Tunai";
             // 
             // label16
             // 
@@ -431,16 +426,16 @@ namespace Bookstore
             this.label16.TabIndex = 89;
             this.label16.Text = "Jenis Pembayaran";
             // 
-            // label15
+            // lblNomorNota
             // 
-            this.label15.AutoSize = true;
-            this.label15.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label15.Location = new System.Drawing.Point(270, 135);
-            this.label15.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
-            this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(144, 28);
-            this.label15.TabIndex = 88;
-            this.label15.Text = "20190405TR13";
+            this.lblNomorNota.AutoSize = true;
+            this.lblNomorNota.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblNomorNota.Location = new System.Drawing.Point(270, 135);
+            this.lblNomorNota.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
+            this.lblNomorNota.Name = "lblNomorNota";
+            this.lblNomorNota.Size = new System.Drawing.Size(144, 28);
+            this.lblNomorNota.TabIndex = 88;
+            this.lblNomorNota.Text = "20190405TR13";
             // 
             // label14
             // 
@@ -454,17 +449,17 @@ namespace Bookstore
             this.label14.TabIndex = 87;
             this.label14.Text = "Kode Transaksi";
             // 
-            // label11
+            // lblTotal
             // 
-            this.label11.AutoSize = true;
-            this.label11.BackColor = System.Drawing.Color.White;
-            this.label11.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.Location = new System.Drawing.Point(749, 83);
-            this.label11.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(111, 28);
-            this.label11.TabIndex = 81;
-            this.label11.Text = "Rp 302.000";
+            this.lblTotal.AutoSize = true;
+            this.lblTotal.BackColor = System.Drawing.Color.White;
+            this.lblTotal.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTotal.Location = new System.Drawing.Point(749, 83);
+            this.lblTotal.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
+            this.lblTotal.Name = "lblTotal";
+            this.lblTotal.Size = new System.Drawing.Size(111, 28);
+            this.lblTotal.TabIndex = 81;
+            this.lblTotal.Text = "Rp 302.000";
             // 
             // btnLihatNota
             // 
@@ -475,7 +470,7 @@ namespace Bookstore
             this.btnLihatNota.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnLihatNota.ForeColor = System.Drawing.Color.White;
             this.btnLihatNota.Location = new System.Drawing.Point(965, 657);
-            this.btnLihatNota.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.btnLihatNota.Margin = new System.Windows.Forms.Padding(5);
             this.btnLihatNota.Name = "btnLihatNota";
             this.btnLihatNota.Size = new System.Drawing.Size(191, 47);
             this.btnLihatNota.TabIndex = 86;
@@ -483,17 +478,17 @@ namespace Bookstore
             this.btnLihatNota.UseVisualStyleBackColor = false;
             this.btnLihatNota.Click += new System.EventHandler(this.btnLihatNota_Click);
             // 
-            // label10
+            // lblQty
             // 
-            this.label10.AutoSize = true;
-            this.label10.BackColor = System.Drawing.Color.White;
-            this.label10.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.Location = new System.Drawing.Point(270, 231);
-            this.label10.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(23, 28);
-            this.label10.TabIndex = 80;
-            this.label10.Text = "5";
+            this.lblQty.AutoSize = true;
+            this.lblQty.BackColor = System.Drawing.Color.White;
+            this.lblQty.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblQty.Location = new System.Drawing.Point(270, 231);
+            this.lblQty.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
+            this.lblQty.Name = "lblQty";
+            this.lblQty.Size = new System.Drawing.Size(23, 28);
+            this.lblQty.TabIndex = 80;
+            this.lblQty.Text = "5";
             // 
             // btnBack
             // 
@@ -504,7 +499,7 @@ namespace Bookstore
             this.btnBack.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnBack.ForeColor = System.Drawing.Color.White;
             this.btnBack.Location = new System.Drawing.Point(1166, 657);
-            this.btnBack.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.btnBack.Margin = new System.Windows.Forms.Padding(5);
             this.btnBack.Name = "btnBack";
             this.btnBack.Size = new System.Drawing.Size(191, 47);
             this.btnBack.TabIndex = 85;
@@ -512,69 +507,37 @@ namespace Bookstore
             this.btnBack.UseVisualStyleBackColor = false;
             this.btnBack.Click += new System.EventHandler(this.btnBack_Click);
             // 
-            // label9
+            // lblMember
             // 
-            this.label9.AutoSize = true;
-            this.label9.BackColor = System.Drawing.Color.White;
-            this.label9.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(1189, 182);
-            this.label9.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(91, 28);
-            this.label9.TabIndex = 79;
-            this.label9.Text = "MEM302";
+            this.lblMember.AutoSize = true;
+            this.lblMember.BackColor = System.Drawing.Color.White;
+            this.lblMember.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblMember.Location = new System.Drawing.Point(1189, 182);
+            this.lblMember.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
+            this.lblMember.Name = "lblMember";
+            this.lblMember.Size = new System.Drawing.Size(91, 28);
+            this.lblMember.TabIndex = 79;
+            this.lblMember.Text = "MEM302";
             // 
-            // dataGridView1
+            // dgvDetail
             // 
-            this.dataGridView1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.dgvDetail.AllowUserToAddRows = false;
+            this.dgvDetail.AllowUserToDeleteRows = false;
+            this.dgvDetail.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dataGridView1.BackgroundColor = System.Drawing.Color.Gainsboro;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Column1,
-            this.Column2,
-            this.Column3,
-            this.Column4,
-            this.Column5});
-            this.dataGridView1.Location = new System.Drawing.Point(39, 393);
-            this.dataGridView1.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowHeadersVisible = false;
-            this.dataGridView1.RowHeadersWidth = 51;
-            this.dataGridView1.Size = new System.Drawing.Size(1317, 251);
-            this.dataGridView1.TabIndex = 84;
-            // 
-            // Column1
-            // 
-            this.Column1.HeaderText = "Kode Buku";
-            this.Column1.MinimumWidth = 6;
-            this.Column1.Name = "Column1";
-            // 
-            // Column2
-            // 
-            this.Column2.HeaderText = "Judul";
-            this.Column2.MinimumWidth = 6;
-            this.Column2.Name = "Column2";
-            // 
-            // Column3
-            // 
-            this.Column3.HeaderText = "Harga";
-            this.Column3.MinimumWidth = 6;
-            this.Column3.Name = "Column3";
-            // 
-            // Column4
-            // 
-            this.Column4.HeaderText = "Qty";
-            this.Column4.MinimumWidth = 6;
-            this.Column4.Name = "Column4";
-            // 
-            // Column5
-            // 
-            this.Column5.HeaderText = "Subtotal";
-            this.Column5.MinimumWidth = 6;
-            this.Column5.Name = "Column5";
+            this.dgvDetail.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvDetail.BackgroundColor = System.Drawing.Color.Gainsboro;
+            this.dgvDetail.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvDetail.Location = new System.Drawing.Point(39, 393);
+            this.dgvDetail.Margin = new System.Windows.Forms.Padding(5);
+            this.dgvDetail.Name = "dgvDetail";
+            this.dgvDetail.ReadOnly = true;
+            this.dgvDetail.RowHeadersVisible = false;
+            this.dgvDetail.RowHeadersWidth = 51;
+            this.dgvDetail.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvDetail.Size = new System.Drawing.Size(1317, 251);
+            this.dgvDetail.TabIndex = 84;
             // 
             // label7
             // 
@@ -611,16 +574,16 @@ namespace Bookstore
             this.label6.TabIndex = 76;
             this.label6.Text = "Total Qty";
             // 
-            // label8
+            // lblKode
             // 
-            this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(270, 83);
-            this.label8.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(100, 28);
-            this.label8.TabIndex = 78;
-            this.label8.Text = "TR055592";
+            this.lblKode.AutoSize = true;
+            this.lblKode.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblKode.Location = new System.Drawing.Point(270, 83);
+            this.lblKode.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
+            this.lblKode.Name = "lblKode";
+            this.lblKode.Size = new System.Drawing.Size(100, 28);
+            this.lblKode.TabIndex = 78;
+            this.lblKode.Text = "TR055592";
             // 
             // label5
             // 
@@ -634,16 +597,16 @@ namespace Bookstore
             this.label5.TabIndex = 75;
             this.label5.Text = "Kode Member";
             // 
-            // label12
+            // lblTanggal
             // 
-            this.label12.AutoSize = true;
-            this.label12.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label12.Location = new System.Drawing.Point(270, 182);
-            this.label12.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(116, 28);
-            this.label12.TabIndex = 82;
-            this.label12.Text = "05/04/2019";
+            this.lblTanggal.AutoSize = true;
+            this.lblTanggal.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTanggal.Location = new System.Drawing.Point(270, 182);
+            this.lblTanggal.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
+            this.lblTanggal.Name = "lblTanggal";
+            this.lblTanggal.Size = new System.Drawing.Size(116, 28);
+            this.lblTanggal.TabIndex = 82;
+            this.lblTanggal.Text = "05/04/2019";
             // 
             // label2
             // 
@@ -673,13 +636,13 @@ namespace Bookstore
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1389, 766);
             this.Controls.Add(this.panel1);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "FormDetailTransaksi";
             this.Text = "FormDetailTransaksi";
             this.Load += new System.EventHandler(this.FormDetailTransaksi_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvDetail)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -696,42 +659,37 @@ namespace Bookstore
         private System.Windows.Forms.Label label24;
         private System.Windows.Forms.Label label23;
         private System.Windows.Forms.Label label22;
-        private System.Windows.Forms.Label label21;
-        private System.Windows.Forms.Label label20;
+        private System.Windows.Forms.Label lblPegawai;
+        private System.Windows.Forms.Label lblJenisCustomer;
         private System.Windows.Forms.Label label19;
         private System.Windows.Forms.Label label18;
-        private System.Windows.Forms.Label label17;
+        private System.Windows.Forms.Label lblMetode;
         private System.Windows.Forms.Label label16;
-        private System.Windows.Forms.Label label15;
+        private System.Windows.Forms.Label lblNomorNota;
         private System.Windows.Forms.Label label14;
-        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.Label lblTotal;
         private System.Windows.Forms.Button btnLihatNota;
-        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.Label lblQty;
         private System.Windows.Forms.Button btnBack;
-        private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.Label lblMember;
+        private System.Windows.Forms.DataGridView dgvDetail;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Label lblKode;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.Label lblTanggal;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column5;
-        private System.Windows.Forms.Label label38;
-        private System.Windows.Forms.Label label37;
+        private System.Windows.Forms.Label lblPoinDigunakan;
+        private System.Windows.Forms.Label lblPaid;
         private System.Windows.Forms.Label label36;
         private System.Windows.Forms.Label label35;
         private System.Windows.Forms.Label label34;
         private System.Windows.Forms.Label label33;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label31;
+        private System.Windows.Forms.Label lblPoinDiterima;
         private System.Windows.Forms.Label label32;
     }
 }

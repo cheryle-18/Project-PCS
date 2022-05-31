@@ -121,7 +121,7 @@ namespace Bookstore
             // 
             this.txtUsername.Location = new System.Drawing.Point(312, 126);
             this.txtUsername.Name = "txtUsername";
-            this.txtUsername.Size = new System.Drawing.Size(355, 45);
+            this.txtUsername.Size = new System.Drawing.Size(355, 49);
             this.txtUsername.StateCommon.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(252)))), ((int)(((byte)(252)))));
             this.txtUsername.StateCommon.Border.DrawBorders = ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom;
             this.txtUsername.StateCommon.Border.GraphicsHint = ComponentFactory.Krypton.Toolkit.PaletteGraphicsHint.AntiAlias;
@@ -131,7 +131,7 @@ namespace Bookstore
             this.txtUsername.StateCommon.Content.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtUsername.StateCommon.Content.Padding = new System.Windows.Forms.Padding(10, 5, 10, 10);
             this.txtUsername.TabIndex = 4;
-            this.txtUsername.Text = "Alice Wonderland";
+            this.txtUsername.Text = "budi";
             // 
             // kryptonLabel2
             // 
@@ -229,7 +229,7 @@ namespace Bookstore
             this.txtPassword.Location = new System.Drawing.Point(312, 224);
             this.txtPassword.Name = "txtPassword";
             this.txtPassword.PasswordChar = '*';
-            this.txtPassword.Size = new System.Drawing.Size(355, 45);
+            this.txtPassword.Size = new System.Drawing.Size(355, 49);
             this.txtPassword.StateCommon.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(252)))), ((int)(((byte)(252)))));
             this.txtPassword.StateCommon.Border.DrawBorders = ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom;
             this.txtPassword.StateCommon.Border.GraphicsHint = ComponentFactory.Krypton.Toolkit.PaletteGraphicsHint.AntiAlias;
@@ -239,7 +239,7 @@ namespace Bookstore
             this.txtPassword.StateCommon.Content.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtPassword.StateCommon.Content.Padding = new System.Windows.Forms.Padding(10, 5, 10, 10);
             this.txtPassword.TabIndex = 10;
-            this.txtPassword.Text = "Alice Wonderland";
+            this.txtPassword.Text = "budi";
             // 
             // label2
             // 

@@ -72,6 +72,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CrNotaTransaksi.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CrNotaTransaksi.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="FormBukuBaruAdmin.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -89,12 +95,6 @@
     </Compile>
     <Compile Include="FormCariMember.Designer.cs">
       <DependentUpon>FormCariMember.cs</DependentUpon>
-    </Compile>
-    <Compile Include="FormCariPO.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="FormCariPO.Designer.cs">
-      <DependentUpon>FormCariPO.cs</DependentUpon>
     </Compile>
     <Compile Include="FormDetailBuku.cs">
       <SubType>Form</SubType>
@@ -255,6 +255,10 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="CrNotaTransaksi.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>CrNotaTransaksi.cs</LastGenOutput>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormBukuBaruAdmin.resx">
       <DependentUpon>FormBukuBaruAdmin.cs</DependentUpon>
     </EmbeddedResource>
@@ -263,9 +267,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormCariMember.resx">
       <DependentUpon>FormCariMember.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="FormCariPO.resx">
-      <DependentUpon>FormCariPO.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormDetailBuku.resx">
       <DependentUpon>FormDetailBuku.cs</DependentUpon>
@@ -370,6 +371,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\Images\book.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{C0C07587-41A7-46C8-8FBD-3F9C8EBE2DDC}" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
