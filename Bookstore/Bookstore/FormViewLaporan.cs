@@ -14,6 +14,9 @@ namespace Bookstore
     public partial class FormViewLaporan : Form
     {
         private int mode;
+        DateTime tglDari;
+        DateTime tglSampai;
+
         public FormViewLaporan(int selection)
         {
             InitializeComponent();
@@ -21,7 +24,13 @@ namespace Bookstore
 
             if(this.mode == 1)
             {
+                dtpDari.Visible = false;
+                dtpSampai.Visible = false;
+                btnTampilkan.Visible = false;
+                label5.Visible = false;
+                label6.Visible = false;
 
+                showLaporanBukuPreOrder();
             }
             else if(this.mode == 2)
             {
@@ -79,6 +88,47 @@ namespace Bookstore
             double avg = Convert.ToDouble(cmd.ExecuteScalar());
             rep.SetParameterValue("average", avg);
             crViewLaporan.ReportSource = rep;
+        }
+
+        public void showLaporanBukuPreOrder()
+        {
+            ReportPreOrder rep = new ReportPreOrder();
+            crViewLaporan.ReportSource = rep;
+        }
+
+        public void showLaporanPenjualanPegawai()
+        {
+            ReportPenjualanPegawai rep = new ReportPenjualanPegawai();
+            rep.SetParameterValue("tglDari", tglDari);
+            rep.SetParameterValue("tglSampai", tglSampai);
+            crViewLaporan.ReportSource = rep;
+        }
+
+        private void btnTampilkan_Click(object sender, EventArgs e)
+        {
+            tglDari = dtpDari.Value;
+            tglSampai = dtpSampai.Value;
+
+            if (this.mode == 1)
+            {
+                showLaporanBukuPreOrder();
+            }
+            else if (this.mode == 2)
+            {
+                showLaporanBukuDiatasRata();
+            }
+            else if (this.mode == 3)
+            {
+                showLaporanBukuDibawahRata();
+            }
+            else if (this.mode == 4)
+            {
+
+            }
+            else if (this.mode == 5)
+            {
+                showLaporanPenjualanPegawai();
+            }
         }
     }
 }

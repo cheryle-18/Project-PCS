@@ -19,6 +19,17 @@ namespace Bookstore
             InitializeComponent();
             this.poId = po_id;
             this.userRole = role;
+
+            loadNota();
+        }
+
+        public void loadNota()
+        {
+            ReportNotaPO rep = new ReportNotaPO();
+            rep.SetParameterValue("poId", poId);
+
+            rep.SetDatabaseLogon("root", "", "localhost", "db_tokobuku");
+            crystalReportViewer1.ReportSource = rep;
         }
 
         private void FormLihatNotaPO_Load(object sender, EventArgs e)

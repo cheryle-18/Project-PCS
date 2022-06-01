@@ -31,12 +31,12 @@ namespace Bookstore
 
         private void btnDetail_Click(object sender, EventArgs e)
         {
-            FormDetailMember frm = new FormDetailMember(user_role);
-            Panel temp = (Panel)frm.Controls[0];
-            temp.Width = panel2.Width;
-            temp.Height = panel2.Height;
-            this.panel2.Controls.Clear();
-            this.panel2.Controls.Add(temp);
+            //FormDetailMember frm = new FormDetailMember(user_role);
+            //Panel temp = (Panel)frm.Controls[0];
+            //temp.Width = panel2.Width;
+            //temp.Height = panel2.Height;
+            //this.panel2.Controls.Clear();
+            //this.panel2.Controls.Add(temp);
         }
 
         private void btnMemberBaru_Click(object sender, EventArgs e)
