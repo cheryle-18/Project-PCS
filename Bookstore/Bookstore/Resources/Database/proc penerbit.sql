@@ -10,4 +10,3 @@ BEGIN
 	SELECT idPenerbit;
 END$$
 DELIMITER ;
-

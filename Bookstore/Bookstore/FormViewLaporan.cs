@@ -42,7 +42,7 @@ namespace Bookstore
             }
             else if(this.mode == 4)
             {
-
+                
             }
             else if(this.mode == 5)
             {
@@ -111,6 +111,18 @@ namespace Bookstore
             rep.SetParameterValue("tglSampai", tglSampai);
             crViewLaporan.ReportSource = rep;
         }
+        public void showLaporanMemberTerbanyakBeli()
+        {
+            MySqlCommand cmd;
+            string id;
+            cmd = new MySqlCommand("SELECT a.HP_M_ID FROM(SELECT HP_M_ID, SUM(HP_TOTAL_QTY) FROM htrans_purchase WHERE HP_M_ID IS NOT NULL GROUP BY HP_M_ID ORDER BY 2 DESC LIMIT 1) a; ",Koneksi.getConn());
+            id = cmd.ExecuteScalar().ToString();
+            ReportMemberTerbanyakBeli rep = new ReportMemberTerbanyakBeli();
+            rep.SetParameterValue("idMember",id);
+            rep.SetParameterValue("startDate", tglDari);
+            rep.SetParameterValue("endDate", tglSampai);
+            crViewLaporan.ReportSource = rep;
+        }
 
         private void btnTampilkan_Click(object sender, EventArgs e)
         {
@@ -131,7 +143,7 @@ namespace Bookstore
             }
             else if (this.mode == 4)
             {
-
+                showLaporanMemberTerbanyakBeli();
             }
             else if (this.mode == 5)
             {

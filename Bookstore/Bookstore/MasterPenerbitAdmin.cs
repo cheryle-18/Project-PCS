@@ -13,7 +13,6 @@ namespace Bookstore
 {
     public partial class MasterPenerbitAdmin : Form
     {
-        private MySqlConnection conn;
         private MySqlCommand cmd;
         private MySqlDataAdapter da;
         private DataTable dt;
@@ -62,20 +61,14 @@ namespace Bookstore
         {
             try
             {
-                conn = Koneksi.getConn();
                 da = new MySqlDataAdapter();
-                cmd = new MySqlCommand(command, conn);
+                cmd = new MySqlCommand(command, Koneksi.getConn());
                 dt = new DataTable();
                 da.SelectCommand = cmd;
-                if (conn.State == System.Data.ConnectionState.Closed)
-                {
-                    conn.Open();
-                }
                 da.Fill(dt);
                 dataGridView1.DataSource = null;
                 dataGridView1.DataSource = dt;
                 da.Dispose();
-                conn.Close();
             }
             catch (Exception e)
             {

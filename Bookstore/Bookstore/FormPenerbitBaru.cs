@@ -13,13 +13,11 @@ namespace Bookstore
 {
     public partial class FormPenerbitBaru : Form
     {
-        MySqlConnection conn;
         MySqlCommand cmd;
 
         public FormPenerbitBaru()
         {
             InitializeComponent();
-            conn = Koneksi.getConn();
             generateID();
         }
 
@@ -29,16 +27,11 @@ namespace Bookstore
             cmd = new MySqlCommand();
             cmd.CommandText = "generateIdPenerbit";
             cmd.CommandType = CommandType.StoredProcedure;
-            cmd.Connection = conn;
+            cmd.Connection = Koneksi.getConn();
 
             cmd.Parameters.Add(new MySqlParameter("idPenerbit",MySqlDbType.VarChar));
             cmd.Parameters["idPenerbit"].Direction = ParameterDirection.Output;
-            if (conn.State == System.Data.ConnectionState.Closed)
-            {
-                conn.Open();
-            }
             cmd.ExecuteNonQuery();
-            conn.Close();
             id = cmd.Parameters["idPenerbit"].Value.ToString();
 
             tbKode.Text = id;
@@ -59,13 +52,8 @@ namespace Bookstore
             if (tbNama.Text != "" && tbAlamat.Text != "" && tbTelp.Text != "") {
                 try {
                     string query = $"INSERT INTO publisher (`P_ID`,`P_NAME`,`P_ADDRESS`,`P_TELP`,`P_STATUS`) VALUES('{tbKode.Text}','{tbNama.Text}','{tbAlamat.Text}','{tbTelp.Text}',1) ;";
-                    cmd = new MySqlCommand(query, conn);
-                    if (conn.State == System.Data.ConnectionState.Closed)
-                    {
-                        conn.Open();
-                    }
+                    cmd = new MySqlCommand(query, Koneksi.getConn());
                     cmd.ExecuteNonQuery();
-                    conn.Close();
                     MessageBox.Show("Berhasi Insert");
                 }
                 catch(Exception ex)

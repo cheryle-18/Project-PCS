@@ -14,7 +14,6 @@ namespace Bookstore
     public partial class FormDetailPenerbitAdmin : Form
     {
         string id_penerbit;
-        private MySqlConnection conn;
         private MySqlCommand cmd;
         private MySqlDataAdapter da;
         private DataTable dt;
@@ -23,8 +22,6 @@ namespace Bookstore
         {
             InitializeComponent();
             id_penerbit = id;
-            
-            conn = Koneksi.getConn();
             command_querry = "SELECT b.B_ID AS 'Kode Buku',b.B_TITLE AS 'Judul Buku',b.B_AUTHOR AS 'Penulis',p.P_NAME AS 'Penerbit',c.C_NAME AS 'Kategori',CONCAT('Rp.',FORMAT(b.B_PRICE,0)) AS 'Harga', b.B_STOCK AS 'Stok',b.B_STATUS AS 'Status' " +
                                    $"FROM book b,publisher p, book_category bc,category c WHERE b.B_STATUS = 1 AND b.B_ID = bc.B_ID AND bc.C_ID = c.C_ID AND b.B_P_ID = p.P_ID AND p.P_ID = '{id_penerbit}'; ";
             connects();
@@ -42,13 +39,8 @@ namespace Bookstore
                 }
                 string query = "UPDATE publisher " +
                                 $"SET P_NAME = '{tbNama.Text}',P_ADDRESS = '{tbAlamat.Text}',P_TELP = '{tbTelp.Text}',P_STATUS = {stat} WHERE P_ID = '{id_penerbit}' ";
-                cmd = new MySqlCommand(query, conn);
-                if (conn.State == System.Data.ConnectionState.Closed)
-                {
-                    conn.Open();
-                }
+                cmd = new MySqlCommand(query, Koneksi.getConn());
                 cmd.ExecuteNonQuery();
-                conn.Close();
 
                 MessageBox.Show("Berhasil Update");
 
@@ -86,7 +78,7 @@ namespace Bookstore
             {
                 dt = new DataTable();
                 string query = $"SELECT P_ID,P_NAME,P_ADDRESS,P_TELP,P_STATUS FROM publisher WHERE P_ID = '{id_penerbit}';";
-                cmd = new MySqlCommand(query, conn);
+                cmd = new MySqlCommand(query, Koneksi.getConn());
                 da = new MySqlDataAdapter(cmd);
                 da.Fill(dt);
                 tbKode.Text = dt.Rows[0][0].ToString();
@@ -117,20 +109,15 @@ namespace Bookstore
         {
             try
             {
-                conn = Koneksi.getConn();
                 da = new MySqlDataAdapter();
-                cmd = new MySqlCommand(command, conn);
+                cmd = new MySqlCommand(command, Koneksi.getConn());
                 dt = new DataTable();
                 da.SelectCommand = cmd;
-                if (conn.State == System.Data.ConnectionState.Closed)
-                {
-                    conn.Open();
-                }
+
                 da.Fill(dt);
                 dataGridView1.DataSource = null;
                 dataGridView1.DataSource = dt;
                 da.Dispose();
-                conn.Close();
             }
             catch (Exception e)
             {

@@ -38,7 +38,7 @@ namespace Bookstore
 
             btnDetail.Enabled = false;
 
-            fullTableQuery = "SELECT htrans_purchase.`HP_ID`,htrans_purchase.`HP_INVOICE_NUMBER`,htrans_purchase.`HP_DATE`,htrans_purchase.`HP_TOTAL_QTY`,CONCAT('Rp ',FORMAT(htrans_purchase.HP_TOTAL,0,'id_ID')) AS HP_TOTAL, concat('Rp ',FORMAT(htrans_purchase.HP_TOTAL_PAID,0,'id_ID')) AS HP_TOTAL_PAID,htrans_purchase.HP_PAYMENT_METHOD,(CASE WHEN member.`M_NAME` IS NULL THEN 'Non-Member' ELSE member.`M_NAME` END) AS MEMBER_NAME FROM htrans_purchase LEFT JOIN member ON htrans_purchase.`HP_M_ID` = member.`M_ID`";
+            fullTableQuery = "SELECT htrans_purchase.`HP_ID`,htrans_purchase.`HP_INVOICE_NUMBER`,htrans_purchase.`HP_DATE`,htrans_purchase.`HP_TOTAL_QTY`,CONCAT('Rp ',FORMAT(htrans_purchase.HP_TOTAL,0,'id_ID')) AS HP_TOTAL, concat('Rp ',FORMAT(htrans_purchase.HP_TOTAL_PAID,0,'id_ID')) AS HP_TOTAL_PAID,htrans_purchase.HP_PAYMENT_METHOD,(CASE WHEN `member`.`M_NAME` IS NULL THEN 'Non-Member' ELSE `member`.`M_NAME` END) AS MEMBER_NAME FROM htrans_purchase LEFT JOIN `member` ON htrans_purchase.`HP_M_ID` = `member`.`M_ID`";
             cari = "";
             filterDari = "";
             filterSampai = "";
@@ -87,26 +87,33 @@ namespace Bookstore
 
         private void loadDGV()
         {
-            query = fullTableQuery;
-            if (cari != "" || (dtpDari.Value < dtpSampai.Value && filterDari != "" && filterSampai != ""))
+            try
             {
-                query += " having ";
-                if (cari != "")
+                query = fullTableQuery;
+                if (cari != "" || (dtpDari.Value < dtpSampai.Value && filterDari != "" && filterSampai != ""))
                 {
-                    query = query + "lower(HP_ID) LIKE '%" + cari + "%' OR lower(HP_INVOICE_NUMBER) LIKE '%" + cari + "%' OR lower(HP_PAYMENT_METHOD) LIKE '%" + cari + "%' OR lower(MEMBER_NAME) LIKE '%" + cari + "%'";
+                    query += " having ";
+                    if (cari != "")
+                    {
+                        query = query + "lower(HP_ID) LIKE '%" + cari + "%' OR lower(HP_INVOICE_NUMBER) LIKE '%" + cari + "%' OR lower(HP_PAYMENT_METHOD) LIKE '%" + cari + "%' OR lower(MEMBER_NAME) LIKE '%" + cari + "%'";
+                        if (dtpDari.Value < dtpSampai.Value)
+                        {
+                            query += " AND ";
+                        }
+                    }
                     if (dtpDari.Value < dtpSampai.Value)
                     {
-                        query += " AND ";
+                        query = query + "HP_DATE >= STR_TO_DATE('" + filterDari + "', '%d-%m-%y') AND HP_DATE <= STR_TO_DATE('" + filterSampai + "', '%d-%m-%y')";
                     }
                 }
-                if (dtpDari.Value < dtpSampai.Value)
+                if (orderBy != "" && arahOrderBy != "")
                 {
-                    query = query + "HP_DATE >= STR_TO_DATE('" + filterDari + "', '%d-%m-%y') AND HP_DATE <= STR_TO_DATE('" + filterSampai + "', '%d-%m-%y')";
+                    query += " order by " + orderBy + " " + arahOrderBy;
                 }
             }
-            if (orderBy != "" && arahOrderBy != "")
+            catch (Exception ex)
             {
-                query += " order by " + orderBy + " " + arahOrderBy;
+                MessageBox.Show(ex.Message);
             }
 
             try
@@ -117,21 +124,21 @@ namespace Bookstore
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message);
+                MessageBox.Show(ex.Message+"--"+query);
             }
         }
 
         public void refreshGridView()
         {
             dgvTransaksi.DataSource = dtTransaksi;
-            dgvTransaksi.Columns["HP_ID"].HeaderText = "Kode Transaksi";
+            /*dgvTransaksi.Columns["HP_ID"].HeaderText = "Kode Transaksi";
             dgvTransaksi.Columns["HP_INVOICE_NUMBER"].HeaderText = "Nomor Nota";
             dgvTransaksi.Columns["HP_DATE"].HeaderText = "Tanggal";
             dgvTransaksi.Columns["HP_TOTAL_QTY"].HeaderText = "Qty";
             dgvTransaksi.Columns["HP_TOTAL"].HeaderText = "Total";
             dgvTransaksi.Columns["HP_TOTAL_PAID"].HeaderText = "Total Paid";
             dgvTransaksi.Columns["HP_PAYMENT_METHOD"].HeaderText = "Metode Pembayaran";
-            dgvTransaksi.Columns["MEMBER_NAME"].HeaderText = "Customer";
+            dgvTransaksi.Columns["MEMBER_NAME"].HeaderText = "Customer";*/
             dgvTransaksi.ClearSelection();
         }
 
