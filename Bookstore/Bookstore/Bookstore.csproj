@@ -78,6 +78,12 @@
       <DependentUpon>CrNotaTransaksi.rpt</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="CrPenjualanBukuDiatasRata.cs">
+      <DependentUpon>CrPenjualanBukuDiatasRata.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <SubType>Component</SubType>
+      <DesignTime>True</DesignTime>
+    </Compile>
     <Compile Include="CrPenjualanBukuDibawahRata.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -117,7 +123,7 @@
     <Compile Include="FormDetailMember.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormDetailMember.Designer.cs">
+    <Compile Include="FormDetailMember.designer.cs">
       <DependentUpon>FormDetailMember.cs</DependentUpon>
     </Compile>
     <Compile Include="FormDetailPegawaiAdmin.cs">
@@ -156,6 +162,12 @@
     <Compile Include="FormLihatNotaPO.Designer.cs">
       <DependentUpon>FormLihatNotaPO.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormMemberBaru.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormMemberBaru.designer.cs">
+      <DependentUpon>FormMemberBaru.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormPegawaiBaru.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -186,12 +198,6 @@
     </Compile>
     <Compile Include="FormLogin.Designer.cs">
       <DependentUpon>FormLogin.cs</DependentUpon>
-    </Compile>
-    <Compile Include="FormMemberBaru.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="FormMemberBaru.Designer.cs">
-      <DependentUpon>FormMemberBaru.cs</DependentUpon>
     </Compile>
     <Compile Include="FormPreOrderBaru.cs">
       <SubType>Form</SubType>
@@ -306,6 +312,10 @@
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>CrNotaTransaksi.cs</LastGenOutput>
     </EmbeddedResource>
+    <EmbeddedResource Include="CrPenjualanBukuDiatasRata.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>CrPenjualanBukuDiatasRata.cs</LastGenOutput>
+    </EmbeddedResource>
     <EmbeddedResource Include="CrPenjualanBukuDibawahRata.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>CrPenjualanBukuDibawahRata.cs</LastGenOutput>
@@ -346,6 +356,9 @@
     <EmbeddedResource Include="FormLihatNota.resx">
       <DependentUpon>FormLihatNota.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FormMemberBaru.resx">
+      <DependentUpon>FormMemberBaru.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormPegawaiBaru.resx">
       <DependentUpon>FormPegawaiBaru.cs</DependentUpon>
     </EmbeddedResource>
@@ -360,9 +373,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormLogin.resx">
       <DependentUpon>FormLogin.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="FormMemberBaru.resx">
-      <DependentUpon>FormMemberBaru.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormPreOrderBaru.resx">
       <DependentUpon>FormPreOrderBaru.cs</DependentUpon>

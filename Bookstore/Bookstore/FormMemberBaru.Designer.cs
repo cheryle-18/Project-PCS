@@ -30,11 +30,11 @@ namespace Bookstore
         private void InitializeComponent()
         {
             this.panel2 = new System.Windows.Forms.Panel();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.tbTelepon = new System.Windows.Forms.TextBox();
+            this.tbAlamat = new System.Windows.Forms.TextBox();
+            this.dtpTanggalLahir = new System.Windows.Forms.DateTimePicker();
+            this.tbNama = new System.Windows.Forms.TextBox();
+            this.tbID = new System.Windows.Forms.TextBox();
             this.label12 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
@@ -57,11 +57,11 @@ namespace Bookstore
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panel2.BackColor = System.Drawing.Color.White;
-            this.panel2.Controls.Add(this.textBox4);
-            this.panel2.Controls.Add(this.textBox3);
-            this.panel2.Controls.Add(this.dateTimePicker1);
-            this.panel2.Controls.Add(this.textBox2);
-            this.panel2.Controls.Add(this.textBox1);
+            this.panel2.Controls.Add(this.tbTelepon);
+            this.panel2.Controls.Add(this.tbAlamat);
+            this.panel2.Controls.Add(this.dtpTanggalLahir);
+            this.panel2.Controls.Add(this.tbNama);
+            this.panel2.Controls.Add(this.tbID);
             this.panel2.Controls.Add(this.label12);
             this.panel2.Controls.Add(this.label11);
             this.panel2.Controls.Add(this.label9);
@@ -81,43 +81,44 @@ namespace Bookstore
             this.panel2.Size = new System.Drawing.Size(1042, 616);
             this.panel2.TabIndex = 21;
             // 
-            // textBox4
+            // tbTelepon
             // 
-            this.textBox4.Location = new System.Drawing.Point(202, 274);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(213, 30);
-            this.textBox4.TabIndex = 74;
+            this.tbTelepon.Location = new System.Drawing.Point(202, 274);
+            this.tbTelepon.Name = "tbTelepon";
+            this.tbTelepon.Size = new System.Drawing.Size(213, 26);
+            this.tbTelepon.TabIndex = 74;
             // 
-            // textBox3
+            // tbAlamat
             // 
-            this.textBox3.Location = new System.Drawing.Point(202, 223);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(213, 30);
-            this.textBox3.TabIndex = 73;
+            this.tbAlamat.Location = new System.Drawing.Point(202, 223);
+            this.tbAlamat.Name = "tbAlamat";
+            this.tbAlamat.Size = new System.Drawing.Size(213, 26);
+            this.tbAlamat.TabIndex = 73;
             // 
-            // dateTimePicker1
+            // dtpTanggalLahir
             // 
-            this.dateTimePicker1.CustomFormat = "dd/MM/yyyy";
-            this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dateTimePicker1.Location = new System.Drawing.Point(202, 174);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(213, 30);
-            this.dateTimePicker1.TabIndex = 72;
+            this.dtpTanggalLahir.CustomFormat = "dd/MM/yyyy";
+            this.dtpTanggalLahir.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dtpTanggalLahir.Location = new System.Drawing.Point(202, 174);
+            this.dtpTanggalLahir.Name = "dtpTanggalLahir";
+            this.dtpTanggalLahir.Size = new System.Drawing.Size(213, 26);
+            this.dtpTanggalLahir.TabIndex = 72;
             // 
-            // textBox2
+            // tbNama
             // 
-            this.textBox2.Location = new System.Drawing.Point(202, 129);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(213, 30);
-            this.textBox2.TabIndex = 71;
+            this.tbNama.Location = new System.Drawing.Point(202, 129);
+            this.tbNama.Name = "tbNama";
+            this.tbNama.Size = new System.Drawing.Size(213, 26);
+            this.tbNama.TabIndex = 71;
+            this.tbNama.TextChanged += new System.EventHandler(this.tbUbah_TextChanged);
             // 
-            // textBox1
+            // tbID
             // 
-            this.textBox1.Enabled = false;
-            this.textBox1.Location = new System.Drawing.Point(202, 79);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(117, 30);
-            this.textBox1.TabIndex = 70;
+            this.tbID.Enabled = false;
+            this.tbID.Location = new System.Drawing.Point(202, 79);
+            this.tbID.Name = "tbID";
+            this.tbID.Size = new System.Drawing.Size(117, 26);
+            this.tbID.TabIndex = 70;
             // 
             // label12
             // 
@@ -170,7 +171,7 @@ namespace Bookstore
             this.label6.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.Location = new System.Drawing.Point(26, 276);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(82, 28);
+            this.label6.Size = new System.Drawing.Size(66, 21);
             this.label6.TabIndex = 64;
             this.label6.Text = "No Telp";
             // 
@@ -180,7 +181,7 @@ namespace Bookstore
             this.label5.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.Location = new System.Drawing.Point(26, 225);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(75, 28);
+            this.label5.Size = new System.Drawing.Size(61, 21);
             this.label5.TabIndex = 63;
             this.label5.Text = "Alamat";
             // 
@@ -190,7 +191,7 @@ namespace Bookstore
             this.label4.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.Location = new System.Drawing.Point(24, 178);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(132, 28);
+            this.label4.Size = new System.Drawing.Size(105, 21);
             this.label4.TabIndex = 62;
             this.label4.Text = "Tanggal Lahir";
             // 
@@ -200,7 +201,7 @@ namespace Bookstore
             this.label2.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.Location = new System.Drawing.Point(25, 131);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(65, 28);
+            this.label2.Size = new System.Drawing.Size(52, 21);
             this.label2.TabIndex = 61;
             this.label2.Text = "Nama";
             // 
@@ -210,7 +211,7 @@ namespace Bookstore
             this.label10.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label10.Location = new System.Drawing.Point(25, 81);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(32, 28);
+            this.label10.Size = new System.Drawing.Size(26, 21);
             this.label10.TabIndex = 60;
             this.label10.Text = "ID";
             // 
@@ -252,7 +253,7 @@ namespace Bookstore
             this.label3.Font = new System.Drawing.Font("Segoe UI Semibold", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.Location = new System.Drawing.Point(23, 18);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(183, 37);
+            this.label3.Size = new System.Drawing.Size(144, 30);
             this.label3.TabIndex = 14;
             this.label3.Text = "Member Baru";
             // 
@@ -272,11 +273,11 @@ namespace Bookstore
         #endregion
 
         private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.TextBox textBox4;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox tbTelepon;
+        private System.Windows.Forms.TextBox tbAlamat;
+        private System.Windows.Forms.DateTimePicker dtpTanggalLahir;
+        private System.Windows.Forms.TextBox tbNama;
+        private System.Windows.Forms.TextBox tbID;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Label label9;

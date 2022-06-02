@@ -14,6 +14,9 @@ namespace Bookstore
     public partial class FormViewLaporan : Form
     {
         private int mode;
+        DateTime tglDari;
+        DateTime tglSampai;
+
         public FormViewLaporan(int selection)
         {
             InitializeComponent();
@@ -21,11 +24,17 @@ namespace Bookstore
 
             if(this.mode == 1)
             {
+                dtpDari.Visible = false;
+                dtpSampai.Visible = false;
+                btnTampilkan.Visible = false;
+                label5.Visible = false;
+                label6.Visible = false;
 
+                showLaporanBukuPreOrder();
             }
             else if(this.mode == 2)
             {
-                
+                showLaporanBukuDiatasRata();
             }
             else if(this.mode == 3)
             {
@@ -61,24 +70,73 @@ namespace Bookstore
         {
             //SHOW CRYSTAL REPORT
             CrPenjualanBukuDibawahRata rep = new CrPenjualanBukuDibawahRata();
-
             //FIND AVG
-            MySqlCommand cmd = new MySqlCommand("SELECT SUM(DP_QTY)/COUNT(DP_B_ID) FROM dtrans_purchase;",Koneksi.getConn());
+            MySqlCommand cmd = new MySqlCommand("SELECT (CASE WHEN SUM(DP_QTY)/COUNT(DP_B_ID) IS NULL THEN 0 ELSE SUM(DP_QTY)/COUNT(DP_B_ID) END) FROM dtrans_purchase JOIN htrans_purchase WHERE dtrans_purchase.`DP_HP_ID` = htrans_purchase.`HP_ID` AND htrans_purchase.`HP_DATE` >= STR_TO_DATE(@startDate,'%d/%m/%Y') AND htrans_purchase.`HP_DATE` <= STR_TO_DATE(@endDate,'%d/%m/%Y');", Koneksi.getConn());
+            cmd.Parameters.AddWithValue("@startDate",dtpDari.Value.ToString("dd/MM/yyyy"));
+            cmd.Parameters.AddWithValue("@endDate", dtpSampai.Value.ToString("dd/MM/yyyy"));
             double avg = Convert.ToDouble(cmd.ExecuteScalar());
+            MessageBox.Show(dtpDari.Value.ToString("MM/dd/yyyy"));
+            MessageBox.Show(dtpSampai.Value.ToString("MM/dd/yyyy"));
+            MessageBox.Show(avg + "");
             rep.SetParameterValue("average", avg);
+            rep.SetParameterValue("startDate", dtpDari.Value);
+            rep.SetParameterValue("endDate", dtpSampai.Value);
             crViewLaporan.ReportSource = rep;
         }
 
-
-        private void showLaporanMemberBeliTerbanyak()
+        private void showLaporanBukuDiatasRata()
         {
-            ReportMemberTerbanyakBeli rep = new ReportMemberTerbanyakBeli();
+            //SHOW CRYSTAL REPORT
+            CrPenjualanBukuDiatasRata rep = new CrPenjualanBukuDiatasRata();
 
+            //FIND AVG
+            MySqlCommand cmd = new MySqlCommand("SELECT SUM(DP_QTY)/COUNT(DP_B_ID) FROM dtrans_purchase;", Koneksi.getConn());
+            double avg = Convert.ToDouble(cmd.ExecuteScalar());
+            rep.SetParameterValue("average", avg);
+            rep.SetParameterValue("startDate", dtpDari.Value);
+            rep.SetParameterValue("endDate", dtpSampai.Value);
+            crViewLaporan.ReportSource = rep;
         }
 
-        private void btnMemberBaru_Click(object sender, EventArgs e)
+        public void showLaporanBukuPreOrder()
         {
+            ReportPreOrder rep = new ReportPreOrder();
+            crViewLaporan.ReportSource = rep;
+        }
 
+        public void showLaporanPenjualanPegawai()
+        {
+            ReportPenjualanPegawai rep = new ReportPenjualanPegawai();
+            rep.SetParameterValue("tglDari", tglDari);
+            rep.SetParameterValue("tglSampai", tglSampai);
+            crViewLaporan.ReportSource = rep;
+        }
+
+        private void btnTampilkan_Click(object sender, EventArgs e)
+        {
+            tglDari = dtpDari.Value;
+            tglSampai = dtpSampai.Value;
+
+            if (this.mode == 1)
+            {
+                showLaporanBukuPreOrder();
+            }
+            else if (this.mode == 2)
+            {
+                showLaporanBukuDiatasRata();
+            }
+            else if (this.mode == 3)
+            {
+                showLaporanBukuDibawahRata();
+            }
+            else if (this.mode == 4)
+            {
+
+            }
+            else if (this.mode == 5)
+            {
+                showLaporanPenjualanPegawai();
+            }
         }
     }
 }
