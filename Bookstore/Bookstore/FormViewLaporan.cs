@@ -69,33 +69,66 @@ namespace Bookstore
         private void showLaporanBukuDibawahRata()
         {
             //SHOW CRYSTAL REPORT
-            CrPenjualanBukuDibawahRata rep = new CrPenjualanBukuDibawahRata();
+           
+            MySqlCommand check = new MySqlCommand(@"SELECT COUNT(*) FROM
+            (SELECT DP_ID, DP_HP_ID, DP_B_ID, SUM(DP_QTY) AS TOTAL FROM dtrans_purchase
+            JOIN htrans_purchase ON htrans_purchase.`HP_ID` = dtrans_purchase.`DP_HP_ID`
+            WHERE htrans_purchase.`HP_DATE` >= STR_TO_DATE(@startDate, '%d/%m/%Y')
+            AND htrans_purchase.`HP_DATE` <= STR_TO_DATE(@endDate, '%d/%m/%Y')
+            GROUP BY DP_B_ID
+            HAVING TOTAL <= @avg)X;",Koneksi.getConn());
+
             //FIND AVG
             MySqlCommand cmd = new MySqlCommand("SELECT (CASE WHEN SUM(DP_QTY)/COUNT(DP_B_ID) IS NULL THEN 0 ELSE SUM(DP_QTY)/COUNT(DP_B_ID) END) FROM dtrans_purchase JOIN htrans_purchase WHERE dtrans_purchase.`DP_HP_ID` = htrans_purchase.`HP_ID` AND htrans_purchase.`HP_DATE` >= STR_TO_DATE(@startDate,'%d/%m/%Y') AND htrans_purchase.`HP_DATE` <= STR_TO_DATE(@endDate,'%d/%m/%Y');", Koneksi.getConn());
             cmd.Parameters.AddWithValue("@startDate",dtpDari.Value.ToString("dd/MM/yyyy"));
             cmd.Parameters.AddWithValue("@endDate", dtpSampai.Value.ToString("dd/MM/yyyy"));
             double avg = Convert.ToDouble(cmd.ExecuteScalar());
-            MessageBox.Show(dtpDari.Value.ToString("MM/dd/yyyy"));
-            MessageBox.Show(dtpSampai.Value.ToString("MM/dd/yyyy"));
-            MessageBox.Show(avg + "");
-            rep.SetParameterValue("average", avg);
-            rep.SetParameterValue("startDate", dtpDari.Value);
-            rep.SetParameterValue("endDate", dtpSampai.Value);
-            crViewLaporan.ReportSource = rep;
+
+            check.Parameters.AddWithValue("@startDate",dtpDari.Value.ToString("dd/MM/yyyy"));
+            check.Parameters.AddWithValue("@endDate",dtpSampai.Value.ToString("dd/MM/yyyy"));
+            check.Parameters.AddWithValue("@avg", avg);
+
+            int ct = Convert.ToInt32(check.ExecuteScalar());
+            
+            if(ct > 0)
+            {
+                CrPenjualanBukuDibawahRata rep = new CrPenjualanBukuDibawahRata();
+                rep.SetParameterValue("average", avg);
+                rep.SetParameterValue("startDate", dtpDari.Value);
+                rep.SetParameterValue("endDate", dtpSampai.Value);
+                crViewLaporan.ReportSource = rep;
+            }
+
         }
 
         private void showLaporanBukuDiatasRata()
         {
-            //SHOW CRYSTAL REPORT
-            CrPenjualanBukuDiatasRata rep = new CrPenjualanBukuDiatasRata();
+            MySqlCommand check = new MySqlCommand(@"SELECT COUNT(*) FROM
+            (SELECT DP_ID, DP_HP_ID, DP_B_ID, SUM(DP_QTY) AS TOTAL FROM dtrans_purchase
+            JOIN htrans_purchase ON htrans_purchase.`HP_ID` = dtrans_purchase.`DP_HP_ID`
+            WHERE htrans_purchase.`HP_DATE` >= STR_TO_DATE(@startDate, '%d/%m/%Y')
+            AND htrans_purchase.`HP_DATE` <= STR_TO_DATE(@endDate, '%d/%m/%Y')
+            GROUP BY DP_B_ID
+            HAVING TOTAL >= @avg)X;", Koneksi.getConn());  
 
             //FIND AVG
             MySqlCommand cmd = new MySqlCommand("SELECT SUM(DP_QTY)/COUNT(DP_B_ID) FROM dtrans_purchase;", Koneksi.getConn());
             double avg = Convert.ToDouble(cmd.ExecuteScalar());
-            rep.SetParameterValue("average", avg);
-            rep.SetParameterValue("startDate", dtpDari.Value);
-            rep.SetParameterValue("endDate", dtpSampai.Value);
-            crViewLaporan.ReportSource = rep;
+
+            check.Parameters.AddWithValue("@startDate", dtpDari.Value.ToString("dd/MM/yyyy"));
+            check.Parameters.AddWithValue("@endDate", dtpSampai.Value.ToString("dd/MM/yyyy"));
+            check.Parameters.AddWithValue("@avg", avg);
+
+            int ct = Convert.ToInt32(check.ExecuteScalar());
+            if (ct > 0)
+            {
+                //SHOW CRYSTAL REPORT
+                CrPenjualanBukuDiatasRata rep = new CrPenjualanBukuDiatasRata();
+                rep.SetParameterValue("average", avg);
+                rep.SetParameterValue("startDate", dtpDari.Value);
+                rep.SetParameterValue("endDate", dtpSampai.Value);
+                crViewLaporan.ReportSource = rep;
+            }
         }
 
         public void showLaporanBukuPreOrder()
