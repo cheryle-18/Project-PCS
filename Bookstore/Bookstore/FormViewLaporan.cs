@@ -68,5 +68,17 @@ namespace Bookstore
             rep.SetParameterValue("average", avg);
             crViewLaporan.ReportSource = rep;
         }
+
+
+        private void showLaporanMemberBeliTerbanyak()
+        {
+            ReportMemberTerbanyakBeli rep = new ReportMemberTerbanyakBeli();
+
+        }
+
+        private void btnMemberBaru_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

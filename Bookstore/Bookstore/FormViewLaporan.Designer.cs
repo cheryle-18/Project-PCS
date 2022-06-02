@@ -89,6 +89,7 @@ namespace Bookstore
             this.btnMemberBaru.TabIndex = 50;
             this.btnMemberBaru.Text = "Tampilkan";
             this.btnMemberBaru.UseVisualStyleBackColor = false;
+            this.btnMemberBaru.Click += new System.EventHandler(this.btnMemberBaru_Click);
             // 
             // label3
             // 
@@ -109,7 +110,7 @@ namespace Bookstore
             this.dateTimePicker2.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.dateTimePicker2.Location = new System.Drawing.Point(539, 83);
             this.dateTimePicker2.Name = "dateTimePicker2";
-            this.dateTimePicker2.Size = new System.Drawing.Size(219, 34);
+            this.dateTimePicker2.Size = new System.Drawing.Size(219, 29);
             this.dateTimePicker2.TabIndex = 48;
             // 
             // label6
@@ -118,7 +119,7 @@ namespace Bookstore
             this.label6.AutoSize = true;
             this.label6.Location = new System.Drawing.Point(468, 84);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(74, 28);
+            this.label6.Size = new System.Drawing.Size(60, 21);
             this.label6.TabIndex = 47;
             this.label6.Text = "sampai";
             // 
@@ -128,7 +129,7 @@ namespace Bookstore
             this.label5.AutoSize = true;
             this.label5.Location = new System.Drawing.Point(117, 85);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(139, 28);
+            this.label5.Size = new System.Drawing.Size(111, 21);
             this.label5.TabIndex = 46;
             this.label5.Text = "Tampilkan dari";
             // 
@@ -139,7 +140,7 @@ namespace Bookstore
             this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.dateTimePicker1.Location = new System.Drawing.Point(244, 83);
             this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(218, 34);
+            this.dateTimePicker1.Size = new System.Drawing.Size(218, 29);
             this.dateTimePicker1.TabIndex = 45;
             // 
             // panel2

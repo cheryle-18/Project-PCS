@@ -22,7 +22,7 @@ namespace Bookstore
         private MySqlDataAdapter da;
         private DataTable dt;
         private string command_querry = "SELECT b.B_ID AS 'Kode Buku',b.B_TITLE AS 'Judul Buku',b.B_AUTHOR AS 'Penulis',p.P_NAME AS 'Penerbit',c.C_NAME AS 'Kategori',CONCAT('Rp.',FORMAT(b.B_PRICE,0)) AS 'Harga', b.B_STOCK AS 'Stok',b.B_STATUS AS 'Status' " +
-                                   "FROM book b,publisher p, book_category bc,category c WHERE b.B_ID = bc.B_ID AND bc.C_ID = c.C_ID AND b.B_P_ID = p.P_ID; ";
+                                   "FROM book b,publisher p, book_category bc,category c WHERE b.B_STATUS = 1 AND b.B_ID = bc.B_ID AND bc.C_ID = c.C_ID AND b.B_P_ID = p.P_ID; ";
         
         public MasterBuku(int role)
         {
@@ -107,7 +107,7 @@ namespace Bookstore
 
                         cmd = "SELECT b.B_ID AS 'Kode Buku',b.B_TITLE AS 'Judul Buku',b.B_AUTHOR AS 'Penulis',p.P_NAME AS 'Penerbit',c.C_NAME AS 'Kategori',CONCAT('Rp.',FORMAT(b.B_PRICE,0)) AS 'Harga', b.B_STOCK AS 'Stok',b.B_STATUS AS 'Status' " +
                                           "FROM book b,publisher p, book_category bc,category c " +
-                                          $"WHERE b.B_ID = bc.B_ID AND bc.C_ID = c.C_ID AND b.B_P_ID = p.P_ID AND b.B_TITLE LIKE CONCAT('%','{input}','%') ORDER BY {kolom} {order}; ";
+                                          $"WHERE b.B_STATUS = 1 AND b.B_ID = bc.B_ID AND bc.C_ID = c.C_ID AND b.B_P_ID = p.P_ID AND b.B_TITLE LIKE CONCAT('%','{input}','%') ORDER BY {kolom} {order}; ";
                 }
                     else if (cmbSort.SelectedIndex >= 3)
                     {
@@ -116,14 +116,14 @@ namespace Bookstore
                             kolom = 6;
                             cmd = "SELECT b.B_ID AS 'Kode Buku',b.B_TITLE AS 'Judul Buku',b.B_AUTHOR AS 'Penulis',p.P_NAME AS 'Penerbit',c.C_NAME AS 'Kategori',CONCAT('Rp.', FORMAT(b.B_PRICE, 0)) AS 'Harga', b.B_STOCK AS 'Stok',b.B_STATUS AS 'Status' " +
                                       "FROM book b,publisher p, book_category bc,category c " +
-                                      $"WHERE b.B_ID = bc.B_ID AND bc.C_ID = c.C_ID AND b.B_P_ID = p.P_ID AND b.B_TITLE LIKE CONCAT('%','{input}','%') ORDER BY LENGTH(b.B_PRICE) {order}, b.B_PRICE {order}; ";
+                                      $"WHERE b.B_STATUS = 1 AND b.B_ID = bc.B_ID AND bc.C_ID = c.C_ID AND b.B_P_ID = p.P_ID AND b.B_TITLE LIKE CONCAT('%','{input}','%') ORDER BY LENGTH(b.B_PRICE) {order}, b.B_PRICE {order}; ";
                         }
                         else if (cmbSort.SelectedIndex == 4)
                         {
                             kolom = 7;
                             cmd = "SELECT b.B_ID AS 'Kode Buku',b.B_TITLE AS 'Judul Buku',b.B_AUTHOR AS 'Penulis',p.P_NAME AS 'Penerbit',c.C_NAME AS 'Kategori',CONCAT('Rp.', FORMAT(b.B_PRICE, 0)) AS 'Harga', b.B_STOCK AS 'Stok',b.B_STATUS AS 'Status' " +
                                       "FROM book b,publisher p, book_category bc,category c " +
-                                      $"WHERE b.B_ID = bc.B_ID AND bc.C_ID = c.C_ID AND b.B_P_ID = p.P_ID AND b.B_TITLE LIKE CONCAT('%','{input}','%') ORDER BY LENGTH(b.B_STOCK) {order}, b.B_STOCK {order}; ";
+                                      $"WHERE b.B_STATUS = 1 AND b.B_ID = bc.B_ID AND bc.C_ID = c.C_ID AND b.B_P_ID = p.P_ID AND b.B_TITLE LIKE CONCAT('%','{input}','%') ORDER BY LENGTH(b.B_STOCK) {order}, b.B_STOCK {order}; ";
                         }
 
                     }
@@ -131,7 +131,7 @@ namespace Bookstore
             else
             {
                 cmd = "SELECT b.B_ID AS 'Kode Buku',b.B_TITLE AS 'Judul Buku',b.B_AUTHOR AS 'Penulis',p.P_NAME AS 'Penerbit',c.C_NAME AS 'Kategori',CONCAT('Rp.',FORMAT(b.B_PRICE,0)) AS 'Harga', b.B_STOCK AS 'Stok',b.B_STATUS AS 'Status' " +
-                                      $"FROM book b,publisher p, book_category bc,category c WHERE b.B_ID = bc.B_ID AND bc.C_ID = c.C_ID AND b.B_P_ID = p.P_ID AND b.B_TITLE LIKE CONCAT('%','{input}','%'); ";
+                                      $"FROM book b,publisher p, book_category bc,category c WHERE b.B_STATUS = 1 AND b.B_ID = bc.B_ID AND bc.C_ID = c.C_ID AND b.B_P_ID = p.P_ID AND b.B_TITLE LIKE CONCAT('%','{input}','%'); ";
             }
                 return cmd;
         }
@@ -215,7 +215,7 @@ namespace Bookstore
 
                     cmd = "SELECT b.B_ID AS 'Kode Buku',b.B_TITLE AS 'Judul Buku',b.B_AUTHOR AS 'Penulis',p.P_NAME AS 'Penerbit',c.C_NAME AS 'Kategori',CONCAT('Rp.',FORMAT(b.B_PRICE,0)) AS 'Harga', b.B_STOCK AS 'Stok',b.B_STATUS AS 'Status' " +
                                       "FROM book b,publisher p, book_category bc,category c " +
-                                      $"WHERE b.B_ID = bc.B_ID AND bc.C_ID = c.C_ID AND b.B_P_ID = p.P_ID AND b.B_TITLE LIKE CONCAT('%','{keyword}','%') ORDER BY {kolom} {order}; ";
+                                      $"WHERE b.B_STATUS = 1 AND b.B_ID = bc.B_ID AND bc.C_ID = c.C_ID AND b.B_P_ID = p.P_ID AND b.B_TITLE LIKE CONCAT('%','{keyword}','%') ORDER BY {kolom} {order}; ";
                 }
                 if (cmbSort.SelectedIndex >= 3)
                 {
@@ -224,14 +224,14 @@ namespace Bookstore
                         kolom = 6;
                         cmd = "SELECT b.B_ID AS 'Kode Buku',b.B_TITLE AS 'Judul Buku',b.B_AUTHOR AS 'Penulis',p.P_NAME AS 'Penerbit',c.C_NAME AS 'Kategori',CONCAT('Rp.', FORMAT(b.B_PRICE, 0)) AS 'Harga', b.B_STOCK AS 'Stok',b.B_STATUS AS 'Status' " +
                                   "FROM book b,publisher p, book_category bc,category c " +
-                                  $"WHERE b.B_ID = bc.B_ID AND bc.C_ID = c.C_ID AND b.B_P_ID = p.P_ID AND b.B_TITLE LIKE CONCAT('%','{keyword}','%') ORDER BY LENGTH(b.B_PRICE) {order}, b.B_PRICE {order}; ";
+                                  $"WHERE b.B_STATUS = 1 AND b.B_ID = bc.B_ID AND bc.C_ID = c.C_ID AND b.B_P_ID = p.P_ID AND b.B_TITLE LIKE CONCAT('%','{keyword}','%') ORDER BY LENGTH(b.B_PRICE) {order}, b.B_PRICE {order}; ";
                     }
                     else if (cmbSort.SelectedIndex == 4)
                     {
                         kolom = 7;
                         cmd = "SELECT b.B_ID AS 'Kode Buku',b.B_TITLE AS 'Judul Buku',b.B_AUTHOR AS 'Penulis',p.P_NAME AS 'Penerbit',c.C_NAME AS 'Kategori',CONCAT('Rp.', FORMAT(b.B_PRICE, 0)) AS 'Harga', b.B_STOCK AS 'Stok',b.B_STATUS AS 'Status' " +
                                   "FROM book b,publisher p, book_category bc,category c " +
-                                  $"WHERE b.B_ID = bc.B_ID AND bc.C_ID = c.C_ID AND b.B_P_ID = p.P_ID AND b.B_TITLE LIKE CONCAT('%','{keyword}','%') ORDER BY LENGTH(b.B_STOCK) {order}, b.B_STOCK {order}; ";
+                                  $"WHERE b.B_STATUS = 1 AND b.B_ID = bc.B_ID AND bc.C_ID = c.C_ID AND b.B_P_ID = p.P_ID AND b.B_TITLE LIKE CONCAT('%','{keyword}','%') ORDER BY LENGTH(b.B_STOCK) {order}, b.B_STOCK {order}; ";
                     }
                     
                 }
@@ -280,7 +280,7 @@ namespace Bookstore
 
                     cmd = "SELECT b.B_ID AS 'Kode Buku',b.B_TITLE AS 'Judul Buku',b.B_AUTHOR AS 'Penulis',p.P_NAME AS 'Penerbit',c.C_NAME AS 'Kategori',CONCAT('Rp.',FORMAT(b.B_PRICE,0)) AS 'Harga', b.B_STOCK AS 'Stok',b.B_STATUS AS 'Status' " +
                                       "FROM book b,publisher p, book_category bc,category c " +
-                                      $"WHERE b.B_ID = bc.B_ID AND bc.C_ID = c.C_ID AND b.B_P_ID = p.P_ID AND b.B_TITLE LIKE CONCAT('%','{keyword}','%') ORDER BY {kolom} {order}; ";
+                                      $"WHERE b.B_STATUS = 1 AND b.B_ID = bc.B_ID AND bc.C_ID = c.C_ID AND b.B_P_ID = p.P_ID AND b.B_TITLE LIKE CONCAT('%','{keyword}','%') ORDER BY {kolom} {order}; ";
                 }
                 if (cmbSort.SelectedIndex >= 3)
                 {
@@ -289,14 +289,14 @@ namespace Bookstore
                         kolom = 6;
                         cmd = "SELECT b.B_ID AS 'Kode Buku',b.B_TITLE AS 'Judul Buku',b.B_AUTHOR AS 'Penulis',p.P_NAME AS 'Penerbit',c.C_NAME AS 'Kategori',CONCAT('Rp.', FORMAT(b.B_PRICE, 0)) AS 'Harga', b.B_STOCK AS 'Stok',b.B_STATUS AS 'Status' " +
                                   "FROM book b,publisher p, book_category bc,category c " +
-                                  $"WHERE b.B_ID = bc.B_ID AND bc.C_ID = c.C_ID AND b.B_P_ID = p.P_ID AND b.B_TITLE LIKE CONCAT('%','{keyword}','%') ORDER BY LENGTH(b.B_PRICE) {order}, b.B_PRICE {order}; ";
+                                  $"WHERE b.B_STATUS = 1 AND b.B_ID = bc.B_ID AND bc.C_ID = c.C_ID AND b.B_P_ID = p.P_ID AND b.B_TITLE LIKE CONCAT('%','{keyword}','%') ORDER BY LENGTH(b.B_PRICE) {order}, b.B_PRICE {order}; ";
                     }
                     else if (cmbSort.SelectedIndex == 4)
                     {
                         kolom = 7;
                         cmd = "SELECT b.B_ID AS 'Kode Buku',b.B_TITLE AS 'Judul Buku',b.B_AUTHOR AS 'Penulis',p.P_NAME AS 'Penerbit',c.C_NAME AS 'Kategori',CONCAT('Rp.', FORMAT(b.B_PRICE, 0)) AS 'Harga', b.B_STOCK AS 'Stok',b.B_STATUS AS 'Status' " +
                                   "FROM book b,publisher p, book_category bc,category c " +
-                                  $"WHERE b.B_ID = bc.B_ID AND bc.C_ID = c.C_ID AND b.B_P_ID = p.P_ID AND b.B_TITLE LIKE CONCAT('%','{keyword}','%') ORDER BY LENGTH(b.B_STOCK) {order}, b.B_STOCK {order}; ";
+                                  $"WHERE b.B_STATUS = 1 AND b.B_ID = bc.B_ID AND bc.C_ID = c.C_ID AND b.B_P_ID = p.P_ID AND b.B_TITLE LIKE CONCAT('%','{keyword}','%') ORDER BY LENGTH(b.B_STOCK) {order}, b.B_STOCK {order}; ";
                     }
 
                 }

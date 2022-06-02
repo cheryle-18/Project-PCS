@@ -18,7 +18,7 @@ namespace Bookstore
         private MySqlDataAdapter da;
         private DataTable dt;
         private string command_querry = "SELECT P_ID AS 'Kode Penerbit',P_NAME AS 'Nama',P_ADDRESS AS 'Alamat',P_TELP AS 'Telp',P_STATUS AS 'Status' " +
-                                   "FROM publisher; ";
+                                   "FROM publisher WHERE P_STATUS = 1; ";
         public MasterPenerbitAdmin()
         {
             InitializeComponent();
@@ -117,14 +117,14 @@ namespace Bookstore
 
                     cmd = "SELECT P_ID AS 'Kode Penerbit',P_NAME AS 'Nama',P_ADDRESS AS 'Alamat',P_TELP AS 'Telp',P_STATUS AS 'Status' " +
                                    "FROM publisher " +
-                                      $"WHERE P_NAME LIKE CONCAT('%','{input}','%') ORDER BY {kolom} {order}; ";
+                                      $"WHERE P_STATUS = 1 AND P_NAME LIKE CONCAT('%','{input}','%') ORDER BY {kolom} {order}; ";
                 }
             }
             else
             {
                 cmd = "SELECT P_ID AS 'Kode Penerbit',P_NAME AS 'Nama',P_ADDRESS AS 'Alamat',P_TELP AS 'Telp',P_STATUS AS 'Status' " +
                                    "FROM publisher " +
-                                      $"WHERE P_NAME LIKE CONCAT('%','{input}','%'); ";
+                                      $"WHERE P_STATUS = 1 AND P_NAME LIKE CONCAT('%','{input}','%'); ";
             }
             return cmd;
         }
@@ -167,7 +167,7 @@ namespace Bookstore
 
                     cmd = "SELECT P_ID AS 'Kode Penerbit',P_NAME AS 'Nama',P_ADDRESS AS 'Alamat',P_TELP AS 'Telp',P_STATUS AS 'Status' " +
                                    "FROM publisher " +
-                                      $"WHERE P_NAME LIKE CONCAT('%','{keyword}','%') ORDER BY {kolom} {order}; ";
+                                      $"WHERE P_STATUS = 1 AND P_NAME LIKE CONCAT('%','{keyword}','%') ORDER BY {kolom} {order}; ";
                 }
 
                 refreshDgv(cmd);
@@ -221,7 +221,7 @@ namespace Bookstore
 
                     cmd = "SELECT P_ID AS 'Kode Penerbit',P_NAME AS 'Nama',P_ADDRESS AS 'Alamat',P_TELP AS 'Telp',P_STATUS AS 'Status' " +
                                    "FROM publisher " +
-                                      $"WHERE P_NAME LIKE CONCAT('%','{keyword}','%') ORDER BY {kolom} {order}; ";
+                                      $"WHERE P_STATUS = 1 AND P_NAME LIKE CONCAT('%','{keyword}','%') ORDER BY {kolom} {order}; ";
                 }
                 refreshDgv(cmd);
             }
