@@ -238,3 +238,50 @@ BEGIN
     return newId;
 END$$ 
 DELIMITER ;
+
+
+-- generate id user
+DELIMITER $$ 
+CREATE OR REPLACE FUNCTION generateIdUser()
+RETURNS varchar(6)
+BEGIN 
+    declare ctr int;
+    declare newId varchar(6);
+    declare total int;
+
+    select count(*) into total from users;
+    
+    if total>0 then
+      select substr(max(U_ID),3)+1 into ctr from users;
+    else
+      set ctr = 1;
+    end if;
+    
+    set newId = (concat("US", LPAD(ctr, 2, "0")));
+
+    return newId;
+END$$ 
+DELIMITER ;
+
+-- generate id employee
+DELIMITER $$ 
+CREATE OR REPLACE FUNCTION generateIdEmployee()
+RETURNS varchar(6)
+BEGIN 
+    declare ctr int;
+    declare newId varchar(6);
+    declare total int;
+
+    select count(*) into total from employee;
+    
+    if total>0 then
+      select substr(max(E_ID),3)+1 into ctr from employee;
+    else
+      set ctr = 1;
+    end if;
+    
+    set newId = (concat("EM", LPAD(ctr, 2, "0")));
+
+    return newId;
+END$$ 
+DELIMITER ;
