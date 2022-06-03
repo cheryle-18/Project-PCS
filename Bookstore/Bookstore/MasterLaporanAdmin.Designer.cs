@@ -78,7 +78,7 @@ namespace Bookstore
             this.btnLaporanPegawaiPalingSering.Name = "btnLaporanPegawaiPalingSering";
             this.btnLaporanPegawaiPalingSering.Size = new System.Drawing.Size(324, 70);
             this.btnLaporanPegawaiPalingSering.TabIndex = 32;
-            this.btnLaporanPegawaiPalingSering.Text = "Laporan Pegawai Dengan Penjualan Di Atas Rata-Rata";
+            this.btnLaporanPegawaiPalingSering.Text = "Laporan Pegawai Dengan Penjualan Terbanyak";
             this.btnLaporanPegawaiPalingSering.UseVisualStyleBackColor = false;
             this.btnLaporanPegawaiPalingSering.Click += new System.EventHandler(this.btnLaporanPegawaiPalingSering_Click);
             // 

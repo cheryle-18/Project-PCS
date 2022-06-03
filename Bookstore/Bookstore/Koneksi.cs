@@ -15,7 +15,7 @@ namespace Bookstore
         public static bool openConn(string server, string db, string id)
         {
             string pass = " ";
-            pass = "mysql";//khusus berpassword
+            //pass = "mysql";//khusus berpassword
             bool res = true;
             conn.ConnectionString = string.Format("server={0}; user id={1}; password={2}; database={3}", server, id, pass, db);
             try

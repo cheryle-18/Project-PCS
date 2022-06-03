@@ -61,13 +61,13 @@ namespace Bookstore
             // 
             // btnBack
             // 
-            this.btnBack.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnBack.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.btnBack.BackColor = System.Drawing.Color.Navy;
             this.btnBack.FlatAppearance.BorderSize = 0;
             this.btnBack.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnBack.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnBack.ForeColor = System.Drawing.Color.White;
-            this.btnBack.Location = new System.Drawing.Point(875, 553);
+            this.btnBack.Location = new System.Drawing.Point(12, 553);
             this.btnBack.Name = "btnBack";
             this.btnBack.Size = new System.Drawing.Size(153, 38);
             this.btnBack.TabIndex = 52;
@@ -110,7 +110,7 @@ namespace Bookstore
             this.dtpSampai.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.dtpSampai.Location = new System.Drawing.Point(539, 83);
             this.dtpSampai.Name = "dtpSampai";
-            this.dtpSampai.Size = new System.Drawing.Size(219, 39);
+            this.dtpSampai.Size = new System.Drawing.Size(219, 29);
             this.dtpSampai.TabIndex = 48;
             // 
             // label6
@@ -119,7 +119,7 @@ namespace Bookstore
             this.label6.AutoSize = true;
             this.label6.Location = new System.Drawing.Point(468, 84);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(90, 32);
+            this.label6.Size = new System.Drawing.Size(60, 21);
             this.label6.TabIndex = 47;
             this.label6.Text = "sampai";
             // 
@@ -129,7 +129,7 @@ namespace Bookstore
             this.label5.AutoSize = true;
             this.label5.Location = new System.Drawing.Point(117, 85);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(169, 32);
+            this.label5.Size = new System.Drawing.Size(111, 21);
             this.label5.TabIndex = 46;
             this.label5.Text = "Tampilkan dari";
             // 
@@ -140,7 +140,7 @@ namespace Bookstore
             this.dtpDari.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.dtpDari.Location = new System.Drawing.Point(244, 83);
             this.dtpDari.Name = "dtpDari";
-            this.dtpDari.Size = new System.Drawing.Size(218, 39);
+            this.dtpDari.Size = new System.Drawing.Size(218, 29);
             this.dtpDari.TabIndex = 45;
             // 
             // panel2

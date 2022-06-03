@@ -37,7 +37,7 @@ namespace Bookstore
 
             btnDetail.Enabled = false;
 
-            fullTableQuery = "select PO_ID, PO_INVOICE_NUMBER, PO_DATE, B_TITLE, concat('Rp ', format(PO_TOTAL,0,'de_DE')), concat('Rp ', format(PO_DOWN_PAYMENT,0,'de_DE')), (case when PO_M_ID is null then 'Guest' else M_NAME end), (case when PO_STATUS=1 then 'Menunggu Buku' when PO_STATUS=2 then 'Siap Diproses' else 'Selesai' end) from pre_order join book on B_ID=PO_B_ID left join member on M_ID=PO_M_ID";
+            fullTableQuery = "select PO_ID, PO_INVOICE_NUMBER, PO_DATE, B_TITLE, concat('Rp ', format(PO_TOTAL,0,'de_DE')), concat('Rp ', format(PO_DOWN_PAYMENT,0,'de_DE')), (case when PO_M_ID is null then 'Non-Member' else M_NAME end), (case when PO_STATUS=1 then 'Menunggu Buku' when PO_STATUS=2 then 'Siap Diproses' else 'Selesai' end) from pre_order join book on B_ID=PO_B_ID left join member on M_ID=PO_M_ID";
             cari = "";
             filterDari = "";
             filterSampai = "";
