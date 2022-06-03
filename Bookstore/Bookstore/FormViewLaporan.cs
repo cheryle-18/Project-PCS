@@ -161,6 +161,9 @@ namespace Bookstore
         public void showLaporanPenjualanPegawai()
         {
             ReportPenjualanPegawai rep = new ReportPenjualanPegawai();
+            MySqlCommand cmd = new MySqlCommand("select x.HP_E_ID from (select HP_E_ID, COUNT(HP_ID) as jumlah from htrans_purchase group by HP_E_ID order by jumlah desc limit 1) x", Koneksi.getConn());
+            string empId = cmd.ExecuteScalar().ToString();
+            rep.SetParameterValue("empId", empId);
             rep.SetParameterValue("tglDari", tglDari);
             rep.SetParameterValue("tglSampai", tglSampai);
             crViewLaporan.ReportSource = rep;
