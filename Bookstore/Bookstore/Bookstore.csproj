@@ -141,7 +141,7 @@
     <Compile Include="FormDetailPegawaiAdmin.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormDetailPegawaiAdmin.Designer.cs">
+    <Compile Include="FormDetailPegawaiAdmin.designer.cs">
       <DependentUpon>FormDetailPegawaiAdmin.cs</DependentUpon>
     </Compile>
     <Compile Include="FormDetailPenerbitAdmin.cs">
@@ -183,7 +183,7 @@
     <Compile Include="FormPegawaiBaru.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormPegawaiBaru.Designer.cs">
+    <Compile Include="FormPegawaiBaru.designer.cs">
       <DependentUpon>FormPegawaiBaru.cs</DependentUpon>
     </Compile>
     <Compile Include="FormPenerbitBaru.cs">
@@ -250,7 +250,7 @@
     <Compile Include="MasterPegawaiAdmin.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="MasterPegawaiAdmin.Designer.cs">
+    <Compile Include="MasterPegawaiAdmin.designer.cs">
       <DependentUpon>MasterPegawaiAdmin.cs</DependentUpon>
     </Compile>
     <Compile Include="MasterPenerbitAdmin.cs">

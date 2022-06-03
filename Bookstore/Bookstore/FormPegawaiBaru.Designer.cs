@@ -30,11 +30,20 @@ namespace Bookstore
         private void InitializeComponent()
         {
             this.panel2 = new System.Windows.Forms.Panel();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.label14 = new System.Windows.Forms.Label();
+            this.label16 = new System.Windows.Forms.Label();
+            this.tbPassword = new System.Windows.Forms.TextBox();
+            this.tbUsername = new System.Windows.Forms.TextBox();
+            this.label15 = new System.Windows.Forms.Label();
+            this.label17 = new System.Windows.Forms.Label();
+            this.label13 = new System.Windows.Forms.Label();
+            this.tbUserId = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.tbTelepon = new System.Windows.Forms.TextBox();
+            this.tbAlamat = new System.Windows.Forms.TextBox();
+            this.dtpTanggalLahir = new System.Windows.Forms.DateTimePicker();
+            this.tbNama = new System.Windows.Forms.TextBox();
+            this.tbID = new System.Windows.Forms.TextBox();
             this.label12 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
@@ -57,11 +66,20 @@ namespace Bookstore
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panel2.BackColor = System.Drawing.Color.White;
-            this.panel2.Controls.Add(this.textBox4);
-            this.panel2.Controls.Add(this.textBox3);
-            this.panel2.Controls.Add(this.dateTimePicker1);
-            this.panel2.Controls.Add(this.textBox2);
-            this.panel2.Controls.Add(this.textBox1);
+            this.panel2.Controls.Add(this.label14);
+            this.panel2.Controls.Add(this.label16);
+            this.panel2.Controls.Add(this.tbPassword);
+            this.panel2.Controls.Add(this.tbUsername);
+            this.panel2.Controls.Add(this.label15);
+            this.panel2.Controls.Add(this.label17);
+            this.panel2.Controls.Add(this.label13);
+            this.panel2.Controls.Add(this.tbUserId);
+            this.panel2.Controls.Add(this.label1);
+            this.panel2.Controls.Add(this.tbTelepon);
+            this.panel2.Controls.Add(this.tbAlamat);
+            this.panel2.Controls.Add(this.dtpTanggalLahir);
+            this.panel2.Controls.Add(this.tbNama);
+            this.panel2.Controls.Add(this.tbID);
             this.panel2.Controls.Add(this.label12);
             this.panel2.Controls.Add(this.label11);
             this.panel2.Controls.Add(this.label9);
@@ -81,46 +99,127 @@ namespace Bookstore
             this.panel2.Size = new System.Drawing.Size(1042, 624);
             this.panel2.TabIndex = 19;
             // 
-            // textBox4
+            // label14
             // 
-            this.textBox4.Location = new System.Drawing.Point(243, 301);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(213, 30);
-            this.textBox4.TabIndex = 90;
+            this.label14.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label14.Location = new System.Drawing.Point(199, 303);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(15, 28);
+            this.label14.TabIndex = 101;
+            this.label14.Text = ":";
             // 
-            // textBox3
+            // label16
             // 
-            this.textBox3.Location = new System.Drawing.Point(243, 247);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(213, 30);
-            this.textBox3.TabIndex = 89;
+            this.label16.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label16.Location = new System.Drawing.Point(23, 303);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(191, 28);
+            this.label16.TabIndex = 100;
+            this.label16.Text = "Password";
             // 
-            // dateTimePicker1
+            // tbPassword
             // 
-            this.dateTimePicker1.Location = new System.Drawing.Point(243, 190);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(213, 30);
-            this.dateTimePicker1.TabIndex = 88;
+            this.tbPassword.Location = new System.Drawing.Point(248, 305);
+            this.tbPassword.Name = "tbPassword";
+            this.tbPassword.Size = new System.Drawing.Size(213, 30);
+            this.tbPassword.TabIndex = 99;
             // 
-            // textBox2
+            // tbUsername
             // 
-            this.textBox2.Location = new System.Drawing.Point(243, 138);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(213, 30);
-            this.textBox2.TabIndex = 87;
+            this.tbUsername.Location = new System.Drawing.Point(248, 253);
+            this.tbUsername.Name = "tbUsername";
+            this.tbUsername.Size = new System.Drawing.Size(213, 30);
+            this.tbUsername.TabIndex = 98;
             // 
-            // textBox1
+            // label15
             // 
-            this.textBox1.Enabled = false;
-            this.textBox1.Location = new System.Drawing.Point(243, 86);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(149, 30);
-            this.textBox1.TabIndex = 86;
+            this.label15.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label15.Location = new System.Drawing.Point(200, 251);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(15, 28);
+            this.label15.TabIndex = 96;
+            this.label15.Text = ":";
+            // 
+            // label17
+            // 
+            this.label17.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label17.Location = new System.Drawing.Point(24, 251);
+            this.label17.Name = "label17";
+            this.label17.Size = new System.Drawing.Size(191, 28);
+            this.label17.TabIndex = 94;
+            this.label17.Text = "Username";
+            // 
+            // label13
+            // 
+            this.label13.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label13.Location = new System.Drawing.Point(202, 145);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(15, 28);
+            this.label13.TabIndex = 93;
+            this.label13.Text = ":";
+            // 
+            // tbUserId
+            // 
+            this.tbUserId.Enabled = false;
+            this.tbUserId.Location = new System.Drawing.Point(248, 143);
+            this.tbUserId.Name = "tbUserId";
+            this.tbUserId.Size = new System.Drawing.Size(213, 30);
+            this.tbUserId.TabIndex = 92;
+            // 
+            // label1
+            // 
+            this.label1.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(24, 143);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(191, 28);
+            this.label1.TabIndex = 91;
+            this.label1.Text = "User ID";
+            // 
+            // tbTelepon
+            // 
+            this.tbTelepon.Location = new System.Drawing.Point(247, 463);
+            this.tbTelepon.Name = "tbTelepon";
+            this.tbTelepon.Size = new System.Drawing.Size(213, 30);
+            this.tbTelepon.TabIndex = 90;
+            this.tbTelepon.TextChanged += new System.EventHandler(this.tbUbah_TextChanged);
+            // 
+            // tbAlamat
+            // 
+            this.tbAlamat.Location = new System.Drawing.Point(247, 411);
+            this.tbAlamat.Name = "tbAlamat";
+            this.tbAlamat.Size = new System.Drawing.Size(213, 30);
+            this.tbAlamat.TabIndex = 89;
+            this.tbAlamat.TextChanged += new System.EventHandler(this.tbUbah_TextChanged);
+            // 
+            // dtpTanggalLahir
+            // 
+            this.dtpTanggalLahir.CustomFormat = "dd/MM/yyyy";
+            this.dtpTanggalLahir.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dtpTanggalLahir.Location = new System.Drawing.Point(247, 356);
+            this.dtpTanggalLahir.Name = "dtpTanggalLahir";
+            this.dtpTanggalLahir.Size = new System.Drawing.Size(213, 30);
+            this.dtpTanggalLahir.TabIndex = 88;
+            // 
+            // tbNama
+            // 
+            this.tbNama.Location = new System.Drawing.Point(248, 197);
+            this.tbNama.Name = "tbNama";
+            this.tbNama.Size = new System.Drawing.Size(213, 30);
+            this.tbNama.TabIndex = 87;
+            this.tbNama.TextChanged += new System.EventHandler(this.tbUbah_TextChanged);
+            // 
+            // tbID
+            // 
+            this.tbID.Enabled = false;
+            this.tbID.Location = new System.Drawing.Point(248, 88);
+            this.tbID.Name = "tbID";
+            this.tbID.Size = new System.Drawing.Size(213, 30);
+            this.tbID.TabIndex = 86;
             // 
             // label12
             // 
             this.label12.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label12.Location = new System.Drawing.Point(200, 299);
+            this.label12.Location = new System.Drawing.Point(199, 463);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(15, 28);
             this.label12.TabIndex = 85;
@@ -129,7 +228,7 @@ namespace Bookstore
             // label11
             // 
             this.label11.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.Location = new System.Drawing.Point(200, 245);
+            this.label11.Location = new System.Drawing.Point(199, 409);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(15, 28);
             this.label11.TabIndex = 84;
@@ -138,7 +237,7 @@ namespace Bookstore
             // label9
             // 
             this.label9.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(200, 190);
+            this.label9.Location = new System.Drawing.Point(199, 354);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(15, 28);
             this.label9.TabIndex = 83;
@@ -147,7 +246,7 @@ namespace Bookstore
             // label8
             // 
             this.label8.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(200, 138);
+            this.label8.Location = new System.Drawing.Point(200, 195);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(15, 28);
             this.label8.TabIndex = 82;
@@ -165,7 +264,7 @@ namespace Bookstore
             // label6
             // 
             this.label6.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(24, 299);
+            this.label6.Location = new System.Drawing.Point(23, 463);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(191, 28);
             this.label6.TabIndex = 80;
@@ -174,7 +273,7 @@ namespace Bookstore
             // label5
             // 
             this.label5.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(24, 245);
+            this.label5.Location = new System.Drawing.Point(23, 409);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(191, 28);
             this.label5.TabIndex = 79;
@@ -183,7 +282,7 @@ namespace Bookstore
             // label4
             // 
             this.label4.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(24, 190);
+            this.label4.Location = new System.Drawing.Point(23, 354);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(191, 28);
             this.label4.TabIndex = 78;
@@ -192,7 +291,7 @@ namespace Bookstore
             // label2
             // 
             this.label2.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(24, 138);
+            this.label2.Location = new System.Drawing.Point(24, 195);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(191, 28);
             this.label2.TabIndex = 77;
@@ -267,11 +366,6 @@ namespace Bookstore
         #endregion
 
         private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.TextBox textBox4;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Label label9;
@@ -285,5 +379,19 @@ namespace Bookstore
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button btnBack;
         private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.TextBox tbTelepon;
+        private System.Windows.Forms.TextBox tbAlamat;
+        private System.Windows.Forms.DateTimePicker dtpTanggalLahir;
+        private System.Windows.Forms.TextBox tbNama;
+        private System.Windows.Forms.TextBox tbID;
+        private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.TextBox tbUserId;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.TextBox tbPassword;
+        private System.Windows.Forms.TextBox tbUsername;
+        private System.Windows.Forms.Label label15;
+        private System.Windows.Forms.Label label17;
+        private System.Windows.Forms.Label label14;
+        private System.Windows.Forms.Label label16;
     }
 }

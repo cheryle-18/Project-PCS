@@ -39,15 +39,9 @@ namespace Bookstore
             this.label2 = new System.Windows.Forms.Label();
             this.tbCari = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dgPegawai = new System.Windows.Forms.DataGridView();
             this.panel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgPegawai)).BeginInit();
             this.SuspendLayout();
             // 
             // panel2
@@ -65,7 +59,7 @@ namespace Bookstore
             this.panel2.Controls.Add(this.label2);
             this.panel2.Controls.Add(this.tbCari);
             this.panel2.Controls.Add(this.label3);
-            this.panel2.Controls.Add(this.dataGridView1);
+            this.panel2.Controls.Add(this.dgPegawai);
             this.panel2.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.panel2.Location = new System.Drawing.Point(0, 0);
             this.panel2.Name = "panel2";
@@ -114,10 +108,11 @@ namespace Bookstore
             this.btnReset.ForeColor = System.Drawing.Color.White;
             this.btnReset.Location = new System.Drawing.Point(924, 85);
             this.btnReset.Name = "btnReset";
-            this.btnReset.Size = new System.Drawing.Size(95, 30);
+            this.btnReset.Size = new System.Drawing.Size(95, 39);
             this.btnReset.TabIndex = 25;
             this.btnReset.Text = "Reset";
             this.btnReset.UseVisualStyleBackColor = false;
+            this.btnReset.Click += new System.EventHandler(this.btnReset_Click);
             // 
             // cmbArah
             // 
@@ -131,6 +126,7 @@ namespace Bookstore
             this.cmbArah.Name = "cmbArah";
             this.cmbArah.Size = new System.Drawing.Size(128, 29);
             this.cmbArah.TabIndex = 24;
+            this.cmbArah.SelectedValueChanged += new System.EventHandler(this.tbCari_TextChanged);
             // 
             // label4
             // 
@@ -156,6 +152,7 @@ namespace Bookstore
             this.cmbSort.Name = "cmbSort";
             this.cmbSort.Size = new System.Drawing.Size(191, 29);
             this.cmbSort.TabIndex = 19;
+            this.cmbSort.SelectedIndexChanged += new System.EventHandler(this.tbCari_TextChanged);
             // 
             // label2
             // 
@@ -173,7 +170,7 @@ namespace Bookstore
             this.tbCari.Name = "tbCari";
             this.tbCari.Size = new System.Drawing.Size(294, 29);
             this.tbCari.TabIndex = 15;
-            this.tbCari.Text = "Kata Kunci";
+            this.tbCari.TextChanged += new System.EventHandler(this.tbCari_TextChanged);
             // 
             // label3
             // 
@@ -185,63 +182,27 @@ namespace Bookstore
             this.label3.TabIndex = 14;
             this.label3.Text = "Daftar Pegawai";
             // 
-            // dataGridView1
+            // dgPegawai
             // 
-            this.dataGridView1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.dgPegawai.AllowUserToAddRows = false;
+            this.dgPegawai.AllowUserToDeleteRows = false;
+            this.dgPegawai.AllowUserToOrderColumns = true;
+            this.dgPegawai.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dataGridView1.BackgroundColor = System.Drawing.Color.Gainsboro;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Column1,
-            this.Column2,
-            this.Column3,
-            this.Column4,
-            this.Column5,
-            this.Column6});
-            this.dataGridView1.Location = new System.Drawing.Point(17, 130);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowHeadersVisible = false;
-            this.dataGridView1.RowHeadersWidth = 51;
-            this.dataGridView1.Size = new System.Drawing.Size(1002, 385);
-            this.dataGridView1.TabIndex = 1;
-            // 
-            // Column1
-            // 
-            this.Column1.HeaderText = "Kode Pegawai";
-            this.Column1.MinimumWidth = 8;
-            this.Column1.Name = "Column1";
-            // 
-            // Column2
-            // 
-            this.Column2.HeaderText = "Nama";
-            this.Column2.MinimumWidth = 8;
-            this.Column2.Name = "Column2";
-            // 
-            // Column3
-            // 
-            this.Column3.HeaderText = "Tanggal Lahir";
-            this.Column3.MinimumWidth = 8;
-            this.Column3.Name = "Column3";
-            // 
-            // Column4
-            // 
-            this.Column4.HeaderText = "Telp";
-            this.Column4.MinimumWidth = 8;
-            this.Column4.Name = "Column4";
-            // 
-            // Column5
-            // 
-            this.Column5.HeaderText = "ID User";
-            this.Column5.MinimumWidth = 8;
-            this.Column5.Name = "Column5";
-            // 
-            // Column6
-            // 
-            this.Column6.HeaderText = "Status";
-            this.Column6.MinimumWidth = 8;
-            this.Column6.Name = "Column6";
+            this.dgPegawai.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgPegawai.BackgroundColor = System.Drawing.Color.Gainsboro;
+            this.dgPegawai.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgPegawai.Location = new System.Drawing.Point(17, 130);
+            this.dgPegawai.Name = "dgPegawai";
+            this.dgPegawai.ReadOnly = true;
+            this.dgPegawai.RowHeadersVisible = false;
+            this.dgPegawai.RowHeadersWidth = 51;
+            this.dgPegawai.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgPegawai.Size = new System.Drawing.Size(1002, 385);
+            this.dgPegawai.TabIndex = 1;
+            this.dgPegawai.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgPegawai_CellClick);
+            this.dgPegawai.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.dgPegawai_CellFormatting);
             // 
             // MasterPegawaiAdmin
             // 
@@ -252,7 +213,7 @@ namespace Bookstore
             this.Text = "MasterPegawaiAdmin";
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgPegawai)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -269,12 +230,6 @@ namespace Bookstore
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox tbCari;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column5;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column6;
+        private System.Windows.Forms.DataGridView dgPegawai;
     }
 }
