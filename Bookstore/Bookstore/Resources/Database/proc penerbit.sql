@@ -21,3 +21,15 @@ BEGIN
 	SET idBC = keluar;
 END$$
 DELIMITER ;
+
+DELIMITER $$
+DROP PROCEDURE IF EXISTS generateIdBook$$
+CREATE PROCEDURE generateIdBook(OUT idB VARCHAR(10))
+BEGIN
+	DECLARE ctr INT(5);
+	DECLARE keluar VARCHAR(10);
+	SELECT COUNT(B_ID)+1 INTO ctr FROM book;
+	SET keluar = CONCAT('BOOK',LPAD(ctr,3,0));
+	SET idB = keluar;
+END$$
+DELIMITER ;

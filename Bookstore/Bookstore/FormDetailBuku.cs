@@ -14,7 +14,6 @@ namespace Bookstore
 {
     public partial class FormDetailBuku : Form
     {
-        MySqlConnection connection;
         MySqlCommand command;
         MySqlDataAdapter da;
         private string idBuku;
@@ -22,7 +21,6 @@ namespace Bookstore
         {
             InitializeComponent();
             idBuku = id;
-            connection = Koneksi.getConn();
             connects();
         }
 
@@ -32,7 +30,7 @@ namespace Bookstore
                                       "FROM book b,publisher p, book_category bc,category c " +
                                       $"WHERE b.B_ID = bc.B_ID AND bc.C_ID = c.C_ID AND b.B_P_ID = p.P_ID AND b.B_ID LIKE '{idBuku}';";
 
-            command = new MySqlCommand(query, connection);
+            command = new MySqlCommand(query, Koneksi.getConn());
             da = new MySqlDataAdapter(command);
             DataTable table = new DataTable();
             da.Fill(table);

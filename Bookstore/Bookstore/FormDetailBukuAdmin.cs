@@ -15,7 +15,6 @@ namespace Bookstore
     public partial class FormDetailBukuAdmin : Form
     {
         MySqlCommand command;
-        MySqlConnection connection;
         MySqlDataAdapter da;
         MySqlDataReader dr;
         string idBuku;
@@ -25,15 +24,13 @@ namespace Bookstore
         List<string> arrBC_ID;
         List<string> arrC_ID;
         List<string> arrIDPenerbit;
-        DataTable dtPenerbit;
-        Random rnd=new Random();
+   
         public FormDetailBukuAdmin(string id,string nav)
         {
             InitializeComponent();
             arrIDPenerbit = new List<string>();
             arrBC_ID = new List<string>();
             arrC_ID = new List<string>();
-            connection = Koneksi.getConn();
             idBuku = id;
             navigasi = nav;
             connects();
@@ -137,15 +134,12 @@ namespace Bookstore
                 string query="UPDATE book"+
                                $" SET B_TITLE = '{tbJudul.Text}', B_AUTHOR = '{tbAuthor.Text}', B_P_ID = '{arrIDPenerbit[cbPenerbit.SelectedIndex]}', B_PUB_DATE = '{tgl}', B_SYNOPSIS = '{tbSynopsis.Text}', B_PRICE = {harga}, B_IMAGE = @img, B_STOCK = {numStok.Value}, B_LANGUAGE = '{tbBahasa.Text}', B_FORMAT = '{tbFormat.Text}',B_ISBN10 = '{tbIsbn10.Text}', B_ISBN13 = '{tbIsbn13.Text}', B_STATUS = {stat}"+
                                $" WHERE B_ID = '{idBuku}'";
-                command = new MySqlCommand(query,connection);
+                command = new MySqlCommand(query,Koneksi.getConn());
                 command.Parameters.Add("@img",MySqlDbType.Blob);
                 command.Parameters["@img"].Value = img;
-                if (connection.State == System.Data.ConnectionState.Closed)
-                {
-                    connection.Open();
-                }
+                
                 command.ExecuteNonQuery();
-                connection.Close();
+     
                 if (chListKategori.CheckedItems.Count>arrBC_ID.Count)
                 {
                     int selisih = chListKategori.CheckedItems.Count - arrBC_ID.Count;
@@ -155,12 +149,10 @@ namespace Bookstore
                         query = $"UPDATE book_category SET C_ID = '{arrC_ID[chListKategori.CheckedIndices[i]]}' WHERE BC_ID = '{arrBC_ID[i]}' ";
                         ctr++;
                         command.CommandText = query;
-                        if (connection.State == System.Data.ConnectionState.Closed)
-                        {
-                            connection.Open();
-                        }
+                        command.Connection = Koneksi.getConn();
+
                         command.ExecuteNonQuery();
-                        connection.Close();
+    
                     }
                     
 
@@ -169,12 +161,10 @@ namespace Bookstore
                         query=$"INSERT INTO book_category(BC_ID,B_ID,C_ID) VALUES('{generateBC_ID()}','{idBuku}','{arrC_ID[chListKategori.CheckedIndices[ctr]]}')";
                         ctr++;
                         command.CommandText = query;
-                        if (connection.State == System.Data.ConnectionState.Closed)
-                        {
-                            connection.Open();
-                        }
+                        command.Connection = Koneksi.getConn();
+                        
                         command.ExecuteNonQuery();
-                        connection.Close();
+
                     }
 
 
@@ -184,22 +174,17 @@ namespace Bookstore
                     int selisih = arrBC_ID.Count - chListKategori.CheckedItems.Count;
                     query = $"DELETE FROM book_category WHERE B_ID = '{idBuku}' ORDER BY BC_ID DESC LIMIT {selisih}";
                     command.CommandText = query;
-                    if (connection.State == System.Data.ConnectionState.Closed)
-                    {
-                        connection.Open();
-                    }
+                    command.Connection = Koneksi.getConn();
+                   
                     command.ExecuteNonQuery();
-                    connection.Close();
+
                     for (int i = 0; i < arrBC_ID.Count; i++)
                     {
                         query = $"UPDATE book_category SET C_ID = '{arrC_ID[chListKategori.CheckedIndices[i]]}' WHERE BC_ID = '{arrBC_ID[i]}' ";
                         command.CommandText = query;
-                        if (connection.State == System.Data.ConnectionState.Closed)
-                        {
-                            connection.Open();
-                        }
+                        command.Connection = Koneksi.getConn();
+                       
                         command.ExecuteNonQuery();
-                        connection.Close();
                     }
                     
                 }
@@ -209,12 +194,10 @@ namespace Bookstore
                     {
                         query = $"UPDATE book_category SET C_ID = '{arrC_ID[chListKategori.CheckedIndices[i]]}' WHERE BC_ID = '{arrBC_ID[i]}' ";
                         command.CommandText = query;
-                        if (connection.State == System.Data.ConnectionState.Closed)
-                        {
-                            connection.Open();
-                        }
+                        command.Connection = Koneksi.getConn();
+              
                         command.ExecuteNonQuery();
-                        connection.Close();
+                       
                     }
                 }
                 
@@ -278,14 +261,13 @@ namespace Bookstore
         private void connects()
         {
             string query;
-            string publisher="";
-            dtPenerbit = new DataTable();            
+            string publisher="";          
             try
             {
                 query = "SELECT b.B_ID AS 'Kode Buku',b.B_TITLE AS 'Judul Buku',b.B_AUTHOR AS 'Penulis',p.P_NAME AS 'Penerbit' , b.B_PRICE AS 'Harga', b.B_STOCK AS 'Stok',b.B_STATUS AS 'Status',b.B_IMAGE AS 'image',b.B_SYNOPSIS as 'sinopsis',b.B_ISBN10 ,b.B_ISBN13,b.B_LANGUAGE,b.B_FORMAT,b.B_PUB_DATE " +
                                       "FROM book b,publisher p " +
                                       $"WHERE  b.B_P_ID = p.P_ID AND b.B_ID LIKE '{idBuku}';";
-                command = new MySqlCommand(query, connection);
+                command = new MySqlCommand(query, Koneksi.getConn());
                 da = new MySqlDataAdapter(command);
                 DataTable table = new DataTable();
                 da.Fill(table);
@@ -329,19 +311,15 @@ namespace Bookstore
             {
 
                 query = "SELECT P_ID,P_NAME FROM publisher;";
-                command = new MySqlCommand(query, connection);
+                command = new MySqlCommand(query, Koneksi.getConn());
 
-                if (connection.State == System.Data.ConnectionState.Closed)
-                {
-                    connection.Open();
-                }
                 dr = command.ExecuteReader();
                 while (dr.Read())
                 {
                     cbPenerbit.Items.Add(dr.GetString(1));
                     arrIDPenerbit.Add(dr.GetString(0));
                 }
-                connection.Close();
+ 
 
                 for (int a = 0; a < cbPenerbit.Items.Count; a++)
                 {
@@ -351,6 +329,7 @@ namespace Bookstore
                     }
 
                 }
+                dr.Close();
 
             }
             catch (Exception ex)
@@ -362,11 +341,8 @@ namespace Bookstore
             {
 
                 query = $"SELECT c.C_NAME,bc.BC_ID FROM book_category bc,category c WHERE c.C_ID = bc.C_ID AND bc.B_ID='{idBuku}';";
-                command = new MySqlCommand(query, connection);
-                if (connection.State == System.Data.ConnectionState.Closed)
-                {
-                    connection.Open();
-                }
+                command = new MySqlCommand(query, Koneksi.getConn());
+      
                 dr = command.ExecuteReader();
                 arrTemp = new List<string>();
                 while (dr.Read())
@@ -374,7 +350,8 @@ namespace Bookstore
                     arrTemp.Add(dr[0].ToString());  
                     arrBC_ID.Add(dr[1].ToString());  
                 }
-                connection.Close();
+                dr.Close();
+   
             }
             catch(Exception ex)
             {
@@ -384,12 +361,9 @@ namespace Bookstore
             try
             {
                 query = $"SELECT C_ID,C_NAME FROM category;";
-                command = new MySqlCommand(query, connection);
+                command = new MySqlCommand(query,Koneksi.getConn());
                 
-                if (connection.State == System.Data.ConnectionState.Closed)
-                {
-                    connection.Open();
-                }
+    
                 dr = command.ExecuteReader();
                 bool cek;
                 while (dr.Read())
@@ -410,13 +384,12 @@ namespace Bookstore
                     }
                     arrC_ID.Add(dr[0].ToString());
                 }
-                connection.Close();
+                dr.Close();
             }
             catch(Exception ex)
             {
                 MessageBox.Show(ex.Message);
             }
-            connection.Close();
             da.Dispose(); 
         }
 
