@@ -571,12 +571,12 @@ namespace Bookstore
             this.rbGuest.AutoSize = true;
             this.rbGuest.Checked = true;
             this.rbGuest.Enabled = false;
-            this.rbGuest.Location = new System.Drawing.Point(827, 66);
+            this.rbGuest.Location = new System.Drawing.Point(747, 66);
             this.rbGuest.Name = "rbGuest";
-            this.rbGuest.Size = new System.Drawing.Size(101, 33);
+            this.rbGuest.Size = new System.Drawing.Size(181, 33);
             this.rbGuest.TabIndex = 69;
             this.rbGuest.TabStop = true;
-            this.rbGuest.Text = "Guest";
+            this.rbGuest.Text = "Non-Member";
             this.rbGuest.UseVisualStyleBackColor = true;
             // 
             // tbNotaPO

@@ -14,19 +14,23 @@ namespace Bookstore
     {
         string poId;
         int userRole;
-        public FormLihatNotaPO(string po_id, int role)
+        string member;
+        public FormLihatNotaPO(string po_id, int role, string invoice, string member)
         {
             InitializeComponent();
             this.poId = po_id;
             this.userRole = role;
+            this.member = member;
 
             loadNota();
+            lbInvoice.Text = invoice;
         }
 
         public void loadNota()
         {
             ReportNotaPO rep = new ReportNotaPO();
             rep.SetParameterValue("poId", poId);
+            rep.SetParameterValue("memberName", member);
 
             rep.SetDatabaseLogon("root", "", "localhost", "db_tokobuku");
             crystalReportViewer1.ReportSource = rep;

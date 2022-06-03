@@ -82,12 +82,12 @@ namespace Bookstore
             this.label9 = new System.Windows.Forms.Label();
             this.btnCariBuku = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.tbNamaMember = new System.Windows.Forms.TextBox();
+            this.btnCancelEdit = new System.Windows.Forms.Button();
             this.cmbPembayaran = new System.Windows.Forms.ComboBox();
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.tbDP = new System.Windows.Forms.TextBox();
-            this.btnCancelEdit = new System.Windows.Forms.Button();
-            this.tbNamaMember = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.nudQty)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgCart)).BeginInit();
             this.panel2.SuspendLayout();
@@ -209,12 +209,12 @@ namespace Bookstore
             this.rbGuest.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.rbGuest.AutoSize = true;
             this.rbGuest.Checked = true;
-            this.rbGuest.Location = new System.Drawing.Point(813, 69);
+            this.rbGuest.Location = new System.Drawing.Point(733, 69);
             this.rbGuest.Name = "rbGuest";
-            this.rbGuest.Size = new System.Drawing.Size(101, 33);
+            this.rbGuest.Size = new System.Drawing.Size(181, 33);
             this.rbGuest.TabIndex = 69;
             this.rbGuest.TabStop = true;
-            this.rbGuest.Text = "Guest";
+            this.rbGuest.Text = "Non-Member";
             this.rbGuest.UseVisualStyleBackColor = true;
             this.rbGuest.CheckedChanged += new System.EventHandler(this.rbGuest_CheckedChanged);
             // 
@@ -736,6 +736,32 @@ namespace Bookstore
             this.panel2.Size = new System.Drawing.Size(1043, 615);
             this.panel2.TabIndex = 23;
             // 
+            // tbNamaMember
+            // 
+            this.tbNamaMember.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.tbNamaMember.Enabled = false;
+            this.tbNamaMember.Location = new System.Drawing.Point(752, 151);
+            this.tbNamaMember.Name = "tbNamaMember";
+            this.tbNamaMember.Size = new System.Drawing.Size(266, 35);
+            this.tbNamaMember.TabIndex = 147;
+            this.tbNamaMember.Text = "-";
+            // 
+            // btnCancelEdit
+            // 
+            this.btnCancelEdit.BackColor = System.Drawing.Color.Red;
+            this.btnCancelEdit.FlatAppearance.BorderSize = 0;
+            this.btnCancelEdit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCancelEdit.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCancelEdit.ForeColor = System.Drawing.Color.White;
+            this.btnCancelEdit.Location = new System.Drawing.Point(419, 283);
+            this.btnCancelEdit.Name = "btnCancelEdit";
+            this.btnCancelEdit.Size = new System.Drawing.Size(113, 29);
+            this.btnCancelEdit.TabIndex = 146;
+            this.btnCancelEdit.Text = "Cancel";
+            this.btnCancelEdit.UseVisualStyleBackColor = false;
+            this.btnCancelEdit.Visible = false;
+            this.btnCancelEdit.Click += new System.EventHandler(this.btnCancelEdit_Click);
+            // 
             // cmbPembayaran
             // 
             this.cmbPembayaran.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
@@ -782,32 +808,6 @@ namespace Bookstore
             this.tbDP.Text = "0";
             this.tbDP.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.tbDP.TextChanged += new System.EventHandler(this.tbDP_TextChanged);
-            // 
-            // btnCancelEdit
-            // 
-            this.btnCancelEdit.BackColor = System.Drawing.Color.Red;
-            this.btnCancelEdit.FlatAppearance.BorderSize = 0;
-            this.btnCancelEdit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCancelEdit.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCancelEdit.ForeColor = System.Drawing.Color.White;
-            this.btnCancelEdit.Location = new System.Drawing.Point(419, 283);
-            this.btnCancelEdit.Name = "btnCancelEdit";
-            this.btnCancelEdit.Size = new System.Drawing.Size(113, 29);
-            this.btnCancelEdit.TabIndex = 146;
-            this.btnCancelEdit.Text = "Cancel";
-            this.btnCancelEdit.UseVisualStyleBackColor = false;
-            this.btnCancelEdit.Visible = false;
-            this.btnCancelEdit.Click += new System.EventHandler(this.btnCancelEdit_Click);
-            // 
-            // tbNamaMember
-            // 
-            this.tbNamaMember.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.tbNamaMember.Enabled = false;
-            this.tbNamaMember.Location = new System.Drawing.Point(752, 151);
-            this.tbNamaMember.Name = "tbNamaMember";
-            this.tbNamaMember.Size = new System.Drawing.Size(266, 35);
-            this.tbNamaMember.TabIndex = 147;
-            this.tbNamaMember.Text = "-";
             // 
             // FormPreOrderBaru
             // 

@@ -30,6 +30,7 @@ namespace Bookstore
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
+            this.lbInvoice = new System.Windows.Forms.Label();
             this.btnBack = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
@@ -41,6 +42,7 @@ namespace Bookstore
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.White;
+            this.panel1.Controls.Add(this.lbInvoice);
             this.panel1.Controls.Add(this.btnBack);
             this.panel1.Controls.Add(this.label3);
             this.panel1.Controls.Add(this.panel2);
@@ -49,6 +51,19 @@ namespace Bookstore
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1041, 617);
             this.panel1.TabIndex = 2;
+            // 
+            // lbInvoice
+            // 
+            this.lbInvoice.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.lbInvoice.AutoSize = true;
+            this.lbInvoice.Font = new System.Drawing.Font("Segoe UI Semibold", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbInvoice.Location = new System.Drawing.Point(552, 60);
+            this.lbInvoice.Name = "lbInvoice";
+            this.lbInvoice.Size = new System.Drawing.Size(166, 30);
+            this.lbInvoice.TabIndex = 52;
+            this.lbInvoice.Text = "<Nomor Nota>";
+            this.lbInvoice.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // btnBack
             // 
@@ -70,12 +85,13 @@ namespace Bookstore
             // 
             this.label3.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Segoe UI Semibold", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(3, 48);
+            this.label3.Location = new System.Drawing.Point(360, 60);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(1035, 37);
+            this.label3.Size = new System.Drawing.Size(186, 30);
             this.label3.TabIndex = 49;
-            this.label3.Text = "NOTA PRE-ORDER <Nomor Nota>";
+            this.label3.Text = "NOTA PRE-ORDER";
             this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // panel2
@@ -113,6 +129,7 @@ namespace Bookstore
             this.Text = "FormLihatNotaPO";
             this.Load += new System.EventHandler(this.FormLihatNotaPO_Load);
             this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
             this.panel2.ResumeLayout(false);
             this.ResumeLayout(false);
 
@@ -125,5 +142,6 @@ namespace Bookstore
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Panel panel2;
         private CrystalDecisions.Windows.Forms.CrystalReportViewer crystalReportViewer1;
+        private System.Windows.Forms.Label lbInvoice;
     }
 }
