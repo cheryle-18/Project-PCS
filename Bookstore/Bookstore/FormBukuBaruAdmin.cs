@@ -68,6 +68,7 @@ namespace Bookstore
             }
             else
             {
+                MessageBox.Show(arrIDPenerbit[cbPenerbit.SelectedIndex]);
                 try 
                { 
 
@@ -132,8 +133,8 @@ namespace Bookstore
 
                 tgl = split[0] + " - " + split[2];
 
-                string query = "INSERT INTO book" +
-                               $" VALUES( B_ID ='{tbKode.Text}' , B_TITLE = '{tbJudul.Text}', B_AUTHOR = '{tbAuthor.Text}', B_P_ID = '{arrIDPenerbit[cbPenerbit.SelectedIndex]}', B_PUB_DATE = '{tgl}', B_SYNOPSIS = '{tbSynopsis.Text}', B_PRICE = {harga}, B_IMAGE = @img, B_STOCK = {numStok.Value}, B_LANGUAGE = '{tbBahasa.Text}', B_FORMAT = '{tbFormat.Text}',B_ISBN10 = '{tbISBN10.Text}', B_ISBN13 = '{tbISBN13.Text}', B_STATUS = {stat})";
+                string query = "INSERT INTO book (`B_ID`, `B_TITLE`, `B_AUTHOR`, `B_P_ID`, `B_PUB_DATE`, `B_SYNOPSIS`, `B_PRICE`, `B_IMAGE`, `B_STOCK`, `B_LANGUAGE`, `B_FORMAT`, `B_ISBN10`, `B_ISBN13`, `B_STATUS`)" +
+                               $" VALUES('{tbKode.Text}' , '{tbJudul.Text}', '{tbAuthor.Text}', '{arrIDPenerbit[cbPenerbit.SelectedIndex]}', '{tgl}', '{tbSynopsis.Text}', {harga}, @img, {numStok.Value},'{tbBahasa.Text}', '{tbFormat.Text}','{tbISBN10.Text}', '{tbISBN13.Text}', {stat})";
                 command = new MySqlCommand(query, Koneksi.getConn());
                 command.Parameters.Add("@img", MySqlDbType.Blob);
                 command.Parameters["@img"].Value = img;
@@ -142,7 +143,7 @@ namespace Bookstore
 
                 for (int i = 0; i < chListKategori.CheckedItems.Count; i++)
                 {
-                    query = $"INSERT INTO book_category(BC_ID,B_ID,C_ID) VALUES('{generateBC_ID()}','{idBuku}','{arrC_ID[chListKategori.CheckedIndices[i]]}')";
+                    query = $"INSERT INTO book_category(BC_ID,B_ID,C_ID) VALUES('{generateBC_ID()}','{tbKode.Text}','{arrC_ID[chListKategori.CheckedIndices[i]]}')";
                     command.CommandText = query;
                     command.Connection = Koneksi.getConn();
                     command.ExecuteNonQuery();
