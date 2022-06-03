@@ -154,19 +154,47 @@ namespace Bookstore
 
         public void showLaporanBukuPreOrder()
         {
-            ReportPreOrder rep = new ReportPreOrder();
-            crViewLaporan.ReportSource = rep;
+            MySqlCommand cmd = new MySqlCommand("select count(*) from pre_order where PO_STATUS=1", Koneksi.getConn());
+            int ctr = Convert.ToInt32(cmd.ExecuteScalar());
+            if (ctr > 0)
+            {
+                ReportPreOrder rep = new ReportPreOrder();
+                crViewLaporan.ReportSource = rep;
+            }
+            else
+            {
+                ReportPreOrderKosong rep = new ReportPreOrderKosong();
+                crViewLaporan.ReportSource = rep;
+            }
         }
 
         public void showLaporanPenjualanPegawai()
         {
-            ReportPenjualanPegawai rep = new ReportPenjualanPegawai();
-            MySqlCommand cmd = new MySqlCommand("select x.HP_E_ID from (select HP_E_ID, COUNT(HP_ID) as jumlah from htrans_purchase group by HP_E_ID order by jumlah desc limit 1) x", Koneksi.getConn());
-            string empId = cmd.ExecuteScalar().ToString();
-            rep.SetParameterValue("empId", empId);
-            rep.SetParameterValue("tglDari", tglDari);
-            rep.SetParameterValue("tglSampai", tglSampai);
-            crViewLaporan.ReportSource = rep;
+            string strTglDari = tglDari.ToString("dd/MM/yyyy");
+            string strTglSampai = tglSampai.ToString("dd/MM/yyyy");
+            MySqlCommand cmd = new MySqlCommand("select count(*) from htrans_purchase where HP_DATE>=STR_TO_DATE(@tglDari, '%d/%m/%Y') and HP_DATE<=STR_TO_DATE(@tglSampai, '%d/%m/%Y')", Koneksi.getConn());
+            cmd.Parameters.AddWithValue("@tglDari", strTglDari);
+            cmd.Parameters.AddWithValue("@tglSampai", strTglSampai);
+            int ctr = Convert.ToInt32(cmd.ExecuteScalar());
+            if (ctr > 0)
+            {
+                cmd = new MySqlCommand("select x.HP_E_ID from (select HP_E_ID, COUNT(HP_ID) as jumlah from htrans_purchase group by HP_E_ID order by jumlah desc limit 1) x", Koneksi.getConn());
+                string empId = cmd.ExecuteScalar().ToString();
+                ReportPenjualanPegawai rep = new ReportPenjualanPegawai();
+                rep.SetParameterValue("empId", empId);
+                rep.SetParameterValue("tglDari", tglDari);
+                rep.SetParameterValue("tglSampai", tglSampai);
+                crViewLaporan.ReportSource = rep;
+            }
+            else
+            {
+                ReportPenjualanPegawaiKosong rep = new ReportPenjualanPegawaiKosong();
+                rep.SetParameterValue("tglDari", tglDari);
+                rep.SetParameterValue("tglSampai", tglSampai);
+                crViewLaporan.ReportSource = rep;
+            }
+            
+            
         }
         public void showLaporanMemberTerbanyakBeli()
         {
