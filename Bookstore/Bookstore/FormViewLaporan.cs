@@ -31,22 +31,23 @@ namespace Bookstore
                 label6.Visible = false;
 
                 showLaporanBukuPreOrder();
+                label3.Text = "Laporan Preorder Buku";
             }
             else if(this.mode == 2)
             {
-                showLaporanBukuDiatasRata();
+                label3.Text = "Laporan Penjualan Buku diatas Rata-rata";
             }
             else if(this.mode == 3)
             {
-                showLaporanBukuDibawahRata();
+                label3.Text = "Laporan Penjualan Buku dibawah Rata-rata";
             }
             else if(this.mode == 4)
             {
-
+                label3.Text = "Laporan Member yang Paling Sering Membeli";
             }
             else if(this.mode == 5)
             {
-
+                label3.Text = "Laporan Pegawai dengan Penjualan diatas Rata-rata";
             }
 
         }
@@ -71,12 +72,14 @@ namespace Bookstore
             //SHOW CRYSTAL REPORT
            
             MySqlCommand check = new MySqlCommand(@"SELECT COUNT(*) FROM
-            (SELECT DP_ID, DP_HP_ID, DP_B_ID, SUM(DP_QTY) AS TOTAL FROM dtrans_purchase
-            JOIN htrans_purchase ON htrans_purchase.`HP_ID` = dtrans_purchase.`DP_HP_ID`
-            WHERE htrans_purchase.`HP_DATE` >= STR_TO_DATE(@startDate, '%d/%m/%Y')
-            AND htrans_purchase.`HP_DATE` <= STR_TO_DATE(@endDate, '%d/%m/%Y')
-            GROUP BY DP_B_ID
-            HAVING TOTAL <= @avg)X;",Koneksi.getConn());
+            (SELECT book.`B_ID`, (CASE WHEN SUM(DP_QTY) IS NULL THEN 0 ELSE SUM(DP_QTY)END) AS TOTAL FROM book
+            LEFT JOIN dtrans_purchase ON dtrans_purchase.`DP_B_ID` = book.`B_ID`
+            LEFT JOIN htrans_purchase ON htrans_purchase.`HP_ID` = dtrans_purchase.`DP_HP_ID`
+            WHERE htrans_purchase.`HP_DATE` IS NULL
+            OR (htrans_purchase.`HP_DATE` >= STR_TO_DATE(@startDate, '%d/%m/%Y')
+            AND htrans_purchase.`HP_DATE` <= STR_TO_DATE(@endDate, '%d/%m/%Y'))
+            GROUP BY book.`B_ID`
+            HAVING TOTAL <= @avg)X;", Koneksi.getConn());
 
             //FIND AVG
             MySqlCommand cmd = new MySqlCommand("SELECT (CASE WHEN SUM(DP_QTY)/COUNT(DP_B_ID) IS NULL THEN 0 ELSE SUM(DP_QTY)/COUNT(DP_B_ID) END) FROM dtrans_purchase JOIN htrans_purchase WHERE dtrans_purchase.`DP_HP_ID` = htrans_purchase.`HP_ID` AND htrans_purchase.`HP_DATE` >= STR_TO_DATE(@startDate,'%d/%m/%Y') AND htrans_purchase.`HP_DATE` <= STR_TO_DATE(@endDate,'%d/%m/%Y');", Koneksi.getConn());
@@ -98,18 +101,28 @@ namespace Bookstore
                 rep.SetParameterValue("endDate", dtpSampai.Value);
                 crViewLaporan.ReportSource = rep;
             }
+            else
+            {
+                CrKosongPenjualanDibawahRata rep = new CrKosongPenjualanDibawahRata();
+                rep.SetParameterValue("average", avg);
+                rep.SetParameterValue("startDate", dtpDari.Value);
+                rep.SetParameterValue("endDate", dtpSampai.Value);
+                crViewLaporan.ReportSource = rep;
+            }
 
         }
 
         private void showLaporanBukuDiatasRata()
         {
             MySqlCommand check = new MySqlCommand(@"SELECT COUNT(*) FROM
-            (SELECT DP_ID, DP_HP_ID, DP_B_ID, SUM(DP_QTY) AS TOTAL FROM dtrans_purchase
-            JOIN htrans_purchase ON htrans_purchase.`HP_ID` = dtrans_purchase.`DP_HP_ID`
-            WHERE htrans_purchase.`HP_DATE` >= STR_TO_DATE(@startDate, '%d/%m/%Y')
-            AND htrans_purchase.`HP_DATE` <= STR_TO_DATE(@endDate, '%d/%m/%Y')
-            GROUP BY DP_B_ID
-            HAVING TOTAL >= @avg)X;", Koneksi.getConn());  
+            (SELECT book.`B_ID`, (CASE WHEN SUM(DP_QTY) IS NULL THEN 0 ELSE SUM(DP_QTY)END) AS TOTAL FROM book
+            LEFT JOIN dtrans_purchase ON dtrans_purchase.`DP_B_ID` = book.`B_ID`
+            LEFT JOIN htrans_purchase ON htrans_purchase.`HP_ID` = dtrans_purchase.`DP_HP_ID`
+            WHERE htrans_purchase.`HP_DATE` IS NULL
+            OR (htrans_purchase.`HP_DATE` >= STR_TO_DATE(@startDate, '%d/%m/%Y')
+            AND htrans_purchase.`HP_DATE` <= STR_TO_DATE(@endDate, '%d/%m/%Y'))
+            GROUP BY book.`B_ID`
+            HAVING TOTAL >= @avg)X;", Koneksi.getConn());
 
             //FIND AVG
             MySqlCommand cmd = new MySqlCommand("SELECT SUM(DP_QTY)/COUNT(DP_B_ID) FROM dtrans_purchase;", Koneksi.getConn());
@@ -124,6 +137,14 @@ namespace Bookstore
             {
                 //SHOW CRYSTAL REPORT
                 CrPenjualanBukuDiatasRata rep = new CrPenjualanBukuDiatasRata();
+                rep.SetParameterValue("average", avg);
+                rep.SetParameterValue("startDate", dtpDari.Value);
+                rep.SetParameterValue("endDate", dtpSampai.Value);
+                crViewLaporan.ReportSource = rep;
+            }
+            else
+            {
+                CrKosongPenjualanDiatasRata rep = new CrKosongPenjualanDiatasRata();
                 rep.SetParameterValue("average", avg);
                 rep.SetParameterValue("startDate", dtpDari.Value);
                 rep.SetParameterValue("endDate", dtpSampai.Value);

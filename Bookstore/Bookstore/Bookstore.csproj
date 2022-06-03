@@ -78,8 +78,20 @@
       <DependentUpon>CrNotaTransaksi.rpt</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="CrKosongPenjualanDiatasRata.cs">
+      <DependentUpon>CrKosongPenjualanDiatasRata.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <SubType>Component</SubType>
+      <DesignTime>True</DesignTime>
+    </Compile>
     <Compile Include="CrPenjualanBukuDiatasRata.cs">
       <DependentUpon>CrPenjualanBukuDiatasRata.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <SubType>Component</SubType>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="CrKosongPenjualanDibawahRata.cs">
+      <DependentUpon>CrKosongPenjualanDibawahRata.rpt</DependentUpon>
       <AutoGen>True</AutoGen>
       <SubType>Component</SubType>
       <DesignTime>True</DesignTime>
@@ -306,9 +318,17 @@
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>CrNotaTransaksi.cs</LastGenOutput>
     </EmbeddedResource>
+    <EmbeddedResource Include="CrKosongPenjualanDiatasRata.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>CrKosongPenjualanDiatasRata.cs</LastGenOutput>
+    </EmbeddedResource>
     <EmbeddedResource Include="CrPenjualanBukuDiatasRata.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>CrPenjualanBukuDiatasRata.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CrKosongPenjualanDibawahRata.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>CrKosongPenjualanDibawahRata.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="CrPenjualanBukuDibawahRata.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
