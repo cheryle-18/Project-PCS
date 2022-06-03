@@ -68,7 +68,6 @@ namespace Bookstore
             }
             else
             {
-                MessageBox.Show(arrIDPenerbit[cbPenerbit.SelectedIndex]);
                 try 
                { 
 
@@ -140,12 +139,12 @@ namespace Bookstore
                 command.Parameters["@img"].Value = img;
 
                 command.ExecuteNonQuery();
-
+                    string bc_id = "";
                 for (int i = 0; i < chListKategori.CheckedItems.Count; i++)
                 {
-                    query = $"INSERT INTO book_category(BC_ID,B_ID,C_ID) VALUES('{generateBC_ID()}','{tbKode.Text}','{arrC_ID[chListKategori.CheckedIndices[i]]}')";
-                    command.CommandText = query;
-                    command.Connection = Koneksi.getConn();
+                    bc_id = generateBC_ID();
+                    query = $"INSERT INTO `book_category` (`BC_ID`, `B_ID`, `C_ID`) VALUES('{bc_id}', '{tbKode.Text}', '{arrC_ID[chListKategori.CheckedIndices[i]]}'); ";
+                    command = new MySqlCommand(query,Koneksi.getConn());
                     command.ExecuteNonQuery();
                 }
                 MessageBox.Show("Behasil Insert");
