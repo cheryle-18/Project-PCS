@@ -21,7 +21,7 @@ namespace Bookstore
         private MySqlDataAdapter da;
         private DataTable dt;
         private string command_querry = "SELECT b.B_ID AS 'Kode Buku',b.B_TITLE AS 'Judul Buku',b.B_AUTHOR AS 'Penulis',p.P_NAME AS 'Penerbit',c.C_NAME AS 'Kategori',CONCAT('Rp.',FORMAT(b.B_PRICE,0)) AS 'Harga', b.B_STOCK AS 'Stok',b.B_STATUS AS 'Status' " +
-                                   "FROM book b,publisher p, book_category bc,category c WHERE b.B_STATUS = 1 AND b.B_ID = bc.B_ID AND bc.C_ID = c.C_ID AND b.B_P_ID = p.P_ID; ";
+                                   "FROM book b,publisher p, book_category bc,category c WHERE b.B_STATUS = 1 AND b.B_ID = bc.B_ID AND bc.C_ID = c.C_ID AND b.B_P_ID = p.P_ID ORDER BY b.B_ID ASC; ";
         
         public MasterBuku(int role)
         {

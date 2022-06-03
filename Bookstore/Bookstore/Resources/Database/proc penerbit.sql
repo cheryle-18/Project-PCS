@@ -7,6 +7,17 @@ BEGIN
 	SELECT COUNT(P_ID)+1 INTO ctr FROM publisher;
 	SET keluar = CONCAT('P',LPAD(ctr,3,0));
 	SET idPenerbit = keluar;
-	SELECT idPenerbit;
+END$$
+DELIMITER ;
+
+DELIMITER $$
+DROP PROCEDURE IF EXISTS generateIdBC$$
+CREATE PROCEDURE generateIdBC(OUT idBC VARCHAR(10))
+BEGIN
+	DECLARE ctr INT(5);
+	DECLARE keluar VARCHAR(10);
+	SELECT COUNT(BC_ID)+1 INTO ctr FROM book_category;
+	SET keluar = CONCAT('BC',LPAD(ctr,3,0));
+	SET idBC = keluar;
 END$$
 DELIMITER ;
