@@ -18,6 +18,17 @@ namespace Bookstore
         {
             InitializeComponent();
             this.user_role = role;
+            this.tr_id = tr_id;
+
+            loadNota();
+        }
+
+        private void loadNota()
+        {
+            this.label3.Text = "NOTA TRANSAKSI";
+            CrNotaTransaksi rep = new CrNotaTransaksi();
+            rep.SetParameterValue("id_transaksi", tr_id);
+            crNota.ReportSource = rep;
         }
 
         private void FormLihatNota_Load(object sender, EventArgs e)
