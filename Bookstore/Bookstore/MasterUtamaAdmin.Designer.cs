@@ -255,9 +255,9 @@ namespace Bookstore
             this.lbNama.AutoSize = true;
             this.lbNama.Font = new System.Drawing.Font("Segoe UI Semibold", 12.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbNama.ForeColor = System.Drawing.Color.White;
-            this.lbNama.Location = new System.Drawing.Point(881, 13);
+            this.lbNama.Location = new System.Drawing.Point(933, 9);
             this.lbNama.Name = "lbNama";
-            this.lbNama.Size = new System.Drawing.Size(156, 23);
+            this.lbNama.Size = new System.Drawing.Size(200, 30);
             this.lbNama.TabIndex = 11;
             this.lbNama.Text = "Halo, Nama Admin";
             // 
