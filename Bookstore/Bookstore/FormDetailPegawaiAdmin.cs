@@ -45,7 +45,7 @@ namespace Bookstore
 
         void loadDatabase(string name)
         {
-            string query = $"SELECT E_ID, E_NAME, DATE_FORMAT(e_birthdate,'%d/%m/%Y'), E_ADDRESS, E_TELP, E_U_ID, CONVERT(e_status, CHAR) FROM employee where e_id = '{e_id}'";
+            string query = $"SELECT E_ID, E_NAME, DATE_FORMAT(e_birthdate,'%e-%c-%Y'), E_ADDRESS, E_TELP, E_U_ID, CONVERT(e_status, CHAR) FROM employee where e_id = '{e_id}'";
             try
             {
                 MySqlDataAdapter da = new MySqlDataAdapter(query, Koneksi.getConn());
