@@ -118,24 +118,24 @@ END$$
 DELIMITER ;
 
 -- trigger kurangi stok stlh insert dtrans
-DELIMITER $$
-CREATE OR REPLACE TRIGGER triggerStokBuku
-AFTER INSERT ON dtrans_purchase
-FOR EACH ROW 
-BEGIN
-    declare qty int;
-    declare stok int;
-    declare bookId text;
-    declare newStok int;
+-- DELIMITER $$
+-- CREATE OR REPLACE TRIGGER triggerStokBuku
+-- AFTER INSERT ON dtrans_purchase
+-- FOR EACH ROW 
+-- BEGIN
+--     declare qty int;
+--     declare stok int;
+--     declare bookId text;
+--     declare newStok int;
 
-    select new.DP_QTY into qty;
-    select new.DP_B_ID into bookId;
-    select B_STOCK into stok from book where B_ID=bookId;
+--     select new.DP_QTY into qty;
+--     select new.DP_B_ID into bookId;
+--     select B_STOCK into stok from book where B_ID=bookId;
 
-    set newStok = stok - qty;
-    update book set B_STOCK = newStok where B_ID = bookId;
-END$$
-DELIMITER ;
+--     set newStok = stok - qty;
+--     update book set B_STOCK = newStok where B_ID = bookId;
+-- END$$
+-- DELIMITER ;
 
 -- trigger update status PO stlh update stok buku
 DELIMITER $$
