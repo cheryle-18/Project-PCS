@@ -70,7 +70,7 @@ namespace Bookstore
         void loadDatabase(string name)
         {
             string[] arahs = { "asc", "desc" };
-            string[] sorts = { "E_ID", "E_NAME", "E_BIRTHDATE", "E_TELP", "E_U_ID", "E_STATUS" };
+            string[] sorts = { "E_ID", "E_NAME", "E_BIRTHDATE", "E_ADDRESS", "E_TELP", "E_U_ID", "E_STATUS" };
             string arah = arahs[cmbArah.SelectedIndex];
             string sort = $"order by {sorts[cmbSort.SelectedIndex]} {arah}";
             string query = $"SELECT E_ID, E_NAME, DATE_FORMAT(e_birthdate,'%d/%m/%Y'), E_ADDRESS, E_TELP, E_U_ID, CONVERT(e_status, CHAR) FROM employee where E_NAME like '%{name}%' {sort}";
@@ -95,12 +95,24 @@ namespace Bookstore
             dgPegawai.Columns[3].HeaderText = "Alamat";
             dgPegawai.Columns[4].HeaderText = "Telepon";
             dgPegawai.Columns[5].HeaderText = "ID User";
-            dgPegawai.Columns[6].HeaderText = "Status";            
+            dgPegawai.Columns[6].HeaderText = "Status";
+            for (int i = 0; i < dgPegawai.Columns.Count; i++)
+            {
+                dgPegawai.Columns[i].SortMode = DataGridViewColumnSortMode.NotSortable;
+            }
         }
 
         private void dgPegawai_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            e_id = dgPegawai.Rows[e.RowIndex].Cells[0].Value.ToString();
+            try
+            {
+                e_id = dgPegawai.Rows[e.RowIndex].Cells[0].Value.ToString();
+            }
+            catch (Exception)
+            {
+
+                e_id = "";
+            }
         }
 
         private void dgPegawai_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)

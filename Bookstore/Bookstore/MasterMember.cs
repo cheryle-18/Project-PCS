@@ -102,11 +102,22 @@ namespace Bookstore
             dgMember.Columns[4].HeaderText = "No Telepon";
             dgMember.Columns[5].HeaderText = "Point";
             dgMember.Columns[6].HeaderText = "Status";
+            for (int i = 0; i < dgMember.Columns.Count; i++)
+            {
+                dgMember.Columns[i].SortMode = DataGridViewColumnSortMode.NotSortable;
+            }
         }
 
         private void dgMember_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            m_id = dgMember.Rows[e.RowIndex].Cells[0].Value.ToString();
+            try
+            {
+                m_id = dgMember.Rows[e.RowIndex].Cells[0].Value.ToString();
+            }
+            catch (Exception)
+            {
+                m_id = "";
+            }
         }
 
         private void dgMember_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
