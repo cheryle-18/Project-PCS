@@ -14,9 +14,11 @@ namespace Bookstore
 {
     public partial class MasterUtamaAdmin : KryptonForm
     {
-        public MasterUtamaAdmin()
+        string nama;
+        public MasterUtamaAdmin(string username)
         {
             InitializeComponent();
+            nama = char.ToUpper(username[0])+username.Substring(1);
         }
 
         private void MasterUtamaAdmin_FormClosed(object sender, FormClosedEventArgs e)
@@ -63,6 +65,7 @@ namespace Bookstore
         private void MasterUtamaAdmin_Load(object sender, EventArgs e)
         {
             //user_role = 1
+            lbNama.Text = "Halo, "+nama;
             MasterBuku frm = new MasterBuku(1);
             reAddControls(frm);
         }

@@ -171,7 +171,11 @@ namespace Bookstore
                     query = $"DELETE FROM book_category WHERE B_ID = '{idBuku}' ORDER BY BC_ID DESC LIMIT {selisih}";
                     command = new MySqlCommand(query, Koneksi.getConn());
                     command.ExecuteNonQuery();
-
+                    for (int i=selisih;i>0;i--)
+                    {
+                        arrBC_ID.RemoveAt(arrBC_ID.Count - 1);
+                    }
+                    
                     for (int i = 0; i < arrBC_ID.Count; i++)
                     {
                         query = $"UPDATE book_category SET C_ID = '{arrC_ID[chListKategori.CheckedIndices[i]]}' WHERE BC_ID = '{arrBC_ID[i]}' ";
