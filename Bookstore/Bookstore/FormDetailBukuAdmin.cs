@@ -261,7 +261,13 @@ namespace Bookstore
                 da = new MySqlDataAdapter(command);
                 DataTable table = new DataTable();
                 da.Fill(table);
-                byte[] img = (byte[])table.Rows[0][7];
+                byte[] img;
+                if (table.Rows[0][7].ToString() != "")
+                {
+                    img = (byte[])table.Rows[0][7];
+                    MemoryStream ms = new MemoryStream(img);
+                    pictureBox2.Image = Image.FromStream(ms);
+                }
                 tbKode.Text = table.Rows[0][0].ToString();
                 tbJudul.Text = table.Rows[0][1].ToString();
                 tbAuthor.Text = table.Rows[0][2].ToString();
@@ -275,8 +281,7 @@ namespace Bookstore
                 string tanggaltemp = table.Rows[0][13].ToString();
                 var myDate = DateTime.ParseExact(tanggaltemp, "MMMM - yyyy",new System.Globalization.CultureInfo("id-ID"), System.Globalization.DateTimeStyles.None);
                 tglTerbit.Value = myDate;
-                MemoryStream ms = new MemoryStream(img);
-                pictureBox2.Image = Image.FromStream(ms);
+               
 
                 if (Convert.ToInt32(table.Rows[0][6]) == 1)
                 {

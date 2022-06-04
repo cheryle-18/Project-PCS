@@ -14,8 +14,13 @@ namespace Bookstore
         //input required parameters
         public static bool openConn(string server, string db, string id)
         {
+<<<<<<< Updated upstream
             string pass = " ";
             pass = "";//khusus berpassword
+=======
+            string pass = "";
+            pass = "mysql";//khusus berpassword
+>>>>>>> Stashed changes
             bool res = true;
             conn.ConnectionString = string.Format("server={0}; user id={1}; password={2}; database={3}", server, id, pass, db);
             try
