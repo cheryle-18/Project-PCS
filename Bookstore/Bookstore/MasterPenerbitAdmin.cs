@@ -16,8 +16,7 @@ namespace Bookstore
         private MySqlCommand cmd;
         private MySqlDataAdapter da;
         private DataTable dt;
-        private string command_querry = "SELECT P_ID AS 'Kode Penerbit',P_NAME AS 'Nama',P_ADDRESS AS 'Alamat',P_TELP AS 'Telp',P_STATUS AS 'Status' " +
-                                   "FROM publisher WHERE P_STATUS = 1; ";
+        private string command_querry = "SELECT P_ID AS 'Kode Penerbit',P_NAME AS 'Nama',P_ADDRESS AS 'Alamat',P_TELP AS 'Telp', (case when P_STATUS=1 then 'Aktif' else 'Tidak Aktif' end) AS 'Status' FROM publisher WHERE P_STATUS = 1; ";
         public MasterPenerbitAdmin()
         {
             InitializeComponent();
@@ -108,14 +107,14 @@ namespace Bookstore
                         kolom = 5;
                     }
 
-                    cmd = "SELECT P_ID AS 'Kode Penerbit',P_NAME AS 'Nama',P_ADDRESS AS 'Alamat',P_TELP AS 'Telp',P_STATUS AS 'Status' " +
+                    cmd = "SELECT P_ID AS 'Kode Penerbit',P_NAME AS 'Nama',P_ADDRESS AS 'Alamat',P_TELP AS 'Telp',(case when P_STATUS=1 then 'Aktif' else 'Tidak Aktif' end) AS 'Status' " +
                                    "FROM publisher " +
                                       $"WHERE P_STATUS = 1 AND P_NAME LIKE CONCAT('%','{input}','%') ORDER BY {kolom} {order}; ";
                 }
             }
             else
             {
-                cmd = "SELECT P_ID AS 'Kode Penerbit',P_NAME AS 'Nama',P_ADDRESS AS 'Alamat',P_TELP AS 'Telp',P_STATUS AS 'Status' " +
+                cmd = "SELECT P_ID AS 'Kode Penerbit',P_NAME AS 'Nama',P_ADDRESS AS 'Alamat',P_TELP AS 'Telp',(case when P_STATUS=1 then 'Aktif' else 'Tidak Aktif' end) AS 'Status' " +
                                    "FROM publisher " +
                                       $"WHERE P_STATUS = 1 AND P_NAME LIKE CONCAT('%','{input}','%'); ";
             }
@@ -158,7 +157,7 @@ namespace Bookstore
                         kolom = 3;
                     }
 
-                    cmd = "SELECT P_ID AS 'Kode Penerbit',P_NAME AS 'Nama',P_ADDRESS AS 'Alamat',P_TELP AS 'Telp',P_STATUS AS 'Status' " +
+                    cmd = "SELECT P_ID AS 'Kode Penerbit',P_NAME AS 'Nama',P_ADDRESS AS 'Alamat',P_TELP AS 'Telp',(case when P_STATUS=1 then 'Aktif' else 'Tidak Aktif' end) AS 'Status' " +
                                    "FROM publisher " +
                                       $"WHERE P_STATUS = 1 AND P_NAME LIKE CONCAT('%','{keyword}','%') ORDER BY {kolom} {order}; ";
                 }
@@ -212,7 +211,7 @@ namespace Bookstore
                         kolom = 3;
                     }
 
-                    cmd = "SELECT P_ID AS 'Kode Penerbit',P_NAME AS 'Nama',P_ADDRESS AS 'Alamat',P_TELP AS 'Telp',P_STATUS AS 'Status' " +
+                    cmd = "SELECT P_ID AS 'Kode Penerbit',P_NAME AS 'Nama',P_ADDRESS AS 'Alamat',P_TELP AS 'Telp',(case when P_STATUS=1 then 'Aktif' else 'Tidak Aktif' end) AS 'Status' " +
                                    "FROM publisher " +
                                       $"WHERE P_STATUS = 1 AND P_NAME LIKE CONCAT('%','{keyword}','%') ORDER BY {kolom} {order}; ";
                 }
