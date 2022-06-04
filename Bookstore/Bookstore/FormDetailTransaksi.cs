@@ -62,7 +62,7 @@ namespace Bookstore
             {
                 lblKode.Text = dr["HP_ID"].ToString();
                 lblNomorNota.Text = dr["HP_INVOICE_NUMBER"].ToString();
-                lblTanggal.Text = Convert.ToDateTime(dr["HP_DATE"]).ToString("MM/dd/yyyy");
+                lblTanggal.Text = Convert.ToDateTime(dr["HP_DATE"]).ToString("dd/MM/yyyy");
                 lblQty.Text = dr["HP_TOTAL_QTY"].ToString();
                 lblMetode.Text = dr["HP_PAYMENT_METHOD"].ToString();
                 lblTotal.Text = "Rp " + Convert.ToInt32(dr["HP_TOTAL"]).ToString("N0",new System.Globalization.CultureInfo("id-ID"));
