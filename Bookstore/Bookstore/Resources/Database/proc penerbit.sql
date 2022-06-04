@@ -29,7 +29,7 @@ BEGIN
 	DECLARE ctr INT(5);
 	DECLARE keluar VARCHAR(10);
 	SELECT SUBSTRING(B_ID,5,4)INTO ctr FROM book ORDER BY B_ID DESC LIMIT 1;
-	SET keluar = CONCAT('BOOK',LPAD(ctr+1,3,0));
+	SET keluar = CONCAT('BOOK',LPAD(ctr+1,4,0));
 	SET idB = keluar;
 END$$
 DELIMITER ;

@@ -160,12 +160,21 @@ namespace Bookstore
                     command.ExecuteNonQuery();
                 }
                 MessageBox.Show("Behasil Insert");
+
+                MasterBuku frm = new MasterBuku(1);
+                Panel temp = (Panel)frm.Controls[0];
+                temp.Width = panel2.Width;
+                temp.Height = panel2.Height;
+                this.panel2.Controls.Clear();
+                this.panel2.Controls.Add(temp);
             }
             catch(Exception ex)
             {
                 MessageBox.Show(ex.Message);
             }
             }
+
+
         }
 
         private string generateBC_ID()
@@ -258,7 +267,8 @@ namespace Bookstore
                 try
                 {
                     harga = Convert.ToInt32(tbHarga.Text);
-                    tbHarga.Text = string.Format("{0:#,##0.00}", double.Parse(tbHarga.Text));
+                    //tbHarga.Text = string.Format("{0:#,##0.00}", double.Parse(tbHarga.Text));
+                    tbHarga.Text = harga.ToString("N0", new System.Globalization.CultureInfo("id-ID"));
                 }
                 catch (Exception)
                 {

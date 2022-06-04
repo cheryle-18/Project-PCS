@@ -117,45 +117,25 @@ BEGIN
 END$$ 
 DELIMITER ;
 
--- trigger kurangi stok & update status po stlh insert dtrans
-DELIMITER $$
-CREATE OR REPLACE TRIGGER triggerStokBuku
-AFTER INSERT ON dtrans_purchase
-FOR EACH ROW 
-BEGIN
-    declare qty int;
-    declare stok int;
-    declare bookId text;
-    declare newStok int;
-    declare poId text;
-    declare po_qty int;
-    declare finished int default 0;
+-- trigger kurangi stok stlh insert dtrans
+-- DELIMITER $$
+-- CREATE OR REPLACE TRIGGER triggerStokBuku
+-- AFTER INSERT ON dtrans_purchase
+-- FOR EACH ROW 
+-- BEGIN
+--     declare qty int;
+--     declare stok int;
+--     declare bookId text;
+--     declare newStok int;
 
-    declare curPO CURSOR for select PO_ID, PO_QTY from pre_order where PO_B_ID=bookID and PO_STATUS=2;
-    declare continue handler for not found set finished = 1;
+--     select new.DP_QTY into qty;
+--     select new.DP_B_ID into bookId;
+--     select B_STOCK into stok from book where B_ID=bookId;
 
-    select new.DP_QTY into qty;
-    select new.DP_B_ID into bookId;
-    select B_STOCK into stok from book where B_ID=bookId;
-
-    set newStok = stok - qty;
-    update book set B_STOCK = newStok where B_ID = bookId;
-
-    OPEN curPO;
-    loop_po : LOOP
-        fetch curPO into poId, po_qty;
-
-        IF finished=1 THEN 
-            LEAVE loop_po;
-        END IF;
-
-        if(newStok-po_qty<0) then 
-            update pre_order set PO_STATUS = 1 where PO_ID = poId;
-        end if;
-    END LOOP;
-    CLOSE curPO;
-END$$
-DELIMITER ;
+--     set newStok = stok - qty;
+--     update book set B_STOCK = newStok where B_ID = bookId;
+-- END$$
+-- DELIMITER ;
 
 -- trigger update status PO stlh update stok buku
 DELIMITER $$
@@ -167,9 +147,10 @@ BEGIN
     declare bookId text;
     declare poId text;
     declare qty int;
+    declare status int;
     declare finished int default 0;
 
-    declare curPO CURSOR for select PO_ID, PO_QTY from pre_order where PO_B_ID=bookID and PO_STATUS=1;
+    declare curPO CURSOR for select PO_ID, PO_QTY, PO_STATUS from pre_order where PO_B_ID=bookID;
     declare continue handler for not found set finished = 1;
 
     select new.B_ID into bookId;
@@ -181,14 +162,16 @@ BEGIN
     if(stok <> -1) then
         OPEN curPO;
         loop_po : LOOP
-            fetch curPO into poId, qty;
+            fetch curPO into poId, qty, status;
 
             IF finished=1 THEN 
                 LEAVE loop_po;
             END IF;
 
-            if(stok-qty>=0) then 
+            if(stok-qty>=0 and status=1) then 
                 update pre_order set PO_STATUS = 2 where PO_ID = poId;
+            elseif(stok-qty<0 and status=2) then
+                update pre_order set PO_STATUS = 1 where PO_ID = poId;
             end if;
         END LOOP;
         CLOSE curPO;

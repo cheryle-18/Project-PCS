@@ -145,5 +145,10 @@ namespace Bookstore
                 refreshDgv();
             }
         }
+
+        private void MasterPegawaiAdmin_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

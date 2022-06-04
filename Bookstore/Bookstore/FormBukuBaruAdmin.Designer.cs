@@ -171,7 +171,7 @@ namespace Bookstore
             this.chListKategori.FormattingEnabled = true;
             this.chListKategori.Location = new System.Drawing.Point(392, 454);
             this.chListKategori.Name = "chListKategori";
-            this.chListKategori.Size = new System.Drawing.Size(402, 62);
+            this.chListKategori.Size = new System.Drawing.Size(402, 91);
             this.chListKategori.TabIndex = 106;
             // 
             // radTada
@@ -190,7 +190,7 @@ namespace Bookstore
             this.radAda.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.radAda.AutoSize = true;
             this.radAda.Checked = true;
-            this.radAda.Location = new System.Drawing.Point(739, 125);
+            this.radAda.Location = new System.Drawing.Point(785, 125);
             this.radAda.Name = "radAda";
             this.radAda.Size = new System.Drawing.Size(103, 32);
             this.radAda.TabIndex = 103;
@@ -342,7 +342,7 @@ namespace Bookstore
             this.label8.AutoSize = true;
             this.label8.BackColor = System.Drawing.Color.White;
             this.label8.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(670, 126);
+            this.label8.Location = new System.Drawing.Point(731, 126);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(78, 28);
             this.label8.TabIndex = 78;
@@ -353,7 +353,7 @@ namespace Bookstore
             this.label7.AutoSize = true;
             this.label7.BackColor = System.Drawing.Color.White;
             this.label7.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(392, 127);
+            this.label7.Location = new System.Drawing.Point(390, 127);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(36, 28);
             this.label7.TabIndex = 77;
@@ -363,7 +363,7 @@ namespace Bookstore
             // 
             this.tbHarga.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.tbHarga.Location = new System.Drawing.Point(417, 124);
+            this.tbHarga.Location = new System.Drawing.Point(426, 123);
             this.tbHarga.Name = "tbHarga";
             this.tbHarga.Size = new System.Drawing.Size(247, 34);
             this.tbHarga.TabIndex = 76;
@@ -430,7 +430,7 @@ namespace Bookstore
             this.button2.ForeColor = System.Drawing.Color.White;
             this.button2.Location = new System.Drawing.Point(28, 474);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(212, 37);
+            this.button2.Size = new System.Drawing.Size(201, 37);
             this.button2.TabIndex = 70;
             this.button2.Text = "Browse Picture";
             this.button2.UseVisualStyleBackColor = false;
@@ -440,7 +440,7 @@ namespace Bookstore
             // 
             this.pictureBox2.Location = new System.Drawing.Point(28, 92);
             this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(212, 376);
+            this.pictureBox2.Size = new System.Drawing.Size(201, 376);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox2.TabIndex = 69;
             this.pictureBox2.TabStop = false;
@@ -451,7 +451,7 @@ namespace Bookstore
             this.tbKode.Location = new System.Drawing.Point(87, 57);
             this.tbKode.Name = "tbKode";
             this.tbKode.ReadOnly = true;
-            this.tbKode.Size = new System.Drawing.Size(153, 34);
+            this.tbKode.Size = new System.Drawing.Size(142, 34);
             this.tbKode.TabIndex = 68;
             this.tbKode.Text = "B0001";
             // 
@@ -474,7 +474,7 @@ namespace Bookstore
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button1.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button1.ForeColor = System.Drawing.Color.White;
-            this.button1.Location = new System.Drawing.Point(827, 527);
+            this.button1.Location = new System.Drawing.Point(827, 564);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(201, 38);
             this.button1.TabIndex = 31;
@@ -490,7 +490,7 @@ namespace Bookstore
             this.btnBack.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnBack.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnBack.ForeColor = System.Drawing.Color.White;
-            this.btnBack.Location = new System.Drawing.Point(28, 527);
+            this.btnBack.Location = new System.Drawing.Point(28, 564);
             this.btnBack.Name = "btnBack";
             this.btnBack.Size = new System.Drawing.Size(201, 38);
             this.btnBack.TabIndex = 30;

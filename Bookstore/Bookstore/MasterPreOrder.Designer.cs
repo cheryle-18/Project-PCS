@@ -259,6 +259,7 @@ namespace Bookstore
             this.dgPO.ReadOnly = true;
             this.dgPO.RowHeadersVisible = false;
             this.dgPO.RowHeadersWidth = 51;
+            this.dgPO.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgPO.Size = new System.Drawing.Size(1010, 353);
             this.dgPO.TabIndex = 1;
             this.dgPO.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgPO_CellClick);

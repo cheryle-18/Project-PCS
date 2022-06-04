@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -46,7 +47,7 @@ namespace Bookstore
         }
         void loadDatabase(string name)
         {
-            string query = $"SELECT m_id,m_name,DATE_FORMAT(m_birthdate,'%e-%c-%Y'),m_address,m_telp,m_point,CONVERT(m_status, CHAR) FROM MEMBER where m_id = '{m_id}'";
+            string query = $"SELECT m_id,m_name,DATE_FORMAT(m_birthdate,'%d/%m/%Y'),m_address,m_telp,m_point,CONVERT(m_status, CHAR) FROM MEMBER where m_id = '{m_id}'";
             try
             {
                 MySqlDataAdapter da = new MySqlDataAdapter(query, Koneksi.getConn());
@@ -67,9 +68,11 @@ namespace Bookstore
             tbKode.Text = datamember[0].ToString();
             tbNama.Text = datamember[1].ToString();
             tbAlamat.Text = datamember[3].ToString();
-            DateTime tanggalLahir = new DateTime();
+
+            DateTime tanggalLahir;
             //MessageBox.Show(datamember[2].ToString());
-            tanggalLahir = Convert.ToDateTime(datamember[2].ToString());
+            string tanggal = datamember[2].ToString();
+            tanggalLahir = DateTime.ParseExact(tanggal, "dd/MM/yyyy", CultureInfo.CurrentCulture);
             dtpTanggalLahir.Value = tanggalLahir;
             tbTelepon.Text = datamember[4].ToString();
             tbJumlahPoin.Text = datamember[5].ToString();
@@ -101,6 +104,11 @@ namespace Bookstore
 
                 MessageBox.Show("Simpan Perubahan Berhasil!");
             }
+        }
+
+        private void FormDetailMember_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

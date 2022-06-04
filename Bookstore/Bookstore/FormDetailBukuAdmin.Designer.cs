@@ -33,6 +33,7 @@ namespace Bookstore
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormDetailBukuAdmin));
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.btnDelete = new System.Windows.Forms.Button();
             this.cbPenerbit = new System.Windows.Forms.ComboBox();
             this.numStok = new System.Windows.Forms.NumericUpDown();
             this.tbBahasa = new System.Windows.Forms.TextBox();
@@ -88,6 +89,7 @@ namespace Bookstore
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panel2.BackColor = System.Drawing.Color.White;
+            this.panel2.Controls.Add(this.btnDelete);
             this.panel2.Controls.Add(this.cbPenerbit);
             this.panel2.Controls.Add(this.numStok);
             this.panel2.Controls.Add(this.tbBahasa);
@@ -128,6 +130,22 @@ namespace Bookstore
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(1042, 624);
             this.panel2.TabIndex = 13;
+            // 
+            // btnDelete
+            // 
+            this.btnDelete.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnDelete.BackColor = System.Drawing.Color.Navy;
+            this.btnDelete.FlatAppearance.BorderSize = 0;
+            this.btnDelete.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnDelete.Font = new System.Drawing.Font("Segoe UI Semibold", 12.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDelete.ForeColor = System.Drawing.Color.White;
+            this.btnDelete.Location = new System.Drawing.Point(653, 572);
+            this.btnDelete.Name = "btnDelete";
+            this.btnDelete.Size = new System.Drawing.Size(164, 38);
+            this.btnDelete.TabIndex = 117;
+            this.btnDelete.Text = "Delete";
+            this.btnDelete.UseVisualStyleBackColor = false;
+            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
             // 
             // cbPenerbit
             // 
@@ -447,7 +465,7 @@ namespace Bookstore
             this.button2.ForeColor = System.Drawing.Color.White;
             this.button2.Location = new System.Drawing.Point(26, 480);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(212, 37);
+            this.button2.Size = new System.Drawing.Size(201, 37);
             this.button2.TabIndex = 70;
             this.button2.Text = "Browse Picture";
             this.button2.UseVisualStyleBackColor = false;
@@ -459,7 +477,7 @@ namespace Bookstore
             | System.Windows.Forms.AnchorStyles.Left)));
             this.pictureBox2.Location = new System.Drawing.Point(26, 98);
             this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(212, 376);
+            this.pictureBox2.Size = new System.Drawing.Size(201, 376);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox2.TabIndex = 69;
             this.pictureBox2.TabStop = false;
@@ -470,7 +488,7 @@ namespace Bookstore
             this.tbKode.Location = new System.Drawing.Point(85, 63);
             this.tbKode.Name = "tbKode";
             this.tbKode.ReadOnly = true;
-            this.tbKode.Size = new System.Drawing.Size(153, 34);
+            this.tbKode.Size = new System.Drawing.Size(142, 34);
             this.tbKode.TabIndex = 68;
             this.tbKode.Text = "B0001";
             // 
@@ -493,7 +511,7 @@ namespace Bookstore
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button1.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button1.ForeColor = System.Drawing.Color.White;
-            this.button1.Location = new System.Drawing.Point(823, 543);
+            this.button1.Location = new System.Drawing.Point(823, 572);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(201, 38);
             this.button1.TabIndex = 31;
@@ -509,7 +527,7 @@ namespace Bookstore
             this.btnBack.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnBack.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnBack.ForeColor = System.Drawing.Color.White;
-            this.btnBack.Location = new System.Drawing.Point(26, 541);
+            this.btnBack.Location = new System.Drawing.Point(26, 572);
             this.btnBack.Name = "btnBack";
             this.btnBack.Size = new System.Drawing.Size(201, 38);
             this.btnBack.TabIndex = 30;
@@ -583,5 +601,6 @@ namespace Bookstore
         private System.Windows.Forms.TextBox tbFormat;
         private System.Windows.Forms.NumericUpDown numStok;
         private System.Windows.Forms.ComboBox cbPenerbit;
+        private System.Windows.Forms.Button btnDelete;
     }
 }
