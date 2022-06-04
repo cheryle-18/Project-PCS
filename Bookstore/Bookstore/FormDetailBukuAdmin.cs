@@ -148,9 +148,7 @@ namespace Bookstore
                     {
                         query = $"UPDATE book_category SET C_ID = '{arrC_ID[chListKategori.CheckedIndices[i]]}' WHERE BC_ID = '{arrBC_ID[i]}' ";
                         ctr++;
-                        command.CommandText = query;
-                        command.Connection = Koneksi.getConn();
-
+                        command = new MySqlCommand(query, Koneksi.getConn());
                         command.ExecuteNonQuery();
     
                     }
@@ -160,9 +158,7 @@ namespace Bookstore
                     {
                         query=$"INSERT INTO book_category(BC_ID,B_ID,C_ID) VALUES('{generateBC_ID()}','{idBuku}','{arrC_ID[chListKategori.CheckedIndices[ctr]]}')";
                         ctr++;
-                        command.CommandText = query;
-                        command.Connection = Koneksi.getConn();
-                        
+                        command = new MySqlCommand(query, Koneksi.getConn());
                         command.ExecuteNonQuery();
 
                     }
@@ -173,17 +169,13 @@ namespace Bookstore
                 {
                     int selisih = arrBC_ID.Count - chListKategori.CheckedItems.Count;
                     query = $"DELETE FROM book_category WHERE B_ID = '{idBuku}' ORDER BY BC_ID DESC LIMIT {selisih}";
-                    command.CommandText = query;
-                    command.Connection = Koneksi.getConn();
-                   
+                    command = new MySqlCommand(query, Koneksi.getConn());
                     command.ExecuteNonQuery();
 
                     for (int i = 0; i < arrBC_ID.Count; i++)
                     {
                         query = $"UPDATE book_category SET C_ID = '{arrC_ID[chListKategori.CheckedIndices[i]]}' WHERE BC_ID = '{arrBC_ID[i]}' ";
-                        command.CommandText = query;
-                        command.Connection = Koneksi.getConn();
-                       
+                        command = new MySqlCommand(query, Koneksi.getConn());
                         command.ExecuteNonQuery();
                     }
                     
@@ -193,11 +185,9 @@ namespace Bookstore
                     for (int i=0;i<arrBC_ID.Count;i++)
                     {
                         query = $"UPDATE book_category SET C_ID = '{arrC_ID[chListKategori.CheckedIndices[i]]}' WHERE BC_ID = '{arrBC_ID[i]}' ";
-                        command.CommandText = query;
-                        command.Connection = Koneksi.getConn();
-              
+                        command = new MySqlCommand(query, Koneksi.getConn());
                         command.ExecuteNonQuery();
-                       
+
                     }
                 }
                 

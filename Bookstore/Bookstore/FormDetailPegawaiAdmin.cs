@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -63,14 +64,15 @@ namespace Bookstore
         void refreshData()
         {
             DataRow datamember = dtDataPegawai.Rows[0];
-            //E_ID, E_NAME, DATE_FORMAT(e_birthdate,'%d/%m/%Y'), E_ADDRESS, E_TELP, E_U_ID, CONVERT(e_status, CHAR)
+            //E_ID, E_NAME, DATE_FORMAT(e_birthdate,'%e-%c-%Y'), E_ADDRESS, E_TELP, E_U_ID, CONVERT(e_status, CHAR)
             //  0     1                     2                       3          4      5                6                         
             tbKode.Text = datamember[0].ToString();
             tbNama.Text = datamember[1].ToString();
             tbAlamat.Text = datamember[3].ToString();
+            CultureInfo cultures = new CultureInfo("en-US");
             DateTime tanggalLahir = new DateTime();
             //MessageBox.Show(datamember[2].ToString());
-            tanggalLahir = Convert.ToDateTime(datamember[2].ToString());
+            tanggalLahir = Convert.ToDateTime(datamember[2].ToString(), cultures);
             dtpTanggalLahir.Value = tanggalLahir;
             tbTelepon.Text = datamember[4].ToString();
             tbUserId.Text = datamember[5].ToString();
