@@ -17,7 +17,7 @@ BEGIN
 	DECLARE ctr INT(5);
 	DECLARE keluar VARCHAR(10);
 	SELECT SUBSTRING(BC_ID,3,4)INTO ctr FROM book_category ORDER BY BC_ID DESC LIMIT 1;
-	SET keluar = CONCAT('BC',LPAD(ctr,3,0));
+	SET keluar = CONCAT('BC',LPAD(ctr+1,4,0));
 	SET idBC = keluar;
 END$$
 DELIMITER ;
