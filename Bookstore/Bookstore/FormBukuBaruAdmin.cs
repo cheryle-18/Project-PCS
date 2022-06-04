@@ -148,12 +148,21 @@ namespace Bookstore
                     command.ExecuteNonQuery();
                 }
                 MessageBox.Show("Behasil Insert");
+
+                MasterBuku frm = new MasterBuku(1);
+                Panel temp = (Panel)frm.Controls[0];
+                temp.Width = panel2.Width;
+                temp.Height = panel2.Height;
+                this.panel2.Controls.Clear();
+                this.panel2.Controls.Add(temp);
             }
             catch(Exception ex)
             {
                 MessageBox.Show(ex.Message);
             }
             }
+
+
         }
 
         private string generateBC_ID()

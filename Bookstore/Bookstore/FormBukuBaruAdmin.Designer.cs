@@ -171,7 +171,7 @@ namespace Bookstore
             this.chListKategori.FormattingEnabled = true;
             this.chListKategori.Location = new System.Drawing.Point(392, 454);
             this.chListKategori.Name = "chListKategori";
-            this.chListKategori.Size = new System.Drawing.Size(402, 52);
+            this.chListKategori.Size = new System.Drawing.Size(402, 100);
             this.chListKategori.TabIndex = 106;
             // 
             // radTada
@@ -474,7 +474,7 @@ namespace Bookstore
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button1.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button1.ForeColor = System.Drawing.Color.White;
-            this.button1.Location = new System.Drawing.Point(827, 527);
+            this.button1.Location = new System.Drawing.Point(827, 564);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(201, 38);
             this.button1.TabIndex = 31;
@@ -490,7 +490,7 @@ namespace Bookstore
             this.btnBack.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnBack.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnBack.ForeColor = System.Drawing.Color.White;
-            this.btnBack.Location = new System.Drawing.Point(28, 527);
+            this.btnBack.Location = new System.Drawing.Point(28, 564);
             this.btnBack.Name = "btnBack";
             this.btnBack.Size = new System.Drawing.Size(201, 38);
             this.btnBack.TabIndex = 30;
