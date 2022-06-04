@@ -246,7 +246,8 @@ namespace Bookstore
                 try
                 {
                     harga = Convert.ToInt32(tbHarga.Text);
-                    tbHarga.Text = string.Format("{0:#,##0.00}", double.Parse(tbHarga.Text));
+                    //tbHarga.Text = string.Format("{0:#,##0.00}", double.Parse(tbHarga.Text));
+                    tbHarga.Text = harga.ToString("N0", new System.Globalization.CultureInfo("id-ID"));
                 }
                 catch (Exception)
                 {

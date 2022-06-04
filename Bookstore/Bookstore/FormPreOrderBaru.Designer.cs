@@ -99,7 +99,7 @@ namespace Bookstore
             this.label3.Font = new System.Drawing.Font("Segoe UI Semibold", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.Location = new System.Drawing.Point(12, 22);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(241, 45);
+            this.label3.Size = new System.Drawing.Size(158, 30);
             this.label3.TabIndex = 14;
             this.label3.Text = "Pre-Order Baru";
             // 
@@ -110,7 +110,7 @@ namespace Bookstore
             this.label2.ForeColor = System.Drawing.SystemColors.ControlText;
             this.label2.Location = new System.Drawing.Point(13, 330);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(150, 40);
+            this.label2.Size = new System.Drawing.Size(99, 25);
             this.label2.TabIndex = 47;
             this.label2.Text = "Keranjang";
             // 
@@ -120,7 +120,7 @@ namespace Bookstore
             this.label10.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label10.Location = new System.Drawing.Point(14, 72);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(152, 32);
+            this.label10.Size = new System.Drawing.Size(102, 21);
             this.label10.TabIndex = 59;
             this.label10.Text = "Nomor Nota";
             // 
@@ -130,7 +130,7 @@ namespace Bookstore
             this.label11.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label11.Location = new System.Drawing.Point(14, 112);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(206, 32);
+            this.label11.Size = new System.Drawing.Size(135, 21);
             this.label11.TabIndex = 60;
             this.label11.Text = "Tanggal Transaksi";
             // 
@@ -201,7 +201,7 @@ namespace Bookstore
             this.tbNota.Enabled = false;
             this.tbNota.Location = new System.Drawing.Point(195, 70);
             this.tbNota.Name = "tbNota";
-            this.tbNota.Size = new System.Drawing.Size(241, 35);
+            this.tbNota.Size = new System.Drawing.Size(241, 26);
             this.tbNota.TabIndex = 67;
             // 
             // rbGuest
@@ -209,9 +209,9 @@ namespace Bookstore
             this.rbGuest.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.rbGuest.AutoSize = true;
             this.rbGuest.Checked = true;
-            this.rbGuest.Location = new System.Drawing.Point(733, 69);
+            this.rbGuest.Location = new System.Drawing.Point(795, 69);
             this.rbGuest.Name = "rbGuest";
-            this.rbGuest.Size = new System.Drawing.Size(181, 33);
+            this.rbGuest.Size = new System.Drawing.Size(119, 24);
             this.rbGuest.TabIndex = 69;
             this.rbGuest.TabStop = true;
             this.rbGuest.Text = "Non-Member";
@@ -222,9 +222,9 @@ namespace Bookstore
             // 
             this.rbMember.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.rbMember.AutoSize = true;
-            this.rbMember.Location = new System.Drawing.Point(709, 70);
+            this.rbMember.Location = new System.Drawing.Point(752, 70);
             this.rbMember.Name = "rbMember";
-            this.rbMember.Size = new System.Drawing.Size(128, 33);
+            this.rbMember.Size = new System.Drawing.Size(85, 24);
             this.rbMember.TabIndex = 70;
             this.rbMember.Text = "Member";
             this.rbMember.UseVisualStyleBackColor = true;
@@ -236,7 +236,7 @@ namespace Bookstore
             this.tbKodeMember.Enabled = false;
             this.tbKodeMember.Location = new System.Drawing.Point(752, 110);
             this.tbKodeMember.Name = "tbKodeMember";
-            this.tbKodeMember.Size = new System.Drawing.Size(147, 35);
+            this.tbKodeMember.Size = new System.Drawing.Size(147, 26);
             this.tbKodeMember.TabIndex = 71;
             this.tbKodeMember.Text = "-";
             // 
@@ -262,7 +262,7 @@ namespace Bookstore
             this.label24.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label24.Location = new System.Drawing.Point(13, 285);
             this.label24.Name = "label24";
-            this.label24.Size = new System.Drawing.Size(54, 32);
+            this.label24.Size = new System.Drawing.Size(36, 21);
             this.label24.TabIndex = 104;
             this.label24.Text = "Qty";
             // 
@@ -281,7 +281,7 @@ namespace Bookstore
             this.nudQty.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.nudQty.Location = new System.Drawing.Point(195, 283);
             this.nudQty.Name = "nudQty";
-            this.nudQty.Size = new System.Drawing.Size(99, 39);
+            this.nudQty.Size = new System.Drawing.Size(99, 29);
             this.nudQty.TabIndex = 106;
             // 
             // btnTambah
@@ -385,7 +385,7 @@ namespace Bookstore
             this.label18.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label18.Location = new System.Drawing.Point(732, 407);
             this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(107, 32);
+            this.label18.Size = new System.Drawing.Size(72, 21);
             this.label18.TabIndex = 110;
             this.label18.Text = "Subtotal";
             // 
@@ -396,7 +396,7 @@ namespace Bookstore
             this.label19.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label19.Location = new System.Drawing.Point(732, 372);
             this.label19.Name = "label19";
-            this.label19.Size = new System.Drawing.Size(114, 32);
+            this.label19.Size = new System.Drawing.Size(75, 21);
             this.label19.TabIndex = 111;
             this.label19.Text = "Total Qty";
             // 
@@ -429,7 +429,7 @@ namespace Bookstore
             this.lbTotalQty.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbTotalQty.Location = new System.Drawing.Point(851, 372);
             this.lbTotalQty.Name = "lbTotalQty";
-            this.lbTotalQty.Size = new System.Drawing.Size(28, 32);
+            this.lbTotalQty.Size = new System.Drawing.Size(19, 21);
             this.lbTotalQty.TabIndex = 114;
             this.lbTotalQty.Text = "0";
             // 
@@ -467,7 +467,7 @@ namespace Bookstore
             this.label29.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label29.Location = new System.Drawing.Point(732, 440);
             this.label29.Name = "label29";
-            this.label29.Size = new System.Drawing.Size(142, 32);
+            this.label29.Size = new System.Drawing.Size(92, 21);
             this.label29.TabIndex = 117;
             this.label29.Text = "Uang Muka";
             // 
@@ -478,7 +478,7 @@ namespace Bookstore
             this.label30.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label30.Location = new System.Drawing.Point(732, 474);
             this.label30.Name = "label30";
-            this.label30.Size = new System.Drawing.Size(142, 32);
+            this.label30.Size = new System.Drawing.Size(93, 21);
             this.label30.TabIndex = 118;
             this.label30.Text = "Grand Total";
             // 
@@ -511,7 +511,7 @@ namespace Bookstore
             this.label35.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label35.Location = new System.Drawing.Point(851, 407);
             this.label35.Name = "label35";
-            this.label35.Size = new System.Drawing.Size(43, 32);
+            this.label35.Size = new System.Drawing.Size(29, 21);
             this.label35.TabIndex = 121;
             this.label35.Text = "Rp";
             // 
@@ -522,7 +522,7 @@ namespace Bookstore
             this.label36.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label36.Location = new System.Drawing.Point(851, 441);
             this.label36.Name = "label36";
-            this.label36.Size = new System.Drawing.Size(43, 32);
+            this.label36.Size = new System.Drawing.Size(29, 21);
             this.label36.TabIndex = 122;
             this.label36.Text = "Rp";
             // 
@@ -533,7 +533,7 @@ namespace Bookstore
             this.label37.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label37.Location = new System.Drawing.Point(851, 474);
             this.label37.Name = "label37";
-            this.label37.Size = new System.Drawing.Size(44, 32);
+            this.label37.Size = new System.Drawing.Size(30, 21);
             this.label37.TabIndex = 123;
             this.label37.Text = "Rp";
             // 
@@ -587,7 +587,7 @@ namespace Bookstore
             this.lbTanggal.AutoSize = true;
             this.lbTanggal.Location = new System.Drawing.Point(191, 114);
             this.lbTanggal.Name = "lbTanggal";
-            this.lbTanggal.Size = new System.Drawing.Size(131, 29);
+            this.lbTanggal.Size = new System.Drawing.Size(89, 20);
             this.lbTanggal.TabIndex = 129;
             this.lbTanggal.Text = "29/05/2022";
             // 
@@ -597,7 +597,7 @@ namespace Bookstore
             this.label4.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.Location = new System.Drawing.Point(14, 173);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(134, 32);
+            this.label4.Size = new System.Drawing.Size(89, 21);
             this.label4.TabIndex = 130;
             this.label4.Text = "Kode Buku";
             // 
@@ -606,7 +606,7 @@ namespace Bookstore
             this.tbKodeBuku.Enabled = false;
             this.tbKodeBuku.Location = new System.Drawing.Point(195, 170);
             this.tbKodeBuku.Name = "tbKodeBuku";
-            this.tbKodeBuku.Size = new System.Drawing.Size(220, 35);
+            this.tbKodeBuku.Size = new System.Drawing.Size(220, 26);
             this.tbKodeBuku.TabIndex = 131;
             this.tbKodeBuku.Text = "-";
             // 
@@ -615,7 +615,7 @@ namespace Bookstore
             this.tbJudulBuku.Enabled = false;
             this.tbJudulBuku.Location = new System.Drawing.Point(195, 205);
             this.tbJudulBuku.Name = "tbJudulBuku";
-            this.tbJudulBuku.Size = new System.Drawing.Size(339, 35);
+            this.tbJudulBuku.Size = new System.Drawing.Size(339, 26);
             this.tbJudulBuku.TabIndex = 132;
             this.tbJudulBuku.Text = "-";
             // 
@@ -625,7 +625,7 @@ namespace Bookstore
             this.label7.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.Location = new System.Drawing.Point(13, 245);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(197, 32);
+            this.label7.Size = new System.Drawing.Size(128, 21);
             this.label7.TabIndex = 133;
             this.label7.Text = "Harga Buku (Rp)";
             // 
@@ -634,7 +634,7 @@ namespace Bookstore
             this.tbHargaBuku.Enabled = false;
             this.tbHargaBuku.Location = new System.Drawing.Point(195, 243);
             this.tbHargaBuku.Name = "tbHargaBuku";
-            this.tbHargaBuku.Size = new System.Drawing.Size(220, 35);
+            this.tbHargaBuku.Size = new System.Drawing.Size(220, 26);
             this.tbHargaBuku.TabIndex = 134;
             this.tbHargaBuku.Text = "0";
             // 
@@ -743,7 +743,7 @@ namespace Bookstore
             this.tbNamaMember.Enabled = false;
             this.tbNamaMember.Location = new System.Drawing.Point(752, 151);
             this.tbNamaMember.Name = "tbNamaMember";
-            this.tbNamaMember.Size = new System.Drawing.Size(266, 35);
+            this.tbNamaMember.Size = new System.Drawing.Size(266, 26);
             this.tbNamaMember.TabIndex = 147;
             this.tbNamaMember.Text = "-";
             // 
@@ -774,7 +774,7 @@ namespace Bookstore
             "Kartu Kredit"});
             this.cmbPembayaran.Location = new System.Drawing.Point(855, 501);
             this.cmbPembayaran.Name = "cmbPembayaran";
-            this.cmbPembayaran.Size = new System.Drawing.Size(163, 37);
+            this.cmbPembayaran.Size = new System.Drawing.Size(163, 28);
             this.cmbPembayaran.TabIndex = 141;
             // 
             // label5
@@ -795,7 +795,7 @@ namespace Bookstore
             this.label6.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.Location = new System.Drawing.Point(732, 503);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(150, 32);
+            this.label6.Size = new System.Drawing.Size(98, 21);
             this.label6.TabIndex = 139;
             this.label6.Text = "Pembayaran";
             // 
@@ -804,7 +804,7 @@ namespace Bookstore
             this.tbDP.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.tbDP.Location = new System.Drawing.Point(886, 439);
             this.tbDP.Name = "tbDP";
-            this.tbDP.Size = new System.Drawing.Size(133, 35);
+            this.tbDP.Size = new System.Drawing.Size(133, 26);
             this.tbDP.TabIndex = 138;
             this.tbDP.Text = "0";
             this.tbDP.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;

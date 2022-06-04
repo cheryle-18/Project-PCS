@@ -117,7 +117,7 @@ BEGIN
 END$$ 
 DELIMITER ;
 
--- trigger kurangi stok & update status po stlh insert dtrans
+-- trigger kurangi stok stlh insert dtrans
 DELIMITER $$
 CREATE OR REPLACE TRIGGER triggerStokBuku
 AFTER INSERT ON dtrans_purchase
