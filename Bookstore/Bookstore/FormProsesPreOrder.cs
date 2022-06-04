@@ -39,7 +39,7 @@ namespace Bookstore
         public void loadDetail()
         {
             //detail PO
-            MySqlCommand cmd = new MySqlCommand("select PO_INVOICE_NUMBER, date_format(PO_DATE, '%d/%m/%Y'), PO_B_ID, PO_M_ID, PO_QTY, PO_TOTAL, PO_DOWN_PAYMENT from pre_order where PO_ID=@po_id", Koneksi.getConn());
+            MySqlCommand cmd = new MySqlCommand("select PO_INVOICE_NUMBER, date_format(PO_DATE, '%d/%m/%Y'), PO_B_ID, (case when PO_M_ID is null then '0' else PO_M_ID end), PO_QTY, PO_TOTAL, PO_DOWN_PAYMENT from pre_order where PO_ID=@po_id", Koneksi.getConn());
             cmd.Parameters.AddWithValue("@po_id", poId);
             MySqlDataReader reader = cmd.ExecuteReader();
             while (reader.Read())
@@ -70,6 +70,7 @@ namespace Bookstore
             {
                 rbGuest.Checked = true;
                 nudPoint.Enabled = false;
+                btnPakaiSemua.Enabled = false;
             }
             else
             {
@@ -118,43 +119,46 @@ namespace Bookstore
 
         private void nudPoint_KeyUp(object sender, KeyEventArgs e)
         {
-            if (nudPoint.Text == "")
+            if (memberId != "0")
             {
-                nudPoint.Value = 0;
-                diskon = 0;
-                lbDisc.Text = diskon.ToString();
-                grandtotal = subtotal - uangmuka - diskon;
-                lbGrandTotal.Text = grandtotal.ToString("N0", new System.Globalization.CultureInfo("id-ID"));
-            }
-            else if (nudPoint.Value > 0)
-            {
-                if (nudPoint.Value > Convert.ToInt32(lbPoinTersedia.Text))
+                if (nudPoint.Text == "")
                 {
-                    MessageBox.Show("Poin tidak cukup!");
+                    nudPoint.Value = 0;
+                    diskon = 0;
+                    lbDisc.Text = diskon.ToString();
+                    grandtotal = subtotal - uangmuka - diskon;
+                    lbGrandTotal.Text = grandtotal.ToString("N0", new System.Globalization.CultureInfo("id-ID"));
                 }
-                else
+                else if (nudPoint.Value > 0)
                 {
-                    diskon = Convert.ToInt32(nudPoint.Value);
-
-                    if (diskon > subtotal - uangmuka)
+                    if (nudPoint.Value > Convert.ToInt32(lbPoinTersedia.Text))
                     {
-                        MessageBox.Show("Diskon melebihi total!");
+                        MessageBox.Show("Poin tidak cukup!");
                     }
                     else
                     {
-                        lbDisc.Text = diskon.ToString("N0", new System.Globalization.CultureInfo("id-ID"));
+                        diskon = Convert.ToInt32(nudPoint.Value);
 
-                        grandtotal = subtotal - uangmuka - diskon;
-                        lbGrandTotal.Text = grandtotal.ToString("N0", new System.Globalization.CultureInfo("id-ID"));
+                        if (diskon > subtotal - uangmuka)
+                        {
+                            MessageBox.Show("Diskon melebihi total!");
+                        }
+                        else
+                        {
+                            lbDisc.Text = diskon.ToString("N0", new System.Globalization.CultureInfo("id-ID"));
+
+                            grandtotal = subtotal - uangmuka - diskon;
+                            lbGrandTotal.Text = grandtotal.ToString("N0", new System.Globalization.CultureInfo("id-ID"));
+                        }
                     }
                 }
-            }
-            else
-            {
-                diskon = 0;
-                lbDisc.Text = diskon.ToString();
-                grandtotal = subtotal - uangmuka - diskon;
-                lbGrandTotal.Text = grandtotal.ToString("N0", new System.Globalization.CultureInfo("id-ID"));
+                else
+                {
+                    diskon = 0;
+                    lbDisc.Text = diskon.ToString();
+                    grandtotal = subtotal - uangmuka - diskon;
+                    lbGrandTotal.Text = grandtotal.ToString("N0", new System.Globalization.CultureInfo("id-ID"));
+                }
             }
         }
 
@@ -213,14 +217,10 @@ namespace Bookstore
                     string dtransId = cmd.ExecuteScalar().ToString();
 
                     //get member
-                    string memberId = null;
-                    if (rbGuest.Checked)
+                    string hp_m_id = null;
+                    if (memberId != "0")
                     {
-                        memberId = null;
-                    }
-                    else if (rbMember.Checked)
-                    {
-                        memberId = tbKodeMember.Text;
+                        hp_m_id = memberId;
                     }
 
                     //total paid + qty + pembayaran
@@ -229,12 +229,17 @@ namespace Bookstore
                     string pembayaran = cmbPembayaran.Items[cmbPembayaran.SelectedIndex].ToString();
 
                     //point
-                    int pointAvail = Convert.ToInt32(lbPoinTersedia.Text);
-                    int pointUsed = diskon;
+                    int pointAvail = 0;
+                    int pointUsed = 0;
                     int pointGet = 0;
-                    if (totalpaid > 0)
+                    if (memberId != "0")
                     {
-                        pointGet = Convert.ToInt32(totalpaid * 0.05);
+                        pointAvail = Convert.ToInt32(lbPoinTersedia.Text);
+                        pointUsed = diskon;
+                        if (totalpaid > 0)
+                        {
+                            pointGet = Convert.ToInt32(totalpaid * 0.05);
+                        }
                     }
 
                     //insert htrans
@@ -248,7 +253,7 @@ namespace Bookstore
                     cmd.Parameters.AddWithValue("@pointGet", pointGet);
                     cmd.Parameters.AddWithValue("@method", pembayaran);
                     cmd.Parameters.AddWithValue("@e_id", emId);
-                    cmd.Parameters.AddWithValue("@m_id", memberId);
+                    cmd.Parameters.AddWithValue("@m_id", hp_m_id);
                     cmd.ExecuteNonQuery();
 
                     //insert dtrans

@@ -21,11 +21,11 @@ namespace Bookstore
             InitializeComponent();
             if (asal == "transaksi")
             {
-                where = "where book.`B_STOCK`>0";
+                where = "where book.`B_STATUS`=1";
             }
             else if (asal == "preorder")
             {
-                where = "where book.`B_STOCK`=0";
+                where = "where book.`B_STATUS`=0";
             }
             loadDGV();
             refreshGridView();

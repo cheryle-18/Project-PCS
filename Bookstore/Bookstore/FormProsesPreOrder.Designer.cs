@@ -697,6 +697,7 @@ namespace Bookstore
             this.dgBuku.ReadOnly = true;
             this.dgBuku.RowHeadersVisible = false;
             this.dgBuku.RowHeadersWidth = 51;
+            this.dgBuku.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgBuku.Size = new System.Drawing.Size(702, 234);
             this.dgBuku.TabIndex = 46;
             // 

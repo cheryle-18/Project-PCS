@@ -338,6 +338,7 @@ namespace Bookstore
             this.dgCart.ReadOnly = true;
             this.dgCart.RowHeadersVisible = false;
             this.dgCart.RowHeadersWidth = 51;
+            this.dgCart.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgCart.Size = new System.Drawing.Size(709, 172);
             this.dgCart.TabIndex = 109;
             this.dgCart.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgCart_CellClick);
