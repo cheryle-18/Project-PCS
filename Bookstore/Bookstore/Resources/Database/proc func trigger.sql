@@ -103,10 +103,10 @@ BEGIN
 
     select date_format(current_date(), "%y%m%d") into invoice;
 
-    select count(*) into total from htrans_purchase where substr(HP_INVOICE_NUMBER,0,6)=invoice;
+    select count(*) into total from htrans_purchase where substr(HP_INVOICE_NUMBER,1,6)=invoice;
     
     if total>0 then
-      select substr(max(HP_INVOICE_NUMBER),8)+1 into ctr from htrans_purchase;
+      select substr(max(HP_INVOICE_NUMBER),9)+1 into ctr from htrans_purchase;
     else
       set ctr = 1;
     end if;
