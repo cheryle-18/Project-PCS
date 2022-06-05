@@ -469,7 +469,7 @@ namespace Bookstore
             this.btnLihatNota.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnLihatNota.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnLihatNota.ForeColor = System.Drawing.Color.White;
-            this.btnLihatNota.Location = new System.Drawing.Point(965, 657);
+            this.btnLihatNota.Location = new System.Drawing.Point(1165, 654);
             this.btnLihatNota.Margin = new System.Windows.Forms.Padding(5);
             this.btnLihatNota.Name = "btnLihatNota";
             this.btnLihatNota.Size = new System.Drawing.Size(191, 47);
@@ -492,13 +492,13 @@ namespace Bookstore
             // 
             // btnBack
             // 
-            this.btnBack.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnBack.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.btnBack.BackColor = System.Drawing.Color.Navy;
             this.btnBack.FlatAppearance.BorderSize = 0;
             this.btnBack.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnBack.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnBack.ForeColor = System.Drawing.Color.White;
-            this.btnBack.Location = new System.Drawing.Point(1166, 657);
+            this.btnBack.Location = new System.Drawing.Point(39, 654);
             this.btnBack.Margin = new System.Windows.Forms.Padding(5);
             this.btnBack.Name = "btnBack";
             this.btnBack.Size = new System.Drawing.Size(191, 47);

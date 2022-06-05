@@ -90,26 +90,28 @@ namespace Bookstore
             try
             {
                 query = fullTableQuery;
-                if (cari != "" || (dtpDari.Value < dtpSampai.Value && filterDari != "" && filterSampai != ""))
+                if (cari != "" || (dtpDari.Value <= dtpSampai.Value && filterDari != "" && filterSampai != ""))
                 {
                     query += " having ";
                     if (cari != "")
                     {
                         query = query + "lower(HP_ID) LIKE '%" + cari + "%' OR lower(HP_INVOICE_NUMBER) LIKE '%" + cari + "%' OR lower(HP_PAYMENT_METHOD) LIKE '%" + cari + "%' OR lower(MEMBER_NAME) LIKE '%" + cari + "%'";
-                        if (dtpDari.Value < dtpSampai.Value)
+                        if (dtpDari.Value <= dtpSampai.Value)
                         {
                             query += " AND ";
                         }
                     }
-                    if (dtpDari.Value < dtpSampai.Value)
+                    if (dtpDari.Value <= dtpSampai.Value)
                     {
-                        query = query + "HP_DATE >= STR_TO_DATE('" + filterDari + "', '%d-%m-%y') AND HP_DATE <= STR_TO_DATE('" + filterSampai + "', '%d-%m-%y')";
+                        query = query + "STR_TO_DATE(HP_DATE,'%d/%m/%Y') >= STR_TO_DATE('" + filterDari + "','%d/%m/%Y') AND STR_TO_DATE(HP_DATE,'%d/%m/%Y')  <= STR_TO_DATE('" + filterSampai+"','%d/%m/%Y')";
+
                     }
                 }
                 if (orderBy != "" && arahOrderBy != "")
                 {
                     query += " order by " + orderBy + " " + arahOrderBy;
                 }
+                Console.WriteLine(query);
             }
             catch (Exception ex)
             {
@@ -152,7 +154,7 @@ namespace Bookstore
 
         private void dtpDari_ValueChanged(object sender, EventArgs e)
         {
-            filterDari = dtpDari.Value.ToString("dd-MM-yy");
+            filterDari = dtpDari.Value.ToString("dd/MM/yy");
 
             loadDGV();
             refreshGridView();
@@ -160,7 +162,7 @@ namespace Bookstore
 
         private void dtpSampai_ValueChanged(object sender, EventArgs e)
         {
-            filterSampai = dtpSampai.Value.ToString("dd-MM-yy");
+            filterSampai = dtpSampai.Value.ToString("dd/MM/yy");
 
             loadDGV();
             refreshGridView();

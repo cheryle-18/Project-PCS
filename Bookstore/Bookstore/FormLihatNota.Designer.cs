@@ -52,13 +52,13 @@ namespace Bookstore
             // 
             // btnBack
             // 
-            this.btnBack.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnBack.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.btnBack.BackColor = System.Drawing.Color.Navy;
             this.btnBack.FlatAppearance.BorderSize = 0;
             this.btnBack.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnBack.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnBack.ForeColor = System.Drawing.Color.White;
-            this.btnBack.Location = new System.Drawing.Point(875, 560);
+            this.btnBack.Location = new System.Drawing.Point(65, 504);
             this.btnBack.Name = "btnBack";
             this.btnBack.Size = new System.Drawing.Size(153, 38);
             this.btnBack.TabIndex = 51;
@@ -75,7 +75,7 @@ namespace Bookstore
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(1035, 37);
             this.label3.TabIndex = 49;
-            this.label3.Text = "NOTA TRANSAKSI <Nomor Nota>";
+            this.label3.Text = "NOTA TRANSAKSI";
             this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // panel2
@@ -84,7 +84,7 @@ namespace Bookstore
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panel2.Controls.Add(this.crNota);
-            this.panel2.Location = new System.Drawing.Point(65, 147);
+            this.panel2.Location = new System.Drawing.Point(65, 105);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(895, 376);
             this.panel2.TabIndex = 14;
@@ -97,9 +97,9 @@ namespace Bookstore
             | System.Windows.Forms.AnchorStyles.Right)));
             this.crNota.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.crNota.Cursor = System.Windows.Forms.Cursors.Default;
-            this.crNota.Location = new System.Drawing.Point(0, 0);
+            this.crNota.Location = new System.Drawing.Point(0, 3);
             this.crNota.Name = "crNota";
-            this.crNota.Size = new System.Drawing.Size(895, 376);
+            this.crNota.Size = new System.Drawing.Size(895, 373);
             this.crNota.TabIndex = 0;
             // 
             // FormLihatNota
