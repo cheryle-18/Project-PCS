@@ -272,7 +272,7 @@ namespace Bookstore
             this.cmbSort.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbSort.FormattingEnabled = true;
             this.cmbSort.Items.AddRange(new object[] {
-            "ID",
+            "Kode Kategori",
             "Nama",
             "Status"});
             this.cmbSort.Location = new System.Drawing.Point(616, 87);

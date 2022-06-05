@@ -211,7 +211,7 @@ BEGIN
     select count(*) into total from category;
     
     if total>0 then
-      select substr(max(C_ID),3)+1 into ctr from category;
+      select substr(max(C_ID),2)+1 into ctr from category;
     else
       set ctr = 1;
     end if;
@@ -264,6 +264,29 @@ BEGIN
     end if;
     
     set newId = (concat("EM", LPAD(ctr, 2, "0")));
+
+    return newId;
+END$$ 
+DELIMITER ;
+
+-- generate id member
+DELIMITER $$ 
+CREATE OR REPLACE FUNCTION generateIdMember()
+RETURNS varchar(6)
+BEGIN 
+    declare ctr int;
+    declare newId varchar(6);
+    declare total int;
+
+    select count(*) into total from member;
+    
+    if total>0 then
+      select substr(max(M_ID),4)+1 into ctr from member;
+    else
+      set ctr = 1;
+    end if;
+    
+    set newId = (concat("M", LPAD(ctr, 4, "0")));
 
     return newId;
 END$$ 

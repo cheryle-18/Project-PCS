@@ -143,7 +143,7 @@ namespace Bookstore
             this.cmbSort.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbSort.FormattingEnabled = true;
             this.cmbSort.Items.AddRange(new object[] {
-            "ID",
+            "Kode Member",
             "Nama",
             "Tanggal Lahir",
             "Alamat",
