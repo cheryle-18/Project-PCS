@@ -125,7 +125,7 @@ namespace Bookstore
             "Descending"});
             this.cmbArah.Location = new System.Drawing.Point(795, 80);
             this.cmbArah.Name = "cmbArah";
-            this.cmbArah.Size = new System.Drawing.Size(128, 29);
+            this.cmbArah.Size = new System.Drawing.Size(128, 36);
             this.cmbArah.TabIndex = 24;
             this.cmbArah.SelectedIndexChanged += new System.EventHandler(this.cmbArah_SelectedIndexChanged);
             // 
@@ -134,7 +134,7 @@ namespace Bookstore
             this.label4.AutoSize = true;
             this.label4.Location = new System.Drawing.Point(13, 83);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(45, 21);
+            this.label4.Size = new System.Drawing.Size(55, 28);
             this.label4.TabIndex = 23;
             this.label4.Text = "Cari :";
             // 
@@ -149,7 +149,7 @@ namespace Bookstore
             "Status"});
             this.cmbSort.Location = new System.Drawing.Point(621, 80);
             this.cmbSort.Name = "cmbSort";
-            this.cmbSort.Size = new System.Drawing.Size(168, 29);
+            this.cmbSort.Size = new System.Drawing.Size(168, 36);
             this.cmbSort.TabIndex = 19;
             this.cmbSort.SelectedIndexChanged += new System.EventHandler(this.cmbSort_SelectedIndexChanged);
             // 
@@ -159,7 +159,7 @@ namespace Bookstore
             this.label2.AutoSize = true;
             this.label2.Location = new System.Drawing.Point(452, 83);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(163, 21);
+            this.label2.Size = new System.Drawing.Size(202, 28);
             this.label2.TabIndex = 18;
             this.label2.Text = "Urutkan Berdasarkan :";
             // 
@@ -167,7 +167,7 @@ namespace Bookstore
             // 
             this.tbCari.Location = new System.Drawing.Point(64, 79);
             this.tbCari.Name = "tbCari";
-            this.tbCari.Size = new System.Drawing.Size(294, 29);
+            this.tbCari.Size = new System.Drawing.Size(294, 34);
             this.tbCari.TabIndex = 15;
             this.tbCari.Text = "Kata Kunci";
             this.tbCari.TextChanged += new System.EventHandler(this.tbCari_TextChanged);
@@ -178,7 +178,7 @@ namespace Bookstore
             this.label3.Font = new System.Drawing.Font("Segoe UI Semibold", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.Location = new System.Drawing.Point(12, 20);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(158, 30);
+            this.label3.Size = new System.Drawing.Size(203, 37);
             this.label3.TabIndex = 14;
             this.label3.Text = "Daftar Penerbit";
             // 
@@ -197,6 +197,7 @@ namespace Bookstore
             this.dataGridView1.ReadOnly = true;
             this.dataGridView1.RowHeadersVisible = false;
             this.dataGridView1.RowHeadersWidth = 51;
+            this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridView1.Size = new System.Drawing.Size(1007, 409);
             this.dataGridView1.TabIndex = 1;
             // 

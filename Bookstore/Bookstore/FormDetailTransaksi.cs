@@ -13,8 +13,10 @@ namespace Bookstore
 {
     public partial class FormDetailTransaksi : Form
     {
+        bool lihatMember = false;
         private int user_role;
         private string tr_id;
+        private string m_id;
         DataTable dtTransaksi;
         public FormDetailTransaksi(int role,string tr_id)
         {
@@ -26,15 +28,44 @@ namespace Bookstore
             loadDGV();
             refreshGridView();
         }
+        public FormDetailTransaksi(int role,string tr_id,string m_id,bool lihatMember)
+        {
+            InitializeComponent();
+            this.user_role = role;
+            this.tr_id = tr_id;
+            loadHeaderInfo();
+            
+            loadDGV();
+            refreshGridView();
+            if (lihatMember)
+            {
+                this.lihatMember = lihatMember;
+                this.m_id = m_id;
+                //btnBack.Visible = false;
+                btnLihatNota.Visible = false;
+            }
+        }
 
         private void btnBack_Click(object sender, EventArgs e)
         {
-            MasterTransaksi frm = new MasterTransaksi(user_role);
-            Panel temp = (Panel)frm.Controls[0];
-            temp.Width = panel1.Width;
-            temp.Height = panel1.Height;
-            this.panel1.Controls.Clear();
-            this.panel1.Controls.Add(temp);
+            if (lihatMember)
+            {//saat lihat detail transaksi pada satu member
+                FormDetailMember frm = new FormDetailMember(user_role, m_id);
+                Panel temp = (Panel)frm.Controls[0];
+                temp.Width = panel1.Width;
+                temp.Height = panel1.Height;
+                this.panel1.Controls.Clear();
+                this.panel1.Controls.Add(temp);
+            }
+            else
+            {
+                MasterTransaksi frm = new MasterTransaksi(user_role);
+                Panel temp = (Panel)frm.Controls[0];
+                temp.Width = panel1.Width;
+                temp.Height = panel1.Height;
+                this.panel1.Controls.Clear();
+                this.panel1.Controls.Add(temp);
+            }
         }
 
         private void FormDetailTransaksi_Load(object sender, EventArgs e)
@@ -62,7 +93,7 @@ namespace Bookstore
             {
                 lblKode.Text = dr["HP_ID"].ToString();
                 lblNomorNota.Text = dr["HP_INVOICE_NUMBER"].ToString();
-                lblTanggal.Text = Convert.ToDateTime(dr["HP_DATE"]).ToString("MM/dd/yyyy");
+                lblTanggal.Text = Convert.ToDateTime(dr["HP_DATE"]).ToString("dd/MM/yyyy");
                 lblQty.Text = dr["HP_TOTAL_QTY"].ToString();
                 lblMetode.Text = dr["HP_PAYMENT_METHOD"].ToString();
                 lblTotal.Text = "Rp " + Convert.ToInt32(dr["HP_TOTAL"]).ToString("N0",new System.Globalization.CultureInfo("id-ID"));

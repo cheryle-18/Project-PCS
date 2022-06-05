@@ -56,9 +56,10 @@ namespace Bookstore
             this.btnMember.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnMember.Font = new System.Drawing.Font("Segoe UI Semibold", 12.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnMember.ForeColor = System.Drawing.Color.White;
-            this.btnMember.Location = new System.Drawing.Point(1, 303);
+            this.btnMember.Location = new System.Drawing.Point(1, 373);
+            this.btnMember.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnMember.Name = "btnMember";
-            this.btnMember.Size = new System.Drawing.Size(226, 43);
+            this.btnMember.Size = new System.Drawing.Size(301, 53);
             this.btnMember.TabIndex = 14;
             this.btnMember.Text = "Members";
             this.btnMember.UseVisualStyleBackColor = false;
@@ -71,9 +72,10 @@ namespace Bookstore
             this.btnPreOrder.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnPreOrder.Font = new System.Drawing.Font("Segoe UI Semibold", 12.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnPreOrder.ForeColor = System.Drawing.Color.White;
-            this.btnPreOrder.Location = new System.Drawing.Point(1, 261);
+            this.btnPreOrder.Location = new System.Drawing.Point(1, 321);
+            this.btnPreOrder.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnPreOrder.Name = "btnPreOrder";
-            this.btnPreOrder.Size = new System.Drawing.Size(226, 43);
+            this.btnPreOrder.Size = new System.Drawing.Size(301, 53);
             this.btnPreOrder.TabIndex = 13;
             this.btnPreOrder.Text = "Pre-Order";
             this.btnPreOrder.UseVisualStyleBackColor = false;
@@ -86,9 +88,10 @@ namespace Bookstore
             this.btnTransaksi.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnTransaksi.Font = new System.Drawing.Font("Segoe UI Semibold", 12.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnTransaksi.ForeColor = System.Drawing.Color.White;
-            this.btnTransaksi.Location = new System.Drawing.Point(1, 219);
+            this.btnTransaksi.Location = new System.Drawing.Point(1, 270);
+            this.btnTransaksi.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnTransaksi.Name = "btnTransaksi";
-            this.btnTransaksi.Size = new System.Drawing.Size(226, 43);
+            this.btnTransaksi.Size = new System.Drawing.Size(301, 53);
             this.btnTransaksi.TabIndex = 12;
             this.btnTransaksi.Text = "Transaksi";
             this.btnTransaksi.UseVisualStyleBackColor = false;
@@ -101,9 +104,10 @@ namespace Bookstore
             this.btnBuku.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnBuku.Font = new System.Drawing.Font("Segoe UI Semibold", 12.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnBuku.ForeColor = System.Drawing.Color.Navy;
-            this.btnBuku.Location = new System.Drawing.Point(1, 176);
+            this.btnBuku.Location = new System.Drawing.Point(1, 217);
+            this.btnBuku.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnBuku.Name = "btnBuku";
-            this.btnBuku.Size = new System.Drawing.Size(226, 43);
+            this.btnBuku.Size = new System.Drawing.Size(301, 53);
             this.btnBuku.TabIndex = 11;
             this.btnBuku.Text = "Buku";
             this.btnBuku.UseVisualStyleBackColor = false;
@@ -115,9 +119,10 @@ namespace Bookstore
             this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Font = new System.Drawing.Font("Britannic Bold", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(20, 108);
+            this.label1.Location = new System.Drawing.Point(27, 133);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(191, 30);
+            this.label1.Size = new System.Drawing.Size(240, 37);
             this.label1.TabIndex = 10;
             this.label1.Text = "BOOK STATION";
             // 
@@ -132,8 +137,9 @@ namespace Bookstore
             this.kryptonPanel1.Controls.Add(this.label1);
             this.kryptonPanel1.Dock = System.Windows.Forms.DockStyle.Left;
             this.kryptonPanel1.Location = new System.Drawing.Point(0, 0);
+            this.kryptonPanel1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.kryptonPanel1.Name = "kryptonPanel1";
-            this.kryptonPanel1.Size = new System.Drawing.Size(227, 570);
+            this.kryptonPanel1.Size = new System.Drawing.Size(303, 702);
             this.kryptonPanel1.StateCommon.Color1 = System.Drawing.Color.MidnightBlue;
             this.kryptonPanel1.StateCommon.Color2 = System.Drawing.Color.MidnightBlue;
             this.kryptonPanel1.TabIndex = 17;
@@ -146,9 +152,10 @@ namespace Bookstore
             this.btnLogout.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnLogout.Font = new System.Drawing.Font("Segoe UI Semibold", 12.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnLogout.ForeColor = System.Drawing.Color.White;
-            this.btnLogout.Location = new System.Drawing.Point(-2, 494);
+            this.btnLogout.Location = new System.Drawing.Point(-3, 608);
+            this.btnLogout.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnLogout.Name = "btnLogout";
-            this.btnLogout.Size = new System.Drawing.Size(226, 43);
+            this.btnLogout.Size = new System.Drawing.Size(301, 53);
             this.btnLogout.TabIndex = 16;
             this.btnLogout.Text = "Log Out";
             this.btnLogout.UseVisualStyleBackColor = false;
@@ -158,9 +165,10 @@ namespace Bookstore
             // 
             this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
             this.pictureBox1.Image = global::Bookstore.Properties.Resources.book;
-            this.pictureBox1.Location = new System.Drawing.Point(39, 44);
+            this.pictureBox1.Location = new System.Drawing.Point(52, 54);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(155, 61);
+            this.pictureBox1.Size = new System.Drawing.Size(207, 75);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 15;
             this.pictureBox1.TabStop = false;
@@ -184,9 +192,10 @@ namespace Bookstore
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(252)))), ((int)(((byte)(252)))));
             this.panel2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.panel2.Location = new System.Drawing.Point(226, 44);
+            this.panel2.Location = new System.Drawing.Point(301, 54);
+            this.panel2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(738, 526);
+            this.panel2.Size = new System.Drawing.Size(984, 647);
             this.panel2.TabIndex = 16;
             this.panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.panel2_Paint);
             // 
@@ -196,33 +205,33 @@ namespace Bookstore
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panel3.BackColor = System.Drawing.Color.MidnightBlue;
             this.panel3.Controls.Add(this.lbNama);
-            this.panel3.Location = new System.Drawing.Point(226, 0);
-            this.panel3.Margin = new System.Windows.Forms.Padding(2);
+            this.panel3.Location = new System.Drawing.Point(301, 0);
+            this.panel3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(738, 43);
+            this.panel3.Size = new System.Drawing.Size(984, 53);
             this.panel3.TabIndex = 18;
             // 
             // lbNama
             // 
             this.lbNama.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.lbNama.AutoSize = true;
             this.lbNama.Font = new System.Drawing.Font("Segoe UI Semibold", 12.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbNama.ForeColor = System.Drawing.Color.White;
-            this.lbNama.Location = new System.Drawing.Point(560, 9);
-            this.lbNama.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lbNama.Location = new System.Drawing.Point(729, 11);
             this.lbNama.Name = "lbNama";
-            this.lbNama.Size = new System.Drawing.Size(169, 23);
+            this.lbNama.Size = new System.Drawing.Size(239, 39);
             this.lbNama.TabIndex = 11;
             this.lbNama.Text = "Halo, Nama Pegawai";
+            this.lbNama.TextAlign = System.Drawing.ContentAlignment.TopRight;
             // 
             // MasterUtamaPegawai
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(963, 570);
+            this.ClientSize = new System.Drawing.Size(1284, 702);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.kryptonPanel1);
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "MasterUtamaPegawai";
             this.Text = "MasterPegawai";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
@@ -233,7 +242,6 @@ namespace Bookstore
             this.kryptonPanel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panel3.ResumeLayout(false);
-            this.panel3.PerformLayout();
             this.ResumeLayout(false);
 
         }

@@ -14,9 +14,11 @@ namespace Bookstore
 {
     public partial class FormDetailMember : Form
     {
+        private string tr_id = "";
         private string m_id = "";
         private int user_role;
         DataTable dtDataMember;
+        DataTable dtTransaksi;
         public FormDetailMember(int role,string m_id)
         {
             InitializeComponent();
@@ -24,30 +26,36 @@ namespace Bookstore
             this.m_id = m_id;
             loadDatabase(m_id);
             refreshData();
+            loadDatabaseTransaksi();
+            refreshDgvTransaksi();
         }
 
         private void btnDetail_Click(object sender, EventArgs e)
         {
-            MasterMember frm;
-            Panel temp;
-            if(user_role == 0)
+            if (tr_id == "")
             {
-                frm = new MasterMember(0);
+                try
+                {
+                    tr_id = dgTransaksi.Rows[0].Cells[0].Value.ToString();
+                }
+                catch (Exception)
+                {
+
+                }
             }
-            else
+            if (tr_id != "")
             {
-                frm = new MasterMember(1);
+                FormDetailTransaksi frm = new FormDetailTransaksi(user_role, tr_id,m_id,true);
+                Panel temp = (Panel)frm.Controls[0];
+                temp.Width = panel2.Width;
+                temp.Height = panel2.Height;
+                this.panel2.Controls.Clear();
+                this.panel2.Controls.Add(temp);
             }
-      
-            temp = (Panel)frm.Controls[0];
-            temp.Width = panel2.Width;
-            temp.Height = panel2.Height;
-            this.panel2.Controls.Clear();
-            this.panel2.Controls.Add(temp);
         }
         void loadDatabase(string name)
         {
-            string query = $"SELECT m_id,m_name,DATE_FORMAT(m_birthdate,'%e-%c-%Y'),m_address,m_telp,m_point,CONVERT(m_status, CHAR) FROM MEMBER where m_id = '{m_id}'";
+            string query = $"SELECT m_id,m_name,DATE_FORMAT(m_birthdate,'%d/%m/%Y'),m_address,m_telp,m_point,CONVERT(m_status, CHAR) FROM MEMBER where m_id = '{m_id}'";
             try
             {
                 MySqlDataAdapter da = new MySqlDataAdapter(query, Koneksi.getConn());
@@ -68,10 +76,11 @@ namespace Bookstore
             tbKode.Text = datamember[0].ToString();
             tbNama.Text = datamember[1].ToString();
             tbAlamat.Text = datamember[3].ToString();
-            CultureInfo cultures = new CultureInfo("en-US");
-            DateTime tanggalLahir = new DateTime();
+
+            DateTime tanggalLahir;
             //MessageBox.Show(datamember[2].ToString());
-            tanggalLahir = Convert.ToDateTime(datamember[2].ToString(), cultures);
+            string tanggal = datamember[2].ToString();
+            tanggalLahir = DateTime.ParseExact(tanggal, "dd/MM/yyyy", CultureInfo.CurrentCulture);
             dtpTanggalLahir.Value = tanggalLahir;
             tbTelepon.Text = datamember[4].ToString();
             tbJumlahPoin.Text = datamember[5].ToString();
@@ -102,6 +111,55 @@ namespace Bookstore
                 cmd.ExecuteNonQuery();
 
                 MessageBox.Show("Simpan Perubahan Berhasil!");
+            }
+        }
+
+        private void FormDetailMember_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        void loadDatabaseTransaksi()
+        {
+            string query = $"SELECT distinct htrans_purchase.`HP_ID`,htrans_purchase.`HP_INVOICE_NUMBER`,DATE_FORMAT(htrans_purchase.`HP_DATE`,'%d/%m/%Y') AS HP_DATE,htrans_purchase.`HP_TOTAL_QTY`,CONCAT('Rp ',FORMAT(htrans_purchase.HP_TOTAL,0,'id_ID')) AS HP_TOTAL, CONCAT('Rp ',FORMAT(htrans_purchase.HP_TOTAL_PAID,0,'id_ID')) AS HP_TOTAL_PAID,htrans_purchase.HP_PAYMENT_METHOD FROM htrans_purchase LEFT JOIN `member` ON htrans_purchase.`HP_M_ID` = '{m_id}'";
+            try
+            {
+                MySqlDataAdapter da = new MySqlDataAdapter(query, Koneksi.getConn());
+
+                dtTransaksi = new DataTable();
+                da.Fill(dtTransaksi);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        void refreshDgvTransaksi()
+        {
+            dgTransaksi.DataSource = dtTransaksi;
+            dgTransaksi.Columns["HP_ID"].HeaderText = "Kode Transaksi";
+            dgTransaksi.Columns["HP_INVOICE_NUMBER"].HeaderText = "Nomor Nota";
+            dgTransaksi.Columns["HP_DATE"].HeaderText = "Tanggal";
+            dgTransaksi.Columns["HP_TOTAL_QTY"].HeaderText = "Qty";
+            dgTransaksi.Columns["HP_TOTAL"].HeaderText = "Total";
+            dgTransaksi.Columns["HP_TOTAL_PAID"].HeaderText = "Total Paid";
+            dgTransaksi.Columns["HP_PAYMENT_METHOD"].HeaderText = "Metode Pembayaran";
+            for (int i = 0; i < dgTransaksi.Columns.Count; i++)
+            {
+                dgTransaksi.Columns[i].SortMode = DataGridViewColumnSortMode.NotSortable;
+            }
+        }
+
+        private void dgTransaksi_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            try
+            {
+                tr_id = dgTransaksi.Rows[e.RowIndex].Cells[0].Value.ToString();
+            }
+            catch (Exception)
+            {
+                tr_id = "";
             }
         }
     }

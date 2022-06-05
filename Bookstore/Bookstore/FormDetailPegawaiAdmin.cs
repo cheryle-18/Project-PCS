@@ -46,7 +46,7 @@ namespace Bookstore
 
         void loadDatabase(string name)
         {
-            string query = $"SELECT E_ID, E_NAME, DATE_FORMAT(e_birthdate,'%e-%c-%Y'), E_ADDRESS, E_TELP, E_U_ID, CONVERT(e_status, CHAR) FROM employee where e_id = '{e_id}'";
+            string query = $"SELECT E_ID, E_NAME, DATE_FORMAT(e_birthdate,'%d/%m/%Y'), E_ADDRESS, E_TELP, E_U_ID, CONVERT(e_status, CHAR) FROM employee where e_id = '{e_id}'";
             try
             {
                 MySqlDataAdapter da = new MySqlDataAdapter(query, Koneksi.getConn());
@@ -69,10 +69,9 @@ namespace Bookstore
             tbKode.Text = datamember[0].ToString();
             tbNama.Text = datamember[1].ToString();
             tbAlamat.Text = datamember[3].ToString();
-            CultureInfo cultures = new CultureInfo("en-US");
-            DateTime tanggalLahir = new DateTime();
-            //MessageBox.Show(datamember[2].ToString());
-            tanggalLahir = Convert.ToDateTime(datamember[2].ToString(), cultures);
+            DateTime tanggalLahir;
+            string tanggal = datamember[2].ToString();
+            tanggalLahir = DateTime.ParseExact(tanggal, "dd/MM/yyyy",CultureInfo.CurrentCulture);
             dtpTanggalLahir.Value = tanggalLahir;
             tbTelepon.Text = datamember[4].ToString();
             tbUserId.Text = datamember[5].ToString();

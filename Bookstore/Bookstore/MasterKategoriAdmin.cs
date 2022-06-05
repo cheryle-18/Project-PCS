@@ -67,9 +67,13 @@ namespace Bookstore
         {
             dgCategory.DataSource = null;
             dgCategory.DataSource = dtCategory;
-            dgCategory.Columns[0].HeaderText = "ID";
+            dgCategory.Columns[0].HeaderText = "Kode Kategori";
             dgCategory.Columns[1].HeaderText = "Nama";
             dgCategory.Columns[2].HeaderText = "Status";
+            for (int i = 0; i < dgCategory.Columns.Count; i++)
+            {
+                dgCategory.Columns[i].SortMode = DataGridViewColumnSortMode.NotSortable;
+            }
         }
 
         private void dgCategory_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)

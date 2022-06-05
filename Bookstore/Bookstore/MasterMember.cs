@@ -95,7 +95,7 @@ namespace Bookstore
         {
             //dgMember.DataSource = null;
             dgMember.DataSource = dtMember;
-            dgMember.Columns[0].HeaderText = "ID";
+            dgMember.Columns[0].HeaderText = "Kode Member";
             dgMember.Columns[1].HeaderText = "Nama";
             dgMember.Columns[2].HeaderText = "Tanggal Lahir";
             dgMember.Columns[3].HeaderText = "Alamat";

@@ -49,14 +49,14 @@ namespace Bookstore
                 {
                     //USER ROLE = ADMIN
                     this.Hide();
-                    MasterUtamaAdmin frm = new MasterUtamaAdmin();
+                    MasterUtamaAdmin frm = new MasterUtamaAdmin(username);
                     frm.ShowDialog();
                 }
                 else
                 {
                     //USER ROLE = EMPLOYEE
                     this.Hide();
-                    MasterUtamaPegawai frm = new MasterUtamaPegawai();
+                    MasterUtamaPegawai frm = new MasterUtamaPegawai(username);
                     frm.ShowDialog();
                 }
                 

@@ -30,6 +30,7 @@ namespace Bookstore
         private void InitializeComponent()
         {
             this.panel2 = new System.Windows.Forms.Panel();
+            this.btnSimpanPerubahan = new System.Windows.Forms.Button();
             this.dtpTanggalLahir = new System.Windows.Forms.DateTimePicker();
             this.rbStatusNonAktif = new System.Windows.Forms.RadioButton();
             this.rbStatusAktif = new System.Windows.Forms.RadioButton();
@@ -45,14 +46,7 @@ namespace Bookstore
             this.label20 = new System.Windows.Forms.Label();
             this.label19 = new System.Windows.Forms.Label();
             this.label18 = new System.Windows.Forms.Label();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dgTransaksi = new System.Windows.Forms.DataGridView();
             this.label17 = new System.Windows.Forms.Label();
             this.label16 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
@@ -63,9 +57,8 @@ namespace Bookstore
             this.label2 = new System.Windows.Forms.Label();
             this.btnDetail = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
-            this.btnSimpanPerubahan = new System.Windows.Forms.Button();
             this.panel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgTransaksi)).BeginInit();
             this.SuspendLayout();
             // 
             // panel2
@@ -90,7 +83,7 @@ namespace Bookstore
             this.panel2.Controls.Add(this.label20);
             this.panel2.Controls.Add(this.label19);
             this.panel2.Controls.Add(this.label18);
-            this.panel2.Controls.Add(this.dataGridView1);
+            this.panel2.Controls.Add(this.dgTransaksi);
             this.panel2.Controls.Add(this.label17);
             this.panel2.Controls.Add(this.label16);
             this.panel2.Controls.Add(this.label8);
@@ -106,6 +99,21 @@ namespace Bookstore
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(1039, 615);
             this.panel2.TabIndex = 21;
+            // 
+            // btnSimpanPerubahan
+            // 
+            this.btnSimpanPerubahan.BackColor = System.Drawing.Color.Navy;
+            this.btnSimpanPerubahan.FlatAppearance.BorderSize = 0;
+            this.btnSimpanPerubahan.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSimpanPerubahan.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSimpanPerubahan.ForeColor = System.Drawing.Color.White;
+            this.btnSimpanPerubahan.Location = new System.Drawing.Point(403, 312);
+            this.btnSimpanPerubahan.Name = "btnSimpanPerubahan";
+            this.btnSimpanPerubahan.Size = new System.Drawing.Size(157, 38);
+            this.btnSimpanPerubahan.TabIndex = 96;
+            this.btnSimpanPerubahan.Text = "Simpan Perubahan";
+            this.btnSimpanPerubahan.UseVisualStyleBackColor = false;
+            this.btnSimpanPerubahan.Click += new System.EventHandler(this.btnSimpanPerubahan_Click);
             // 
             // dtpTanggalLahir
             // 
@@ -250,70 +258,26 @@ namespace Bookstore
             this.label18.TabIndex = 80;
             this.label18.Text = ":";
             // 
-            // dataGridView1
+            // dgTransaksi
             // 
-            this.dataGridView1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.dgTransaksi.AllowUserToAddRows = false;
+            this.dgTransaksi.AllowUserToDeleteRows = false;
+            this.dgTransaksi.AllowUserToOrderColumns = true;
+            this.dgTransaksi.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dataGridView1.BackgroundColor = System.Drawing.Color.Gainsboro;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Column1,
-            this.Column2,
-            this.Column3,
-            this.Column4,
-            this.Column5,
-            this.Column6,
-            this.Column7});
-            this.dataGridView1.Location = new System.Drawing.Point(19, 412);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowHeadersVisible = false;
-            this.dataGridView1.RowHeadersWidth = 51;
-            this.dataGridView1.Size = new System.Drawing.Size(1000, 116);
-            this.dataGridView1.TabIndex = 58;
-            // 
-            // Column1
-            // 
-            this.Column1.HeaderText = "Kode Transaksi";
-            this.Column1.MinimumWidth = 6;
-            this.Column1.Name = "Column1";
-            // 
-            // Column2
-            // 
-            this.Column2.HeaderText = "Nomor Nota";
-            this.Column2.MinimumWidth = 6;
-            this.Column2.Name = "Column2";
-            // 
-            // Column3
-            // 
-            this.Column3.HeaderText = "Tanggal";
-            this.Column3.MinimumWidth = 6;
-            this.Column3.Name = "Column3";
-            // 
-            // Column4
-            // 
-            this.Column4.HeaderText = "Qty";
-            this.Column4.MinimumWidth = 6;
-            this.Column4.Name = "Column4";
-            // 
-            // Column5
-            // 
-            this.Column5.HeaderText = "Total";
-            this.Column5.MinimumWidth = 6;
-            this.Column5.Name = "Column5";
-            // 
-            // Column6
-            // 
-            this.Column6.HeaderText = "Total Paid";
-            this.Column6.MinimumWidth = 6;
-            this.Column6.Name = "Column6";
-            // 
-            // Column7
-            // 
-            this.Column7.HeaderText = "Poin Diterima";
-            this.Column7.MinimumWidth = 6;
-            this.Column7.Name = "Column7";
+            this.dgTransaksi.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgTransaksi.BackgroundColor = System.Drawing.Color.Gainsboro;
+            this.dgTransaksi.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgTransaksi.Location = new System.Drawing.Point(19, 412);
+            this.dgTransaksi.Name = "dgTransaksi";
+            this.dgTransaksi.ReadOnly = true;
+            this.dgTransaksi.RowHeadersVisible = false;
+            this.dgTransaksi.RowHeadersWidth = 51;
+            this.dgTransaksi.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgTransaksi.Size = new System.Drawing.Size(1000, 116);
+            this.dgTransaksi.TabIndex = 58;
+            this.dgTransaksi.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgTransaksi_CellClick);
             // 
             // label17
             // 
@@ -410,11 +374,11 @@ namespace Bookstore
             this.btnDetail.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnDetail.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnDetail.ForeColor = System.Drawing.Color.White;
-            this.btnDetail.Location = new System.Drawing.Point(876, 536);
+            this.btnDetail.Location = new System.Drawing.Point(876, 545);
             this.btnDetail.Name = "btnDetail";
             this.btnDetail.Size = new System.Drawing.Size(143, 38);
             this.btnDetail.TabIndex = 29;
-            this.btnDetail.Text = "Back";
+            this.btnDetail.Text = "Lihat Detail";
             this.btnDetail.UseVisualStyleBackColor = false;
             this.btnDetail.Click += new System.EventHandler(this.btnDetail_Click);
             // 
@@ -428,21 +392,6 @@ namespace Bookstore
             this.label3.TabIndex = 14;
             this.label3.Text = "Detail Member";
             // 
-            // btnSimpanPerubahan
-            // 
-            this.btnSimpanPerubahan.BackColor = System.Drawing.Color.Navy;
-            this.btnSimpanPerubahan.FlatAppearance.BorderSize = 0;
-            this.btnSimpanPerubahan.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSimpanPerubahan.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSimpanPerubahan.ForeColor = System.Drawing.Color.White;
-            this.btnSimpanPerubahan.Location = new System.Drawing.Point(403, 312);
-            this.btnSimpanPerubahan.Name = "btnSimpanPerubahan";
-            this.btnSimpanPerubahan.Size = new System.Drawing.Size(157, 38);
-            this.btnSimpanPerubahan.TabIndex = 96;
-            this.btnSimpanPerubahan.Text = "Simpan Perubahan";
-            this.btnSimpanPerubahan.UseVisualStyleBackColor = false;
-            this.btnSimpanPerubahan.Click += new System.EventHandler(this.btnSimpanPerubahan_Click);
-            // 
             // FormDetailMember
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
@@ -450,9 +399,10 @@ namespace Bookstore
             this.Controls.Add(this.panel2);
             this.Name = "FormDetailMember";
             this.Text = "FormDetailMember";
+            this.Load += new System.EventHandler(this.FormDetailMember_Load);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgTransaksi)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -467,7 +417,7 @@ namespace Bookstore
         private System.Windows.Forms.Label label20;
         private System.Windows.Forms.Label label19;
         private System.Windows.Forms.Label label18;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView dgTransaksi;
         private System.Windows.Forms.Label label17;
         private System.Windows.Forms.Label label16;
         private System.Windows.Forms.Label label8;
@@ -478,13 +428,6 @@ namespace Bookstore
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button btnDetail;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column5;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column6;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column7;
         private System.Windows.Forms.RadioButton rbStatusNonAktif;
         private System.Windows.Forms.RadioButton rbStatusAktif;
         private System.Windows.Forms.TextBox tbJumlahPoin;

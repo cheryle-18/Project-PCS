@@ -13,9 +13,11 @@ namespace Bookstore
 {
     public partial class MasterUtamaPegawai : KryptonForm
     {
-        public MasterUtamaPegawai()
+        string nama;
+        public MasterUtamaPegawai(string username)
         {
             InitializeComponent();
+            nama = char.ToUpper(username[0])+username.Substring(1);
         }
 
         private void panel2_Paint(object sender, PaintEventArgs e)
@@ -34,6 +36,7 @@ namespace Bookstore
         private void MasterPegawai_Load(object sender, EventArgs e)
         {
             //user role = 0
+            lbNama.Text = "Halo, " + nama;
             MasterBuku frm = new MasterBuku(0);
             reAddControls(frm);
         }

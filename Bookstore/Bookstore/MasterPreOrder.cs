@@ -37,7 +37,7 @@ namespace Bookstore
 
             btnDetail.Enabled = false;
 
-            fullTableQuery = "select PO_ID, PO_INVOICE_NUMBER, PO_DATE, B_TITLE, concat('Rp ', format(PO_TOTAL,0,'de_DE')), concat('Rp ', format(PO_DOWN_PAYMENT,0,'de_DE')), (case when PO_M_ID is null then 'Non-Member' else M_NAME end), (case when PO_STATUS=1 then 'Menunggu Buku' when PO_STATUS=2 then 'Siap Diproses' else 'Selesai' end) from pre_order join book on B_ID=PO_B_ID left join member on M_ID=PO_M_ID";
+            fullTableQuery = "select PO_ID, PO_INVOICE_NUMBER, PO_DATE, B_TITLE, concat('Rp ', format(PO_TOTAL,0,'de_DE')), concat('Rp ', format(PO_DOWN_PAYMENT,0,'de_DE')), (case when PO_M_ID is null then 'Non-Member' else M_NAME end), (case when PO_STATUS=1 then 'Menunggu Buku' when PO_STATUS=2 then 'Siap Diproses' else 'Selesai' end) from pre_order join book on B_ID=PO_B_ID left join `member` on M_ID=PO_M_ID";
             cari = "";
             filterDari = "";
             filterSampai = "";
@@ -81,7 +81,7 @@ namespace Bookstore
         public void loadDatabase()
         {
             query = fullTableQuery;
-            if(cari!="" || (dtpDari.Value<dtpSampai.Value && filterDari!="" && filterSampai!=""))
+            if(cari!="" || (dtpDari.Value<=dtpSampai.Value && filterDari!="" && filterSampai!=""))
             {
                 query += " where ";
                 if (cari != "")
@@ -92,7 +92,7 @@ namespace Bookstore
                         query += " AND ";
                     }
                 }
-                if (dtpDari.Value < dtpSampai.Value)
+                if (dtpDari.Value <= dtpSampai.Value)
                 {
                     query = query + "PO_DATE >= STR_TO_DATE('" + filterDari + "', '%d-%m-%y') AND PO_DATE <= STR_TO_DATE('" + filterSampai + "', '%d-%m-%y')";
                 }
@@ -117,14 +117,17 @@ namespace Bookstore
         public void refreshDgv()
         {
             dgPO.DataSource = dtPO;
-            dgPO.Columns[0].HeaderText = "Kode PO";
-            dgPO.Columns[1].HeaderText = "Nomor Nota";
-            dgPO.Columns[2].HeaderText = "Tanggal PO";
-            dgPO.Columns[3].HeaderText = "Judul Buku";
-            dgPO.Columns[4].HeaderText = "Total";
-            dgPO.Columns[5].HeaderText = "Uang Muka";
-            dgPO.Columns[6].HeaderText = "Customer";
-            dgPO.Columns[7].HeaderText = "Status";
+            if (dgPO.Rows.Count > 0)
+            {
+                dgPO.Columns[0].HeaderText = "Kode PO";
+                dgPO.Columns[1].HeaderText = "Nomor Nota";
+                dgPO.Columns[2].HeaderText = "Tanggal PO";
+                dgPO.Columns[3].HeaderText = "Judul Buku";
+                dgPO.Columns[4].HeaderText = "Total";
+                dgPO.Columns[5].HeaderText = "Uang Muka";
+                dgPO.Columns[6].HeaderText = "Customer";
+                dgPO.Columns[7].HeaderText = "Status";
+            }
             dgPO.ClearSelection();
         }
 

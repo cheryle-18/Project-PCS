@@ -69,11 +69,15 @@ namespace Bookstore
             else
             {
                 try 
-               { 
-
-                MemoryStream ms = new MemoryStream();
-                pictureBox2.Image.Save(ms, pictureBox2.Image.RawFormat);
-                byte[] img = ms.ToArray();
+               {
+                    byte[] img=null;
+                    if (pictureBox2.Image !=null)
+                    {
+                        MemoryStream ms = new MemoryStream();
+                        pictureBox2.Image.Save(ms, pictureBox2.Image.RawFormat);
+                        img = ms.ToArray();
+                    }
+     
                 int stat = 0;
                 if (radAda.Checked)
                 {
@@ -136,9 +140,17 @@ namespace Bookstore
                                $" VALUES('{tbKode.Text}' , '{tbJudul.Text}', '{tbAuthor.Text}', '{arrIDPenerbit[cbPenerbit.SelectedIndex]}', '{tgl}', '{tbSynopsis.Text}', {harga}, @img, {numStok.Value},'{tbBahasa.Text}', '{tbFormat.Text}','{tbISBN10.Text}', '{tbISBN13.Text}', {stat})";
                 command = new MySqlCommand(query, Koneksi.getConn());
                 command.Parameters.Add("@img", MySqlDbType.Blob);
-                command.Parameters["@img"].Value = img;
+                    if (pictureBox2.Image==null)
+                    {
+                        command.Parameters["@img"].Value = null;
+                    }
+                    else
+                    {
+                        command.Parameters["@img"].Value = img;
+                    }
 
-                command.ExecuteNonQuery();
+
+                    command.ExecuteNonQuery();
                     string bc_id = "";
                 for (int i = 0; i < chListKategori.CheckedItems.Count; i++)
                 {
@@ -148,12 +160,21 @@ namespace Bookstore
                     command.ExecuteNonQuery();
                 }
                 MessageBox.Show("Behasil Insert");
+
+                MasterBuku frm = new MasterBuku(1);
+                Panel temp = (Panel)frm.Controls[0];
+                temp.Width = panel2.Width;
+                temp.Height = panel2.Height;
+                this.panel2.Controls.Clear();
+                this.panel2.Controls.Add(temp);
             }
             catch(Exception ex)
             {
                 MessageBox.Show(ex.Message);
             }
             }
+
+
         }
 
         private string generateBC_ID()
@@ -246,7 +267,8 @@ namespace Bookstore
                 try
                 {
                     harga = Convert.ToInt32(tbHarga.Text);
-                    tbHarga.Text = string.Format("{0:#,##0.00}", double.Parse(tbHarga.Text));
+                    //tbHarga.Text = string.Format("{0:#,##0.00}", double.Parse(tbHarga.Text));
+                    tbHarga.Text = harga.ToString("N0", new System.Globalization.CultureInfo("id-ID"));
                 }
                 catch (Exception)
                 {

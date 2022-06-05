@@ -171,7 +171,11 @@ namespace Bookstore
                     query = $"DELETE FROM book_category WHERE B_ID = '{idBuku}' ORDER BY BC_ID DESC LIMIT {selisih}";
                     command = new MySqlCommand(query, Koneksi.getConn());
                     command.ExecuteNonQuery();
-
+                    for (int i=selisih;i>0;i--)
+                    {
+                        arrBC_ID.RemoveAt(arrBC_ID.Count - 1);
+                    }
+                    
                     for (int i = 0; i < arrBC_ID.Count; i++)
                     {
                         query = $"UPDATE book_category SET C_ID = '{arrC_ID[chListKategori.CheckedIndices[i]]}' WHERE BC_ID = '{arrBC_ID[i]}' ";
@@ -194,6 +198,13 @@ namespace Bookstore
                 
 
                 MessageBox.Show("Berhasil Update");
+
+                MasterBuku frm = new MasterBuku(1);
+                Panel temp = (Panel)frm.Controls[0];
+                temp.Width = panel1.Width;
+                temp.Height = panel1.Height;
+                this.panel1.Controls.Clear();
+                this.panel1.Controls.Add(temp);
 
             }
             catch(Exception ex)
@@ -221,6 +232,20 @@ namespace Bookstore
 
         }
 
+        private void btnDelete_Click(object sender, EventArgs e)
+        {
+            MySqlCommand cmd = new MySqlCommand("update book set B_STATUS=2 where B_ID=@book_id", Koneksi.getConn());
+            cmd.Parameters.AddWithValue("@book_id", idBuku);
+            cmd.ExecuteNonQuery();
+
+            MasterBuku frm = new MasterBuku(1);
+            Panel temp = (Panel)frm.Controls[0];
+            temp.Width = panel1.Width;
+            temp.Height = panel1.Height;
+            this.panel1.Controls.Clear();
+            this.panel1.Controls.Add(temp);
+        }
+
         private void button2_Click(object sender, EventArgs e)
         {
             OpenFileDialog opf = new OpenFileDialog();
@@ -238,7 +263,8 @@ namespace Bookstore
                 try
                 {
                     harga = Convert.ToInt32(tbHarga.Text);
-                    tbHarga.Text = string.Format("{0:#,##0.00}", double.Parse(tbHarga.Text));
+                    //tbHarga.Text = string.Format("{0:#,##0.00}", double.Parse(tbHarga.Text));
+                    tbHarga.Text = harga.ToString("N0", new System.Globalization.CultureInfo("id-ID"));
                 }
                 catch (Exception)
                 {
@@ -261,7 +287,13 @@ namespace Bookstore
                 da = new MySqlDataAdapter(command);
                 DataTable table = new DataTable();
                 da.Fill(table);
-                byte[] img = (byte[])table.Rows[0][7];
+                byte[] img;
+                if (table.Rows[0][7].ToString() != "")
+                {
+                    img = (byte[])table.Rows[0][7];
+                    MemoryStream ms = new MemoryStream(img);
+                    pictureBox2.Image = Image.FromStream(ms);
+                }
                 tbKode.Text = table.Rows[0][0].ToString();
                 tbJudul.Text = table.Rows[0][1].ToString();
                 tbAuthor.Text = table.Rows[0][2].ToString();
@@ -275,8 +307,7 @@ namespace Bookstore
                 string tanggaltemp = table.Rows[0][13].ToString();
                 var myDate = DateTime.ParseExact(tanggaltemp, "MMMM - yyyy",new System.Globalization.CultureInfo("id-ID"), System.Globalization.DateTimeStyles.None);
                 tglTerbit.Value = myDate;
-                MemoryStream ms = new MemoryStream(img);
-                pictureBox2.Image = Image.FromStream(ms);
+               
 
                 if (Convert.ToInt32(table.Rows[0][6]) == 1)
                 {

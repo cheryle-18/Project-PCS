@@ -38,7 +38,7 @@ namespace Bookstore
 
             btnDetail.Enabled = false;
 
-            fullTableQuery = "SELECT htrans_purchase.`HP_ID`,htrans_purchase.`HP_INVOICE_NUMBER`,htrans_purchase.`HP_DATE`,htrans_purchase.`HP_TOTAL_QTY`,CONCAT('Rp ',FORMAT(htrans_purchase.HP_TOTAL,0,'id_ID')) AS HP_TOTAL, concat('Rp ',FORMAT(htrans_purchase.HP_TOTAL_PAID,0,'id_ID')) AS HP_TOTAL_PAID,htrans_purchase.HP_PAYMENT_METHOD,(CASE WHEN `member`.`M_NAME` IS NULL THEN 'Non-Member' ELSE `member`.`M_NAME` END) AS MEMBER_NAME FROM htrans_purchase LEFT JOIN `member` ON htrans_purchase.`HP_M_ID` = `member`.`M_ID`";
+            fullTableQuery = "SELECT htrans_purchase.`HP_ID`,htrans_purchase.`HP_INVOICE_NUMBER`,DATE_FORMAT(htrans_purchase.`HP_DATE`,'%d/%m/%Y') AS HP_DATE,htrans_purchase.`HP_TOTAL_QTY`,CONCAT('Rp ',FORMAT(htrans_purchase.HP_TOTAL,0,'id_ID')) AS HP_TOTAL, CONCAT('Rp ',FORMAT(htrans_purchase.HP_TOTAL_PAID,0,'id_ID')) AS HP_TOTAL_PAID,htrans_purchase.HP_PAYMENT_METHOD,(CASE WHEN `member`.`M_NAME` IS NULL THEN 'Non-Member' ELSE `member`.`M_NAME` END) AS MEMBER_NAME FROM htrans_purchase LEFT JOIN `member` ON htrans_purchase.`HP_M_ID` = `member`.`M_ID`";
             cari = "";
             filterDari = "";
             filterSampai = "";
@@ -131,14 +131,14 @@ namespace Bookstore
         public void refreshGridView()
         {
             dgvTransaksi.DataSource = dtTransaksi;
-            /*dgvTransaksi.Columns["HP_ID"].HeaderText = "Kode Transaksi";
+            dgvTransaksi.Columns["HP_ID"].HeaderText = "Kode Transaksi";
             dgvTransaksi.Columns["HP_INVOICE_NUMBER"].HeaderText = "Nomor Nota";
             dgvTransaksi.Columns["HP_DATE"].HeaderText = "Tanggal";
             dgvTransaksi.Columns["HP_TOTAL_QTY"].HeaderText = "Qty";
             dgvTransaksi.Columns["HP_TOTAL"].HeaderText = "Total";
             dgvTransaksi.Columns["HP_TOTAL_PAID"].HeaderText = "Total Paid";
             dgvTransaksi.Columns["HP_PAYMENT_METHOD"].HeaderText = "Metode Pembayaran";
-            dgvTransaksi.Columns["MEMBER_NAME"].HeaderText = "Customer";*/
+            dgvTransaksi.Columns["MEMBER_NAME"].HeaderText = "Customer";
             dgvTransaksi.ClearSelection();
         }
 
