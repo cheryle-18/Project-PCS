@@ -209,7 +209,7 @@ namespace Bookstore
             this.rbGuest.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.rbGuest.AutoSize = true;
             this.rbGuest.Checked = true;
-            this.rbGuest.Location = new System.Drawing.Point(795, 69);
+            this.rbGuest.Location = new System.Drawing.Point(843, 70);
             this.rbGuest.Name = "rbGuest";
             this.rbGuest.Size = new System.Drawing.Size(119, 24);
             this.rbGuest.TabIndex = 69;

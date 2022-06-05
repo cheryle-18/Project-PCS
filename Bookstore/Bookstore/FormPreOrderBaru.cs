@@ -92,6 +92,8 @@ namespace Bookstore
             if (rbGuest.Checked)
             {
                 btnCariMember.Enabled = false;
+                tbKodeMember.Text = "";
+                tbNamaMember.Text = "";
             }
         }
 
@@ -226,6 +228,7 @@ namespace Bookstore
         private void btnHapus_Click(object sender, EventArgs e)
         {
             clearAll();
+            lbTotalQty.Text = "0";
         }
 
         private void btnBayar_Click(object sender, EventArgs e)

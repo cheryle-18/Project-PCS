@@ -78,10 +78,10 @@ BEGIN
 
     select date_format(current_date(), "%y%m%d") into invoice;
 
-    select count(*) into total from pre_order where substr(PO_INVOICE_NUMBER,0,6)=invoice;
+    select count(*) into total from pre_order where substr(PO_INVOICE_NUMBER,1,6)=invoice;
     
     if total>0 then
-      select substr(max(PO_INVOICE_NUMBER),8)+1 into ctr from pre_order;
+      select substr(max(PO_INVOICE_NUMBER),9)+1 into ctr from pre_order;
     else
       set ctr = 1;
     end if;
@@ -116,26 +116,6 @@ BEGIN
     return invoice;
 END$$ 
 DELIMITER ;
-
--- trigger kurangi stok stlh insert dtrans
--- DELIMITER $$
--- CREATE OR REPLACE TRIGGER triggerStokBuku
--- AFTER INSERT ON dtrans_purchase
--- FOR EACH ROW 
--- BEGIN
---     declare qty int;
---     declare stok int;
---     declare bookId text;
---     declare newStok int;
-
---     select new.DP_QTY into qty;
---     select new.DP_B_ID into bookId;
---     select B_STOCK into stok from book where B_ID=bookId;
-
---     set newStok = stok - qty;
---     update book set B_STOCK = newStok where B_ID = bookId;
--- END$$
--- DELIMITER ;
 
 -- trigger update status PO stlh update stok buku
 DELIMITER $$
