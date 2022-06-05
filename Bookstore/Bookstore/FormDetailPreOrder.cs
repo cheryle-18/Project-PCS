@@ -40,7 +40,7 @@ namespace Bookstore
             MySqlCommand cmd = new MySqlCommand("select (case when PO_STATUS is not null then PO_STATUS end) as status from pre_order where PO_ID=@po_id", Koneksi.getConn());
             cmd.Parameters.AddWithValue("@po_id", poId);
             int status = Convert.ToInt32(cmd.ExecuteScalar());
-            if (status == 2)
+            if (status == 2 && userRole!=1)
             {
                 btnProses.Visible = true;
             }
@@ -144,7 +144,7 @@ namespace Bookstore
 
         private void btnBack_Click(object sender, EventArgs e)
         {
-            MasterPreOrder frm = new MasterPreOrder(0);
+            MasterPreOrder frm = new MasterPreOrder(userRole);
             Panel temp = (Panel)frm.Controls[0];
             temp.Width = panel2.Width;
             temp.Height = panel2.Height;
