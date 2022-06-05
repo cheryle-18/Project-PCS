@@ -281,7 +281,7 @@ BEGIN
     select count(*) into total from member;
     
     if total>0 then
-      select substr(max(M_ID),4)+1 into ctr from member;
+      select substr(max(M_ID),2)+1 into ctr from member;
     else
       set ctr = 1;
     end if;
