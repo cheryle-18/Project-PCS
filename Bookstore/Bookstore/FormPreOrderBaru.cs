@@ -92,6 +92,8 @@ namespace Bookstore
             if (rbGuest.Checked)
             {
                 btnCariMember.Enabled = false;
+                tbKodeMember.Text = "";
+                tbNamaMember.Text = "";
             }
         }
 

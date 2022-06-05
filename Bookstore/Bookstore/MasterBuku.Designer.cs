@@ -84,7 +84,7 @@ namespace Bookstore
             this.label3.Font = new System.Drawing.Font("Segoe UI Semibold", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.Location = new System.Drawing.Point(12, 22);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(163, 37);
+            this.label3.Size = new System.Drawing.Size(127, 30);
             this.label3.TabIndex = 14;
             this.label3.Text = "Daftar Buku";
             // 
@@ -94,7 +94,7 @@ namespace Bookstore
             this.label2.AutoSize = true;
             this.label2.Location = new System.Drawing.Point(455, 85);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(207, 25);
+            this.label2.Size = new System.Drawing.Size(169, 20);
             this.label2.TabIndex = 18;
             this.label2.Text = "Urutkan Berdasarkan :";
             // 
@@ -111,7 +111,7 @@ namespace Bookstore
             "Stok"});
             this.cmbSort.Location = new System.Drawing.Point(624, 77);
             this.cmbSort.Name = "cmbSort";
-            this.cmbSort.Size = new System.Drawing.Size(168, 33);
+            this.cmbSort.Size = new System.Drawing.Size(168, 28);
             this.cmbSort.TabIndex = 19;
             this.cmbSort.SelectedIndexChanged += new System.EventHandler(this.cmbSort_SelectedIndexChanged);
             // 
@@ -120,7 +120,7 @@ namespace Bookstore
             this.label4.AutoSize = true;
             this.label4.Location = new System.Drawing.Point(13, 85);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(109, 25);
+            this.label4.Size = new System.Drawing.Size(86, 20);
             this.label4.TabIndex = 23;
             this.label4.Text = "Cari Buku :";
             // 
@@ -134,7 +134,7 @@ namespace Bookstore
             "Descending"});
             this.cmbArah.Location = new System.Drawing.Point(798, 77);
             this.cmbArah.Name = "cmbArah";
-            this.cmbArah.Size = new System.Drawing.Size(128, 33);
+            this.cmbArah.Size = new System.Drawing.Size(128, 28);
             this.cmbArah.TabIndex = 24;
             this.cmbArah.SelectedIndexChanged += new System.EventHandler(this.cmbArah_SelectedIndexChanged);
             // 
@@ -193,7 +193,7 @@ namespace Bookstore
             // 
             this.txtCari.Location = new System.Drawing.Point(128, 80);
             this.txtCari.Name = "txtCari";
-            this.txtCari.Size = new System.Drawing.Size(321, 30);
+            this.txtCari.Size = new System.Drawing.Size(321, 26);
             this.txtCari.TabIndex = 66;
             this.txtCari.Text = "Kata Kunci";
             this.txtCari.TextChanged += new System.EventHandler(this.txtCari_TextChanged);
